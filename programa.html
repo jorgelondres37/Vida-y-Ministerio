@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--gold:#A9792A;--serif:'Fraunces',Georgia,serif;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D}}
-:root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D}
+:root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--gold:#A9792A;--serif:'Fraunces',Georgia,serif;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320}}
+:root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320}
 *{box-sizing:border-box}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -77,6 +77,50 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 .sc.conf{background:#D5E8D4;color:#111}.chip.conf{background:#D5E8D4;color:#111;border-color:#a9c9a6}
 .sh th{background:#d32f2f;color:#fff;text-align:left;text-transform:uppercase;font-size:11px;letter-spacing:.05em;position:sticky;left:0}
 #segGrid thead small{font-weight:400;color:var(--soft);font-size:10.5px}
+/* Estadísticas de confiabilidad */
+.stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.stat-mini{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat-mini b{display:block;font:600 26px var(--serif);letter-spacing:-.02em}
+.stat-mini span{font-size:11px;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+#relTable{border-collapse:collapse;min-width:100%}
+#relTable th,#relTable td{border:1px solid var(--line);padding:6px 10px;font-size:12.5px;text-align:left;white-space:nowrap}
+#relTable thead th{background:var(--fill);position:sticky;top:0;z-index:1}
+#relTable td.empty{color:var(--soft);white-space:normal}
+.badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.badge.top{background:#D5E8D4;color:#1F6F5F}
+.badge.good{background:var(--brand-bg);color:var(--brand)}
+.badge.warn{background:#FFF3CD;color:#8a6100}
+.badge.bad{background:#F8E3DF;color:var(--bad)}
+.badge.none{background:var(--fill);color:var(--soft)}
+.repl-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
+.repl-cols h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
+.repl-cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;max-height:280px;overflow:auto}
+.repl-cols li{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--fill);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12.5px}
+.repl-cols li small{color:var(--soft);white-space:nowrap}
+@media(max-width:640px){.repl-cols{grid-template-columns:1fr}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+@keyframes growY{from{transform:scaleY(0)}to{transform:scaleY(1)}}
+.rank-row{display:grid;grid-template-columns:24px minmax(120px,1fr) 2fr 46px;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
+.rank-row:last-child{border-bottom:0}
+.rank-pos{font:700 13px var(--serif);color:var(--soft);text-align:center}
+.rank-row:first-child .rank-pos{color:var(--bad)}
+.rank-name{font-weight:600;font-size:13px}
+.rank-bar{height:16px;background:var(--fill);border-radius:99px;overflow:hidden}
+.rank-bar div{height:100%;width:100%;background:linear-gradient(90deg,#E3796D,var(--bad));border-radius:99px;transform-origin:left;animation:growX .7s cubic-bezier(.2,.8,.2,1) both}
+.rank-num{font:700 22px var(--serif);color:var(--bad);text-align:right}
+@media(max-width:640px){.rank-row{grid-template-columns:20px 1fr 42px;grid-template-areas:"pos name num" "bar bar bar";row-gap:6px}.rank-row .rank-bar{grid-area:bar;margin-top:2px}.rank-row .rank-pos{grid-area:pos}.rank-row .rank-name{grid-area:name}.rank-row .rank-num{grid-area:num}}
+.stat-mini.big-bad{background:var(--bad-bg);border-color:var(--bad)}
+.stat-mini.big-bad b{color:var(--bad);font-size:36px}
+.mchart{display:flex;gap:12px;align-items:flex-end;overflow-x:auto;padding:16px 4px 4px;border-top:1px solid var(--line);margin-top:14px}
+.mchart-col{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:34px}
+.mchart-bars{display:flex;align-items:flex-end;gap:3px;height:90px}
+.mb{width:11px;border-radius:3px 3px 0 0;transform-origin:bottom;animation:growY .7s cubic-bezier(.2,.8,.2,1) both}
+.mb.ok{background:var(--brand)}
+.mb.no{background:var(--bad)}
+.mchart-col span{font-size:10px;color:var(--soft);white-space:nowrap}
+.inc-list{display:flex;flex-direction:column;gap:6px;margin-top:8px}
+.inc-row{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;background:var(--bad-bg);border:1px solid var(--bad);border-radius:8px;padding:7px 11px}
+.inc-row b{color:var(--bad)}
 @media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
 body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
 body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
@@ -129,6 +173,34 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
       <div class="chips" style="margin-bottom:8px"><span class="chip conf">Confirmado</span><span class="chip ok">Cumplió</span><span class="chip no">No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
       <p class="hint" id="segStats"></p>
       <div class="tw"><table id="segGrid"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Estadísticas de confiabilidad</h2>
+      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento.</p>
+      <div class="stat-cards" id="availCards"></div>
+      <div class="row2"><label class="chk"><input type="checkbox" id="statsHist"> Ver histórico completo (todos los meses guardados), no solo el mes elegido</label></div>
+      <div class="tw" style="margin-top:10px"><table id="relTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Ranking de fallas</h2>
+      <p class="hint">Los hermanos con más «no cumplió» en todo el historial guardado (no solo el mes elegido arriba). De mayor a menor.</p>
+      <div id="failRank"></div>
+    </section>
+
+    <section class="card">
+      <h2>Ficha por hermano</h2>
+      <p class="hint">Escribe o elige un nombre para ver su historial completo de cumplimiento en todos los meses guardados — útil para mostrarlo cuando alguien reclama que no lo has puesto en el programa.</p>
+      <div class="row2"><input list="allNamesL" id="personSearch" placeholder="Nombre del hermano…" autocomplete="off"><datalist id="allNamesL"></datalist><button class="btn" id="personClear" type="button">Limpiar</button></div>
+      <div id="personCard"></div>
+    </section>
+
+    <section class="card">
+      <h2>Disponibles para reemplazo</h2>
+      <p class="hint">Hermanos activos que no participaron en la semana elegida ni en la anterior, para no repetir siempre a los mismos. Se ordenan por menos asignaciones en el alcance de arriba.</p>
+      <div class="row2"><select id="replWeek" aria-label="Semana"></select></div>
+      <div id="replLists"></div>
     </section>
   </div>
 </main>
@@ -352,7 +424,7 @@ function renderSeg(){
   $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
   $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
   const g=$('segGrid');
-  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';return}
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderAvail();renderReliability();renderReplWeeks();renderRanking();renderPerson();return}
   const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
@@ -367,7 +439,145 @@ function renderSeg(){
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
   g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
+  renderAvail();renderReliability();renderReplWeeks();renderRanking();renderPerson();
 }
+
+/* ---------- Estadísticas de confiabilidad y disponibilidad ---------- */
+function weekScope(){
+  if($('statsHist')?.checked){
+    const done=new Set(progs.map(p=>p.id));
+    return [...progs.flatMap(p=>p.weeks),...(cur&&!done.has(cur.id)?cur.weeks:[])];
+  }
+  return cur?cur.weeks:[];
+}
+function computeStats(weeks){
+  const st={};const get=n=>(st[n]??={asign:0,ok:0,no:0,repl:0});
+  weeks.forEach(w=>{
+    w.seg=w.seg||{};
+    slots(w).forEach(s=>{
+      const n=s.o[s.f];if(!n)return;
+      const e=w.seg[s.k]?.e;
+      if(e==='ok'){const r=get(n);r.asign++;r.ok++}
+      else if(e==='no'){const r=get(n);r.asign++;r.no++;const rep=w.seg[s.k].r;if(rep)get(rep).repl++}
+    });
+  });
+  return st;
+}
+function relBadge(rate,tot){
+  if(tot<2)return'<span class="badge none">Pocos datos</span>';
+  if(rate===0)return'<span class="badge top">Muy confiable</span>';
+  if(rate<=15)return'<span class="badge good">Confiable</span>';
+  if(rate<=35)return'<span class="badge warn">Irregular</span>';
+  return'<span class="badge bad">Falla mucho</span>';
+}
+function renderReliability(){
+  const st=computeStats(weekScope());
+  const rows=Object.entries(st).map(([n,r])=>{const tot=r.ok+r.no,rate=tot?Math.round(r.no/tot*100):0;return{n,...r,tot,rate}})
+    .sort((a,b)=>b.rate-a.rate||b.tot-a.tot||a.n.localeCompare(b.n));
+  $('relTable').innerHTML=rows.length?`<thead><tr><th>Hermano</th><th>Resueltas</th><th>Cumplió</th><th>No cumplió</th><th>% Cumplimiento</th><th>% Falla</th><th>Reemplazó a otros</th><th>Confiabilidad</th></tr></thead><tbody>${
+    rows.map(r=>`<tr><td>${esc(r.n)}</td><td>${r.tot}</td><td>${r.ok}</td><td>${r.no}</td><td>${r.tot?(100-r.rate)+'%':'—'}</td><td>${r.tot?r.rate+'%':'—'}</td><td>${r.repl||0}</td><td>${relBadge(r.rate,r.tot)}</td></tr>`).join('')
+  }</tbody>`:'<tbody><tr><td class="empty">Aún no hay asignaciones marcadas como cumplidas o no cumplidas en este alcance. Marca semanas en la tabla de arriba para que aparezcan aquí.</td></tr></tbody>';
+}
+function renderAvail(){
+  const activeP=people.filter(p=>!p.inactivo);
+  const avV=activeP.filter(p=>p.genero==='V').length,avM=activeP.filter(p=>p.genero==='M').length;
+  const used=new Set();(cur?cur.weeks:[]).forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])used.add(s.o[s.f])}));
+  let uV=0,uM=0;used.forEach(n=>{const p=byName(n);if(p){if(p.genero==='V')uV++;else if(p.genero==='M')uM++}});
+  $('availCards').innerHTML=`<div class="stat-mini"><b>${avV}</b><span>Hermanos activos (V)</span></div>
+<div class="stat-mini"><b>${avM}</b><span>Hermanas activas (M)</span></div>
+<div class="stat-mini"><b>${uV}</b><span>Hermanos usados este mes</span></div>
+<div class="stat-mini"><b>${uM}</b><span>Hermanas usadas este mes</span></div>`;
+}
+function renderReplWeeks(){
+  if(!cur||!cur.weeks.length){$('replWeek').innerHTML='';$('replLists').innerHTML='';return}
+  const sel=$('replWeek'),prevVal=sel.value;
+  sel.innerHTML=cur.weeks.map((w,i)=>`<option value="${i}">${esc(dateLbl(w))} · ${esc(w.range)}</option>`).join('');
+  if(prevVal&&+prevVal<cur.weeks.length)sel.value=prevVal;
+  renderRepl();
+}
+function renderRepl(){
+  if(!cur||!cur.weeks.length){$('replLists').innerHTML='';return}
+  const wi=+($('replWeek').value||0),w=cur.weeks[wi],prev=cur.weeks[wi-1];
+  const usedNow=new Set();slots(w).forEach(s=>{if(s.o[s.f])usedNow.add(s.o[s.f])});
+  const usedPrev=new Set();if(prev)slots(prev).forEach(s=>{if(s.o[s.f])usedPrev.add(s.o[s.f])});
+  const st=computeStats(weekScope());
+  const cand=people.filter(p=>!p.inactivo&&!usedNow.has(p.n)&&!usedPrev.has(p.n));
+  const list=g=>{const l=cand.filter(p=>p.genero===g).sort((a,b)=>(st[a.n]?.asign||0)-(st[b.n]?.asign||0)||a.n.localeCompare(b.n));
+    return l.length?l.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join(''):'<li class="asign-empty">Sin candidatos.</li>'};
+  $('replLists').innerHTML=`<div class="repl-cols"><div><h4>Hermanos (V)</h4><ul>${list('V')}</ul></div><div><h4>Hermanas (M)</h4><ul>${list('M')}</ul></div></div>`;
+}
+function allPrograms(){
+  const map={};progs.forEach(p=>map[p.id]=p);if(cur)map[cur.id]=cur;
+  return Object.values(map).sort((a,b)=>a.id<b.id?-1:1);
+}
+function weekLabels(w){
+  const c={mm:0,vc:0},out={};
+  slots(w).forEach(s=>{if(s.o.kind==='MM'&&s.f==='p')c.mm++;if(s.o.kind==='VC')c.vc++;out[s.k]=lab(s,c)[0]});
+  return out;
+}
+function failRanking(){
+  const st=computeStats(allPrograms().flatMap(p=>p.weeks));
+  return Object.entries(st).map(([n,r])=>({n,no:r.no,ok:r.ok,tot:r.ok+r.no}))
+    .filter(r=>r.no>0).sort((a,b)=>b.no-a.no||b.tot-a.tot||a.n.localeCompare(b.n));
+}
+function renderRanking(){
+  const rank=failRanking().slice(0,10),max=rank[0]?.no||1;
+  $('failRank').innerHTML=rank.length?rank.map((r,i)=>`<div class="rank-row">
+   <span class="rank-pos">${i+1}</span>
+   <span class="rank-name clickable" tabindex="0" role="button" data-person="${esc(r.n)}">${esc(r.n)}</span>
+   <div class="rank-bar"><div style="width:${Math.round(r.no/max*100)}%"></div></div>
+   <span class="rank-num">${r.no}</span>
+  </div>`).join(''):'<p class="hint">Aún no hay fallas registradas en el historial guardado. Buenas noticias.</p>';
+}
+function personHistory(name){
+  const months=[],incidents=[];
+  allPrograms().forEach(p=>{
+    let ok=0,no=0;
+    p.weeks.forEach(w=>{
+      w.seg=w.seg||{};const labels=weekLabels(w);
+      slots(w).forEach(s=>{
+        if(s.o[s.f]!==name)return;
+        const st=w.seg[s.k];
+        if(st?.e==='ok')ok++;
+        else if(st?.e==='no'){no++;incidents.push({label:dateLbl(w),range:w.range,role:labels[s.k],r:st.r,n:st.n})}
+      });
+    });
+    if(ok||no){const [y,m]=p.id.split('-');months.push({label:`${MESES[+m-1].slice(0,3)} ${y}`,ok,no})}
+  });
+  return{months,incidents};
+}
+function allNamesEver(){
+  const set=new Set();
+  allPrograms().forEach(p=>p.weeks.forEach(w=>{
+    slots(w).forEach(s=>{if(s.o[s.f])set.add(s.o[s.f])});
+    Object.values(w.seg||{}).forEach(st=>{if(st.r)set.add(st.r)});
+  }));
+  return[...set].sort((a,b)=>a.localeCompare(b));
+}
+function renderPerson(){
+  $('allNamesL').innerHTML=allNamesEver().map(n=>`<option value="${esc(n)}">`).join('');
+  const name=$('personSearch').value.trim();
+  if(!name){$('personCard').innerHTML='';return}
+  const{months,incidents}=personHistory(name),ok=months.reduce((a,m)=>a+m.ok,0),no=months.reduce((a,m)=>a+m.no,0),tot=ok+no;
+  if(!tot){$('personCard').innerHTML=`<p class="hint">Sin registros de cumplimiento para «${esc(name)}» en el historial guardado. Revisa que el nombre esté escrito igual que en el registro.</p>`;return}
+  const rate=Math.round(no/tot*100),maxM=Math.max(1,...months.map(m=>m.ok+m.no));
+  $('personCard').innerHTML=`<div class="stat-cards" style="margin-top:10px">
+   <div class="stat-mini big-bad"><b>${no}</b><span>Fallas históricas</span></div>
+   <div class="stat-mini"><b>${ok}</b><span>Cumplió</span></div>
+   <div class="stat-mini"><b>${tot}</b><span>Asignaciones resueltas</span></div>
+   <div class="stat-mini"><b>${rate}%</b><span>% de falla</span></div>
+  </div>
+  <div class="mchart">${months.map(m=>`<div class="mchart-col" title="${esc(m.label)}: ${m.ok} cumplió, ${m.no} falló">
+    <div class="mchart-bars"><div class="mb ok" style="height:${Math.round(m.ok/maxM*100)}%"></div><div class="mb no" style="height:${Math.round(m.no/maxM*100)}%"></div></div>
+    <span>${esc(m.label)}</span>
+   </div>`).join('')}</div>
+  ${incidents.length?`<h4 style="margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--soft)">Detalle de las fallas</h4>
+  <div class="inc-list">${incidents.map(i=>`<div class="inc-row"><b>${esc(i.label)}</b><span>${esc(i.range)}</span><span>${esc(i.role)}</span>${i.r?`<span>↪ Reemplazó: ${esc(i.r)}</span>`:''}${i.n?`<span>📝 ${esc(i.n)}</span>`:''}</div>`).join('')}</div>`:''}`;
+}
+$('personSearch').addEventListener('input',renderPerson);
+$('personClear').onclick=()=>{$('personSearch').value='';renderPerson()};
+$('failRank').addEventListener('click',e=>{const b=e.target.closest('[data-person]');if(b){$('personSearch').value=b.dataset.person;renderPerson();$('personCard').scrollIntoView({behavior:'smooth',block:'center'})}});
+$('failRank').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.person){e.preventDefault();e.target.click()}});
 function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&(!w.seg[s.k]||w.seg[s.k].e==='conf'))w.seg[s.k]={...w.seg[s.k],e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
 $('segAll').onclick=()=>cur&&confirm('¿Marcar como cumplidas todas las asignaciones pendientes del mes?')&&markPending(cur.weeks);
 $('segPrint').onclick=()=>{if(!cur)return;document.body.classList.add('ps');window.print()};
@@ -376,6 +586,8 @@ $('segMonth').onchange=e=>{
   const p=progs.find(x=>x.id===e.target.value);if(!p)return;
   cur=JSON.parse(JSON.stringify(p));$('month').value=cur.id;draft();render();renderSeg();
 };
+$('statsHist').onchange=renderReliability;
+$('replWeek').addEventListener('change',renderRepl);
 const syncSeg=()=>{document.querySelectorAll('#segDlg [data-e]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.e===segCtx.e));$('segNo').hidden=segCtx.e!=='no'};
 $('segGrid').addEventListener('click',e=>{
   const b=e.target.closest('[data-wk]');if(b)return markPending([cur.weeks[b.dataset.wk]]);
