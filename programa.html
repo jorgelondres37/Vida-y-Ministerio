@@ -61,11 +61,24 @@ textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-siz
  .ce{border:0}.ce:empty{display:none}
  .sheet input,.sheet select{border:0;appearance:none;-webkit-appearance:none;padding:0}
 }
+body[data-tab="seg"] #progView{display:none}body:not([data-tab="seg"]) #seg{display:none}
+.tw{overflow:auto;border:1px solid var(--line);border-radius:10px;max-height:70vh}
+#segGrid{border-collapse:collapse;min-width:100%}#segGrid th,#segGrid td{border:1px solid var(--line);padding:6px 9px;font-size:12.5px;text-align:left;vertical-align:top}
+#segGrid thead th{position:sticky;top:0;background:var(--fill);z-index:2;min-width:140px}
+#segGrid .rl{position:sticky;left:0;background:var(--card);z-index:1;min-width:150px;font-weight:600;white-space:nowrap}
+#segGrid thead th:first-child{left:0;z-index:3}
+.sc{cursor:pointer}.sc:hover{outline:2px solid var(--brand);outline-offset:-2px}
+.sc.ok{background:#FFF36B;color:#111}.sc.no{color:var(--bad);font-weight:600}.sc small{display:block;font-weight:400;color:var(--soft)}.sc.ok small{color:#444}
+.chip.ok{background:#FFF36B;color:#111;border-color:#e3d63f}.chip.no{color:var(--bad);border-color:var(--bad)}
+dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:20px;width:min(420px,calc(100% - 32px))}
+dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;margin:10px 0 4px}dialog input{width:100%}
+.btn[aria-pressed="true"]{background:var(--brand-bg);border-color:var(--brand);color:var(--brand)}
 </style>
 </head>
 <body>
-<header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><a class="btn small" href="index.html">← Registro</a></div></header>
+<header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><a class="btn small" href="index.html">← Registro</a></div></header>
 <main class="wrap">
+  <div id="progView">
   <div class="no-print">
     <h1>Programa <em>Vida y Ministerio</em></h1>
     <p class="hint">Pega el programa del mes, la página asigna a los hermanos según sus asignaciones y su historial, y lo dejas listo para imprimir.</p>
@@ -99,7 +112,25 @@ textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-siz
     <p class="hint">Los meses guardados alimentan la rotación: quien tuvo más partes recientes queda de último.</p>
     <div id="hist"></div>
   </section>
+  </div>
+  <div id="seg" class="no-print">
+    <h1>Seguimiento <em>de asignaciones</em></h1>
+    <p class="hint">Toca un nombre para marcar si cumplió su parte. Amarillo = cumplió · rojo = no cumplió (con el hermano que lo reemplazó) · blanco = pendiente.</p>
+    <section class="card">
+      <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><span id="segMsg" role="status"></span></div>
+      <div class="chips" style="margin-bottom:8px"><span class="chip ok">Cumplió</span><span class="chip no">No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
+      <p class="hint" id="segStats"></p>
+      <div class="tw"><table id="segGrid"></table></div>
+    </section>
+  </div>
 </main>
+<dialog id="segDlg" aria-labelledby="segT">
+  <h2 id="segT" style="margin:0"></h2><p class="hint" id="segSub"></p>
+  <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
+  <div id="segNo" hidden><label for="segR">Lo reemplazó</label><input id="segR" list="segL" placeholder="Nombre del reemplazo"><datalist id="segL"></datalist></div>
+  <label for="segN">Nota (opcional)</label><input id="segN" placeholder="Motivo o comentario">
+  <div class="row2" style="margin-top:14px"><button class="btn primary" id="segOk" type="button">Aceptar</button><button class="btn" id="segCancel" type="button">Cancelar</button></div>
+</dialog>
 
 <script>
 'use strict';
@@ -112,7 +143,7 @@ const SHOWD=['MM','LECTURA','EST','QD','DMM'];
 const HP='programas.json',CK='hermanos.cfg',DK='programa.draft';
 let people=[],progs=[],cur=null;
 const disp=n=>n.includes(',')?n.split(',').slice(1).join(',').trim()+' '+n.split(',')[0].trim():n.trim();
-const say=(m,c='')=>{$('msg').textContent=m;$('msg').className=c};
+const say=(m,c='')=>['msg','segMsg'].forEach(i=>{const e=$(i);if(e){e.textContent=m;e.className=c}});
 
 /* ---------- GitHub (misma conexión que el Registro) ---------- */
 const cfg=()=>{let s={};try{s=JSON.parse(localStorage.getItem(CK)||'{}')}catch{}const h=location.hostname;const g=h.endsWith('.github.io')?{owner:h.split('.')[0],repo:location.pathname.split('/')[1]||h}:{};return{branch:'main',...g,...s}};
@@ -130,7 +161,7 @@ function classify(sec,t,n){
   return /necesidades/i.test(t)?'NEC':/estudio b[ií]blico/i.test(t)?'EST':'VC';
 }
 function parse(txt){
-  txt=txt.replace(/\r/g,'').replace(/\n\s*(\(\d+\s*mins?\.?\))/g,' $1');
+  txt=txt.replace(/\r/g,'').replace(/\n\s*(\(\d+\s*mins?\.?\))/g,' $1').replace(/\((parte\s+\d+)\)/gi,', $1');
   const hdr=/^[ \t]*(\d{1,2}(?:\s*[-–]\s*\d{1,2})?\s+DE\s+[A-ZÁÉÍÓÚÑ]+(?:\s+A\s+\d{1,2}\s+DE\s+[A-ZÁÉÍÓÚÑ]+)?)[ \t]*\|?[ \t]*([A-ZÁÉÍÓÚÑ0-9]+\s+\d[\d ,\-–]*)?/gim;
   const hs=[...txt.matchAll(hdr)];
   return hs.map((m,i)=>{
@@ -143,7 +174,7 @@ function parse(txt){
     for(const p of body.matchAll(re)){
       const n=+p[1],title=p[2].replace(/\s+/g,' ').trim();
       const sec=(cutV>=0&&p.index>=cutV)?'V':(iM>=0?(p.index>=iM?'M':'T'):(n<=3?'T':'M'));
-      const kind=classify(sec,title,n);
+      const det=p[4].replace(/\s+/g,' ').trim();let kind=classify(sec,title,n);if(kind==='MM'&&/^Discurso/i.test(det))kind='DMM';
       parts.push({sec,kind,title,min:+p[3],detail:p[4].replace(/\s+/g,' ').trim().slice(0,320),p:'',h:'',l:''});
     }
     return{range:m[1].replace(/\s+/g,' ').toUpperCase(),bible:(m[2]||'').replace(/\s+/g,' ').trim().toUpperCase(),
@@ -159,7 +190,8 @@ function slots(w){
     if(p.kind==='MM'){s.push({o:p,f:'p',role:MMR[Math.min(mm++,2)]},{o:p,f:'h',role:'MMH',helper:1})}
     else if(p.kind==='EST')s.push({o:p,f:'p',role:'ESTUDIO_BIBLICO',g:'V'},{o:p,f:'l',role:'LECTOR_ESTUDIO_BIBLICO',g:'V'});
     else s.push({o:p,f:'p',role:ROLE[p.kind],g:'V'});
-  });return s;
+  });
+  s.forEach(x=>{x.k=x.o===w?x.f:'p'+w.parts.indexOf(x.o)+'.'+x.f});return s;
 }
 const pool=s=>{
   const salud=$('salud').checked;
@@ -168,7 +200,7 @@ const pool=s=>{
   return c;
 };
 const newT=()=>({cnt:{},lr:{},la:{},seq:0});
-function reg(T,w){slots(w).forEach(s=>{const n=s.o[s.f];if(!n)return;T.cnt[n]=(T.cnt[n]||0)+1;T.lr[n+'|'+s.role]=T.seq;T.la[n]=T.seq});T.seq++}
+function reg(T,w){slots(w).forEach(s=>{const st=w.seg&&w.seg[s.k],n=(st&&st.e==='no'&&st.r)?st.r:s.o[s.f];if(!n)return;T.cnt[n]=(T.cnt[n]||0)+1;T.lr[n+'|'+s.role]=T.seq;T.la[n]=T.seq});T.seq++}
 const score=(T,n,role)=>(T.cnt[n]||0)*3+Math.max(0,4-(T.seq-(T.lr[n+'|'+role]??-99)))*2+(T.seq-(T.la[n]??-99)<=1?2:0)+Math.random()*.7;
 function histBefore(){return progs.filter(p=>p.id<cur.id).sort((a,b)=>a.id<b.id?-1:1)}
 function tally(){const T=newT();histBefore().flatMap(p=>p.weeks).slice(-13).forEach(w=>reg(T,w));return T}
@@ -212,7 +244,7 @@ function splitD(p){
     const m=d.match(/\(((?:lmd|th|lff)[^()]*)\)\.?$/i);
     if(!m)return{ref:'',desc:d};let x=d.slice(0,m.index).trim();if(x&&!/[.?!:]$/.test(x))x+='.';return{ref:'('+m[1]+')',desc:x};
   }
-  return{ref:'',desc:(d.match(/^An[aá]lisis[^.]*\./i)||[''])[0]};
+  return{ref:'',desc:(d.match(/^(?:An[aá]lisis|Discurso)[^.]*\./i)||[''])[0]};
 }
 const norm=p=>{if(p.ref===undefined){const s=splitD(p);p.ref=s.ref;p.desc=s.desc}};
 function sel(w,sl,wi,o,f){
@@ -276,11 +308,78 @@ $('parseBtn').onclick=()=>{
 $('fillBtn').onclick=()=>{autofill(false);draft();render()};
 $('regenBtn').onclick=()=>{if(confirm('Se reemplazarán TODAS las asignaciones del mes, incluidas las que editaste. ¿Continuar?')){autofill(true);draft();render()}};
 $('printBtn').onclick=()=>window.print();
-$('saveBtn').onclick=async()=>{
+async function saveCur(){
   const next=progs.filter(p=>p.id!==cur.id).concat([JSON.parse(JSON.stringify(cur))]);
   try{say('Guardando…');await saveJson(HP,{programs:next},`Programa ${cur.id}`);progs=next;hist();say('Guardado en el historial ✓','ok')}
   catch(e){say(e.message,'err')}
+}
+$('saveBtn').onclick=saveCur;$('segSave').onclick=()=>cur?saveCur():say('No hay un mes abierto.','err');
+
+/* ---------- Seguimiento ---------- */
+function lab(s,c){
+  const o=s.o,f=s.f;
+  if(f==='presi')return['Presidencia',0];if(f==='oraA')return['Oración inicial',1];if(f==='oraB')return['Oración final',70];
+  switch(o.kind){
+    case'TESORO':return['Discurso Tesoros de la Biblia',2];
+    case'PERLAS':return['Perlas escondidas',3];
+    case'LECTURA':return['Lectura de la Biblia',4];
+    case'MM':return f==='h'?['Asignación N°'+c.mm+' · Ayudante',11+2*c.mm]:['Asignación N°'+c.mm,10+2*c.mm];
+    case'DMM':case'QD':return['Discurso Seamos Mejores Maestros',30];
+    case'VC':return[c.vc>1?'Vida Cristiana · Parte '+c.vc:'Discurso Vida Cristiana',39+c.vc];
+    case'NEC':return['Necesidades de la congregación',50];
+    default:return f==='l'?['Lector estudio bíblico',61]:['Conductor estudio bíblico',60];
+  }
+}
+let segCtx=null;
+function renderSeg(){
+  const ids=progs.map(p=>p.id);if(cur&&!ids.includes(cur.id))ids.push(cur.id);
+  ids.sort().reverse();
+  $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
+  $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
+  const g=$('segGrid');
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';return}
+  const rows={};let ok=0,no=0,pe=0;
+  cur.weeks.forEach((w,wi)=>{
+    w.seg=w.seg||{};const c={mm:0,vc:0};
+    slots(w).forEach(s=>{
+      if(s.o.kind==='MM'&&s.f==='p')c.mm++;if(s.o.kind==='VC')c.vc++;
+      const [l,ord]=lab(s,c);(rows[l]??={ord,cells:{}}).cells[wi]=s;
+    });
+  });
+  const body=Object.entries(rows).sort((a,b)=>a[1].ord-b[1].ord).map(([l,r])=>`<tr><th class="rl">${esc(l)}</th>${cur.weeks.map((w,wi)=>{
+    const s=r.cells[wi];if(!s||!s.o[s.f])return'<td></td>';
+    const st=w.seg[s.k]||{};if(st.e==='ok')ok++;else if(st.e==='no')no++;else pe++;
+    return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`).join('');
+  g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(w.range)}<br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
+  $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${pe} pendientes`;
+}
+function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&!w.seg[s.k])w.seg[s.k]={e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
+$('segAll').onclick=()=>cur&&confirm('¿Marcar como cumplidas todas las asignaciones pendientes del mes?')&&markPending(cur.weeks);
+$('segMonth').onchange=e=>{
+  const p=progs.find(x=>x.id===e.target.value);if(!p)return;
+  cur=JSON.parse(JSON.stringify(p));$('month').value=cur.id;draft();render();renderSeg();
 };
+const syncSeg=()=>{document.querySelectorAll('#segDlg [data-e]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.e===segCtx.e));$('segNo').hidden=segCtx.e!=='no'};
+$('segGrid').addEventListener('click',e=>{
+  const b=e.target.closest('[data-wk]');if(b)return markPending([cur.weeks[b.dataset.wk]]);
+  const t=e.target.closest('.sc');if(!t||!cur)return;
+  const w=cur.weeks[t.dataset.w],s=slots(w).find(x=>x.k===t.dataset.k),st=w.seg[s.k]||{};
+  segCtx={w,k:s.k,e:st.e||''};
+  $('segT').textContent=s.o[s.f];$('segSub').textContent=t.dataset.l+' · '+w.range;
+  $('segR').value=st.r||'';$('segN').value=st.n||'';syncSeg();$('segDlg').showModal();
+});
+$('segDlg').addEventListener('click',e=>{if(e.target.dataset.e!==undefined){segCtx.e=e.target.dataset.e;syncSeg()}});
+$('segCancel').onclick=()=>$('segDlg').close();
+$('segOk').onclick=()=>{
+  const c=segCtx;
+  if(c.e)c.w.seg[c.k]={e:c.e,r:c.e==='no'?$('segR').value.trim():'',n:$('segN').value.trim()};else delete c.w.seg[c.k];
+  $('segDlg').close();draft();renderSeg();say('Cambios sin guardar');
+};
+document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{
+  document.body.dataset.tab=b.dataset.tab;
+  document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  if(b.dataset.tab==='seg')renderSeg();
+});
 $('sheets').addEventListener('change',e=>{
   const t=e.target,w=cur?.weeks[t.dataset.w];if(!w)return;
   if(t.dataset.s!==undefined){const s=slots(w)[t.dataset.s];s.o[s.f]=t.value;render()}
