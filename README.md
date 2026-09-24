@@ -2,6 +2,8 @@
 
 Panel web para consultar el registro de hermanos y sus asignaciones del programa.
 
+https://jorgelondres37.github.io/Vida-y-Ministerio/
+
 ## 👀 Qué puedes ver
 
 - 📊 **Resumen**: total de hermanos, activos, inactivos y en salud.
