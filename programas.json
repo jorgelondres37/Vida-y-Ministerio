@@ -877,7 +877,8 @@
        "ref": "",
        "desc": "wcg cap. 10."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "range": "5-11 DE OCTUBRE",
@@ -1014,7 +1015,8 @@
        "ref": "",
        "desc": "wcg cap. 11."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "range": "12-18 DE OCTUBRE",
@@ -1138,7 +1140,8 @@
        "ref": "",
        "desc": "wcg cap. 12."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "range": "19-25 DE OCTUBRE",
@@ -1275,7 +1278,8 @@
        "ref": "",
        "desc": "wcg cap. 13."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "range": "26 DE OCTUBRE A 1 DE NOVIEMBRE",
@@ -1399,7 +1403,8 @@
        "ref": "",
        "desc": "wcg cap. 14."
       }
-     ]
+     ],
+     "seg": {}
     }
    ]
   },
@@ -1528,7 +1533,62 @@
        "ref": "",
        "desc": "wcg introducción a la sección 1, línea de tiempo y cap. 1."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "no",
+       "r": "David Ortega",
+       "n": ""
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "no",
+       "r": "Cristian Da Silva",
+       "n": ""
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Fabiola de Da Silva",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Ana de Aliaga",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "3-9 DE AGOSTO",
@@ -1652,7 +1712,59 @@
        "ref": "",
        "desc": "wcg cap. 2."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "no",
+       "r": "Jorge Benavides",
+       "n": ""
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Luis López",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Elisabete de Ortega",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Ricardo Ugalde",
+       "n": ""
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "10-16 DE AGOSTO",
@@ -1776,7 +1888,54 @@
        "ref": "",
        "desc": "wcg cap. 3."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "17-23 DE AGOSTO",
@@ -1900,7 +2059,60 @@
        "ref": "",
        "desc": "wcg cap. 4."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Ricardo Ugalde",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "no",
+       "r": "Miguel Meneses",
+       "n": ""
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "24-30 DE AGOSTO",
@@ -2037,7 +2249,64 @@
        "ref": "",
        "desc": "wcg cap. 5."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "no",
+       "r": "Jorge Benavides",
+       "n": ""
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Matilde Durán",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Miguel Meneses",
+       "n": ""
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      },
+      "p8.l": {
+       "e": "no",
+       "r": "David Ortega",
+       "n": ""
+      }
+     }
     }
    ]
   }
