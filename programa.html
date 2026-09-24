@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Programa Vida y Ministerio — Curauma</title>
+<script>try{var t=localStorage.getItem('hermanos.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--gold:#A9792A;--serif:'Fraunces',Georgia,serif;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D}}
+:root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D}
+*{box-sizing:border-box}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
+.top-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
+.brand{font:600 16px var(--serif);flex:1}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 72px}
+h1{font:600 clamp(30px,5vw,46px)/1.05 var(--serif);letter-spacing:-.025em;margin:0 0 6px}
+h1 em{color:var(--brand)}h2{font:600 19px var(--serif);margin:0 0 4px}
+.hint{color:var(--soft);font-size:12.5px;margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow);margin-bottom:18px}
+.row2{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-bottom:10px}
+select,input,textarea{font:inherit;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:9px;padding:7px 10px;max-width:100%}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--brand);outline-offset:1px}
+textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-size:12px}
+.btn{font:inherit;font-size:13px;font-weight:600;padding:8px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+.btn:hover{border-color:var(--ink)}.btn.primary{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.btn.small{padding:3px 9px;font-size:12px}.btn.danger{color:var(--bad)}
+.chk{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--soft)}
+#msg{font-size:12.5px;color:var(--soft)}#msg.err{color:var(--bad)}#msg.ok{color:var(--brand)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}.chip{background:var(--fill);border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:12px}.chip.hi{border-color:var(--bad);color:var(--bad)}
+.hist{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}.hist b{flex:1}
+/* Hoja de programa */
+.sheet{background:#fff;color:#111;border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin-bottom:18px;font-size:13px}
+.sheet input,.sheet select{background:transparent;color:#111;border:0;border-bottom:1px dotted #aaa;border-radius:0;padding:1px 2px;font-size:13px}
+.sheet .doc{font:600 10px Inter;letter-spacing:.08em;color:#666;text-transform:uppercase}
+.wk{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;border-bottom:2px solid #222;padding:6px 0;margin:4px 0 8px}
+.wk input{font-weight:700;font-size:15px;text-transform:uppercase}.wk i{margin-left:auto;font-size:11px;color:#555;font-style:normal}
+.r{display:grid;grid-template-columns:44px 22px 1fr minmax(170px,32%);gap:6px;align-items:start;padding:3px 0}
+.tm{color:#555;font-variant-numeric:tabular-nums}.n{font-weight:700}.tt input.ti{width:calc(100% - 52px);font-weight:600}.mn{font-size:11px;color:#666;margin-left:4px}
+.dt{width:100%;font-size:11.5px!important;color:#444!important}
+.who{display:flex;flex-direction:column;gap:2px}.who select,.who input{width:100%}
+.sec{font:700 11px Inter;letter-spacing:.09em;color:#fff;padding:3px 8px;margin:10px 0 4px}
+.sec.t{background:#2F6F73}.sec.m{background:#A9792A}.sec.v{background:#9C2B23}
+.foot{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 14px;margin-top:12px;border-top:1px solid #999;padding-top:8px;font-size:11px}
+.foot label{display:flex;flex-direction:column;font-weight:700;font-size:10px;color:#444}.foot input{width:100%}
+.bad-sel{color:#B3382C!important}
+@media(max-width:640px){.r{grid-template-columns:40px 18px 1fr}.who{grid-column:3}.foot{grid-template-columns:1fr 1fr}}
+@media print{
+ @page{size:A4;margin:10mm}
+ :root:root{--bg:#fff;--card:#fff;--ink:#111;--soft:#444;--line:#ccc;--fill:#fff}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ .no-print,.top{display:none!important}
+ body{background:#fff}.wrap{padding:0;max-width:none}
+ .sheet{border:0;border-radius:0;padding:0;margin:0;break-after:page;font-size:12.5px}
+ .sheet:last-child{break-after:auto}
+ .sheet input,.sheet select{border:0;appearance:none;-webkit-appearance:none;padding:0}
+}
+</style>
+</head>
+<body>
+<header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><a class="btn small" href="index.html">← Registro</a></div></header>
+<main class="wrap">
+  <div class="no-print">
+    <h1>Programa <em>Vida y Ministerio</em></h1>
+    <p class="hint">Pega el programa del mes, la página asigna a los hermanos según sus asignaciones y su historial, y lo dejas listo para imprimir.</p>
+
+    <section class="card">
+      <h2>1 · Cargar el mes</h2>
+      <p class="hint">Abre la guía (PDF de Vida y Ministerio), selecciona y copia todo el texto, y pégalo aquí.</p>
+      <div class="row2"><input type="month" id="month" aria-label="Mes"><label class="chk"><input type="checkbox" id="salud"> Incluir hermanos marcados «en salud»</label></div>
+      <textarea id="paste" placeholder="Pega aquí el texto de la guía de actividades…"></textarea>
+      <div class="row2" style="margin-top:10px"><button class="btn primary" id="parseBtn" type="button">Leer y asignar</button><span id="msg" role="status"></span></div>
+    </section>
+
+    <section class="card" id="tools" hidden>
+      <h2>2 · Revisar y guardar</h2>
+      <p class="hint">Cada nombre es un menú con los hermanos habilitados para esa parte. Puedes cambiar cualquiera; lo que edites se respeta al autocompletar.</p>
+      <div class="row2">
+        <button class="btn" id="fillBtn" type="button">Autocompletar vacíos</button>
+        <button class="btn" id="regenBtn" type="button">Regenerar todo</button>
+        <button class="btn primary" id="saveBtn" type="button">Guardar en historial</button>
+        <button class="btn" id="printBtn" type="button">Imprimir / PDF</button>
+      </div>
+      <h2 style="font-size:15px;margin-top:14px">Reparto del mes</h2>
+      <div class="chips" id="summary"></div>
+    </section>
+  </div>
+
+  <div id="sheets"></div>
+
+  <section class="card no-print">
+    <h2>Historial</h2>
+    <p class="hint">Los meses guardados alimentan la rotación: quien tuvo más partes recientes queda de último.</p>
+    <div id="hist"></div>
+  </section>
+</main>
+
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const MESES=['ENERO','FEBRERO','MARZO','ABRIL','MAYO','JUNIO','JULIO','AGOSTO','SEPTIEMBRE','OCTUBRE','NOVIEMBRE','DICIEMBRE'];
+const ROLE={TESORO:'DISCURSO_TESORO_BIBLIA',PERLAS:'PERLAS_ESCONDIDAS',LECTURA:'LECTURA_BIBLIA',QD:'DISCURSO_MM',DMM:'DISCURSO_MM',VC:'DISCURSO_VIDA_CRISTIANA',NEC:'NECESIDADES_CONGREGACION',EST:'ESTUDIO_BIBLICO'};
+const MMR=['MM_1','MM_2','MM_3'];
+const SHOWD=['MM','LECTURA','EST','QD','DMM'];
+const HP='programas.json',CK='hermanos.cfg',DK='programa.draft';
+let people=[],progs=[],cur=null;
+const disp=n=>n.includes(',')?n.split(',').slice(1).join(',').trim()+' '+n.split(',')[0].trim():n.trim();
+const say=(m,c='')=>{$('msg').textContent=m;$('msg').className=c};
+
+/* ---------- GitHub (misma conexión que el Registro) ---------- */
+const cfg=()=>{let s={};try{s=JSON.parse(localStorage.getItem(CK)||'{}')}catch{}const h=location.hostname;const g=h.endsWith('.github.io')?{owner:h.split('.')[0],repo:location.pathname.split('/')[1]||h}:{};return{branch:'main',...g,...s}};
+const shas={};
+async function gh(path,method='GET',body){const c=cfg();const r=await fetch(`https://api.github.com/repos/${c.owner}/${c.repo}/contents/${path}`+(method==='GET'?`?ref=${encodeURIComponent(c.branch)}`:''),{method,cache:'no-store',headers:{Accept:'application/vnd.github+json',Authorization:`Bearer ${c.token}`,'X-GitHub-Api-Version':'2022-11-28'},body:body&&JSON.stringify(body)});if(!r.ok){const e=new Error(`Error ${r.status}`);e.status=r.status;throw e}return r.json()}
+const dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));
+const enc=s=>{const b=new TextEncoder().encode(s);let x='';for(let i=0;i<b.length;i+=32768)x+=String.fromCharCode(...b.subarray(i,i+32768));return btoa(x)};
+async function loadJson(path,fb){if(cfg().token){try{const r=await gh(path);shas[path]=r.sha;return JSON.parse(dec(r.content))}catch(e){if(e.status===404){shas[path]=null;return fb}}}try{const r=await fetch(path+'?t='+Date.now(),{cache:'no-store'});if(r.ok)return await r.json()}catch{}return fb}
+async function saveJson(path,obj,msg){if(!cfg().token)throw new Error('Falta el token: actívalo en el Registro → Conexión GitHub');if(!(path in shas)){try{shas[path]=(await gh(path)).sha}catch(e){if(e.status!==404)throw e;shas[path]=null}}const b={message:msg,content:enc(JSON.stringify(obj,null,1)),branch:cfg().branch};if(shas[path])b.sha=shas[path];shas[path]=(await gh(path,'PUT',b)).content.sha}
+
+/* ---------- Lectura del texto de la guía ---------- */
+function classify(sec,t,n){
+  if(sec==='T')return /perlas/i.test(t)?'PERLAS':/lectura/i.test(t)?'LECTURA':'TESORO';
+  if(sec==='M')return /qu[eé] dir[ií]a/i.test(t)?'QD':/discurso/i.test(t)?'DMM':'MM';
+  return /necesidades/i.test(t)?'NEC':/estudio b[ií]blico/i.test(t)?'EST':'VC';
+}
+function parse(txt){
+  txt=txt.replace(/\r/g,'').replace(/\n\s*(\(\d+\s*mins?\.?\))/g,' $1');
+  const hdr=/^[ \t]*(\d{1,2}(?:\s*[-–]\s*\d{1,2})?\s+DE\s+[A-ZÁÉÍÓÚÑ]+(?:\s+A\s+\d{1,2}\s+DE\s+[A-ZÁÉÍÓÚÑ]+)?)[ \t]*\|?[ \t]*([A-ZÁÉÍÓÚÑ0-9]+\s+\d[\d ,\-–]*)?/gim;
+  const hs=[...txt.matchAll(hdr)];
+  return hs.map((m,i)=>{
+    const body=txt.slice(m.index+m[0].length,i+1<hs.length?hs[i+1].index:undefined);
+    const songs=[...body.matchAll(/Canci[oó]n\s+(\d+)(\s+y\s+oraci[oó]n)?/gi)].map(x=>({n:x[1],o:!!x[2]}));
+    const os=songs.filter(s=>s.o),mid=songs.find(s=>!s.o);
+    const iM=body.search(/MEJORES\s*MAESTROS/i),iV=body.search(/NUESTRA\s*VIDA\s*CRISTIANA/i),iS=body.search(/^\s*Canci[oó]n\s+\d+\s*$/m);
+    const cutV=iV>=0?iV:iS,parts=[];
+    const re=/^\s*(\d{1,2})\.\s+([^()]{1,160}?)\s*\((\d+)\s*mins?\.?\)([^\n]*(?:\n(?!\s*\d{1,2}\.\s|\s*(?:Canci|Palabras|TESOROS|SEAMOS|NUESTRA))[^\n]*)*)/gim;
+    for(const p of body.matchAll(re)){
+      const n=+p[1],title=p[2].replace(/\s+/g,' ').trim();
+      const sec=(cutV>=0&&p.index>=cutV)?'V':(iM>=0?(p.index>=iM?'M':'T'):(n<=3?'T':'M'));
+      const kind=classify(sec,title,n);
+      parts.push({sec,kind,title,min:+p[3],detail:p[4].replace(/\s+/g,' ').trim().slice(0,170),p:'',h:'',l:''});
+    }
+    return{range:m[1].replace(/\s+/g,' ').toUpperCase(),bible:(m[2]||'').replace(/\s+/g,' ').trim().toUpperCase(),
+      sOpen:os[0]?.n||'',sClose:os[1]?.n||'',sMid:mid?.n||'',presi:'',oraA:'',oraB:'',aseo:'',x:{ent:'',mic:'',aud:'',plat:'',av:''},parts};
+  }).filter(w=>w.parts.length);
+}
+
+/* ---------- Motor de asignación ---------- */
+const byName=n=>people.find(p=>p.n===n);
+function slots(w){
+  const s=[{o:w,f:'presi',role:'PRESIDENCIA',g:'V'},{o:w,f:'oraA',role:'ORACION',g:'V'},{o:w,f:'oraB',role:'ORACION',g:'V'}];let mm=0;
+  w.parts.forEach(p=>{
+    if(p.kind==='MM'){s.push({o:p,f:'p',role:MMR[Math.min(mm++,2)]},{o:p,f:'h',role:'MMH',helper:1})}
+    else if(p.kind==='EST')s.push({o:p,f:'p',role:'ESTUDIO_BIBLICO',g:'V'},{o:p,f:'l',role:'LECTOR_ESTUDIO_BIBLICO',g:'V'});
+    else s.push({o:p,f:'p',role:ROLE[p.kind],g:'V'});
+  });return s;
+}
+const pool=s=>{
+  const salud=$('salud').checked;
+  let c=people.filter(p=>!p.inactivo&&(salud||!p.salud)&&(s.role==='MMH'?MMR.some(r=>p.asign.includes(r)):p.asign.includes(s.role))&&(!s.g||p.genero===s.g));
+  if(s.helper){const t=byName(s.o.p);if(t)c=c.filter(x=>x.genero===t.genero&&x.n!==t.n)}
+  return c;
+};
+const newT=()=>({cnt:{},lr:{},la:{},seq:0});
+function reg(T,w){slots(w).forEach(s=>{const n=s.o[s.f];if(!n)return;T.cnt[n]=(T.cnt[n]||0)+1;T.lr[n+'|'+s.role]=T.seq;T.la[n]=T.seq});T.seq++}
+const score=(T,n,role)=>(T.cnt[n]||0)*3+Math.max(0,4-(T.seq-(T.lr[n+'|'+role]??-99)))*2+(T.seq-(T.la[n]??-99)<=1?2:0)+Math.random()*.7;
+function histBefore(){return progs.filter(p=>p.id<cur.id).sort((a,b)=>a.id<b.id?-1:1)}
+function tally(){const T=newT();histBefore().flatMap(p=>p.weeks).slice(-13).forEach(w=>reg(T,w));return T}
+function fillWeek(w,T,all){
+  const sl=slots(w);
+  if(all)sl.forEach(s=>s.o[s.f]='');
+  const used=new Set(sl.map(s=>s.o[s.f]).filter(Boolean));
+  const todo=sl.filter(s=>!s.o[s.f]);
+  todo.sort((a,b)=>(!!a.helper-!!b.helper)||(pool(a).length-pool(b).length));
+  for(const s of todo){
+    const c=pool(s);let f=c.filter(p=>!used.has(p.n));if(!f.length)f=c;if(!f.length)continue;
+    const best=f.map(p=>[score(T,p.n,s.role),p.n]).sort((a,b)=>a[0]-b[0])[0][1];
+    s.o[s.f]=best;used.add(best);
+  }
+  reg(T,w);
+}
+function autofill(all){
+  const T=tally();cur.weeks.forEach(w=>fillWeek(w,T,all));
+  let last=0;histBefore().forEach(p=>p.weeks.forEach(w=>{if(+w.aseo)last=+w.aseo}));
+  cur.weeks.forEach(w=>{if(all||!w.aseo){last=last%5+1;w.aseo=String(last)}else last=+w.aseo||last});
+}
+
+/* ---------- Render ---------- */
+const hm=m=>String(m/60|0).padStart(2,'0')+':'+String(m%60).padStart(2,'0');
+function times(w){
+  let t=19*60+35,m=20*60,v=20*60+20,end=0;
+  w.parts.forEach((p,i)=>{
+    if(p.sec==='T'){p.t=hm(t);t+=p.min}
+    else if(p.sec==='M'){p.t=hm(m);m+=p.min+1}
+    else{p.t=hm(v);v+=p.min}
+  });
+  return{sMid:'20:15',concl:hm(v),sEnd:hm(v+3)};
+}
+function sel(w,sl,wi,o,f){
+  const i=sl.findIndex(s=>s.o===o&&s.f===f),s=sl[i],val=o[f]||'';
+  const names=pool(s).map(p=>p.n).sort((a,b)=>a.localeCompare(b));
+  const out=val&&!names.includes(val);
+  return`<select data-w="${wi}" data-s="${i}" class="${out?'bad-sel':''}" aria-label="Asignado"><option value="">—</option>${(out?[val,...names]:names).map(n=>`<option ${n===val?'selected':''} value="${esc(n)}">${out&&n===val?'⚠ ':''}${esc(n)}</option>`).join('')}</select>`;
+}
+function render(){
+  $('tools').hidden=!cur;
+  if(!cur){$('sheets').innerHTML='';return}
+  const [y,mo]=cur.id.split('-'),title=`${MESES[+mo-1]} ${y}`;
+  $('sheets').innerHTML=cur.weeks.map((w,wi)=>{
+    const sl=slots(w),tm=times(w),S=(o,f)=>sel(w,sl,wi,o,f);
+    const inp=(f,v,c='')=>`<input class="${c}" data-w="${wi}" data-f="${f}" value="${esc(v)}">`;
+    let n=0,sec='';
+    const rows=w.parts.map((p,pi)=>{
+      n++;const head=p.sec!==sec?`<div class="sec ${p.sec.toLowerCase()}">${{T:'TESOROS DE LA BIBLIA',M:'SEAMOS MEJORES MAESTROS',V:'NUESTRA VIDA CRISTIANA'}[p.sec]}</div>${p.sec==='V'?`<div class="r"><span class="tm">${tm.sMid}</span><span></span><span>Canción ${inp('sMid',w.sMid,'sn')}</span><span class="who">${S(w,'presi')}</span></div>`:''}`:'';sec=p.sec;
+      const who=S(p,'p')+(p.kind==='MM'?S(p,'h'):p.kind==='EST'?S(p,'l'):'');
+      return head+`<div class="r"><span class="tm">${p.t}</span><span class="n">${n}</span><div class="tt"><input class="ti" data-w="${wi}" data-p="${pi}" data-f="title" value="${esc(p.title)}"><span class="mn">(${p.min} min.)</span>${SHOWD.includes(p.kind)?`<input class="dt" data-w="${wi}" data-p="${pi}" data-f="detail" value="${esc(p.detail)}">`:''}</div><div class="who">${who}</div></div>`;
+    }).join('');
+    const F=[['ent','ACOMODADOR ENTRADA'],['mic','MICRÓFONOS'],['aud','ACOMODADOR AUDITORIO'],['plat','PLATAFORMA'],['av','AUDIO VIDEO / ZOOM']];
+    return`<section class="sheet"><div class="doc">Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</div>
+<div class="wk">${inp('range',w.range)}${inp('bible',w.bible)}<i>SALA PRINCIPAL</i></div>
+<div class="r"><span class="tm">19:30</span><span></span><span><b>Presidente</b></span><span class="who">${S(w,'presi')}</span></div>
+<div class="r"><span></span><span></span><span>Canción ${inp('sOpen',w.sOpen,'sn')} y oración</span><span class="who">${S(w,'oraA')}</span></div>
+<div class="r"><span class="tm">19:34</span><span></span><span>Palabras de introducción (1 min.)</span><span class="who">${esc(w.presi)}</span></div>
+${rows}
+<div class="r" style="margin-top:6px"><span class="tm">${tm.concl}</span><span></span><span>Palabras de conclusión (3 min.)</span><span class="who">${esc(w.presi)}</span></div>
+<div class="r"><span class="tm">${tm.sEnd}</span><span></span><span>Canción ${inp('sClose',w.sClose,'sn')} y oración</span><span class="who">${S(w,'oraB')}</span></div>
+<div class="foot">${F.map(([k,l])=>`<label>${l}<input data-w="${wi}" data-x="${k}" value="${esc(w.x[k])}"></label>`).join('')}<label>ASEO (GRUPO)<input data-w="${wi}" data-f="aseo" value="${esc(w.aseo)}"></label></div></section>`;
+  }).join('');
+  summary();
+}
+function summary(){
+  if(!cur)return;const c={};
+  cur.weeks.forEach(w=>slots(w).forEach(s=>{const n=s.o[s.f];if(n)c[n]=(c[n]||0)+1}));
+  $('summary').innerHTML=Object.entries(c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([n,k])=>`<span class="chip ${k>3?'hi':''}">${esc(n)} ×${k}</span>`).join('')||'<span class="hint">Sin asignaciones todavía.</span>';
+}
+function hist(){
+  $('hist').innerHTML=progs.slice().sort((a,b)=>a.id<b.id?1:-1).map(p=>{const [y,m]=p.id.split('-');return`<div class="hist"><b>${MESES[+m-1]} ${y}</b><button class="btn small" data-open="${p.id}">Abrir</button><button class="btn small danger" data-del="${p.id}">Eliminar</button></div>`}).join('')||'<p class="hint">Aún no hay meses guardados.</p>';
+}
+const draft=()=>{try{localStorage.setItem(DK,JSON.stringify(cur))}catch{}};
+
+/* ---------- Eventos ---------- */
+$('parseBtn').onclick=()=>{
+  const id=$('month').value;
+  if(!id)return say('Elige el mes del programa.','err');
+  if(!people.length)return say('No se cargó la lista de hermanos (data.json).','err');
+  const weeks=parse($('paste').value);
+  if(!weeks.length)return say('No pude detectar semanas. Revisa que el texto incluya los encabezados de fecha (ej. «2-8 DE NOVIEMBRE | JEREMÍAS 49, 50»).','err');
+  if(progs.some(p=>p.id===id)&&!confirm('Ese mes ya está en el historial. ¿Reemplazarlo?'))return;
+  cur={id,weeks};autofill(true);draft();render();hist();
+  say(`${weeks.length} semanas leídas y asignadas. Revisa cada hoja.`,'ok');
+  $('sheets').scrollIntoView({behavior:'smooth'});
+};
+$('fillBtn').onclick=()=>{autofill(false);draft();render()};
+$('regenBtn').onclick=()=>{if(confirm('Se reemplazarán TODAS las asignaciones del mes, incluidas las que editaste. ¿Continuar?')){autofill(true);draft();render()}};
+$('printBtn').onclick=()=>window.print();
+$('saveBtn').onclick=async()=>{
+  const next=progs.filter(p=>p.id!==cur.id).concat([JSON.parse(JSON.stringify(cur))]);
+  try{say('Guardando…');await saveJson(HP,{programs:next},`Programa ${cur.id}`);progs=next;hist();say('Guardado en el historial ✓','ok')}
+  catch(e){say(e.message,'err')}
+};
+$('sheets').addEventListener('change',e=>{
+  const t=e.target,w=cur?.weeks[t.dataset.w];if(!w)return;
+  if(t.dataset.s!==undefined){const s=slots(w)[t.dataset.s];s.o[s.f]=t.value;render()}
+  else{
+    if(t.dataset.p!==undefined)w.parts[t.dataset.p][t.dataset.f]=t.value;
+    else if(t.dataset.x)w.x[t.dataset.x]=t.value;else w[t.dataset.f]=t.value;
+    summary();
+  }
+  draft();
+});
+$('hist').addEventListener('click',async e=>{
+  const o=e.target.dataset.open,d=e.target.dataset.del;
+  if(o){cur=JSON.parse(JSON.stringify(progs.find(p=>p.id===o)));$('month').value=o;render();window.scrollTo({top:0,behavior:'smooth'})}
+  if(d&&confirm('¿Eliminar este mes del historial?')){
+    const next=progs.filter(p=>p.id!==d);
+    try{await saveJson(HP,{programs:next},`Elimina programa ${d}`);progs=next;hist()}catch(err){say(err.message,'err')}
+  }
+});
+
+/* ---------- Inicio ---------- */
+(async()=>{
+  const d=await loadJson('data.json',{rows:[]});
+  people=(d.rows||[]).map(r=>({...r,n:disp(r.nombre),asign:r.asign||[]}));
+  progs=(await loadJson(HP,{programs:[]})).programs||[];
+  hist();
+  if(!people.length)say('No se pudo cargar data.json.','err');
+  try{const s=JSON.parse(localStorage.getItem(DK)||'null');if(s?.weeks?.length){cur=s;$('month').value=s.id;render()}}catch{}
+  if(!cur){const n=new Date(new Date().getFullYear(),new Date().getMonth()+1,1);$('month').value=`${n.getFullYear()}-${String(n.getMonth()+1).padStart(2,'0')}`}
+})();
+</script>
+</body>
+</html>
