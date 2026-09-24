@@ -20,7 +20,7 @@
   {"num":18,"nombre":"Benavides, Eduardo","tarea":"PTJ","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":19,"nombre":"Olivares, Camila","tarea":"PTJ","grupo":"3","genero":"M","inactivo":true,"salud":false,"asign":[]},
   {"num":20,"nombre":"Aguilera, Juan","tarea":"AN/PR","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":21,"nombre":"Avilés, Idilia","tarea":"PTJ","grupo":"2","genero":"M","inactivo":true,"salud":false,"asign":[]},
+  {"num":21,"nombre":"Avilés, Idilia","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":22,"nombre":"Cortez, Esther","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":23,"nombre":"Benavides, Jorge","tarea":"AN","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":24,"nombre":"Cabezas, Luis","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
