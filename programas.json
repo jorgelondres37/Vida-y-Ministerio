@@ -436,6 +436,551 @@
      ]
     }
    ]
+  },
+  {
+   "id": "2026-11",
+   "weeks": [
+    {
+     "range": "2-8 DE NOVIEMBRE",
+     "bible": "JEREMÍAS 49, 50",
+     "sOpen": "1",
+     "sClose": "33",
+     "sMid": "44",
+     "presi": "Ronny Pérez",
+     "oraA": "Claudio Correa",
+     "oraB": "Guillermo Colina",
+     "aseo": "1",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Ayudamos a otros a beneficiarse de la misericordia de Jehová",
+       "min": 10,
+       "detail": "",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "",
+       "t": "19:35"
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Miguel Meneses",
+       "h": "",
+       "l": "",
+       "t": "19:45"
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 50:24-40 (th lección 11).",
+       "p": "Cristian Da Silva",
+       "h": "",
+       "l": "",
+       "t": "19:55"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Enseña una verdad bíblica (lmd lección 1 punto 5).",
+       "p": "Nayade de Benavides",
+       "h": "Angélica de López",
+       "l": "",
+       "t": "20:00"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Hagamos revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. La persona quiere hablar de un tema distinto (lmd lección 9 punto 3).",
+       "p": "Rosa de Cabezas",
+       "h": "Ana de Aliaga",
+       "l": "",
+       "t": "20:04"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Hagamos discípulos",
+       "min": 5,
+       "detail": "lff lección 20 punto 4 (lmd lección 11 punto 4).",
+       "p": "Josefina Avendaño",
+       "h": "Roxana de Ruiz",
+       "l": "",
+       "t": "20:09"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Nunca olviden lo que Jehová recuerda",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Jorge Benavides",
+       "h": "",
+       "l": "",
+       "t": "20:20"
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 15.",
+       "p": "Luis López",
+       "h": "",
+       "l": "David Cruz",
+       "t": "20:35"
+      }
+     ]
+    },
+    {
+     "range": "9-15 DE NOVIEMBRE",
+     "bible": "JEREMÍAS 51, 52",
+     "sOpen": "98",
+     "sClose": "150",
+     "sMid": "10",
+     "presi": "Mario Aliaga",
+     "oraA": "Johnny Silva",
+     "oraB": "David Ortega",
+     "aseo": "2",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "No seamos como Sedequías",
+       "min": 10,
+       "detail": "",
+       "p": "Felipe Gonzalez",
+       "h": "",
+       "l": "",
+       "t": "19:35"
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Yimmy Silva",
+       "h": "",
+       "l": "",
+       "t": "19:45"
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 52:6-20 (th lección 5).",
+       "p": "Carlos Alvarado",
+       "h": "",
+       "l": "",
+       "t": "19:55"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Ofrece un curso bíblico de forma directa (lmd lección 3 punto 3).",
+       "p": "Lauren Arias",
+       "h": "Alicia Rodríguez",
+       "l": "",
+       "t": "20:00"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Mencionas que Jesús es el Hijo de Dios y la persona no está de acuerdo (lmd lección 3 punto 4).",
+       "p": "Poulette de Robles",
+       "h": "Noemí de Aguilera",
+       "l": "",
+       "t": "20:04"
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 5,
+       "detail": "lmd apéndice A punto 21. Título: El Reino de Dios es un gobierno real que está en el cielo (th lección 7).",
+       "p": "Mauricio Valenzuela",
+       "h": "",
+       "l": "",
+       "t": "20:09"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Nuestras donaciones le dan gloria al gran nombre de Jehová",
+       "min": 15,
+       "detail": "Análisis con el auditorio a cargo de un anciano.",
+       "p": "Juan Aguilera",
+       "h": "",
+       "l": "",
+       "t": "20:20"
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 16.",
+       "p": "Manuel Hernández",
+       "h": "",
+       "l": "Eduardo Benavides",
+       "t": "20:35"
+      }
+     ]
+    },
+    {
+     "range": "16-22 DE NOVIEMBRE",
+     "bible": "LAMENTACIONES 1, 2",
+     "sOpen": "28",
+     "sClose": "75",
+     "sMid": "90",
+     "presi": "Luis Escandell",
+     "oraA": "Enrique Núñez",
+     "oraB": "Luis Cabezas",
+     "aseo": "3",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Una reacción natural ante una situación devastadora",
+       "min": 10,
+       "detail": "",
+       "p": "Ricardo Ugalde",
+       "h": "",
+       "l": "",
+       "t": "19:35"
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Ismael Orellana",
+       "h": "",
+       "l": "",
+       "t": "19:45"
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Lam 1:8-18 (th lección 10).",
+       "p": "Tomás Colina",
+       "h": "",
+       "l": "",
+       "t": "19:55"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "PREDICACIÓN INFORMAL. Empieza una conversación amigable que termina antes de que puedas predicar (lmd lección 2 punto 4).",
+       "p": "Verónica de Alvarado",
+       "h": "Andrea de Ramirez",
+       "l": "",
+       "t": "20:00"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Hagamos revisitas",
+       "min": 4,
+       "detail": "PREDICACIÓN PÚBLICA. Presenta y analiza un video del kit de enseñanza y ofrece un curso de la Biblia (lmd lección 9 punto 4).",
+       "p": "Lisette de Molina",
+       "h": "Rita Panes",
+       "l": "",
+       "t": "20:04"
+      },
+      {
+       "sec": "M",
+       "kind": "QD",
+       "title": "¿Qué dirías?",
+       "min": 5,
+       "detail": "Análisis con el auditorio. DE CASA EN CASA. Repasa Una obra de amor lección 1 punto 4b y menciona la imagen.",
+       "p": "Gabriel Ugalde",
+       "h": "",
+       "l": "",
+       "t": "20:09"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "No nos olvidemos de nuestros hermanos inactivos",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Ronny Pérez",
+       "h": "",
+       "l": "",
+       "t": "20:20"
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 17.",
+       "p": "Jorge Benavides",
+       "h": "",
+       "l": "Matías Colina",
+       "t": "20:35"
+      }
+     ]
+    },
+    {
+     "range": "23-29 DE NOVIEMBRE",
+     "bible": "LAMENTACIONES 3-5",
+     "sOpen": "158",
+     "sClose": "74",
+     "sMid": "109",
+     "presi": "Claudio Correa",
+     "oraA": "Carlos Yáñez",
+     "oraB": "Andrés Valenzuela",
+     "aseo": "4",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Cuando tengamos problemas, no nos rindamos",
+       "min": 10,
+       "detail": "",
+       "p": "Juan Aguilera",
+       "h": "",
+       "l": "",
+       "t": "19:35"
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Felipe Godoy",
+       "h": "",
+       "l": "",
+       "t": "19:45"
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Lam 3:19-42 (th lección 12).",
+       "p": "Luis Valladares",
+       "h": "",
+       "l": "",
+       "t": "19:55"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Enseña una verdad bíblica (lmd lección 5 punto 4).",
+       "p": "Cristhel de Hernández",
+       "h": "Rocío Valenzuela",
+       "l": "",
+       "t": "20:00"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. Ofrece un tratado (lmd lección 4 punto 3).",
+       "p": "Andrea de Núñez",
+       "h": "Thiare Aliaga",
+       "l": "",
+       "t": "20:04"
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 5,
+       "detail": "w25.12 26-30. Título: Los mayores son un tesoro para la congregación (th lección 16).",
+       "p": "Felipe Escandell",
+       "h": "",
+       "l": "",
+       "t": "20:09"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Ayudemos a los cuidadores a no rendirse",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Cristian Da Silva",
+       "h": "",
+       "l": "",
+       "t": "20:20"
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 18.",
+       "p": "Felipe Gonzalez",
+       "h": "",
+       "l": "Agustín Pizarro",
+       "t": "20:35"
+      }
+     ]
+    },
+    {
+     "range": "30 DE NOVIEMBRE A 6 DE DICIEMBRE",
+     "bible": "EZEQUIEL 1, 2",
+     "sOpen": "65",
+     "sClose": "134",
+     "sMid": "63",
+     "presi": "Manuel Hernández",
+     "oraA": "Miguel Meneses",
+     "oraB": "Ricardo Ugalde",
+     "aseo": "5",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Avancemos al ritmo del carro celestial de Jehová",
+       "min": 10,
+       "detail": "",
+       "p": "Mario Aliaga",
+       "h": "",
+       "l": "",
+       "t": "19:35"
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Luis Escandell",
+       "h": "",
+       "l": "",
+       "t": "19:45"
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Eze 2:1-10 (th lección 2).",
+       "p": "Rodrigo Molina",
+       "h": "",
+       "l": "",
+       "t": "19:55"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Ofrece un curso de la Biblia (lmd lección 3 punto 3).",
+       "p": "Cecilia de Silva",
+       "h": "Matilde Durán",
+       "l": "",
+       "t": "20:00"
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Hagamos discípulos",
+       "min": 5,
+       "detail": "Anima a un estudiante de la Biblia que está afrontando oposición de la familia (lmd lección 11 punto 5).",
+       "p": "Leonor Alvarado",
+       "h": "Marisol Avila",
+       "l": "",
+       "t": "20:04"
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 4,
+       "detail": "lmd apéndice A punto 22. Título: El Reino de Dios reemplazará a todos los gobiernos humanos (th lección 6).",
+       "p": "Elías Mesa",
+       "h": "",
+       "l": "",
+       "t": "20:10"
+      },
+      {
+       "sec": "V",
+       "kind": "NEC",
+       "title": "Necesidades de la congregación",
+       "min": 15,
+       "detail": "",
+       "p": "Luis López",
+       "h": "",
+       "l": "",
+       "t": "20:20"
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 19.",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "Guillermo Colina",
+       "t": "20:35"
+      }
+     ]
+    }
+   ]
   }
  ]
 }
