@@ -177,7 +177,7 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
     <section class="card">
       <h2>Estadísticas de confiabilidad</h2>
-      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento.</p>
+      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento. Los conteos de «activos» excluyen a los inactivos y a los marcados «en salud»: para ti, esos no son opción real.</p>
       <div class="stat-cards" id="availCards"></div>
       <div class="row2"><label class="chk"><input type="checkbox" id="statsHist"> Ver histórico completo (todos los meses guardados), no solo el mes elegido</label></div>
       <div class="tw" style="margin-top:10px"><table id="relTable"></table></div>
@@ -198,8 +198,7 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
     <section class="card">
       <h2>Disponibles para reemplazo</h2>
-      <p class="hint">Hermanos activos que no participaron en la semana elegida ni en la anterior, para no repetir siempre a los mismos. Se ordenan por menos asignaciones en el alcance de arriba.</p>
-      <div class="row2"><select id="replWeek" aria-label="Semana"></select></div>
+      <p class="hint">Hermanos activos (sin contar inactivos ni marcados «en salud») que no tuvieron ninguna participación en todo el mes elegido arriba. Se ordenan por menos asignaciones en el alcance de arriba.</p>
       <div id="replLists"></div>
     </section>
   </div>
@@ -424,7 +423,7 @@ function renderSeg(){
   $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
   $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
   const g=$('segGrid');
-  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderAvail();renderReliability();renderReplWeeks();renderRanking();renderPerson();return}
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderAvail();renderReliability();renderRepl();renderRanking();renderPerson();return}
   const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
@@ -439,7 +438,7 @@ function renderSeg(){
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
   g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
-  renderAvail();renderReliability();renderReplWeeks();renderRanking();renderPerson();
+  renderAvail();renderReliability();renderRepl();renderRanking();renderPerson();
 }
 
 /* ---------- Estadísticas de confiabilidad y disponibilidad ---------- */
@@ -479,7 +478,7 @@ function renderReliability(){
   }</tbody>`:'<tbody><tr><td class="empty">Aún no hay asignaciones marcadas como cumplidas o no cumplidas en este alcance. Marca semanas en la tabla de arriba para que aparezcan aquí.</td></tr></tbody>';
 }
 function renderAvail(){
-  const activeP=people.filter(p=>!p.inactivo);
+  const activeP=people.filter(p=>!p.inactivo&&!p.salud);
   const avV=activeP.filter(p=>p.genero==='V').length,avM=activeP.filter(p=>p.genero==='M').length;
   const used=new Set();(cur?cur.weeks:[]).forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])used.add(s.o[s.f])}));
   let uV=0,uM=0;used.forEach(n=>{const p=byName(n);if(p){if(p.genero==='V')uV++;else if(p.genero==='M')uM++}});
@@ -488,22 +487,14 @@ function renderAvail(){
 <div class="stat-mini"><b>${uV}</b><span>Hermanos usados este mes</span></div>
 <div class="stat-mini"><b>${uM}</b><span>Hermanas usadas este mes</span></div>`;
 }
-function renderReplWeeks(){
-  if(!cur||!cur.weeks.length){$('replWeek').innerHTML='';$('replLists').innerHTML='';return}
-  const sel=$('replWeek'),prevVal=sel.value;
-  sel.innerHTML=cur.weeks.map((w,i)=>`<option value="${i}">${esc(dateLbl(w))} · ${esc(w.range)}</option>`).join('');
-  if(prevVal&&+prevVal<cur.weeks.length)sel.value=prevVal;
-  renderRepl();
-}
 function renderRepl(){
   if(!cur||!cur.weeks.length){$('replLists').innerHTML='';return}
-  const wi=+($('replWeek').value||0),w=cur.weeks[wi],prev=cur.weeks[wi-1];
-  const usedNow=new Set();slots(w).forEach(s=>{if(s.o[s.f])usedNow.add(s.o[s.f])});
-  const usedPrev=new Set();if(prev)slots(prev).forEach(s=>{if(s.o[s.f])usedPrev.add(s.o[s.f])});
+  const usedMonth=new Set();
+  cur.weeks.forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])usedMonth.add(s.o[s.f])}));
   const st=computeStats(weekScope());
-  const cand=people.filter(p=>!p.inactivo&&!usedNow.has(p.n)&&!usedPrev.has(p.n));
+  const cand=people.filter(p=>!p.inactivo&&!p.salud&&!usedMonth.has(p.n));
   const list=g=>{const l=cand.filter(p=>p.genero===g).sort((a,b)=>(st[a.n]?.asign||0)-(st[b.n]?.asign||0)||a.n.localeCompare(b.n));
-    return l.length?l.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join(''):'<li class="asign-empty">Sin candidatos.</li>'};
+    return l.length?l.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join(''):'<li class="asign-empty">Sin candidatos: todos los hermanos activos ya tuvieron participación este mes.</li>'};
   $('replLists').innerHTML=`<div class="repl-cols"><div><h4>Hermanos (V)</h4><ul>${list('V')}</ul></div><div><h4>Hermanas (M)</h4><ul>${list('M')}</ul></div></div>`;
 }
 function allPrograms(){
@@ -587,7 +578,6 @@ $('segMonth').onchange=e=>{
   cur=JSON.parse(JSON.stringify(p));$('month').value=cur.id;draft();render();renderSeg();
 };
 $('statsHist').onchange=renderReliability;
-$('replWeek').addEventListener('change',renderRepl);
 const syncSeg=()=>{document.querySelectorAll('#segDlg [data-e]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.e===segCtx.e));$('segNo').hidden=segCtx.e!=='no'};
 $('segGrid').addEventListener('click',e=>{
   const b=e.target.closest('[data-wk]');if(b)return markPending([cur.weeks[b.dataset.wk]]);
