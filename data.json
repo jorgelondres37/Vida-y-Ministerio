@@ -13,7 +13,7 @@
   {"num":11,"nombre":"Gutiérrez, Hugo","tarea":"PTJ","grupo":"3","genero":"V","inactivo":true,"salud":false,"asign":[]},
   {"num":12,"nombre":"González, Marcela","tarea":"PTJ","grupo":"1","genero":"M","inactivo":true,"salud":false,"asign":[]},
   {"num":13,"nombre":"Valenzuela, Ingrid de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":true,"salud":false,"asign":[]},
-  {"num":14,"nombre":"Navarro, Juan","tarea":"PTJ","grupo":"2","genero":"V","inactivo":true,"salud":false,"asign":[]},
+  {"num":14,"nombre":"Navarro, Juan","tarea":"PTJ","grupo":"2","genero":"V","inactivo":false,"salud":true,"asign":[]},
   {"num":15,"nombre":"Valencia, Mateo","tarea":"PTJ","grupo":"4","genero":"V","inactivo":true,"salud":false,"asign":[]},
   {"num":16,"nombre":"Valenzuela, Javier","tarea":"PTJ","grupo":"4","genero":"V","inactivo":true,"salud":false,"asign":[]},
   {"num":17,"nombre":"Lima, Beatriz","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":true,"asign":[]},
