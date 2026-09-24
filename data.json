@@ -26,7 +26,7 @@
   {"num":24,"nombre":"Cabezas, Luis","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":25,"nombre":"Díaz, Agustina de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":true,"salud":false,"asign":[]},
   {"num":26,"nombre":"López, Fabiola de","tarea":"PTJ","grupo":"3","genero":"M","inactivo":true,"salud":false,"asign":[]},
-  {"num":27,"nombre":"Colina, Matías","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
+  {"num":27,"nombre":"Colina, Matías","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":28,"nombre":"Valladares, Viviana de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":29,"nombre":"Colina, Isabel de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":30,"nombre":"Veloz, Ana María de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":true,"asign":[]},
