@@ -82,7 +82,7 @@
   {"num":80,"nombre":"López, Angélica de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":81,"nombre":"Pérez, Ronny","tarea":"AN/PR","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":82,"nombre":"López, Bárbara","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
-  {"num":83,"nombre":"Silva, Yimmy","tarea":"SM","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
+  {"num":83,"nombre":"Silva, Jimmy","tarea":"SM","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":84,"nombre":"Núñez, Andrea de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":85,"nombre":"Silva, Cecilia de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":86,"nombre":"Colina, Guillermo","tarea":"SM","grupo":"2","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
