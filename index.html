@@ -3,229 +3,225 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Registro de Hermanos — Programa</title>
+<title>Congregación Curauma — Registro de Hermanos</title>
+<script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('hermanos.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root {
-    --paper: #EFEAD9;
-    --paper-2: #E6DFC9;
-    --ink: #22281F;
-    --ink-soft: #4B5245;
-    --rule: #C9C0A2;
-    --active: #2B6E62;
-    --active-bg: #DEEAE6;
-    --inactive: #A23B2E;
-    --inactive-bg: #F1DFDA;
-    --accent: #8C6A2F;
-    box-sizing: border-box;
-    padding-top: env(safe-area-inset-top, 0px);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
-  }
-  @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-      --paper: #1B1D17;
-      --paper-2: #24261E;
-      --ink: #EDE9DA;
-      --ink-soft: #B9B4A2;
-      --rule: #3C3D31;
-      --active-bg: #223530;
-      --inactive-bg: #3A2521;
-    }
-  }
-  :root[data-theme="dark"] {
-    --paper: #1B1D17;
-    --paper-2: #24261E;
-    --ink: #EDE9DA;
-    --ink-soft: #B9B4A2;
-    --rule: #3C3D31;
-    --active-bg: #223530;
-    --inactive-bg: #3A2521;
-  }
-  html { scroll-padding-top: env(safe-area-inset-top, 0px); }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--paper);
-    color: var(--ink);
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: 14px;
-    line-height: 1.5;
-    min-height: 100%;
-  }
-  .wrap { max-width: 1040px; margin: 0 auto; padding: 32px 20px 64px; }
-  header { border-bottom: 2px solid var(--ink); padding-bottom: 20px; margin-bottom: 28px; }
-  h1 {
-    font-family: 'Fraunces', serif;
-    font-optical-sizing: auto;
-    font-weight: 700;
-    font-size: clamp(28px, 5vw, 44px);
-    margin: 0 0 6px;
-    letter-spacing: -0.01em;
-  }
-  .subtitle { color: var(--ink-soft); font-size: 13px; }
+  :root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);--r:14px;--gold:#A9792A;--serif:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}}
+  :root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:76px}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.55 Inter,system-ui,-apple-system,'Segoe UI',sans-serif;font-variant-numeric:tabular-nums;-webkit-font-smoothing:antialiased}
+  .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:100;background:var(--card);padding:8px 12px;border-radius:8px}
 
-  .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); margin-bottom: 32px; }
-  .stat { background: var(--paper); padding: 18px 16px; }
-  .stat .num { font-family: 'Fraunces', serif; font-weight: 600; font-size: 34px; line-height: 1; }
-  .stat .label { color: var(--ink-soft); font-size: 12px; margin-top: 6px; }
-  .stat.active .num { color: var(--active); }
-  .stat.inactive .num { color: var(--inactive); }
+  .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;white-space:nowrap}
+  .logo{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;font-size:12px}
+  nav{display:flex;gap:4px;margin-left:auto;overflow-x:auto;scrollbar-width:none}
+  nav a{padding:6px 12px;border-radius:99px;color:var(--soft);text-decoration:none;font-weight:500;white-space:nowrap;transition:.2s}
+  nav a:hover{color:var(--ink);background:var(--fill)}
+  nav a[aria-current="true"]{background:var(--brand-bg);color:var(--brand)}
+  .icon-btn{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:15px;transition:.2s}
+  .icon-btn:hover{border-color:var(--brand);transform:rotate(20deg)}
 
-  section { margin-bottom: 36px; }
-  h2 {
-    font-family: 'Fraunces', serif;
-    font-weight: 600;
-    font-size: 19px;
-    margin: 0 0 14px;
-    border-bottom: 1px solid var(--rule);
-    padding-bottom: 8px;
-  }
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 72px}
+  body:has(#editBar:not([hidden])) .wrap{padding-bottom:130px}
+  .hero{margin-bottom:22px}
+  h1{font-size:clamp(28px,4.5vw,40px);letter-spacing:-.03em;line-height:1.1;margin:0 0 6px}
+  .subtitle{color:var(--soft)}
+  h2{font-size:17px;letter-spacing:-.01em;margin:0 0 4px}
+  .hint{color:var(--soft);font-size:12.5px;margin:0 0 16px}
 
-  .bar-row { display: grid; grid-template-columns: 70px 1fr 130px; align-items: center; gap: 10px; padding: 6px 0; }
-  .bar-row .name { font-weight: 500; }
-  .bar-track { height: 20px; background: var(--paper-2); position: relative; overflow: hidden; }
-  .bar-fill { height: 100%; display: flex; }
-  .bar-fill .seg-active { background: var(--active); }
-  .bar-fill .seg-inactive { background: var(--inactive); }
-  .bar-count { font-size: 12px; color: var(--ink-soft); text-align: right; }
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:22px}
+  .stat{--c:var(--ink);position:relative;overflow:hidden;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:20px;box-shadow:var(--shadow);transition:transform .2s}
+  .stat::before{content:'';position:absolute;inset:0 0 auto 0;height:3px;background:var(--c)}
+  .stat:hover{transform:translateY(-3px)}
+  .stat.active{--c:var(--brand)}.stat.inactive{--c:var(--bad)}.stat.health{--c:var(--gold)}
+  .stat-top{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .stat-ic{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:15px;background:color-mix(in srgb,var(--c) 14%,transparent)}
+  .stat .label{font:600 11px/1.2 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft)}
+  .stat .num{font:600 clamp(40px,5vw,52px)/1 var(--serif);letter-spacing:-.03em;color:var(--c)}
+  .stat-bar{height:6px;border-radius:99px;background:var(--fill);overflow:hidden;margin:14px 0 8px}
+  .stat-bar i{display:block;height:100%;width:var(--p);background:var(--c);border-radius:99px;transform-origin:left;animation:grow 1s cubic-bezier(.2,.8,.2,1) .2s both}
+  .stat-sub{font-size:12px;color:var(--soft)}
 
-  .tarea-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); gap: 10px; }
-  .tarea-card { background: var(--paper-2); border: 1px solid var(--rule); padding: 12px 14px; }
-  .tarea-card .t-name { font-weight: 600; font-size: 13px; }
-  .tarea-card .t-count { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; margin: 4px 0; }
-  .tarea-card .t-split { font-size: 11px; color: var(--ink-soft); }
+  .cols{display:grid;grid-template-columns:1fr;gap:22px;margin-bottom:22px}
+  @media(min-width:920px){.cols{grid-template-columns:1fr 1fr}}
+  .card{min-width:0;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow)}
 
-  .controls { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 14px; }
-  select, input[type=text] {
-    font-family: inherit; font-size: 13px; background: var(--paper);
-    border: 1px solid var(--ink); color: var(--ink); padding: 7px 10px;
-  }
-  input[type=text] { flex: 1; min-width: 160px; }
-  .count-note { color: var(--ink-soft); font-size: 12px; margin-bottom: 8px; }
+  .bar-row{display:grid;grid-template-columns:70px 1fr 110px;align-items:center;gap:12px;padding:7px 8px;margin:0 -8px;border-radius:10px;transition:background .2s}
+  .bar-row.wide{grid-template-columns:minmax(120px,170px) 1fr 84px}
+  .bar-row .name{font-weight:600;font-size:13px}
+  .bar-track{height:10px;background:var(--fill);border-radius:99px;overflow:hidden}
+  .bar-fill{height:100%;display:flex}
+  .bar-fill>div{transform-origin:left;animation:grow .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i,0)*60ms)}
+  .seg-active{background:var(--brand)}.seg-inactive{background:var(--bad)}
+  .bar-count{font-size:12px;color:var(--soft);text-align:right}
+  .clickable{cursor:pointer}.bar-row.clickable:hover{background:var(--fill)}
+  @media(max-width:520px){.bar-row,.bar-row.wide{grid-template-columns:1fr auto;gap:6px 12px}.bar-row .bar-track{grid-column:1/-1;order:3}}
 
-  .table-wrap { overflow-x: auto; border: 1px solid var(--rule); }
-  table { border-collapse: collapse; width: 100%; min-width: 560px; }
-  th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
-  th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-soft); font-weight: 600; background: var(--paper-2); position: sticky; top: 0; }
-  tr.inactive-row td { color: var(--inactive); }
-  .tag { font-size: 11px; padding: 2px 7px; display: inline-block; }
-  .tag.active { background: var(--active-bg); color: var(--active); }
-  .tag.inactive { background: var(--inactive-bg); color: var(--inactive); }
+  .tarea-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+  .tarea-card{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:12px 14px;animation:rise .45s both;animation-delay:calc(var(--i,0)*40ms);transition:transform .2s,border-color .2s,box-shadow .2s}
+  .tarea-card.clickable:hover{transform:translateY(-2px);border-color:var(--brand);box-shadow:var(--shadow)}
+  .t-name{font-weight:600;font-size:13px}.t-count{font-size:26px;font-weight:700;letter-spacing:-.02em;margin:2px 0}.t-split{font-size:11.5px;color:var(--soft)}
+  #asignPeople{max-height:340px;overflow-y:auto;align-content:start}
+  .person-pill{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--fill);border:1px solid var(--line);border-radius:10px;padding:8px 12px;font-size:12.5px;animation:fade .3s both}
+  .p-meta{color:var(--soft);font-size:11px;white-space:nowrap}
+  .asign-empty{color:var(--soft);padding:8px 0}
 
-  .bar-row.wide { grid-template-columns: 190px 1fr 90px; }
-  .bar-row.wide .name { font-weight: 500; font-size: 12.5px; }
+  .controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+  select,input[type=text],input[type=password]{font:inherit;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;max-width:100%;transition:border-color .2s,box-shadow .2s}
+  select:focus,input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-bg)}
+  .controls input[type=text]{flex:1 1 220px;min-width:160px}
+  .count-note{color:var(--soft);font-size:12.5px;margin-bottom:10px}
+  .table-wrap{overflow:auto;max-height:560px;border:1px solid var(--line);border-radius:12px}
+  table{border-collapse:collapse;width:100%;min-width:560px}
+  th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
+  th{position:sticky;top:0;z-index:1;background:var(--fill);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);font-weight:600}
+  tbody tr{animation:fade .25s both;transition:background .15s}tbody tr:hover{background:var(--fill)}
+  tbody tr:last-child td{border-bottom:0}
+  tr.inactive-row td{color:var(--bad)}
+  td.empty{text-align:center;color:var(--soft);padding:32px}
+  .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:99px}
+  .tag.active{background:var(--brand-bg);color:var(--brand)}.tag.inactive{background:var(--bad-bg);color:var(--bad)}
 
-  .person-pill { background: var(--paper-2); border: 1px solid var(--rule); padding: 8px 12px; font-size: 12.5px; display: flex; justify-content: space-between; align-items: center; gap: 8px; }
-  .person-pill .p-meta { color: var(--ink-soft); font-size: 11px; }
-  .asign-empty { color: var(--ink-soft); font-size: 13px; padding: 8px 0; }
+  .btn{font:inherit;font-size:13px;font-weight:600;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .15s,background .2s,border-color .2s}
+  .btn:hover{border-color:var(--ink)}.btn:active{transform:scale(.97)}
+  .btn.ghost{background:transparent}
+  .btn.primary{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+  .btn.primary:hover{background:var(--brand-2);border-color:var(--brand-2)}
+  .btn.primary:disabled{opacity:.4;cursor:not-allowed;transform:none}
+  #saveBtn:not(:disabled){animation:pulse 1.6s 3}
+  .btn.danger{color:var(--bad);border-color:var(--bad);background:transparent}
+  .btn.small{padding:4px 10px;font-size:12px}
+  .btn[aria-pressed="true"]{background:var(--brand-bg);border-color:var(--brand);color:var(--brand)}
+  :is(.btn,.icon-btn,nav a,.clickable,.table-wrap):focus-visible{outline:2px solid var(--brand);outline-offset:2px}
 
-  .edit-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 14px; }
-  .btn { font-family: inherit; font-size: 12.5px; padding: 7px 12px; border: 1px solid var(--ink); background: var(--paper); color: var(--ink); cursor: pointer; }
-  .btn.ghost { background: transparent; }
-  .btn.primary { background: var(--active); border-color: var(--active); color: #fff; }
-  .btn.primary:disabled { opacity: 0.4; cursor: not-allowed; }
-  .btn.danger { border-color: var(--inactive); color: var(--inactive); background: transparent; }
-  .btn.small { padding: 3px 8px; font-size: 11px; }
-  .save-status { font-size: 11.5px; color: var(--ink-soft); }
-  .save-status.ok { color: var(--active); }
-  .save-status.err { color: var(--inactive); }
+  .edit-bar{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:45;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:8px;width:max-content;max-width:calc(100% - 24px);background:var(--card);border:1px solid var(--line);border-radius:16px;padding:10px 12px;box-shadow:0 14px 40px -8px rgba(0,0,0,.3);animation:barin .4s cubic-bezier(.2,.8,.2,1)}
+  .edit-bar[hidden],th[hidden],td[hidden]{display:none}
+  .save-status{font-size:12px;color:var(--soft)}.save-status:empty{display:none}
+  .save-status.ok{color:var(--brand)}.save-status.err{color:var(--bad)}
 
-  th.edit-col, td.edit-col { white-space: nowrap; }
+  .modal-overlay{position:fixed;inset:0;z-index:60;display:flex;padding:24px 16px;overflow-y:auto;background:rgba(10,15,12,.5);backdrop-filter:blur(3px);animation:fade .2s}
+  .modal-overlay[hidden]{display:none}
+  .modal{margin:auto;width:100%;max-width:540px;background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 24px 60px -12px rgba(0,0,0,.4);animation:pop .28s cubic-bezier(.2,.9,.3,1.2)}
+  .modal h3,dialog h3{margin:0 0 16px;font-size:18px;letter-spacing:-.01em}
+  .field{margin-bottom:14px}
+  .field>label{display:block;font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .field input[type=text],.field input[type=password],.field select{width:100%;background:var(--fill)}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .check-row{display:flex;align-items:center;gap:8px;font-size:12.5px;cursor:pointer}
+  input[type=checkbox]{accent-color:var(--brand);width:16px;height:16px}
+  .asign-checks{display:grid;grid-template-columns:1fr 1fr;gap:8px 12px;max-height:230px;overflow-y:auto;padding:12px;border:1px solid var(--line);border-radius:10px;background:var(--fill)}
+  @media(max-width:420px){.asign-checks,.field-row{grid-template-columns:1fr}}
+  .modal-actions{display:flex;align-items:center;gap:8px;margin-top:20px}
+  dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:24px;width:min(460px,calc(100% - 32px));box-shadow:0 24px 60px -12px rgba(0,0,0,.4)}
+  dialog[open]{animation:pop .28s cubic-bezier(.2,.9,.3,1.2)}
+  dialog::backdrop{background:rgba(10,15,12,.5);backdrop-filter:blur(3px)}
 
-  .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.45); display: flex; align-items: flex-start; justify-content: center; padding: 24px 16px; overflow-y: auto; z-index: 50; }
-  .modal-overlay[hidden] { display: none; }
-  .modal { background: var(--paper); border: 1px solid var(--ink); max-width: 520px; width: 100%; padding: 20px; margin-top: 20px; }
-  .modal h3 { font-family: 'Fraunces', serif; margin: 0 0 14px; font-size: 18px; }
-  .field { margin-bottom: 12px; }
-  .field label { display: block; font-size: 11px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.03em; margin-bottom: 4px; }
-  .field input[type=text], .field select { width: 100%; font-family: inherit; font-size: 13px; padding: 7px 9px; border: 1px solid var(--rule); background: var(--paper-2); color: var(--ink); }
-  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-  .check-row { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; font-size: 12px; }
-  .asign-checks { display: grid; grid-template-columns: 1fr 1fr; gap: 4px 12px; margin-top: 4px; max-height: 220px; overflow-y: auto; padding: 8px; border: 1px solid var(--rule); background: var(--paper-2); }
-  .modal-actions { display: flex; justify-content: space-between; gap: 8px; margin-top: 16px; }
+  footer{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--soft);font-size:12px}
 
-  footer { color: var(--ink-soft); font-size: 11px; margin-top: 40px; border-top: 1px solid var(--rule); padding-top: 14px; }
-
-  .edit-bar[hidden], th[hidden], td[hidden] { display: none; }
-  dialog { background: var(--paper); color: var(--ink); border: 1px solid var(--ink); padding: 20px; width: min(440px, calc(100% - 32px)); }
-  dialog::backdrop { background: rgba(0,0,0,.45); }
-  dialog h3 { font-family: 'Fraunces', serif; margin: 0 0 6px; font-size: 18px; }
-  dialog .hint { color: var(--ink-soft); font-size: 12px; margin: 0 0 14px; }
-  .btn:focus-visible, select:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  h1{font:600 clamp(36px,6.5vw,60px)/1.05 var(--serif);letter-spacing:-.025em;margin:0 0 10px}
+  h1 em{font-style:italic;font-weight:500;color:var(--brand)}
+  h2{font:600 22px/1.2 var(--serif);letter-spacing:-.01em;margin:0 0 4px}
+  .modal h3,dialog h3{font-family:var(--serif)}
+  .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
+  .eyebrow::before{content:'';width:22px;height:2px;border-radius:2px;background:currentColor}
+  .brand span:last-child{font-family:var(--serif);font-size:16px;letter-spacing:-.01em}
+  .bar-count b{font-size:14px;font-weight:700;color:var(--ink)}
+  .t-count{font-family:var(--serif)}
+  @media(max-width:700px){.brand span:last-child{display:none}}
+  @keyframes rise{from{opacity:0;transform:translateY(12px)}}
+  @keyframes fade{from{opacity:0}}
+  @keyframes grow{from{transform:scaleX(0)}}
+  @keyframes pop{from{opacity:0;transform:translateY(14px) scale(.97)}}
+  @keyframes barin{from{opacity:0;transform:translate(-50%,20px)}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--brand) 50%,transparent)}70%,100%{box-shadow:0 0 0 10px transparent}}
+  .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+  .js .reveal.in{opacity:1;transform:none}
+  @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
 </style>
 </head>
 <body>
-<div class="wrap">
+<a class="skip" href="#listado">Ir al listado</a>
+<header class="top">
+  <div class="top-in">
+    <div class="brand"><span class="logo" aria-hidden="true">CC</span><span>Congregación Curauma</span></div>
+    <nav aria-label="Secciones">
+      <a href="#resumen">Resumen</a><a href="#distribucion">Grupos y tareas</a><a href="#disponibilidad">Disponibilidad</a><a href="#listado">Listado</a>
+    </nav>
+    <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro">◐</button>
+  </div>
+</header>
 
-  <header>
-    <h1>Registro de Hermanos</h1>
+<main class="wrap">
+  <div class="hero reveal">
+    <p class="eyebrow">Registro de Hermanos</p>
+    <h1>Congregación <em>Curauma</em></h1>
     <div class="subtitle">Programa de asignaciones — <span id="totalSub">106</span> hermanos registrados en 5 grupos</div>
-    <div class="edit-bar" id="editBar" hidden>
-      <button class="btn" id="addBtn" type="button">+ Agregar hermano</button>
-      <button class="btn ghost" id="editModeBtn" type="button">Modo edición: OFF</button>
-      <button class="btn primary" id="saveBtn" type="button" disabled>Guardar cambios</button>
-      <span class="save-status" id="saveStatus" role="status" aria-live="polite"></span>
-    </div>
-  </header>
+  </div>
 
-  <div class="stats" id="statsRow"></div>
-
-  <section>
-    <h2>Por grupo</h2>
-    <div id="grupoChart"></div>
+  <section id="resumen" class="reveal" aria-labelledby="h-res">
+    <p class="eyebrow">Panorama general</p><h2 id="h-res">Estadísticas</h2><p class="hint">Cifras clave del registro y su proporción sobre el total.</p>
+    <div class="stats" id="statsRow"></div>
   </section>
 
-  <section>
-    <h2>Por tarea</h2>
-    <div class="tarea-grid" id="tareaGrid"></div>
-  </section>
+  <div class="cols" id="distribucion">
+    <section class="card reveal" aria-labelledby="h-grupo">
+      <p class="eyebrow">Distribución · Grupos</p><h2 id="h-grupo">Por grupo</h2><p class="hint">Toca un grupo para filtrar el listado.</p>
+      <div id="grupoChart"></div>
+    </section>
+    <section class="card reveal" aria-labelledby="h-tarea">
+      <p class="eyebrow">Distribución · Tareas</p><h2 id="h-tarea">Por tarea</h2><p class="hint">Toca una tarea para filtrar el listado.</p>
+      <div class="tarea-grid" id="tareaGrid"></div>
+    </section>
+  </div>
 
-  <section>
-    <h2>Disponibilidad por asignación</h2>
-    <div id="asignChart"></div>
-  </section>
+  <div class="cols" id="disponibilidad">
+    <section class="card reveal" aria-labelledby="h-disp">
+      <p class="eyebrow">Asignaciones · Cupos</p><h2 id="h-disp">Disponibilidad por asignación</h2><p class="hint">Hermanos activos que pueden tomar cada asignación.</p>
+      <div id="asignChart"></div>
+    </section>
+    <section class="card reveal" aria-labelledby="h-quien">
+      <p class="eyebrow">Asignaciones · Personas</p><h2 id="h-quien">¿Quién puede tomar una asignación?</h2><p class="hint">Elige una asignación para ver la lista.</p>
+      <div class="controls"><select id="asignSelect" aria-label="Asignación"></select></div>
+      <div class="count-note" id="asignNote"></div>
+      <div class="tarea-grid" id="asignPeople"></div>
+    </section>
+  </div>
 
-  <section>
-    <h2>¿Quién puede tomar una asignación?</h2>
+  <section class="card reveal" id="listado" aria-labelledby="h-list">
+    <p class="eyebrow">Directorio · Búsqueda</p><h2 id="h-list">Listado</h2><p class="hint">Busca y combina filtros para encontrar hermanos.</p>
     <div class="controls">
-      <select id="asignSelect"></select>
+      <input type="text" id="searchBox" placeholder="Buscar por nombre…" aria-label="Buscar por nombre">
+      <select id="filterGrupo" aria-label="Grupo"><option value="">Todos los grupos</option></select>
+      <select id="filterTarea" aria-label="Tarea"><option value="">Todas las tareas</option></select>
+      <select id="filterGenero" aria-label="Género"><option value="">M y V</option><option value="M">M</option><option value="V">V</option></select>
+      <select id="filterEstado" aria-label="Estado"><option value="">Activos e inactivos</option><option value="activo">Solo activos</option><option value="inactivo">Solo inactivos</option></select>
+      <select id="filterAsign" aria-label="Asignación"><option value="">Cualquier asignación</option></select>
+      <button class="btn ghost" id="clearFilters" type="button">Limpiar filtros</button>
     </div>
-    <div class="count-note" id="asignNote"></div>
-    <div class="tarea-grid" id="asignPeople"></div>
-  </section>
-
-  <section>
-    <h2>Listado</h2>
-    <div class="controls">
-      <input type="text" id="searchBox" placeholder="Buscar por nombre…">
-      <select id="filterGrupo"><option value="">Todos los grupos</option></select>
-      <select id="filterTarea"><option value="">Todas las tareas</option></select>
-      <select id="filterGenero">
-        <option value="">M y V</option>
-        <option value="M">M</option>
-        <option value="V">V</option>
-      </select>
-      <select id="filterEstado">
-        <option value="">Activos e inactivos</option>
-        <option value="activo">Solo activos</option>
-        <option value="inactivo">Solo inactivos</option>
-      </select>
-      <select id="filterAsign"><option value="">Cualquier asignación</option></select>
-    </div>
-    <div class="count-note" id="countNote"></div>
-    <div class="table-wrap">
+    <div class="count-note" id="countNote" role="status" aria-live="polite"></div>
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de hermanos">
       <table>
-        <thead>
-          <tr><th>#</th><th>Nombre</th><th>Tarea</th><th>Grupo</th><th>Género</th><th>Estado</th><th class="edit-col" id="actionsHead" hidden>Acciones</th></tr>
-        </thead>
+        <thead><tr><th>#</th><th>Nombre</th><th>Tarea</th><th>Grupo</th><th>Género</th><th>Estado</th><th class="edit-col" id="actionsHead" hidden>Acciones</th></tr></thead>
         <tbody id="tableBody"></tbody>
       </table>
     </div>
   </section>
 
   <footer><span id="footNote"></span> · <button class="btn ghost small" id="cfgBtn" type="button">Conexión GitHub</button></footer>
+</main>
+
+<div class="edit-bar" id="editBar" hidden role="toolbar" aria-label="Edición">
+  <button class="btn" id="addBtn" type="button">+ Agregar hermano</button>
+  <button class="btn ghost" id="editModeBtn" type="button" aria-pressed="false">Modo edición: OFF</button>
+  <span class="save-status" id="saveStatus" role="status" aria-live="polite"></span>
+  <button class="btn primary" id="saveBtn" type="button" disabled>Guardar cambios</button>
 </div>
 
 <div class="modal-overlay" id="modalOverlay" hidden>
@@ -277,7 +273,7 @@
 <dialog id="cfgDialog" aria-labelledby="cfgTitle">
   <h3 id="cfgTitle">Conexión con GitHub</h3>
   <p class="hint">El token se guarda solo en este dispositivo. Permite editar y guardar en el repositorio.</p>
-  <div class="field"><label for="c_token">Token (fine-grained, Contents: Read and write)</label><input type="password" id="c_token" autocomplete="off" style="width:100%;font-family:inherit;padding:7px 9px;border:1px solid var(--rule);background:var(--paper-2);color:var(--ink)"></div>
+  <div class="field"><label for="c_token">Token (fine-grained, Contents: Read and write)</label><input type="password" id="c_token" autocomplete="off"></div>
   <div class="field-row">
     <div class="field"><label for="c_owner">Usuario</label><input type="text" id="c_owner"></div>
     <div class="field"><label for="c_repo">Repositorio</label><input type="text" id="c_repo"></div>
@@ -290,6 +286,7 @@
     <button class="btn primary" id="cfgSave" type="button">Guardar</button>
   </div>
 </dialog>
+
 <script>
 'use strict';
 const ASIGN_COLS = [
@@ -377,28 +374,35 @@ function setStatus(msg, cls = '') { const s = $('saveStatus'); s.textContent = m
 function markDirty() { dirty = true; $('saveBtn').disabled = false; setStatus('Cambios sin guardar'); renderAll(); }
 
 // ---------- Render ----------
-const stat = (cls, n, label) => `<div class="stat ${cls}"><div class="num">${n}</div><div class="label">${label}</div></div>`;
+const fmt = n => n.toLocaleString('es-CL', {maximumFractionDigits: 1});
+const stat = (cls, icon, n, label, sub) => {
+  const pct = rows.length ? n / rows.length * 100 : 0;
+  return `<div class="stat ${cls}" style="--p:${pct.toFixed(1)}%"><div class="stat-top"><span class="stat-ic" aria-hidden="true">${icon}</span><span class="label">${label}</span></div>
+    <div class="num">${n}</div><div class="stat-bar"><i></i></div><div class="stat-sub">${sub ?? fmt(pct) + '% del total'}</div></div>`;
+};
 
 function renderStats() {
   const inact = rows.filter(r => r.inactivo).length;
-  $('statsRow').innerHTML = stat('', rows.length, 'Total hermanos') + stat('active', rows.length - inact, 'Activos') +
-    stat('inactive', inact, 'Inactivos') + stat('', rows.filter(r => r.salud).length, 'En salud');
+  $('statsRow').innerHTML = stat('total', '👥', rows.length, 'Total hermanos', `Distribuidos en ${GRUPOS.length} grupos`) +
+    stat('active', '✅', rows.length - inact, 'Activos') + stat('inactive', '⏸️', inact, 'Inactivos') +
+    stat('health', '🩺', rows.filter(r => r.salud).length, 'En salud');
   $('totalSub').textContent = rows.length;
-  $('footNote').textContent = `${rows.length} registros`;
+  $('footNote').textContent = `Datos cargados desde la planilla proporcionada · ${rows.length} registros`;
+  animateNums();
 }
 
 function renderCharts() {
   const max = Math.max(1, ...GRUPOS.map(g => rows.filter(r => r.grupo === g).length));
   $('grupoChart').innerHTML = GRUPOS.map(g => {
     const gr = rows.filter(r => r.grupo === g), inact = gr.filter(r => r.inactivo).length, act = gr.length - inact;
-    return `<div class="bar-row"><div class="name">Grupo ${g}</div>
+    return `<div class="bar-row clickable" role="button" tabindex="0" data-grupo="${g}" title="Filtrar listado por este grupo"><div class="name">Grupo ${g}</div>
       <div class="bar-track"><div class="bar-fill"><div class="seg-active" style="width:${act / max * 100}%"></div><div class="seg-inactive" style="width:${inact / max * 100}%"></div></div></div>
-      <div class="bar-count">${gr.length} (${inact} inact.)</div></div>`;
+      <div class="bar-count"><b>${gr.length}</b> (${inact} inact.)</div></div>`;
   }).join('');
 
   const tc = {};
   rows.forEach(r => { const t = tc[r.tarea] ??= {total: 0, M: 0, V: 0}; t.total++; t[r.genero]++; });
-  $('tareaGrid').innerHTML = tareas().map(t => `<div class="tarea-card"><div class="t-name">${esc(t)}</div>
+  $('tareaGrid').innerHTML = tareas().map(t => `<div class="tarea-card clickable" role="button" tabindex="0" data-tarea="${esc(t)}" title="Filtrar listado por esta tarea"><div class="t-name">${esc(t)}</div>
     <div class="t-count">${tc[t].total}</div><div class="t-split">${tc[t].M} mujeres · ${tc[t].V} varones</div></div>`).join('');
 
   const act = rows.filter(r => !r.inactivo);
@@ -407,7 +411,7 @@ function renderCharts() {
   const m = Math.max(1, ...counts.map(a => a.disp));
   $('asignChart').innerHTML = counts.map(a => `<div class="bar-row wide"><div class="name">${a.label}</div>
     <div class="bar-track"><div class="bar-fill"><div class="seg-active" style="width:${a.disp / m * 100}%"></div></div></div>
-    <div class="bar-count">${a.disp}${a.all > a.disp ? ` (+${a.all - a.disp} inactivo)` : ''}</div></div>`).join('');
+    <div class="bar-count"><b>${a.disp}</b>${a.all > a.disp ? ` (+${a.all - a.disp} inactivo)` : ''}</div></div>`).join('');
 }
 
 function tareas() {
@@ -443,10 +447,10 @@ function renderTable() {
   $('tableBody').innerHTML = list.map(r => `<tr class="${r.inactivo ? 'inactive-row' : ''}">
     <td>${r.num}</td><td>${esc(r.nombre)}</td><td>${esc(r.tarea)}${r.salud ? ' (salud)' : ''}</td><td>${r.grupo || '—'}</td><td>${r.genero}</td>
     <td><span class="tag ${r.inactivo ? 'inactive' : 'active'}">${r.inactivo ? 'Inactivo' : 'Activo'}</span></td>
-    ${editMode ? `<td class="edit-col"><button class="btn small" type="button" data-edit="${r.num}" aria-label="Editar ${esc(r.nombre)}">Editar</button></td>` : ''}</tr>`).join('');
+    ${editMode ? `<td class="edit-col"><button class="btn small" type="button" data-edit="${r.num}" aria-label="Editar ${esc(r.nombre)}">Editar</button></td>` : ''}</tr>`).join('') || '<tr><td class="empty" colspan="7">Sin resultados con estos filtros.</td></tr>';
 }
 
-function renderAll() { renderStats(); renderCharts(); fillTareaFilter(); renderAsignPeople(); renderTable(); }
+function renderAll() { renderStats(); renderCharts(); fillTareaFilter(); renderAsignPeople(); renderTable(); decorate(); }
 
 // ---------- Modal de hermano ----------
 function openModal(r) {
@@ -529,6 +533,56 @@ $('asignSelect').addEventListener('change', renderAsignPeople);
 ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => {
   $(id).addEventListener('input', renderTable); $(id).addEventListener('change', renderTable);
 });
+
+
+// ---------- Interfaz: animaciones y navegación ----------
+const prevNums = [];
+function animateNums() {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  document.querySelectorAll('#statsRow .num').forEach((el, i) => {
+    const to = +el.textContent, from = prevNums[i] ?? 0;
+    prevNums[i] = to;
+    if (reduce || from === to) return;
+    const t0 = performance.now();
+    (function tick(t) {
+      const p = Math.min(1, (t - t0) / 700);
+      el.textContent = Math.round(from + (to - from) * (1 - Math.pow(1 - p, 3)));
+      if (p < 1) requestAnimationFrame(tick);
+    })(t0);
+  });
+}
+function decorate() {
+  ['grupoChart', 'asignChart', 'tareaGrid'].forEach(id => [...$(id).children].forEach((el, i) => el.style.setProperty('--i', i)));
+}
+function goFilter(b) {
+  if (b.dataset.grupo) $('filterGrupo').value = b.dataset.grupo;
+  if (b.dataset.tarea) $('filterTarea').value = b.dataset.tarea;
+  renderTable();
+  $('listado').scrollIntoView({behavior: 'smooth'});
+}
+document.addEventListener('click', e => { const b = e.target.closest('.clickable'); if (b) goFilter(b); });
+document.addEventListener('keydown', e => {
+  if ((e.key === 'Enter' || e.key === ' ') && e.target.classList?.contains('clickable')) { e.preventDefault(); goFilter(e.target); }
+});
+$('clearFilters').onclick = () => {
+  ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => $(id).value = '');
+  renderTable();
+};
+$('themeBtn').onclick = () => {
+  const r = document.documentElement;
+  const cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  r.dataset.theme = cur === 'dark' ? 'light' : 'dark';
+  try { localStorage.setItem('hermanos.theme', r.dataset.theme); } catch {}
+};
+const revealIO = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
+}), {threshold: 0.05});
+document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
+const navLinks = [...document.querySelectorAll('nav a')];
+const spyIO = new IntersectionObserver(es => es.forEach(e => {
+  if (e.isIntersecting) navLinks.forEach(a => a.setAttribute('aria-current', a.hash === '#' + e.target.id));
+}), {rootMargin: '-40% 0px -55% 0px'});
+navLinks.forEach(a => { const s = document.querySelector(a.hash); if (s) spyIO.observe(s); });
 
 // ---------- Inicio ----------
 (async () => {
