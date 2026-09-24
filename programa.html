@@ -73,6 +73,14 @@ body[data-tab="seg"] #progView{display:none}body:not([data-tab="seg"]) #seg{disp
 dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:20px;width:min(420px,calc(100% - 32px))}
 dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;margin:10px 0 4px}dialog input{width:100%}
 .btn[aria-pressed="true"]{background:var(--brand-bg);border-color:var(--brand);color:var(--brand)}
+@page seg{size:A4 landscape;margin:8mm}
+.sc.conf{background:#D5E8D4;color:#111}.chip.conf{background:#D5E8D4;color:#111;border-color:#a9c9a6}
+.sh th{background:#d32f2f;color:#fff;text-align:left;text-transform:uppercase;font-size:11px;letter-spacing:.05em;position:sticky;left:0}
+#segGrid thead small{font-weight:400;color:var(--soft);font-size:10.5px}
+@media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
+body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
+body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
+body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{border:0;box-shadow:none;padding:0}}
 </style>
 </head>
 <body>
@@ -115,10 +123,10 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
   </div>
   <div id="seg" class="no-print">
     <h1>Seguimiento <em>de asignaciones</em></h1>
-    <p class="hint">Toca un nombre para marcar si cumplió su parte. Amarillo = cumplió · rojo = no cumplió (con el hermano que lo reemplazó) · blanco = pendiente.</p>
+    <p class="hint">Toca un nombre para marcar si cumplió su parte. Verde = confirmado · amarillo = cumplió · rojo = no cumplió (con el hermano que lo reemplazó) · blanco = pendiente.</p>
     <section class="card">
-      <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><span id="segMsg" role="status"></span></div>
-      <div class="chips" style="margin-bottom:8px"><span class="chip ok">Cumplió</span><span class="chip no">No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
+      <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><button class="btn" id="segPrint" type="button">Imprimir / PDF</button><span id="segMsg" role="status"></span></div>
+      <div class="chips" style="margin-bottom:8px"><span class="chip conf">Confirmado</span><span class="chip ok">Cumplió</span><span class="chip no">No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
       <p class="hint" id="segStats"></p>
       <div class="tw"><table id="segGrid"></table></div>
     </section>
@@ -126,7 +134,7 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 </main>
 <dialog id="segDlg" aria-labelledby="segT">
   <h2 id="segT" style="margin:0"></h2><p class="hint" id="segSub"></p>
-  <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
+  <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="conf" type="button">Confirmado</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
   <div id="segNo" hidden><label for="segR">Lo reemplazó</label><input id="segR" list="segL" placeholder="Nombre del reemplazo"><datalist id="segL"></datalist></div>
   <label for="segN">Nota (opcional)</label><input id="segN" placeholder="Motivo o comentario">
   <div class="row2" style="margin-top:14px"><button class="btn primary" id="segOk" type="button">Aceptar</button><button class="btn" id="segCancel" type="button">Cancelar</button></div>
@@ -331,6 +339,13 @@ function lab(s,c){
   }
 }
 let segCtx=null;
+function dateLbl(w){
+  const m=w.range.match(/^(\d{1,2})(?:\s*[-–]\s*\d{1,2})?\s+DE\s+([A-ZÁÉÍÓÚÑ]+)/i),mo=m?MESES.indexOf(m[2].toUpperCase()):-1;
+  if(mo<0)return w.range;
+  let y=+cur.id.slice(0,4);const im=+cur.id.slice(5,7)-1;if(mo>im+6)y--;else if(mo<im-6)y++;
+  return new Date(y,mo,+m[1]+3).toLocaleDateString('es-CL',{weekday:'short',day:'numeric',month:'short'});
+}
+const secOf=o=>o===0?'':o<10?'Tesoro de la Biblia':o<39?'Seamos mejores maestros':'Nuestra vida cristiana';
 function renderSeg(){
   const ids=progs.map(p=>p.id);if(cur&&!ids.includes(cur.id))ids.push(cur.id);
   ids.sort().reverse();
@@ -338,7 +353,7 @@ function renderSeg(){
   $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
   const g=$('segGrid');
   if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';return}
-  const rows={};let ok=0,no=0,pe=0;
+  const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
     slots(w).forEach(s=>{
@@ -346,15 +361,17 @@ function renderSeg(){
       const [l,ord]=lab(s,c);(rows[l]??={ord,cells:{}}).cells[wi]=s;
     });
   });
-  const body=Object.entries(rows).sort((a,b)=>a[1].ord-b[1].ord).map(([l,r])=>`<tr><th class="rl">${esc(l)}</th>${cur.weeks.map((w,wi)=>{
+  let cs='';const body=Object.entries(rows).sort((a,b)=>a[1].ord-b[1].ord).map(([l,r])=>{const sec=secOf(r.ord),h=sec&&sec!==cs?`<tr class="sh"><th colspan="${cur.weeks.length+1}">${sec}</th></tr>`:'';cs=sec||cs;return h+`<tr><th class="rl">${esc(l)}</th>${cur.weeks.map((w,wi)=>{
     const s=r.cells[wi];if(!s||!s.o[s.f])return'<td></td>';
-    const st=w.seg[s.k]||{};if(st.e==='ok')ok++;else if(st.e==='no')no++;else pe++;
-    return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`).join('');
-  g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(w.range)}<br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
-  $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${pe} pendientes`;
+    const st=w.seg[s.k]||{};if(st.e==='ok')ok++;else if(st.e==='no')no++;else if(st.e==='conf')cf++;else pe++;
+    return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
+  g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
+  $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
 }
-function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&!w.seg[s.k])w.seg[s.k]={e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
+function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&(!w.seg[s.k]||w.seg[s.k].e==='conf'))w.seg[s.k]={...w.seg[s.k],e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
 $('segAll').onclick=()=>cur&&confirm('¿Marcar como cumplidas todas las asignaciones pendientes del mes?')&&markPending(cur.weeks);
+$('segPrint').onclick=()=>{if(!cur)return;document.body.classList.add('ps');window.print()};
+window.addEventListener('afterprint',()=>document.body.classList.remove('ps'));
 $('segMonth').onchange=e=>{
   const p=progs.find(x=>x.id===e.target.value);if(!p)return;
   cur=JSON.parse(JSON.stringify(p));$('month').value=cur.id;draft();render();renderSeg();
