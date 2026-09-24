@@ -94,7 +94,8 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 .badge.none{background:var(--fill);color:var(--soft)}
 .repl-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:10px}
 .repl-cols h4{margin:0 0 6px;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft)}
-.repl-cols ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:4px;max-height:280px;overflow:auto}
+.repl-scroll{max-height:340px;overflow:auto;padding-right:2px}
+.repl-cols ul{list-style:none;margin:0 0 4px;padding:0;display:flex;flex-direction:column;gap:4px}
 .repl-cols li{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--fill);border:1px solid var(--line);border-radius:8px;padding:5px 9px;font-size:12.5px}
 .repl-cols li small{color:var(--soft);white-space:nowrap}
 @media(max-width:640px){.repl-cols{grid-template-columns:1fr}}
@@ -111,16 +112,26 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 @media(max-width:640px){.rank-row{grid-template-columns:20px 1fr 42px;grid-template-areas:"pos name num" "bar bar bar";row-gap:6px}.rank-row .rank-bar{grid-area:bar;margin-top:2px}.rank-row .rank-pos{grid-area:pos}.rank-row .rank-name{grid-area:name}.rank-row .rank-num{grid-area:num}}
 .stat-mini.big-bad{background:var(--bad-bg);border-color:var(--bad)}
 .stat-mini.big-bad b{color:var(--bad);font-size:36px}
-.mchart{display:flex;gap:12px;align-items:flex-end;overflow-x:auto;padding:16px 4px 4px;border-top:1px solid var(--line);margin-top:14px}
-.mchart-col{display:flex;flex-direction:column;align-items:center;gap:6px;min-width:34px}
-.mchart-bars{display:flex;align-items:flex-end;gap:3px;height:90px}
-.mb{width:11px;border-radius:3px 3px 0 0;transform-origin:bottom;animation:growY .7s cubic-bezier(.2,.8,.2,1) both}
-.mb.ok{background:var(--brand)}
-.mb.no{background:var(--bad)}
-.mchart-col span{font-size:10px;color:var(--soft);white-space:nowrap}
-.inc-list{display:flex;flex-direction:column;gap:6px;margin-top:8px}
-.inc-row{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:12px;background:var(--bad-bg);border:1px solid var(--bad);border-radius:8px;padding:7px 11px}
-.inc-row b{color:var(--bad)}
+.pie-wrap{position:relative;width:150px;height:150px;margin:18px auto 6px}
+.pie{width:100%;height:100%;border-radius:50%;background:conic-gradient(var(--bad) calc(var(--p)*1%),var(--brand) 0);animation:pieIn .6s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pieIn{from{transform:scale(.7);opacity:0}to{transform:scale(1);opacity:1}}
+.pie-center{position:absolute;inset:0;margin:auto;width:66%;height:66%;background:var(--card);border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:var(--shadow)}
+.pie-center b{font:700 26px var(--serif);color:var(--brand);letter-spacing:-.02em}
+.pie-center span{font-size:9.5px;color:var(--soft);text-transform:uppercase;letter-spacing:.06em}
+.pie-legend{display:flex;justify-content:center;gap:18px;font-size:12px;color:var(--soft);margin-bottom:6px}
+.pie-legend b{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px}
+.pie-legend .lok b{background:var(--brand)}.pie-legend .lno b{background:var(--bad)}
+.pf-cols{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:16px}
+.pf-col h4{margin:0 0 8px;font-size:11.5px;text-transform:uppercase;letter-spacing:.05em}
+.pf-col.ok h4{color:var(--brand)}.pf-col.no h4{color:var(--bad)}
+.pf-list{display:flex;flex-direction:column;gap:6px;max-height:280px;overflow:auto}
+.pf-row{display:flex;flex-wrap:wrap;gap:3px 10px;font-size:12px;border-radius:8px;padding:6px 10px}
+.pf-col.ok .pf-row{background:var(--brand-bg)}
+.pf-col.no .pf-row{background:var(--bad-bg)}
+.pf-row b{color:inherit}
+@media(max-width:640px){.pf-cols{grid-template-columns:1fr}}
+.repl-grp{margin:12px 0 5px;font:600 10.5px var(--serif, serif);text-transform:uppercase;letter-spacing:.06em;color:var(--brand)}
+.repl-grp:first-child{margin-top:0}
 @media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
 body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
 body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
@@ -191,8 +202,8 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
     <section class="card">
       <h2>Ficha por hermano</h2>
-      <p class="hint">Escribe o elige un nombre para ver su historial completo de cumplimiento en todos los meses guardados — útil para mostrarlo cuando alguien reclama que no lo has puesto en el programa.</p>
-      <div class="row2"><input list="allNamesL" id="personSearch" placeholder="Nombre del hermano…" autocomplete="off"><datalist id="allNamesL"></datalist><button class="btn" id="personClear" type="button">Limpiar</button></div>
+      <p class="hint">Escribe o elige un nombre para ver su historial de cumplimiento — útil para mostrarlo cuando alguien reclama que no lo has puesto en el programa.</p>
+      <div class="row2"><input list="allNamesL" id="personSearch" placeholder="Nombre del hermano…" autocomplete="off"><datalist id="allNamesL"></datalist><select id="personScope" hidden></select><button class="btn" id="personClear" type="button">Limpiar</button></div>
       <div id="personCard"></div>
     </section>
 
@@ -487,15 +498,35 @@ function renderAvail(){
 <div class="stat-mini"><b>${uV}</b><span>Hermanos usados este mes</span></div>
 <div class="stat-mini"><b>${uM}</b><span>Hermanas usadas este mes</span></div>`;
 }
+function rankOf(p){
+  const t=(p.tarea||'').toUpperCase();
+  if(p.genero==='V'){
+    if(t.includes('AN'))return{t:0,l:'Ancianos'};
+    if(t.includes('SM'))return{t:1,l:'Siervos ministeriales'};
+    if(t==='PNB')return{t:3,l:'Publicadores no bautizados'};
+    return{t:2,l:'Publicadores'};
+  }
+  if(t.includes('AUX'))return{t:1,l:'Precursoras auxiliares'};
+  if(t.includes('PR'))return{t:0,l:'Precursoras regulares'};
+  if(t==='PNB')return{t:3,l:'Publicadoras no bautizadas'};
+  return{t:2,l:'Publicadoras'};
+}
 function renderRepl(){
   if(!cur||!cur.weeks.length){$('replLists').innerHTML='';return}
   const usedMonth=new Set();
   cur.weeks.forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])usedMonth.add(s.o[s.f])}));
   const st=computeStats(weekScope());
   const cand=people.filter(p=>!p.inactivo&&!p.salud&&!usedMonth.has(p.n));
-  const list=g=>{const l=cand.filter(p=>p.genero===g).sort((a,b)=>(st[a.n]?.asign||0)-(st[b.n]?.asign||0)||a.n.localeCompare(b.n));
-    return l.length?l.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join(''):'<li class="asign-empty">Sin candidatos: todos los hermanos activos ya tuvieron participación este mes.</li>'};
-  $('replLists').innerHTML=`<div class="repl-cols"><div><h4>Hermanos (V)</h4><ul>${list('V')}</ul></div><div><h4>Hermanas (M)</h4><ul>${list('M')}</ul></div></div>`;
+  const list=g=>{
+    const l=cand.filter(p=>p.genero===g).map(p=>({p,r:rankOf(p)}))
+      .sort((a,b)=>a.r.t-b.r.t||(st[a.p.n]?.asign||0)-(st[b.p.n]?.asign||0)||a.p.n.localeCompare(b.p.n));
+    if(!l.length)return'<p class="hint">Sin candidatos: todos ya tuvieron participación este mes.</p>';
+    const groups={};l.forEach(({p,r})=>{(groups[r.l]??={t:r.t,items:[]}).items.push(p)});
+    return Object.entries(groups).sort((a,b)=>a[1].t-b[1].t).map(([label,gr])=>
+      `<h5 class="repl-grp">${esc(label)}</h5><ul>${gr.items.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join('')}</ul>`
+    ).join('');
+  };
+  $('replLists').innerHTML=`<div class="repl-cols"><div><h4>Hermanos (V)</h4><div class="repl-scroll">${list('V')}</div></div><div><h4>Hermanas (M)</h4><div class="repl-scroll">${list('M')}</div></div></div>`;
 }
 function allPrograms(){
   const map={};progs.forEach(p=>map[p.id]=p);if(cur)map[cur.id]=cur;
@@ -521,7 +552,7 @@ function renderRanking(){
   </div>`).join(''):'<p class="hint">Aún no hay fallas registradas en el historial guardado. Buenas noticias.</p>';
 }
 function personHistory(name){
-  const months=[],incidents=[];
+  const months=[],incidents=[],successes=[];
   allPrograms().forEach(p=>{
     let ok=0,no=0;
     p.weeks.forEach(w=>{
@@ -529,13 +560,14 @@ function personHistory(name){
       slots(w).forEach(s=>{
         if(s.o[s.f]!==name)return;
         const st=w.seg[s.k];
-        if(st?.e==='ok')ok++;
-        else if(st?.e==='no'){no++;incidents.push({label:dateLbl(w),range:w.range,role:labels[s.k],r:st.r,n:st.n})}
+        if(st?.e==='ok'){ok++;successes.push({pid:p.id,label:dateLbl(w),role:labels[s.k]})}
+        else if(st?.e==='no'){no++;incidents.push({pid:p.id,label:dateLbl(w),role:labels[s.k],r:st.r,n:st.n})}
       });
     });
-    if(ok||no){const [y,m]=p.id.split('-');months.push({label:`${MESES[+m-1].slice(0,3)} ${y}`,ok,no})}
+    if(ok||no){const [y,m]=p.id.split('-');months.push({id:p.id,label:`${MESES[+m-1]} ${y}`,ok,no})}
   });
-  return{months,incidents};
+  months.sort((a,b)=>a.id<b.id?1:-1);
+  return{months,incidents,successes};
 }
 function allNamesEver(){
   const set=new Set();
@@ -547,25 +579,35 @@ function allNamesEver(){
 }
 function renderPerson(){
   $('allNamesL').innerHTML=allNamesEver().map(n=>`<option value="${esc(n)}">`).join('');
-  const name=$('personSearch').value.trim();
-  if(!name){$('personCard').innerHTML='';return}
-  const{months,incidents}=personHistory(name),ok=months.reduce((a,m)=>a+m.ok,0),no=months.reduce((a,m)=>a+m.no,0),tot=ok+no;
-  if(!tot){$('personCard').innerHTML=`<p class="hint">Sin registros de cumplimiento para «${esc(name)}» en el historial guardado. Revisa que el nombre esté escrito igual que en el registro.</p>`;return}
-  const rate=Math.round(no/tot*100),maxM=Math.max(1,...months.map(m=>m.ok+m.no));
+  const name=$('personSearch').value.trim(),scopeSel=$('personScope');
+  if(!name){$('personCard').innerHTML='';scopeSel.hidden=true;scopeSel.innerHTML='';return}
+  const data=personHistory(name);
+  if(!data.months.length){$('personCard').innerHTML=`<p class="hint">Sin registros de cumplimiento para «${esc(name)}» en el historial guardado. Revisa que el nombre esté escrito igual que en el registro.</p>`;scopeSel.hidden=true;scopeSel.innerHTML='';return}
+  const prevVal=scopeSel.value;
+  scopeSel.hidden=false;
+  scopeSel.innerHTML='<option value="all">Histórico completo</option>'+data.months.map(m=>`<option value="${m.id}">${esc(m.label)}</option>`).join('');
+  if([...scopeSel.options].some(o=>o.value===prevVal))scopeSel.value=prevVal;
+  const scope=scopeSel.value||'all';
+  const months=scope==='all'?data.months:data.months.filter(m=>m.id===scope);
+  const ok=months.reduce((a,m)=>a+m.ok,0),no=months.reduce((a,m)=>a+m.no,0),tot=ok+no;
+  const incidents=(scope==='all'?data.incidents:data.incidents.filter(i=>i.pid===scope)).sort((a,b)=>b.pid<a.pid?-1:1);
+  const successes=(scope==='all'?data.successes:data.successes.filter(i=>i.pid===scope)).sort((a,b)=>b.pid<a.pid?-1:1);
+  const rate=tot?Math.round(no/tot*100):0;
   $('personCard').innerHTML=`<div class="stat-cards" style="margin-top:10px">
-   <div class="stat-mini big-bad"><b>${no}</b><span>Fallas históricas</span></div>
+   <div class="stat-mini"><b>${tot}</b><span>Total de asignaciones</span></div>
    <div class="stat-mini"><b>${ok}</b><span>Cumplió</span></div>
-   <div class="stat-mini"><b>${tot}</b><span>Asignaciones resueltas</span></div>
+   <div class="stat-mini big-bad"><b>${no}</b><span>No cumplió</span></div>
    <div class="stat-mini"><b>${rate}%</b><span>% de falla</span></div>
   </div>
-  <div class="mchart">${months.map(m=>`<div class="mchart-col" title="${esc(m.label)}: ${m.ok} cumplió, ${m.no} falló">
-    <div class="mchart-bars"><div class="mb ok" style="height:${Math.round(m.ok/maxM*100)}%"></div><div class="mb no" style="height:${Math.round(m.no/maxM*100)}%"></div></div>
-    <span>${esc(m.label)}</span>
-   </div>`).join('')}</div>
-  ${incidents.length?`<h4 style="margin:16px 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--soft)">Detalle de las fallas</h4>
-  <div class="inc-list">${incidents.map(i=>`<div class="inc-row"><b>${esc(i.label)}</b><span>${esc(i.range)}</span><span>${esc(i.role)}</span>${i.r?`<span>↪ Reemplazó: ${esc(i.r)}</span>`:''}${i.n?`<span>📝 ${esc(i.n)}</span>`:''}</div>`).join('')}</div>`:''}`;
+  ${tot?`<div class="pie-legend"><span class="lok"><b></b>Cumplió · ${ok}</span><span class="lno"><b></b>No cumplió · ${no}</span></div>
+  <div class="pie-wrap"><div class="pie" style="--p:${rate}"></div><div class="pie-center"><b>${100-rate}%</b><span>Cumplimiento</span></div></div>`:'<p class="hint">Sin asignaciones resueltas en este alcance todavía.</p>'}
+  <div class="pf-cols">
+   <div class="pf-col ok"><h4>✔ Cumplió (${ok})</h4><div class="pf-list">${successes.length?successes.map(i=>`<div class="pf-row"><b>${esc(i.label)}</b><span>${esc(i.role)}</span></div>`).join(''):'<p class="hint">Sin registros en este alcance.</p>'}</div></div>
+   <div class="pf-col no"><h4>✖ No cumplió (${no})</h4><div class="pf-list">${incidents.length?incidents.map(i=>`<div class="pf-row"><b>${esc(i.label)}</b><span>${esc(i.role)}</span>${i.r?`<span>↪ Reemplazó: ${esc(i.r)}</span>`:''}${i.n?`<span>📝 ${esc(i.n)}</span>`:''}</div>`).join(''):'<p class="hint">Sin fallas en este alcance 🎉</p>'}</div></div>
+  </div>`;
 }
 $('personSearch').addEventListener('input',renderPerson);
+$('personScope').addEventListener('change',renderPerson);
 $('personClear').onclick=()=>{$('personSearch').value='';renderPerson()};
 $('failRank').addEventListener('click',e=>{const b=e.target.closest('[data-person]');if(b){$('personSearch').value=b.dataset.person;renderPerson();$('personCard').scrollIntoView({behavior:'smooth',block:'center'})}});
 $('failRank').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.person){e.preventDefault();e.target.click()}});
