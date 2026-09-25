@@ -146,6 +146,10 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 @media(max-width:640px){.pf-cols{grid-template-columns:1fr}}
 .repl-grp{margin:12px 0 5px;font:600 10.5px var(--serif, serif);text-transform:uppercase;letter-spacing:.06em;color:var(--brand)}
 .repl-grp:first-child{margin-top:0}
+.repl-grp-used{color:var(--bad)}
+.repl-cols li.used{opacity:.6;background:transparent;border-style:dashed}
+.repl-cols li.used span{text-decoration:line-through}
+.repl-cols li.used small{color:var(--bad);font-style:italic}
 @media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
 body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
 body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
@@ -520,15 +524,26 @@ function renderRepl(){
   const usedMonth=new Set();
   cur.weeks.forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])usedMonth.add(s.o[s.f])}));
   const st=computeStats(weekScope());
+  const stMonth=computeStats(cur.weeks);
   const cand=people.filter(p=>!p.inactivo&&!p.salud&&!usedMonth.has(p.n));
   const list=g=>{
-    const l=cand.filter(p=>p.genero===g).map(p=>({p,r:rankOf(p)}))
-      .sort((a,b)=>a.r.t-b.r.t||(st[a.p.n]?.asign||0)-(st[b.p.n]?.asign||0)||a.p.n.localeCompare(b.p.n));
-    if(!l.length)return'<p class="hint">Sin candidatos: todos ya tuvieron participación este mes.</p>';
-    const groups={};l.forEach(({p,r})=>{(groups[r.l]??={t:r.t,items:[]}).items.push(p)});
-    return Object.entries(groups).sort((a,b)=>a[1].t-b[1].t).map(([label,gr])=>
-      `<h5 class="repl-grp">${esc(label)}</h5><ul>${gr.items.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join('')}</ul>`
-    ).join('');
+    const all=cand.filter(p=>p.genero===g).map(p=>({p,r:rankOf(p)}));
+    const free=all.filter(({p})=>!stMonth[p.n]?.repl);
+    const used=all.filter(({p})=>stMonth[p.n]?.repl).sort((a,b)=>a.p.n.localeCompare(b.p.n));
+    let out='';
+    if(!free.length){
+      out+='<p class="hint">Sin candidatos: todos ya tuvieron participación o hicieron un reemplazo este mes.</p>';
+    }else{
+      const l=free.sort((a,b)=>a.r.t-b.r.t||(st[a.p.n]?.asign||0)-(st[b.p.n]?.asign||0)||a.p.n.localeCompare(b.p.n));
+      const groups={};l.forEach(({p,r})=>{(groups[r.l]??={t:r.t,items:[]}).items.push(p)});
+      out+=Object.entries(groups).sort((a,b)=>a[1].t-b[1].t).map(([label,gr])=>
+        `<h5 class="repl-grp">${esc(label)}</h5><ul>${gr.items.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join('')}</ul>`
+      ).join('');
+    }
+    if(used.length){
+      out+=`<h5 class="repl-grp repl-grp-used">Ya hicieron un reemplazo este mes</h5><ul>${used.map(({p})=>`<li class="used"><span>${esc(p.n)}</span><small>(ya hizo reemplazo)</small></li>`).join('')}</ul>`;
+    }
+    return out;
   };
   $('replLists').innerHTML=`<div class="repl-cols"><div><h4>Hermanos (V)</h4><div class="repl-scroll">${list('V')}</div></div><div><h4>Hermanas (M)</h4><div class="repl-scroll">${list('M')}</div></div></div>`;
 }
