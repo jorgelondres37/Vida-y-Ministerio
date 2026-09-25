@@ -71,16 +71,16 @@ body[data-tab="seg"] #progView{display:none}body:not([data-tab="seg"]) #seg{disp
 .sc{cursor:pointer;border-radius:8px;transition:box-shadow .15s,background .15s}
 .sc:hover{box-shadow:inset 0 0 0 2px var(--brand)}
 .sc:empty{background:repeating-linear-gradient(135deg,var(--fill),var(--fill) 6px,transparent 6px,transparent 12px)}
-.sc.conf{background:var(--brand-bg);color:var(--brand-2);border-left:3px solid var(--brand)}
-.sc.ok{background:var(--gold-bg);color:var(--gold-ink);border-left:3px solid var(--gold)}
+.sc.ok{background:var(--brand-bg);color:var(--brand-2);border-left:3px solid var(--brand)}
+.sc.conf{background:var(--gold-bg);color:var(--gold-ink);border-left:3px solid var(--gold)}
 .sc.no{background:var(--bad-bg);color:var(--bad);border-left:3px solid var(--bad);font-weight:600}
-.sc.conf::before{content:'● ';color:var(--brand);font-weight:400}
-.sc.ok::before{content:'✓ ';color:var(--gold-ink);font-weight:400}
+.sc.ok::before{content:'✓ ';color:var(--brand);font-weight:400}
+.sc.conf::before{content:'● ';color:var(--gold-ink);font-weight:400}
 .sc.no::before{content:'✕ ';font-weight:700}
 .sc small{display:block;font-weight:400;color:inherit;opacity:.8;margin-top:2px}
 .chip{display:inline-flex;align-items:center;gap:5px;padding:3px 12px}
-.chip.conf{background:var(--brand-bg);color:var(--brand-2);border-color:var(--brand)}
-.chip.ok{background:var(--gold-bg);color:var(--gold-ink);border-color:var(--gold)}
+.chip.ok{background:var(--brand-bg);color:var(--brand-2);border-color:var(--brand)}
+.chip.conf{background:var(--gold-bg);color:var(--gold-ink);border-color:var(--gold)}
 .chip.no{background:var(--bad-bg);color:var(--bad);border-color:var(--bad)}
 dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:20px;width:min(420px,calc(100% - 32px))}
 dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;margin:10px 0 4px}dialog input{width:100%}
