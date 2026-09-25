@@ -158,36 +158,38 @@ body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:
 body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{border:0;box-shadow:none;padding:0}}
 
 /* ---- Hojas de asignación ---- */
-.hojas-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;margin-top:14px}
-.slip-card{display:flex;flex-direction:column;gap:8px;animation:rise .4s both}
+:root{--slipw:101mm;--sliph:117mm}
+.hojas-grid{display:flex;flex-wrap:wrap;gap:18px;margin-top:14px;align-items:flex-start}
+.slip-card{width:min(var(--slipw),92vw);display:flex;flex-direction:column;gap:8px;animation:rise .4s both}
 .slip-week{font:600 10px Inter;letter-spacing:.07em;text-transform:uppercase;color:var(--soft)}
-.slip{background:#fff;color:#111;border:1px solid var(--line);border-radius:10px;padding:20px 22px;box-shadow:var(--shadow);font-family:Inter,system-ui,sans-serif}
-.slip-doc{font:700 12.5px/1.35 Inter;text-transform:uppercase;text-align:center;margin-bottom:14px}
-.slip-f{display:grid;grid-template-columns:88px 1fr;gap:2px 8px;font-size:12.5px;margin-bottom:5px;align-items:start}
-.slip-f b{font-size:10px;font-weight:700;text-transform:uppercase;color:#555;letter-spacing:.05em;padding-top:1px}
-.slip-f select{width:100%;font:600 12.5px inherit;border:0;background:transparent;padding:1px 0;color:#111;appearance:none;-webkit-appearance:none;cursor:pointer}
+.slip{width:100%;aspect-ratio:101/117;background:#fff;color:#111;border:1px solid var(--line);border-radius:10px;padding:8mm 9mm;box-sizing:border-box;box-shadow:var(--shadow);font-family:Inter,system-ui,sans-serif;display:flex;flex-direction:column;overflow:hidden;font-size:12.5px;line-height:1.32}
+.slip-doc{font-size:1.02em;font-weight:700;text-transform:uppercase;text-align:center;line-height:1.35;margin-bottom:.9em;flex:none}
+.slip-f{display:grid;grid-template-columns:6.8em 1fr;gap:2px 8px;font-size:1em;margin-bottom:.4em;align-items:start;flex:none}
+.slip-f b{font-size:.8em;font-weight:700;text-transform:uppercase;color:#555;letter-spacing:.05em;padding-top:1px}
+.slip-f select{width:100%;font-size:1em;font-weight:600;font-family:inherit;border:0;background:transparent;padding:1px 0;color:#111;appearance:none;-webkit-appearance:none;cursor:pointer}
 .slip-f select:hover{text-decoration:underline dotted}
-.slip-int{margin:12px 0 8px;font-size:12.5px}
+.slip-int{margin:.9em 0 .6em;font-size:1em;flex:none}
 .slip-int .num{font-weight:700}
-.slip-desc,.slip-ref{font-size:12px;margin:4px 0;color:#222;outline:none;border-bottom:1px dotted transparent;overflow-wrap:anywhere}
+.slip-desc,.slip-ref{font-size:.96em;margin:.35em 0;color:#222;outline:none;border-bottom:1px dotted transparent;overflow-wrap:anywhere}
 .slip-desc:focus,.slip-ref:focus{background:#fff7d6;border-color:#ccc}
 .slip-ref{font-weight:700}
-.slip-repl{background:var(--gold-bg);color:var(--gold-ink);border-radius:8px;padding:6px 9px;font-size:11px;margin:8px 0}
-.slip-rooms{margin:12px 0 10px;font-size:12.5px}
-.slip-room{display:flex;align-items:center;gap:7px;margin:4px 0;cursor:pointer}
-.slip-room input{width:14px;height:14px;accent-color:#111}
-.slip-note{font-size:10px;line-height:1.45;color:#444;border-top:1px solid #ddd;padding-top:8px;margin-top:8px}
+.slip-repl{background:var(--gold-bg);color:var(--gold-ink);border-radius:8px;padding:.5em .7em;font-size:.86em;margin:.6em 0;flex:none}
+.slip-rooms{margin:.9em 0 .7em;font-size:1em;flex:none}
+.slip-room{display:flex;align-items:center;gap:7px;margin:.3em 0;cursor:pointer}
+.slip-room input{width:13px;height:13px;accent-color:#111;flex:none}
+.slip-note{font-size:8.3px!important;line-height:1.45;color:#444;border-top:1px solid #ddd;padding-top:.6em;margin-top:auto;flex:none}
 .slip-actions{display:flex;flex-wrap:wrap;gap:6px}
 @media print{
  body.print-slips .top,body.print-slips #progView,body.print-slips #seg,body.print-slips dialog,body.print-slips #hojas h1,body.print-slips #hojas>.hint,body.print-slips #hojas .card>.row2,body.print-slips .slip-actions{display:none!important}
  body.print-slips #hojas{display:block!important}
  body.print-slips #hojas .card{border:0;box-shadow:none;padding:0}
- body.print-slips .hojas-grid{display:block}
- body.print-slips .slip-card{break-inside:avoid;page-break-inside:avoid;margin-bottom:16px}
+ body.print-slips .hojas-grid{display:flex}
+ body.print-slips .slip-card{width:var(--slipw);break-inside:avoid;page-break-inside:avoid;margin:0 8mm 8mm 0}
  body.print-slips .slip-week{display:none}
  body.print-slips .slip{border:1px solid #999;box-shadow:none}
 }
 </style>
+
 </head>
 <body data-tab="prog">
 <header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><button class="btn small" data-tab="hojas" aria-pressed="false">Hojas de asignación</button><a class="btn small" href="index.html">← Registro</a></div></header>
@@ -757,7 +759,18 @@ ${rep?`<div class="slip-repl">↪ Seguimiento: <b>${esc(mainSlot.o[mainSlot.f])}
     });
   });
   grid.innerHTML=out||'<p class="hint">Este mes no tiene partes de Escuela ni Lectura de la Biblia todavía. Vuelve a la pestaña Programa y genera o completa las asignaciones.</p>';
+  requestAnimationFrame(fitSlips);
 }
+function fitSlips(){
+  document.querySelectorAll('#hojasGrid .slip').forEach(el=>{
+    el.style.fontSize='';
+    let size=12.5,guard=0;
+    el.style.fontSize=size+'px';
+    while(el.scrollHeight>el.clientHeight+1&&size>7.5&&guard<25){size-=0.4;el.style.fontSize=size+'px';guard++}
+  });
+}
+let fitT;
+window.addEventListener('resize',()=>{clearTimeout(fitT);fitT=setTimeout(fitSlips,150)});
 const say3=(m,c)=>{const e=$('hojasMsg');if(e){e.textContent=m;e.className=c||''}};
 $('hojasMonth').onchange=e=>{
   const p=progs.find(x=>x.id===e.target.value);if(!p)return;
@@ -775,6 +788,9 @@ $('hojasGrid').addEventListener('input',e=>{
   const wi=+t.dataset.w,pi=+t.dataset.p,f=t.dataset.f,p=cur.weeks[wi].parts[pi];
   p[f]=t.textContent.replace(/\s+/g,' ').trim();draft();
 });
+$('hojasGrid').addEventListener('blur',e=>{
+  if(e.target.classList&&(e.target.classList.contains('slip-desc')||e.target.classList.contains('slip-ref')))fitSlips();
+},true);
 let h2cReady=null;
 function loadH2C(){
   if(h2cReady)return h2cReady;
@@ -821,7 +837,7 @@ async function shareSlip(slipEl){
 }
 function printOneSlip(cardEl){
   document.querySelectorAll('.slip-card').forEach(c=>{if(c!==cardEl)c.style.display='none'});
-  document.body.classList.add('print-slips');window.print();
+  document.body.classList.add('print-slips');fitSlips();window.print();
 }
 $('hojasGrid').addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');if(!b)return;
@@ -830,7 +846,7 @@ $('hojasGrid').addEventListener('click',e=>{
   else if(b.dataset.act==='download')downloadSlip(slipEl);
   else if(b.dataset.act==='share')shareSlip(slipEl);
 });
-$('hojasImprimirTodo').onclick=()=>{if(!cur)return;document.body.classList.add('print-slips');window.print()};
+$('hojasImprimirTodo').onclick=()=>{if(!cur)return;document.body.classList.add('print-slips');fitSlips();window.print()};
 window.addEventListener('afterprint',()=>{
   document.body.classList.remove('print-slips');
   document.querySelectorAll('.slip-card').forEach(c=>c.style.display='');
