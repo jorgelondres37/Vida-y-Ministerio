@@ -9,16 +9,16 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-  :root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);--r:14px;--gold:#A9792A;--gold-bg:#F3E6C9;--gold-ink:#6B4E14;--serif:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}}
-  :root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6)}
+  :root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);--r:14px;--gold:#A9792A;--gold-bg:#F3E6C9;--gold-ink:#6B4E14;--serif:'Fraunces',Georgia,serif;--mono:'IBM Plex Mono',ui-monospace,monospace;--t:#2F6F73;--t-bg:#DCEBEC;--m:#A9792A;--m-bg:#F3E6C9;--v:#9C2B23;--v-bg:#F6DEDB;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+  @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);--t:#6FBEC2;--t-bg:#1D2E30;--m:#D2A652;--m-bg:#3A2E15;--v:#E3796D;--v-bg:#3A2320}}
+  :root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320;--shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px -12px rgba(0,0,0,.6);--t:#6FBEC2;--t-bg:#1D2E30;--m:#D2A652;--m-bg:#3A2E15;--v:#E3796D;--v-bg:#3A2320}
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth;scroll-padding-top:82px}
-  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.6 Inter,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+  html{scroll-behavior:smooth;scroll-padding-top:70px}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.62 Inter,system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
   .skip{position:absolute;left:-999px}.skip:focus{left:12px;top:12px;z-index:100;background:var(--card);padding:8px 12px;border-radius:8px}
 
-  .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-  .top-in{max-width:1120px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
+  .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:var(--bg);background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .top-in{max-width:1180px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
   .brand{display:flex;align-items:center;gap:10px;font-weight:700;white-space:nowrap;text-decoration:none;color:var(--ink)}
   .logo{width:30px;height:30px;border-radius:9px;background:var(--brand);color:var(--on-brand);display:grid;place-items:center;font-size:12px}
   .brand span:last-child{font-family:var(--serif);font-size:16px;letter-spacing:-.01em}
@@ -26,36 +26,48 @@
   .toplinks{display:flex;gap:6px;margin-left:auto}
   .toplinks a{padding:6px 12px;border-radius:99px;color:var(--soft);text-decoration:none;font-weight:500;white-space:nowrap;transition:.2s;border:1px solid transparent}
   .toplinks a:hover{color:var(--ink);background:var(--fill)}
-  .toplinks a.current{background:var(--brand-bg);color:var(--brand);border-color:transparent}
+  .toplinks a.current{background:var(--brand-bg);color:var(--brand)}
   .icon-btn{flex:none;width:34px;height:34px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;font-size:15px;transition:.2s}
   .icon-btn:hover{border-color:var(--brand);transform:rotate(20deg)}
 
-  .wrap{max-width:920px;margin:0 auto;padding:28px 20px 72px}
-  .hero{margin-bottom:8px}
+  .shell{max-width:1180px;margin:0 auto;padding:28px 20px 72px;display:grid;grid-template-columns:1fr;gap:28px}
+  @media(min-width:1000px){.shell{grid-template-columns:230px minmax(0,720px);align-items:start}}
+
+  .hero{margin-bottom:2px}
   .eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 8px;font:600 11px/1 var(--mono);letter-spacing:.16em;text-transform:uppercase;color:var(--brand)}
   .eyebrow::before{content:'';width:22px;height:2px;border-radius:2px;background:currentColor}
-  h1{font:600 clamp(30px,5.5vw,46px)/1.08 var(--serif);letter-spacing:-.025em;margin:0 0 10px}
+  h1{font:600 clamp(28px,5vw,42px)/1.1 var(--serif);letter-spacing:-.025em;margin:0 0 10px}
   h1 em{font-style:italic;font-weight:500;color:var(--brand)}
-  .subtitle{color:var(--soft);max-width:60ch}
-  h2{font:600 19px/1.25 var(--serif);letter-spacing:-.01em;margin:0 0 4px}
-  h3{font:600 15px/1.3 Inter;letter-spacing:-.005em;margin:0 0 4px;color:var(--ink)}
-  .hint{color:var(--soft);font-size:12.5px;margin:0 0 14px}
-  p{margin:0 0 10px}
-  .prose p:last-child{margin-bottom:0}
+  .subtitle{color:var(--soft);max-width:62ch}
 
-  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:16px}
-  .source-note{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--soft);margin-bottom:22px;display:flex;gap:10px;align-items:flex-start}
+  .source-note{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:12.5px;color:var(--soft);display:flex;gap:10px;align-items:flex-start}
   .source-note b{color:var(--ink)}
+  .source-note a{color:var(--brand);font-weight:600;text-decoration:none}
+  .source-note a:hover{text-decoration:underline}
 
-  /* nav rápida */
-  .quicknav{position:sticky;top:calc(53px + env(safe-area-inset-top,0px));z-index:30;background:var(--bg);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:0 -20px 24px;padding:10px 20px}
-  .quicknav-in{max-width:920px;margin:0 auto;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  /* ---- TOC lateral (escritorio) ---- */
+  .toc{position:sticky;top:74px;max-height:calc(100vh - 100px);overflow-y:auto;padding-right:4px}
+  .toc-title{font:600 11px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin:0 0 10px}
+  .toc ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:2px}
+  .toc li a{display:block;padding:6px 10px;border-radius:8px;color:var(--soft);text-decoration:none;font-size:12.5px;font-weight:500;border-left:2px solid transparent}
+  .toc li a:hover{color:var(--ink);background:var(--fill)}
+  .toc li a.on{color:var(--brand);background:var(--brand-bg);border-left-color:var(--brand);font-weight:700}
+  @media(max-width:999px){.toc{display:none}}
+
+  /* ---- TOC móvil (barra scrollable) ---- */
+  .quicknav{display:none;position:sticky;top:calc(53px + env(safe-area-inset-top,0px));z-index:30;background:var(--bg);background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin:0 -20px;padding:10px 20px}
+  @media(max-width:999px){.quicknav{display:block}}
+  .quicknav-in{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
   .quicknav-in::-webkit-scrollbar{display:none}
   .quicknav a{flex:none;padding:6px 12px;border-radius:99px;background:var(--fill);border:1px solid var(--line);color:var(--soft);text-decoration:none;font-size:12.5px;font-weight:600;white-space:nowrap;transition:.2s}
-  .quicknav a:hover{color:var(--ink);border-color:var(--brand)}
   .quicknav a.on{background:var(--brand-bg);color:var(--brand);border-color:transparent}
 
-  /* tabla de tiempos */
+  .content{min-width:0}
+
+  /* ---- Tabla de tiempos ---- */
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:var(--shadow);margin-bottom:8px}
+  h2.pagetitle{font:600 19px/1.25 var(--serif);letter-spacing:-.01em;margin:0 0 4px}
+  .hint{color:var(--soft);font-size:12.5px;margin:0 0 14px}
   .timetable{width:100%;border-collapse:collapse;font-size:13px}
   .timetable th{text-align:left;font:600 11px var(--mono);text-transform:uppercase;letter-spacing:.06em;color:var(--soft);padding:0 10px 8px;border-bottom:1px solid var(--line)}
   .timetable td{padding:9px 10px;border-bottom:1px solid var(--line);vertical-align:top}
@@ -63,45 +75,56 @@
   .timetable tr.total td{font-weight:700;border-top:2px solid var(--ink);border-bottom:0;padding-top:12px}
   .timetable .min{font:600 12.5px var(--mono);color:var(--brand);white-space:nowrap}
   .timetable .sec{display:inline-block;font-size:10px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border-radius:99px;margin-right:8px;text-transform:uppercase;vertical-align:1px}
-  .sec.t{background:#2F6F73;color:#fff}.sec.m{background:var(--gold);color:#3a2c05}.sec.v{background:var(--bad);color:#fff}
+  .sec.t{background:var(--t);color:#fff}.sec.m{background:var(--m);color:#3a2c05}.sec.v{background:var(--v);color:#fff}
+  .callout{background:var(--fill);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;padding:10px 14px;font-size:12.5px;color:var(--soft);margin-top:10px}
+  .callout b{color:var(--ink)}
 
-  /* acordeón */
-  details.sec-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);margin-bottom:12px;overflow:hidden}
-  details.sec-card[open]{box-shadow:0 4px 16px -4px rgba(20,30,25,.12),var(--shadow)}
-  details.sec-card summary{list-style:none;cursor:pointer;padding:18px 22px;display:flex;align-items:center;gap:14px;user-select:none}
-  details.sec-card summary::-webkit-details-marker{display:none}
-  .sec-badge{flex:none;width:34px;height:34px;border-radius:10px;background:var(--brand-bg);color:var(--brand);display:grid;place-items:center;font-family:var(--serif);font-weight:700;font-size:14px}
-  .sec-head{flex:1;min-width:0}
-  .sec-head h2{margin:0}
-  .sec-head .sub{font-size:12px;color:var(--soft)}
-  .chev{flex:none;color:var(--soft);transition:transform .25s}
-  details.sec-card[open] .chev{transform:rotate(180deg)}
-  .sec-body{padding:0 22px 22px;border-top:1px solid var(--line);padding-top:16px}
+  /* ---- Bloques de documento ---- */
+  .block{margin:34px 0 14px;padding-top:8px}
+  .block:first-of-type{margin-top:8px}
+  .block-head{display:flex;align-items:baseline;gap:12px;margin-bottom:4px;padding-bottom:12px;border-bottom:2px solid var(--c,var(--brand))}
+  .block-num{font:700 11px var(--mono);letter-spacing:.06em;color:var(--c,var(--brand));background:var(--c-bg,var(--brand-bg));padding:3px 9px;border-radius:99px;white-space:nowrap}
+  .block-head h2{font:700 15px/1.2 Inter;letter-spacing:.05em;text-transform:uppercase;margin:0;color:var(--ink)}
+  .block.t{--c:var(--t);--c-bg:var(--t-bg)}
+  .block.m{--c:var(--m);--c-bg:var(--m-bg)}
+  .block.v{--c:var(--v);--c-bg:var(--v-bg)}
 
-  .item{padding:14px 0;border-top:1px solid var(--line)}
-  .item:first-child{border-top:0;padding-top:0}
-  .item-head{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:6px}
+  .doc-sec{display:flex;gap:14px;padding:16px 0;border-bottom:1px solid var(--line)}
+  .doc-sec:last-child{border-bottom:0}
+  .doc-num{flex:none;width:34px;padding-top:2px;font:700 12px var(--mono);color:var(--soft);text-align:right}
+  .doc-body{flex:1;min-width:0}
+  .doc-body h3{font:600 15.5px/1.3 var(--serif);letter-spacing:-.005em;margin:0 0 6px;color:var(--ink)}
+  .doc-body p{margin:0 0 9px}
+  .doc-body p:last-child{margin-bottom:0}
+  .meta-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:8px}
   .tag{display:inline-flex;align-items:center;gap:4px;font-size:11px;font-weight:600;padding:3px 10px;border-radius:99px;white-space:nowrap}
   .tag.time{background:var(--brand-bg);color:var(--brand)}
   .tag.who{background:var(--fill);color:var(--soft);border:1px solid var(--line)}
-  .tag.gold{background:var(--gold-bg);color:var(--gold-ink)}
-  .tag.bad{background:var(--bad-bg);color:var(--bad)}
 
   ul.plain{margin:6px 0 0;padding-left:18px}
   ul.plain li{margin-bottom:5px}
   ol.plain{margin:6px 0 0;padding-left:20px}
   ol.plain li{margin-bottom:5px}
 
-  .callout{background:var(--fill);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;padding:10px 14px;font-size:12.5px;color:var(--soft);margin-top:10px}
-  .callout b{color:var(--ink)}
-  .callout.gold{border-color:var(--gold)}
-  .callout.bad{border-color:var(--bad)}
+  .roles-grid{display:grid;grid-template-columns:1fr;gap:0}
+  .role{padding:16px 0;border-bottom:1px solid var(--line)}
+  .role:last-child{border-bottom:0}
+  .role h3{margin:0 0 6px;font:600 15.5px var(--serif)}
 
-  .roles-grid{display:grid;grid-template-columns:1fr;gap:12px}
-  @media(min-width:640px){.roles-grid{grid-template-columns:1fr 1fr}}
-  .role{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
-  .role h3{margin:0 0 6px}
+  /* ---- Listas "habilitados" (secundario) ---- */
+  .enabled-block{margin-top:8px}
+  .enabled-toggle{display:inline-flex;align-items:center;gap:6px;background:none;border:0;padding:0;font:inherit;font-size:12px;font-weight:600;color:var(--brand);cursor:pointer}
+  .enabled-toggle:hover{text-decoration:underline}
+  .enabled-toggle .chev{transition:transform .2s;font-size:10px}
+  .enabled-toggle[aria-expanded="true"] .chev{transform:rotate(180deg)}
+  .enabled-list{margin-top:8px;display:flex;flex-wrap:wrap;gap:6px}
+  .enabled-list[hidden]{display:none}
+  .person-pill{display:inline-flex;align-items:center;gap:6px;background:var(--fill);border:1px solid var(--line);border-radius:99px;padding:4px 11px 4px 11px;font-size:11.5px}
+  .person-pill .p-meta{color:var(--soft);font-size:10.5px}
+  .enabled-empty{font-size:12px;color:var(--soft);font-style:italic}
+  .enabled-loading{font-size:12px;color:var(--soft)}
 
+  /* ---- Enlaces oficiales ---- */
   .linkgrid{display:grid;grid-template-columns:1fr;gap:10px}
   @media(min-width:640px){.linkgrid{grid-template-columns:1fr 1fr}}
   .linkcard{display:flex;align-items:flex-start;gap:12px;background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:13px 14px;text-decoration:none;color:var(--ink);transition:.2s}
@@ -112,7 +135,6 @@
   .linkcard .li-go{margin-left:auto;flex:none;color:var(--soft);align-self:center}
 
   footer{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:28px;padding-top:16px;border-top:1px solid var(--line);color:var(--soft);font-size:12px}
-  footer a{color:var(--soft)}
 
   .js .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s cubic-bezier(.2,.8,.2,1)}
   .js .reveal.in{opacity:1;transform:none}
@@ -120,7 +142,7 @@
 </style>
 </head>
 <body>
-<a class="skip" href="#intro">Ir al contenido</a>
+<a class="skip" href="#contenido">Ir al contenido</a>
 <header class="top">
   <div class="top-in">
     <a class="brand" href="index.html"><span class="logo" aria-hidden="true">CC</span><span>Congregación Curauma</span></a>
@@ -133,366 +155,518 @@
   </div>
 </header>
 
-<main class="wrap">
-  <div class="hero reveal">
-    <p class="eyebrow">Reunión de entre semana</p>
-    <h1>Instrucciones para la reunión <em>Vida y Ministerio</em></h1>
-    <p class="subtitle">Un resumen ordenado del folleto oficial <em>S-38-S</em>, pensado para quien organice o presida la reunión: qué incluye cada parte, quién puede participar y cuánto debe durar.</p>
-  </div>
+<div class="shell">
+  <!-- Índice lateral (escritorio) -->
+  <aside class="toc" aria-label="Índice">
+    <p class="toc-title">Índice</p>
+    <ol id="tocList">
+      <li><a href="#panorama">De un vistazo</a></li>
+      <li><a href="#participar">§1 · Quién puede participar</a></li>
+      <li><a href="#intro">§2 · Introducción</a></li>
+      <li><a href="#tesoros">§3–5 · Tesoros de la Biblia</a></li>
+      <li><a href="#maestros">§6–14 · Mejores maestros</a></li>
+      <li><a href="#vida-cristiana">§15–16 · Vida cristiana</a></li>
+      <li><a href="#conclusion">§17 · Conclusión</a></li>
+      <li><a href="#animo">§18 · Ánimo y consejo</a></li>
+      <li><a href="#tiempo">§19 · Tiempo</a></li>
+      <li><a href="#semanas">§20–22 · Semanas especiales</a></li>
+      <li><a href="#funciones">§23–26 · Funciones</a></li>
+      <li><a href="#videos">§27 · Videos</a></li>
+      <li><a href="#oraciones">Preguntas · Oraciones</a></li>
+      <li><a href="#enlaces">Enlaces JW.ORG</a></li>
+    </ol>
+  </aside>
 
-  <div class="source-note reveal">
-    <span>📄</span>
-    <div><b>Fuente:</b> este resumen se basa por completo en «Instrucciones para la reunión Vida y Ministerio Cristianos» (S-38-S, revisión 9/25), publicado por los testigos de Jehová. Para el texto oficial completo y las publicaciones que se mencionan aquí, usa siempre los enlaces a <b>JW.ORG</b> al final de esta página.</div>
-  </div>
-
-  <nav class="quicknav" aria-label="Ir a sección">
-    <div class="quicknav-in" id="quicknavIn">
-      <a href="#intro">Introducción</a>
-      <a href="#tesoros">Tesoros de la Biblia</a>
-      <a href="#maestros">Seamos mejores maestros</a>
-      <a href="#vida-cristiana">Nuestra vida cristiana</a>
-      <a href="#conclusion">Conclusión</a>
-      <a href="#animo">Ánimo y consejo</a>
-      <a href="#tiempo">Tiempo</a>
-      <a href="#semanas">Semanas especiales</a>
-      <a href="#funciones">Funciones</a>
-      <a href="#videos">Videos</a>
-      <a href="#oraciones">Oraciones</a>
-      <a href="#enlaces">Enlaces JW.ORG</a>
+  <main class="content" id="contenido">
+    <div class="hero reveal">
+      <p class="eyebrow">Reunión de entre semana</p>
+      <h1>Instrucciones para la reunión <em>Vida y Ministerio</em></h1>
+      <p class="subtitle">Guía de lectura ordenada, punto por punto, del folleto oficial de los testigos de Jehová para quien organiza o preside la reunión — qué incluye cada parte, quién puede participar y cuánto debe durar.</p>
     </div>
-  </nav>
 
-  <!-- Panorama de tiempos -->
-  <section class="card reveal" aria-labelledby="h-panorama">
-    <p class="eyebrow">De un vistazo</p><h2 id="h-panorama">Estructura y tiempos de la reunión</h2>
-    <p class="hint">Duración total, con canciones y oraciones incluidas: <b>1 hora 45 minutos</b>. Ninguna parte debe pasarse de su tiempo.</p>
-    <div style="overflow-x:auto">
-    <table class="timetable">
-      <thead><tr><th>Tiempo</th><th>Parte</th></tr></thead>
-      <tbody>
-        <tr><td class="min">1 min</td><td>Palabras de introducción</td></tr>
-        <tr><td class="min">10 min</td><td><span class="sec t">T</span>Discurso — Tesoros de la Biblia</td></tr>
-        <tr><td class="min">10 min</td><td><span class="sec t">T</span>Busquemos perlas escondidas</td></tr>
-        <tr><td class="min">4 min</td><td><span class="sec t">T</span>Lectura de la Biblia</td></tr>
-        <tr><td class="min">15 min</td><td><span class="sec m">M</span>Seamos mejores maestros (1 o 2 asignaciones de estudiante)</td></tr>
-        <tr><td class="min">15 min</td><td><span class="sec v">V</span>Nuestra vida cristiana (1 o 2 partes, más necesidades de la congregación)</td></tr>
-        <tr><td class="min">30 min</td><td><span class="sec v">V</span>Estudio bíblico de la congregación</td></tr>
-        <tr><td class="min">3 min</td><td>Palabras de conclusión</td></tr>
-        <tr class="total"><td>1 h 45 min</td><td>Total, con canciones y oraciones</td></tr>
-      </tbody>
-    </table>
+    <div class="source-note reveal" style="margin:16px 0 20px">
+      <span>📄</span>
+      <div>Todo el contenido de esta página es un resumen fiel de «<b>Instrucciones para la reunión Vida y Ministerio Cristianos</b>» (folleto <b>S-38-S</b>, revisión 9/25), publicado por los testigos de Jehová. Los números <b>§</b> junto a cada título corresponden al párrafo del folleto original. Para el texto oficial completo, consulta siempre <a href="https://www.jw.org/es/" target="_blank" rel="noopener">JW.ORG</a> o los enlaces de la sección final.</div>
     </div>
-    <div class="callout">Cuando visita el superintendente de circuito, el <b>Estudio bíblico de la congregación</b> se reemplaza por un discurso de servicio de 30 minutos.</div>
-  </section>
 
-  <!-- Introducción -->
-  <details class="sec-card reveal" id="intro" open>
-    <summary>
-      <span class="sec-badge">§1–2</span>
-      <div class="sec-head"><h2>Palabras de introducción</h2><div class="sub">Quiénes pueden participar · apertura de la reunión</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>Los publicadores deben ser animados a aceptar asignaciones de estudiante. También pueden participar personas que se relacionan activamente con la congregación, aceptan las enseñanzas bíblicas y viven conforme a los principios cristianos. Si alguien desea matricularse antes de ser publicador, el superintendente de la reunión Vida y Ministerio conversará con él (y con quien le da clases de la Biblia, o uno de sus padres creyente) sobre los mismos requisitos que aplican a un publicador no bautizado.</p>
-      <div class="item">
-        <div class="item-head"><span class="tag time">1 minuto</span></div>
+    <nav class="quicknav" aria-label="Ir a sección">
+      <div class="quicknav-in" id="quicknavIn">
+        <a href="#panorama">Vistazo</a>
+        <a href="#participar">Participar</a>
+        <a href="#intro">Intro</a>
+        <a href="#tesoros">Tesoros</a>
+        <a href="#maestros">Maestros</a>
+        <a href="#vida-cristiana">Vida cristiana</a>
+        <a href="#conclusion">Conclusión</a>
+        <a href="#animo">Ánimo</a>
+        <a href="#tiempo">Tiempo</a>
+        <a href="#semanas">Semanas</a>
+        <a href="#funciones">Funciones</a>
+        <a href="#videos">Videos</a>
+        <a href="#oraciones">Oraciones</a>
+        <a href="#enlaces">Enlaces</a>
+      </div>
+    </nav>
+
+    <!-- Panorama de tiempos -->
+    <section class="card reveal" id="panorama" aria-labelledby="h-panorama">
+      <p class="eyebrow">De un vistazo</p><h2 class="pagetitle" id="h-panorama">Estructura y tiempos de la reunión</h2>
+      <p class="hint">Duración total, con canciones y oraciones incluidas: <b>1 hora 45 minutos</b>. Ninguna parte debe pasarse de su tiempo (§19).</p>
+      <div style="overflow-x:auto">
+      <table class="timetable">
+        <thead><tr><th>Tiempo</th><th>Parte</th></tr></thead>
+        <tbody>
+          <tr><td class="min">1 min</td><td>Palabras de introducción</td></tr>
+          <tr><td class="min">10 min</td><td><span class="sec t">T</span>Discurso — Tesoros de la Biblia</td></tr>
+          <tr><td class="min">10 min</td><td><span class="sec t">T</span>Busquemos perlas escondidas</td></tr>
+          <tr><td class="min">4 min</td><td><span class="sec t">T</span>Lectura de la Biblia</td></tr>
+          <tr><td class="min">15 min</td><td><span class="sec m">M</span>Seamos mejores maestros (1 o 2 asignaciones de estudiante)</td></tr>
+          <tr><td class="min">15 min</td><td><span class="sec v">V</span>Nuestra vida cristiana (1 o 2 partes, más necesidades de la congregación)</td></tr>
+          <tr><td class="min">30 min</td><td><span class="sec v">V</span>Estudio bíblico de la congregación</td></tr>
+          <tr><td class="min">3 min</td><td>Palabras de conclusión</td></tr>
+          <tr class="total"><td>1 h 45 min</td><td>Total, con canciones y oraciones</td></tr>
+        </tbody>
+      </table>
+      </div>
+      <div class="callout">Cuando visita el superintendente de circuito (§20), el <b>Estudio bíblico de la congregación</b> se reemplaza por un discurso de servicio de 30 minutos.</div>
+    </section>
+
+    <!-- §1 Quién puede participar -->
+    <section class="doc-sec reveal" id="participar" style="margin-top:26px">
+      <div class="doc-num">§1</div>
+      <div class="doc-body">
+        <h3>Quién puede participar</h3>
+        <p>Se debe animar a todos los publicadores a presentar asignaciones de estudiante. También pueden participar personas que se relacionan activamente con la congregación, aceptan las enseñanzas bíblicas y viven conforme a los principios cristianos. Si alguien desea matricularse antes de ser publicador, el superintendente de la reunión Vida y Ministerio analizará con él los requisitos (los mismos que para ser publicador no bautizado) — en esa conversación debe estar también quien le da clases de la Biblia, o uno de sus padres si es creyente.</p>
+      </div>
+    </section>
+
+    <!-- §2 Introducción -->
+    <section class="doc-sec reveal" id="intro">
+      <div class="doc-num">§2</div>
+      <div class="doc-body">
+        <h3>Palabras de introducción</h3>
+        <div class="meta-row"><span class="tag time">1 minuto</span><span class="tag who">Presidente de la reunión</span></div>
         <p>Después de la canción y la oración, el presidente despierta el interés del auditorio por el programa, destacando los puntos que más beneficien a la congregación.</p>
       </div>
-    </div>
-  </details>
+    </section>
 
-  <!-- Tesoros de la Biblia -->
-  <details class="sec-card reveal" id="tesoros">
-    <summary>
-      <span class="sec-badge">§3–5</span>
-      <div class="sec-head"><h2>Tesoros de la Biblia</h2><div class="sub">Discurso · Perlas escondidas · Lectura de la Biblia</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body">
-      <div class="item">
-        <div class="item-head"><span class="tag time">10 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
-        <h3>Discurso</h3>
-        <p>Se basa en el título y los dos o tres puntos principales de la Guía de actividades. Cuando empieza a leerse un libro nuevo de la Biblia, se muestra un video de presentación que el orador puede relacionar con el tema. Debe explicar los puntos indicados en la Guía y usar las imágenes según convenga; puede añadir información adicional siempre que desarrolle esos puntos.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag time">10 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
-        <h3>Busquemos perlas escondidas</h3>
-        <p>Formato de preguntas y respuestas, sin introducción ni conclusión. El hermano debe hacer las dos preguntas y puede decidir si se leen los versículos citados. Los comentarios del auditorio deben durar 30 segundos o menos.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag time">4 min</span><span class="tag who">Varón</span></div>
-        <h3>Lectura de la Biblia</h3>
-        <p>El estudiante lee el pasaje sin comentarios de introducción ni conclusión. El presidente ayuda a leer con sentido, exactitud, fluidez y naturalidad, a modular la voz, hacer bien las pausas y dar el énfasis adecuado. El superintendente de la reunión toma en cuenta las capacidades de cada estudiante al asignar las lecturas, ya que algunas son más largas que otras.</p>
-      </div>
-    </div>
-  </details>
+    <!-- TESOROS DE LA BIBLIA -->
+    <div class="block t reveal" id="tesoros">
+      <div class="block-head"><span class="block-num">§3–5</span><h2>Tesoros de la Biblia</h2></div>
 
-  <!-- Seamos mejores maestros -->
-  <details class="sec-card reveal" id="maestros">
-    <summary>
-      <span class="sec-badge">§6–14</span>
-      <div class="sec-head"><h2>Seamos mejores maestros</h2><div class="sub">15 minutos · asignaciones de estudiante para el ministerio</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body">
-      <p>Objetivo: dar a todos la oportunidad de practicar para el ministerio y mejorar sus habilidades para conversar, predicar y enseñar. Si es necesario, también los ancianos pueden recibir asignaciones. Los estudiantes se apoyan en la lección del folleto <em>Maestros</em> o del folleto <em>Una obra de amor</em> que se indica entre paréntesis en la Guía de actividades. Algunas semanas hay análisis con el auditorio, presentados por un anciano o siervo ministerial capacitado.</p>
-
-      <div class="item">
-        <div class="item-head"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo o familiar</span></div>
-        <h3>Empiece conversaciones</h3>
-        <p>Ambos pueden estar sentados o de pie. (Ver más abajo «Contenido» y «Circunstancias de la conversación».)</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo</span></div>
-        <h3>Haga revisitas</h3>
-        <p>El estudiante muestra qué decir al volver a visitar a alguien con quien ya se conversó antes. Ambos pueden estar sentados o de pie.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo</span></div>
-        <h3>Haga discípulos</h3>
-        <p>Si es un fragmento de una sesión de estudio ya iniciada, no hace falta introducción ni conclusión (a menos que el estudiante esté trabajando esos aspectos), ni leer en voz alta toda la información, aunque puede hacerse.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag who">Discurso: varón</span><span class="tag who">Escenificación: estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo o familiar</span></div>
-        <h3>Explique sus creencias</h3>
-        <p>El estudiante responde con tacto y claridad la pregunta del título, apoyándose en la referencia suministrada. Puede mencionar o no la publicación de referencia.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag who">Estudiante varón</span></div>
-        <h3>Discurso</h3>
-        <p>Si se basa en el apéndice A del folleto <em>Una obra de amor</em>, debe destacar cómo pueden usarse los versículos en el ministerio (qué significa un versículo, cuándo o cómo usarlo para razonar con alguien). Si se basa en una lección del folleto, se centra en cómo aplicarla en el ministerio; puede destacar el ejemplo del punto 1 o algún versículo adicional de la lección.</p>
+      <div class="doc-sec">
+        <div class="doc-num">§3</div>
+        <div class="doc-body">
+          <h3>Discurso</h3>
+          <div class="meta-row"><span class="tag time">10 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
+          <p>Se basa en el título y los dos o tres puntos principales de la Guía de actividades. Cuando empieza a leerse un libro nuevo de la Biblia, se muestra un video de presentación que el orador puede relacionar con el tema, pero debe asegurarse de explicar los puntos de la Guía y usar las imágenes según convenga. Puede añadir información adicional siempre que desarrolle esos puntos.</p>
+          <div class="enabled-block" data-asign="DISCURSO_TESORO_BIBLIA">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
       </div>
 
-      <div class="callout"><b>Contenido (§12):</b> salvo indicación contraria, el objetivo es compartir una verdad bíblica sencilla y pertinente para el interlocutor, sentando las bases para seguir conversando después. Presentar una publicación o video es opcional; se debe practicar la naturalidad y el interés sincero, no una escenificación memorizada.</div>
-
-      <div class="callout gold">
-        <b>Circunstancias de la conversación (§13):</b>
-        <ol class="plain">
-          <li><b>De casa en casa</b> — incluye la predicación en los hogares (en persona, teléfono o carta) y las conversaciones posteriores con esos contactos.</li>
-          <li><b>Predicación informal</b> — una conversación cotidiana se convierte en testimonio: trabajo, escuela, vecindario, transporte público, etc.</li>
-          <li><b>Predicación pública</b> — carritos, negocios, calles, parques, estacionamientos u otros lugares con gente.</li>
-        </ol>
+      <div class="doc-sec">
+        <div class="doc-num">§4</div>
+        <div class="doc-body">
+          <h3>Busquemos perlas escondidas</h3>
+          <div class="meta-row"><span class="tag time">10 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
+          <p>Formato de preguntas y respuestas, sin introducción ni conclusión. El hermano debe hacer las dos preguntas y puede decidir si se leen los versículos citados. Los comentarios del auditorio deben durar 30 segundos o menos.</p>
+          <div class="enabled-block" data-asign="PERLAS_ESCONDIDAS">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
       </div>
 
-      <div class="callout"><b>Uso de videos y publicaciones (§14):</b> según las circunstancias, el estudiante decide si presenta algún video o publicación. Si la asignación incluye un video, no debe reproducirse: solo presentarlo y analizarlo.</div>
-    </div>
-  </details>
-
-  <!-- Nuestra vida cristiana -->
-  <details class="sec-card reveal" id="vida-cristiana">
-    <summary>
-      <span class="sec-badge">§15–16</span>
-      <div class="sec-head"><h2>Nuestra vida cristiana</h2><div class="sub">Partes con el auditorio · Estudio bíblico de la congregación</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body">
-      <div class="item">
-        <div class="item-head"><span class="tag time">15 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
-        <h3>Primera parte de la sección</h3>
-        <p>Empieza con una canción. Incluye una o dos asignaciones para poner en práctica la Palabra de Dios. La parte sobre <b>necesidades de la congregación</b> siempre está a cargo de un anciano. En los análisis con el auditorio, el hermano puede formular preguntas además de las suministradas, con una introducción breve que deje tiempo para los puntos principales y la participación del público. Si hay entrevista, es preferible que el entrevistado hable desde la plataforma y no desde su asiento.</p>
-      </div>
-      <div class="item">
-        <div class="item-head"><span class="tag time">30 min</span><span class="tag who">Anciano competente (o siervo ministerial, en congregaciones con pocos ancianos)</span></div>
-        <h3>Estudio bíblico de la congregación</h3>
-        <p>El cuerpo de ancianos decide quiénes están capacitados para dirigirlo. Deben terminar a tiempo, destacar los textos bíblicos clave y ayudar a ver el valor práctico de la información. Si ya se analizó bien el contenido, no hace falta completar los 30 minutos. Cuando el presidente pida acortar el estudio, el conductor decide cómo hacerlo (por ejemplo, no leer algunos párrafos). Si es posible, cada semana se usan conductores y lectores diferentes.</p>
+      <div class="doc-sec">
+        <div class="doc-num">§5</div>
+        <div class="doc-body">
+          <h3>Lectura de la Biblia</h3>
+          <div class="meta-row"><span class="tag time">4 min</span><span class="tag who">Varón</span></div>
+          <p>El estudiante lee el pasaje sin comentarios de introducción ni conclusión. El presidente ayuda a leer con sentido, exactitud, fluidez y naturalidad, a modular la voz, hacer bien las pausas y dar el énfasis adecuado. El superintendente de la reunión toma en cuenta las capacidades de cada estudiante al asignar las lecturas, ya que algunas son más largas que otras.</p>
+          <div class="enabled-block" data-asign="LECTURA_BIBLIA">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
       </div>
     </div>
-  </details>
 
-  <!-- Conclusión -->
-  <details class="sec-card reveal" id="conclusion">
-    <summary>
-      <span class="sec-badge">§17</span>
-      <div class="sec-head"><h2>Palabras de conclusión</h2><div class="sub">3 minutos · anuncios y cartas</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>El presidente repasa ideas útiles que se hayan analizado, si el tiempo lo permite invitando al auditorio a comentar. Despierta el interés por el programa de la semana siguiente y, si es posible, menciona los nombres de los estudiantes que participarán. Los anuncios y las cartas se leen aquí, salvo indicación contraria.</p>
-      <div class="callout bad">La información sobre asuntos cotidianos —horarios de predicación, turnos de limpieza— <b>no</b> se anuncia desde la plataforma: se coloca en el tablero de anuncios. Si falta tiempo para leer cartas o anuncios, el presidente pide a los encargados de «Nuestra vida cristiana» que acorten sus intervenciones. La reunión termina con canción y oración.</div>
-    </div>
-  </details>
+    <!-- SEAMOS MEJORES MAESTROS -->
+    <div class="block m reveal" id="maestros">
+      <div class="block-head"><span class="block-num">§6–14</span><h2>Seamos mejores maestros</h2></div>
 
-  <!-- Ánimo y consejo -->
-  <details class="sec-card reveal" id="animo">
-    <summary>
-      <span class="sec-badge">§18</span>
-      <div class="sec-head"><h2>Palabras de ánimo y consejo</h2><div class="sub">Cómo felicitar y aconsejar a los estudiantes</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>Después de cada asignación de estudiante, el presidente tiene alrededor de un minuto para felicitar al estudiante y darle consejos tomados de la lección asignada. Al anunciar la asignación, no debe decir qué lección está practicando. Al terminar, y después de felicitarlo, puede mencionar la lección y explicar por qué lo hizo bien, o por qué debería darle más atención y cómo hacerlo, además de otros detalles útiles para el estudiante o el auditorio.</p>
-      <p>Otros consejos constructivos —basados en <em>Una obra de amor</em>, <em>Maestros</em> o el libro <em>Benefíciese</em>— pueden darse en privado después de la reunión o en otro momento, sobre la lección asignada o sobre alguna otra.</p>
-    </div>
-  </details>
-
-  <!-- Tiempo -->
-  <details class="sec-card reveal" id="tiempo">
-    <summary>
-      <span class="sec-badge">§19</span>
-      <div class="sec-head"><h2>Tiempo</h2><div class="sub">Puntualidad de cada asignación</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>Ninguna asignación debe pasarse de tiempo, incluidos los comentarios del presidente. Aunque la Guía de actividades indica un tiempo para cada asignación, si la información se trató adecuadamente no hace falta añadir más solo para rellenar. Si alguien se pasa de tiempo, el presidente o el consejero auxiliar deben aconsejarlo en privado.</p>
-      <div class="callout">Duración total de la reunión, con canciones y oraciones incluidas: <b>1 hora y 45 minutos.</b></div>
-    </div>
-  </details>
-
-  <!-- Semanas especiales -->
-  <details class="sec-card reveal" id="semanas">
-    <summary>
-      <span class="sec-badge">§20–22</span>
-      <div class="sec-head"><h2>Semanas especiales</h2><div class="sub">Visita del superintendente de circuito · asamblea · Conmemoración</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body">
-      <div class="item">
-        <h3>Visita del superintendente de circuito</h3>
-        <p>Se sigue el programa de la Guía de actividades con algunas modificaciones: en vez del «Estudio bíblico de la congregación», el superintendente de circuito presenta un discurso de servicio de 30 minutos. Antes, el presidente repasa el programa, despierta interés por la semana siguiente, hace los anuncios, lee las cartas necesarias y presenta al superintendente. Después del discurso, el superintendente concluye con la canción que elija y puede invitar a un hermano a orar. No hay clases auxiliares en el idioma de la congregación; los grupos en otros idiomas pueden reunirse, pero escuchan el discurso de servicio junto con el resto.</p>
+      <div class="doc-sec">
+        <div class="doc-num">§6</div>
+        <div class="doc-body">
+          <h3>Objetivo de la sección</h3>
+          <div class="meta-row"><span class="tag time">15 minutos en total</span></div>
+          <p>Dar a todos la oportunidad de practicar para el ministerio y mejorar sus habilidades para conversar, predicar y enseñar. Si es necesario, también los ancianos pueden recibir asignaciones. Los estudiantes se apoyan en la lección del folleto <em>Maestros</em> o del folleto <em>Una obra de amor</em> que se indica entre paréntesis en la Guía de actividades. Algunas semanas hay análisis con el auditorio, presentados por un anciano o siervo ministerial capacitado.</p>
+          <div class="enabled-block" data-asign="MM_1,MM_2,MM_3">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver estudiantes habilitados para asignaciones de esta sección <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
       </div>
-      <div class="item">
-        <h3>Semana de asamblea</h3>
-        <p>No se celebran reuniones de congregación. Se recuerda a la congregación que la información de esa semana debe estudiarse individualmente o en familia.</p>
+
+      <div class="doc-sec">
+        <div class="doc-num">§7</div>
+        <div class="doc-body">
+          <h3>Empiece conversaciones</h3>
+          <div class="meta-row"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo o familiar</span></div>
+          <p>Ambos pueden estar sentados o de pie. Ver más abajo «Contenido» y «Circunstancias de la conversación» (§12–13).</p>
+        </div>
       </div>
-      <div class="item">
-        <h3>Semana de la Conmemoración</h3>
-        <p>Cuando la Conmemoración se celebra entre semana, se cancela la reunión Vida y Ministerio.</p>
+
+      <div class="doc-sec">
+        <div class="doc-num">§8</div>
+        <div class="doc-body">
+          <h3>Haga revisitas</h3>
+          <div class="meta-row"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo</span></div>
+          <p>El estudiante muestra qué decir al volver a visitar a alguien con quien ya se conversó antes. Ambos pueden estar sentados o de pie.</p>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§9</div>
+        <div class="doc-body">
+          <h3>Haga discípulos</h3>
+          <div class="meta-row"><span class="tag who">Estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo</span></div>
+          <p>Si es un fragmento de una sesión de estudio ya iniciada, no hace falta introducción ni conclusión (a menos que el estudiante esté trabajando esos aspectos), ni leer en voz alta toda la información, aunque puede hacerse.</p>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§10</div>
+        <div class="doc-body">
+          <h3>Explique sus creencias</h3>
+          <div class="meta-row"><span class="tag who">Discurso: estudiante varón</span><span class="tag who">Escenificación: estudiante o estudiante</span><span class="tag who">Ayudante del mismo sexo o familiar</span></div>
+          <p>El estudiante responde con tacto y claridad la pregunta del título, apoyándose en la referencia suministrada. Puede mencionar o no la publicación de referencia.</p>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§11</div>
+        <div class="doc-body">
+          <h3>Discurso</h3>
+          <div class="meta-row"><span class="tag who">Estudiante varón</span></div>
+          <p>Si se basa en el apéndice A del folleto <em>Una obra de amor</em>, debe destacar cómo pueden usarse los versículos en el ministerio (qué significa un versículo, cuándo o cómo usarlo para razonar con alguien). Si se basa en una lección del folleto, se centra en cómo aplicarla en el ministerio; puede destacar el ejemplo del punto 1 o algún versículo adicional de la lección.</p>
+          <div class="enabled-block" data-asign="DISCURSO_MM">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§12</div>
+        <div class="doc-body">
+          <h3>Contenido</h3>
+          <p>Aplica a «Empiece conversaciones» y «Haga revisitas». Salvo indicación contraria, el objetivo es compartir una verdad bíblica sencilla y pertinente para el interlocutor, sentando las bases para seguir conversando después. El estudiante debe elegir un asunto oportuno y práctico para la zona. Presentar una publicación o video es opcional. En vez de escenificar algo memorizado, deben practicarse habilidades como la naturalidad y el interés sincero.</p>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§13</div>
+        <div class="doc-body">
+          <h3>Circunstancias de la conversación</h3>
+          <p>El estudiante debe aplicar a la situación local uno de estos escenarios generales:</p>
+          <ol class="plain">
+            <li><b>De casa en casa.</b> Incluye la predicación en los hogares (en persona, teléfono o carta) y las conversaciones posteriores con esos contactos.</li>
+            <li><b>Predicación informal.</b> Una conversación cotidiana se convierte en testimonio: trabajo, escuela, vecindario, transporte público, etc.</li>
+            <li><b>Predicación pública.</b> Carritos, negocios, calles, parques, estacionamientos u otros lugares con gente.</li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§14</div>
+        <div class="doc-body">
+          <h3>Uso de videos y publicaciones</h3>
+          <p>Según las circunstancias, el estudiante decide si presenta algún video o publicación. Si la asignación incluye un video, no debe reproducirse: solo presentarlo y analizarlo.</p>
+        </div>
       </div>
     </div>
-  </details>
 
-  <!-- Funciones -->
-  <details class="sec-card reveal" id="funciones">
-    <summary>
-      <span class="sec-badge">§23–26</span>
-      <div class="sec-head"><h2>Funciones y responsables</h2><div class="sub">Quién organiza, preside y aconseja</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body">
+    <!-- NUESTRA VIDA CRISTIANA -->
+    <div class="block v reveal" id="vida-cristiana">
+      <div class="block-head"><span class="block-num">§15–16</span><h2>Nuestra vida cristiana</h2></div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§15</div>
+        <div class="doc-body">
+          <h3>Primera parte de la sección</h3>
+          <div class="meta-row"><span class="tag time">15 min</span><span class="tag who">Anciano o siervo ministerial competente</span></div>
+          <p>Empieza con una canción. Incluye una o dos asignaciones para poner en práctica la Palabra de Dios. La parte sobre <b>necesidades de la congregación</b> siempre está a cargo de un anciano. En los análisis con el auditorio, el hermano puede formular preguntas además de las suministradas, con una introducción breve que deje tiempo para los puntos principales y la participación del público. Si hay entrevista, es preferible que el entrevistado hable desde la plataforma y no desde su asiento.</p>
+          <div class="enabled-block" data-asign="DISCURSO_VIDA_CRISTIANA">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver habilitados — discurso Vida cristiana <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+          <div class="enabled-block" data-asign="NECESIDADES_CONGREGACION">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver habilitados — necesidades de la congregación (solo ancianos) <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="doc-sec">
+        <div class="doc-num">§16</div>
+        <div class="doc-body">
+          <h3>Estudio bíblico de la congregación</h3>
+          <div class="meta-row"><span class="tag time">30 min</span><span class="tag who">Anciano competente (o siervo ministerial, si hay pocos ancianos)</span></div>
+          <p>El cuerpo de ancianos decide quiénes están capacitados para dirigirlo. Deben terminar a tiempo, destacar los textos bíblicos clave y ayudar a ver el valor práctico de la información. Si ya se analizó bien el contenido, no hace falta completar los 30 minutos. Cuando el presidente pida acortar el estudio, el conductor decide cómo hacerlo (por ejemplo, no leer algunos párrafos). Si es posible, cada semana se usan conductores y lectores diferentes.</p>
+          <div class="enabled-block" data-asign="ESTUDIO_BIBLICO">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver habilitados — conductor <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+          <div class="enabled-block" data-asign="LECTOR_ESTUDIO_BIBLICO">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver habilitados — lector <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- §17 Conclusión -->
+    <section class="doc-sec reveal" id="conclusion" style="margin-top:26px">
+      <div class="doc-num">§17</div>
+      <div class="doc-body">
+        <h3>Palabras de conclusión</h3>
+        <div class="meta-row"><span class="tag time">3 minutos</span><span class="tag who">Presidente de la reunión</span></div>
+        <p>El presidente repasa ideas útiles que se hayan analizado, si el tiempo lo permite invitando al auditorio a comentar. Despierta el interés por el programa de la semana siguiente y, si es posible, menciona los nombres de los estudiantes que participarán. Los anuncios y las cartas se leen aquí, salvo indicación contraria.</p>
+        <p>La información sobre asuntos cotidianos —horarios de predicación, turnos de limpieza— <b>no</b> se anuncia desde la plataforma: se coloca en el tablero de anuncios. Si falta tiempo para leer cartas o anuncios, el presidente pide a los encargados de «Nuestra vida cristiana» que acorten sus intervenciones. La reunión termina con canción y oración.</p>
+      </div>
+    </section>
+
+    <!-- §18 Ánimo y consejo -->
+    <section class="doc-sec reveal" id="animo">
+      <div class="doc-num">§18</div>
+      <div class="doc-body">
+        <h3>Palabras de ánimo y consejo</h3>
+        <p>Después de cada asignación de estudiante, el presidente tiene alrededor de un minuto para felicitar al estudiante y darle consejos tomados de la lección asignada. Al anunciar la asignación, no debe decir qué lección está practicando. Al terminar, y después de felicitarlo, puede mencionar la lección y explicar por qué lo hizo bien, o por qué debería darle más atención y cómo hacerlo, además de otros detalles útiles para el estudiante o el auditorio.</p>
+        <p>Otros consejos constructivos —basados en <em>Una obra de amor</em>, <em>Maestros</em> o el libro <em>Benefíciese</em>— pueden darse en privado después de la reunión o en otro momento, sobre la lección asignada o sobre alguna otra.</p>
+      </div>
+    </section>
+
+    <!-- §19 Tiempo -->
+    <section class="doc-sec reveal" id="tiempo">
+      <div class="doc-num">§19</div>
+      <div class="doc-body">
+        <h3>Tiempo</h3>
+        <p>Ninguna asignación debe pasarse de tiempo, incluidos los comentarios del presidente. Aunque la Guía de actividades indica un tiempo para cada asignación, si la información se trató adecuadamente no hace falta añadir más solo para rellenar. Si alguien se pasa de tiempo, el presidente o el consejero auxiliar deben aconsejarlo en privado.</p>
+        <div class="callout">Duración total de la reunión, con canciones y oraciones incluidas: <b>1 hora y 45 minutos.</b></div>
+      </div>
+    </section>
+
+    <!-- §20-22 Semanas especiales -->
+    <section class="reveal" id="semanas" style="margin-top:30px">
+      <p class="eyebrow">§20–22</p><h2 class="pagetitle">Semanas especiales</h2>
+      <p class="hint">Visita del superintendente de circuito, semana de asamblea y semana de la Conmemoración.</p>
       <div class="roles-grid">
         <div class="role">
-          <h3>Superintendente de la reunión Vida y Ministerio</h3>
+          <h3>§20 · Visita del superintendente de circuito</h3>
+          <p>Se sigue el programa de la Guía de actividades con algunas modificaciones: en vez del «Estudio bíblico de la congregación», el superintendente de circuito presenta un discurso de servicio de 30 minutos. Antes, el presidente repasa el programa, despierta interés por la semana siguiente, hace los anuncios, lee las cartas necesarias y presenta al superintendente. Después del discurso, el superintendente concluye con la canción que elija y puede invitar a un hermano a orar. No hay clases auxiliares en el idioma de la congregación; los grupos en otros idiomas pueden reunirse, pero escuchan el discurso de servicio junto con el resto.</p>
+        </div>
+        <div class="role">
+          <h3>§21 · Semana de asamblea</h3>
+          <p>No se celebran reuniones de congregación. Se recuerda a la congregación que la información de esa semana debe estudiarse individualmente o en familia.</p>
+        </div>
+        <div class="role">
+          <h3>§22 · Semana de la Conmemoración</h3>
+          <p>Cuando la Conmemoración se celebra entre semana, se cancela la reunión Vida y Ministerio.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- §23-26 Funciones -->
+    <section class="reveal" id="funciones" style="margin-top:30px">
+      <p class="eyebrow">§23–26</p><h2 class="pagetitle">Funciones y responsables</h2>
+      <p class="hint">Quién organiza, preside y aconseja en la reunión.</p>
+      <div class="roles-grid">
+        <div class="role">
+          <h3>§23 · Superintendente de la reunión Vida y Ministerio</h3>
           <p>Anciano seleccionado por el cuerpo de ancianos. Se asegura de que la reunión esté bien organizada y se sigan estas instrucciones; está en constante comunicación con el consejero auxiliar. En cuanto está disponible una nueva Guía de actividades, asigna todas las intervenciones de esos dos meses (de estudiante, las que no son de estudiante, y la presidencia), eligiendo entre los hermanos aprobados por el cuerpo de ancianos. Toma en cuenta la edad, la experiencia y la libertad de cada hermano para hablar del tema. Las asignaciones se entregan con al menos <b>tres semanas</b> de antelación, usando el formulario <b>S-89</b> para las de estudiante. También cuida que el programa completo se coloque en el tablero de anuncios. Solo los ancianos pueden asignar las partes que no son de estudiante.</p>
         </div>
         <div class="role">
-          <h3>Presidente de la reunión Vida y Ministerio</h3>
+          <h3>§24 · Presidente de la reunión Vida y Ministerio</h3>
           <p>Un anciano preside cada semana (o un siervo ministerial competente, si hay pocos ancianos). Prepara las palabras de introducción y conclusión, presenta todas las intervenciones, y hace comentarios de transición muy breves. El cuerpo de ancianos decide quiénes están capacitados; los seleccionados se turnan. Debe saber felicitar y, cuando haga falta, dar consejos prácticos con cariño, y es responsable de que la reunión termine a tiempo.</p>
+          <div class="enabled-block" data-asign="PRESIDENCIA">
+            <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados <span class="cnt"></span><span class="chev">▾</span></button>
+            <div class="enabled-list" hidden></div>
+          </div>
         </div>
         <div class="role">
-          <h3>Consejero auxiliar</h3>
+          <h3>§25 · Consejero auxiliar</h3>
           <p>Aconseja en privado, cuando es necesario, a los ancianos y siervos ministeriales que participan en la reunión, pronuncian discursos públicos, dirigen el Estudio de La Atalaya o el Estudio bíblico de la congregación, o son lectores.</p>
         </div>
         <div class="role">
-          <h3>Clases auxiliares</h3>
+          <h3>§26 · Clases auxiliares</h3>
           <p>Según la cantidad de estudiantes, pueden organizarse clases auxiliares, cada una con un consejero capacitado (preferiblemente anciano, o un siervo ministerial si es necesario). Los estudiantes van a las salas auxiliares después de «Busquemos perlas escondidas» y vuelven a la sala principal al terminar la última asignación de estudiante.</p>
         </div>
       </div>
-    </div>
-  </details>
+    </section>
 
-  <!-- Videos -->
-  <details class="sec-card reveal" id="videos">
-    <summary>
-      <span class="sec-badge">§27</span>
-      <div class="sec-head"><h2>Videos</h2><div class="sub">Disponibles en JW Library</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>Durante la reunión de entre semana se usan algunos videos, disponibles para diferentes dispositivos en la aplicación <b>JW Library®</b> (enlace abajo, en «Enlaces oficiales JW.ORG»).</p>
-    </div>
-  </details>
+    <!-- §27 Videos -->
+    <section class="doc-sec reveal" id="videos" style="margin-top:30px;border-top:1px solid var(--line);padding-top:16px">
+      <div class="doc-num">§27</div>
+      <div class="doc-body">
+        <h3>Videos</h3>
+        <p>Durante la reunión de entre semana se usan algunos videos, disponibles para diferentes dispositivos en la aplicación <b>JW Library®</b> (enlace abajo, en «Enlaces oficiales JW.ORG»).</p>
+      </div>
+    </section>
 
-  <!-- Sección de preguntas -->
-  <details class="sec-card reveal" id="oraciones">
-    <summary>
-      <span class="sec-badge">?</span>
-      <div class="sec-head"><h2>Sección de preguntas: las oraciones</h2><div class="sub">¿Quiénes pueden hacer las oraciones en las reuniones?</div></div>
-      <span class="chev">⌄</span>
-    </summary>
-    <div class="sec-body prose">
-      <p>Los ancianos deben ser juiciosos al determinar qué hermanos cumplen los requisitos para orar en las reuniones. Los hermanos bautizados que representen a la congregación deben ser ministros cristianos maduros, buenos ejemplos y respetados, cuyas oraciones reflejen una buena relación con Jehová.</p>
-      <p>No se debe conceder este privilegio a quienes tienen una conducta cuestionable o frívola, ni a quien tiende a mostrarse descontento o usa las oraciones públicas para airear diferencias personales. Aunque un adolescente esté bautizado, los ancianos deben determinar si tiene la talla espiritual necesaria.</p>
-      <p>De vez en cuando, si en una reunión para el ministerio del campo no hay ningún hermano cualificado, puede ser necesario que una hermana bautizada ore, con una cobertura adecuada en la cabeza. Si es probable que falte un hermano cualificado en ciertas reuniones de servicio, los ancianos pueden asignar la dirección del grupo a una hermana ejemplar.</p>
-      <p>Es costumbre que el presidente de la Reunión Pública haga la oración de apertura; en las demás reuniones, si hay varios hermanos cualificados, la oración de apertura o de conclusión puede asignarse a alguien distinto de quien abre o presenta la última parte. A quien se asigne una oración debe avisársele con antelación para que pueda prepararla. Las oraciones no tienen que ser largas: por lo general se entienden mejor si el hermano se pone en pie, habla con volumen suficiente y claridad.</p>
-    </div>
-  </details>
+    <!-- Sección de preguntas -->
+    <section class="reveal" id="oraciones" style="margin-top:30px">
+      <p class="eyebrow">Sección de preguntas · S-38-S</p><h2 class="pagetitle">¿Quiénes pueden hacer las oraciones en las reuniones?</h2>
+      <div style="margin-top:10px">
+        <p>Los ancianos deben ser juiciosos al determinar qué hermanos cumplen los requisitos para orar en las reuniones. Los hermanos bautizados que representen a la congregación deben ser ministros cristianos maduros, buenos ejemplos y respetados, cuyas oraciones reflejen una buena relación con Jehová.</p>
+        <p>No se debe conceder este privilegio a quienes tienen una conducta cuestionable o frívola, ni a quien tiende a mostrarse descontento o usa las oraciones públicas para airear diferencias personales. Aunque un adolescente esté bautizado, los ancianos deben determinar si tiene la talla espiritual necesaria.</p>
+        <p>De vez en cuando, si en una reunión para el ministerio del campo no hay ningún hermano cualificado, puede ser necesario que una hermana bautizada ore, con una cobertura adecuada en la cabeza. Si es probable que falte un hermano cualificado en ciertas reuniones de servicio, los ancianos pueden asignar la dirección del grupo a una hermana ejemplar.</p>
+        <p>Es costumbre que el presidente de la Reunión Pública haga la oración de apertura; en las demás reuniones, si hay varios hermanos cualificados, la oración de apertura o de conclusión puede asignarse a alguien distinto de quien abre o presenta la última parte. A quien se asigne una oración debe avisársele con antelación para que pueda prepararla. Las oraciones no tienen que ser largas: por lo general se entienden mejor si el hermano se pone en pie, habla con volumen suficiente y claridad.</p>
+        <div class="enabled-block" data-asign="ORACION" style="margin-top:12px">
+          <button class="enabled-toggle" type="button" aria-expanded="false">Ver quiénes están habilitados para orar <span class="cnt"></span><span class="chev">▾</span></button>
+          <div class="enabled-list" hidden></div>
+        </div>
+      </div>
+    </section>
 
-  <!-- Enlaces oficiales -->
-  <section class="card reveal" id="enlaces" aria-labelledby="h-enlaces">
-    <p class="eyebrow">Material oficial</p><h2 id="h-enlaces">Enlaces JW.ORG</h2>
-    <p class="hint">Para el texto completo del folleto y las publicaciones mencionadas arriba, consulta siempre las fuentes oficiales.</p>
-    <div class="linkgrid">
-      <a class="linkcard" href="https://www.jw.org/es/biblioteca/guia-actividades-reunion-testigos-jehova/" target="_blank" rel="noopener">
-        <span class="li-ic">📘</span>
-        <span><span class="li-name">Guía de actividades</span><span class="li-desc">El programa y la lectura semanal de la Biblia para la reunión Vida y Ministerio.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-      <a class="linkcard" href="https://www.jw.org/es/biblioteca/libros/" target="_blank" rel="noopener">
-        <span class="li-ic">📗</span>
-        <span><span class="li-name">Libros — incluye «Benefíciese»</span><span class="li-desc">Biblioteca de libros de jw.org, para consejos de enseñanza y otras referencias citadas.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-      <a class="linkcard" href="https://www.jw.org/es/biblioteca/folletos/" target="_blank" rel="noopener">
-        <span class="li-ic">📙</span>
-        <span><span class="li-name">Folletos — «Una obra de amor» y «Maestros»</span><span class="li-desc">Biblioteca de folletos de jw.org, base de las asignaciones de estudiante.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-      <a class="linkcard" href="https://www.jw.org/es/biblioteca/revistas/" target="_blank" rel="noopener">
-        <span class="li-ic">📰</span>
-        <span><span class="li-name">La Atalaya y revistas de estudio</span><span class="li-desc">Incluye los artículos citados, como w23.04 y ediciones de estudio.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-      <a class="linkcard" href="https://www.jw.org/es/ayuda-en-l%C3%ADnea/jw-library/" target="_blank" rel="noopener">
-        <span class="li-ic">📱</span>
-        <span><span class="li-name">JW Library</span><span class="li-desc">Cómo usar la app donde están disponibles los videos de la reunión.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-      <a class="linkcard" href="https://www.jw.org/es/testigos-de-jehova/reuniones/" target="_blank" rel="noopener">
-        <span class="li-ic">🏛️</span>
-        <span><span class="li-name">Nuestras reuniones</span><span class="li-desc">Información general de jw.org sobre las reuniones, útil para invitar a alguien.</span></span>
-        <span class="li-go">↗</span>
-      </a>
-    </div>
-    <div class="callout">Los formularios internos como el <b>S-38-S</b> (este documento), el <b>S-89</b> (asignación de estudiante) y otras guías para el cuerpo de ancianos se encuentran en las herramientas internas de la congregación, no en el sitio público jw.org.</div>
-  </section>
+    <!-- Enlaces oficiales -->
+    <section class="card reveal" id="enlaces" style="margin-top:30px" aria-labelledby="h-enlaces">
+      <p class="eyebrow">Material oficial</p><h2 class="pagetitle" id="h-enlaces">Enlaces JW.ORG</h2>
+      <p class="hint">Para el texto completo del folleto y las publicaciones mencionadas arriba, consulta siempre las fuentes oficiales.</p>
+      <div class="linkgrid">
+        <a class="linkcard" href="https://www.jw.org/es/biblioteca/guia-actividades-reunion-testigos-jehova/" target="_blank" rel="noopener">
+          <span class="li-ic">📘</span>
+          <span><span class="li-name">Guía de actividades</span><span class="li-desc">El programa y la lectura semanal de la Biblia para la reunión Vida y Ministerio.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+        <a class="linkcard" href="https://www.jw.org/es/biblioteca/libros/" target="_blank" rel="noopener">
+          <span class="li-ic">📗</span>
+          <span><span class="li-name">Libros — incluye «Benefíciese»</span><span class="li-desc">Biblioteca de libros de jw.org, para consejos de enseñanza y otras referencias citadas.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+        <a class="linkcard" href="https://www.jw.org/es/biblioteca/folletos/" target="_blank" rel="noopener">
+          <span class="li-ic">📙</span>
+          <span><span class="li-name">Folletos — «Una obra de amor» y «Maestros»</span><span class="li-desc">Biblioteca de folletos de jw.org, base de las asignaciones de estudiante.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+        <a class="linkcard" href="https://www.jw.org/es/biblioteca/revistas/" target="_blank" rel="noopener">
+          <span class="li-ic">📰</span>
+          <span><span class="li-name">La Atalaya y revistas de estudio</span><span class="li-desc">Incluye los artículos citados, como w23.04 y ediciones de estudio.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+        <a class="linkcard" href="https://www.jw.org/es/ayuda-en-l%C3%ADnea/jw-library/" target="_blank" rel="noopener">
+          <span class="li-ic">📱</span>
+          <span><span class="li-name">JW Library</span><span class="li-desc">Cómo usar la app donde están disponibles los videos de la reunión.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+        <a class="linkcard" href="https://www.jw.org/es/testigos-de-jehova/reuniones/" target="_blank" rel="noopener">
+          <span class="li-ic">🏛️</span>
+          <span><span class="li-name">Nuestras reuniones</span><span class="li-desc">Información general de jw.org sobre las reuniones, útil para invitar a alguien.</span></span>
+          <span class="li-go">↗</span>
+        </a>
+      </div>
+      <div class="callout">Los formularios internos como el <b>S-38-S</b> (este documento), el <b>S-89</b> (asignación de estudiante) y otras guías para el cuerpo de ancianos se encuentran en las herramientas internas de la congregación, no en el sitio público jw.org.</div>
+    </section>
 
-  <footer>
-    <span>© 2025 Watch Tower Bible and Tract Society of Pennsylvania — resumen de referencia S-38-S 9/25.</span>
-    <span style="margin-left:auto">Congregación Curauma</span>
-  </footer>
-</main>
+    <footer>
+      <span>© 2025 Watch Tower Bible and Tract Society of Pennsylvania — resumen de referencia S-38-S 9/25.</span>
+      <span style="margin-left:auto">Congregación Curauma</span>
+    </footer>
+  </main>
+</div>
 
 <script>
+'use strict';
+// ---------- Tema ----------
 document.getElementById('themeBtn').onclick = () => {
   const r = document.documentElement;
   const cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   r.dataset.theme = cur === 'dark' ? 'light' : 'dark';
   try { localStorage.setItem('hermanos.theme', r.dataset.theme); } catch {}
 };
+
+// ---------- Animaciones ----------
 const revealIO = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
 }), {threshold: 0.05});
 document.querySelectorAll('.reveal').forEach(el => revealIO.observe(el));
 
-// resalta el enlace de la sección visible en la barra rápida
-const qnLinks = [...document.querySelectorAll('#quicknavIn a')];
-const secs = qnLinks.map(a => document.querySelector(a.hash)).filter(Boolean);
+// ---------- Índice: resalta sección visible (escritorio + móvil) ----------
+const allNavLinks = [...document.querySelectorAll('#tocList a, #quicknavIn a')];
+const trackedIds = [...new Set(allNavLinks.map(a => a.hash))];
+const trackedSecs = trackedIds.map(h => document.querySelector(h)).filter(Boolean);
 const spyIO = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) {
-    qnLinks.forEach(a => a.classList.toggle('on', a.hash === '#' + e.target.id));
-    const a = document.querySelector('#quicknavIn a.on');
-    if (a) a.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
+    const hash = '#' + e.target.id;
+    allNavLinks.forEach(a => a.classList.toggle('on', a.hash === hash));
+    const qn = document.querySelector(`#quicknavIn a.on`);
+    if (qn) qn.scrollIntoView({block:'nearest', inline:'center', behavior:'smooth'});
   }
-}), {rootMargin: '-20% 0px -70% 0px'});
-secs.forEach(s => spyIO.observe(s));
+}), {rootMargin: '-15% 0px -70% 0px'});
+trackedSecs.forEach(s => spyIO.observe(s));
 
-// abrir el <details> destino al navegar por hash o por la barra rápida
-function openTarget(hash){
-  const el = document.querySelector(hash);
-  if (el && el.tagName === 'DETAILS') el.open = true;
+// ---------- Listas "habilitados" (desde el Registro de Hermanos) ----------
+const CFG_KEY = 'hermanos.cfg';
+function getCfg() {
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(CFG_KEY) || '{}'); } catch {}
+  const h = location.hostname;
+  const guess = h.endsWith('.github.io') ? {owner: h.split('.')[0], repo: location.pathname.split('/')[1] || h} : {};
+  return {branch: 'main', path: 'data.json', ...guess, ...saved};
 }
-qnLinks.forEach(a => a.addEventListener('click', () => openTarget(a.hash)));
-if (location.hash) openTarget(location.hash);
+const b64dec = s => new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g, '')), ch => ch.charCodeAt(0)));
+async function loadRoster() {
+  const c = getCfg();
+  if (c.token) {
+    try {
+      const url = `https://api.github.com/repos/${c.owner}/${c.repo}/contents/${c.path}?ref=${encodeURIComponent(c.branch)}`;
+      const res = await fetch(url, {headers: {Accept: 'application/vnd.github+json', Authorization: `Bearer ${c.token}`}});
+      if (res.ok) { const j = await res.json(); return JSON.parse(b64dec(j.content)); }
+    } catch (e) {}
+  }
+  const res = await fetch(`data.json?t=${Date.now()}`, {cache: 'no-store'});
+  if (!res.ok) throw new Error('No se pudo cargar el registro');
+  return res.json();
+}
+const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+let roster = null, rosterErr = null;
+(async () => {
+  try { roster = (await loadRoster()).rows || []; }
+  catch (e) { rosterErr = e; }
+})();
+
+function renderEnabledList(block) {
+  const ids = block.dataset.asign.split(',');
+  const list = block.querySelector('.enabled-list');
+  const cnt = block.querySelector('.cnt');
+  if (rosterErr) { list.innerHTML = '<span class="enabled-empty">No se pudo cargar el registro de hermanos.</span>'; return; }
+  if (!roster) { list.innerHTML = '<span class="enabled-loading">Cargando…</span>'; return; }
+  const ok = roster.filter(r => !r.inactivo && (r.asign || []).some(a => ids.includes(a)))
+    .sort((a, b) => a.nombre.localeCompare(b.nombre));
+  cnt.textContent = `(${ok.length})`;
+  list.innerHTML = ok.length
+    ? ok.map(r => `<span class="person-pill">${esc(r.nombre)}<span class="p-meta">· G${r.grupo || '—'}</span></span>`).join('')
+    : '<span class="enabled-empty">Nadie tiene esta asignación marcada todavía en el registro.</span>';
+}
+
+document.querySelectorAll('.enabled-toggle').forEach(btn => {
+  btn.addEventListener('click', async () => {
+    const block = btn.closest('.enabled-block');
+    const list = block.querySelector('.enabled-list');
+    const open = btn.getAttribute('aria-expanded') === 'true';
+    if (open) { btn.setAttribute('aria-expanded', 'false'); list.hidden = true; return; }
+    btn.setAttribute('aria-expanded', 'true'); list.hidden = false;
+    if (!list.dataset.loaded) {
+      if (!roster && !rosterErr) { await new Promise(r => { const iv = setInterval(() => { if (roster || rosterErr) { clearInterval(iv); r(); } }, 120); }); }
+      renderEnabledList(block);
+      list.dataset.loaded = '1';
+    }
+  });
+});
 </script>
 </body>
 </html>
