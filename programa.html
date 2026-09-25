@@ -9,9 +9,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--gold:#A9792A;--serif:'Fraunces',Georgia,serif;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320}}
-:root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--bad:#E3796D;--bad-bg:#3A2320}
+:root{--bg:#F3F4F1;--card:#fff;--ink:#17201C;--soft:#5B655F;--line:#E1E4DD;--fill:#EEF0EB;--brand:#1F6F5F;--brand-2:#175548;--brand-bg:#DCEEE8;--on-brand:#fff;--bad:#B3382C;--bad-bg:#F8E3DF;--gold:#A9792A;--gold-bg:#F3E6C9;--gold-ink:#6B4E14;--serif:'Fraunces',Georgia,serif;--shadow:0 1px 2px rgba(20,30,25,.05),0 8px 24px -12px rgba(20,30,25,.14);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320}}
+:root[data-theme="dark"]{--bg:#111512;--card:#1A1F1B;--ink:#ECEFEA;--soft:#A3ADA6;--line:#2C332E;--fill:#232A25;--brand:#4DB6A0;--brand-2:#68C7B3;--brand-bg:#1F332E;--on-brand:#0B1512;--gold:#D2A652;--gold-bg:#3A2E15;--gold-ink:#F0D9A6;--bad:#E3796D;--bad-bg:#3A2320}
 *{box-sizing:border-box}
 html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
 body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
@@ -62,20 +62,34 @@ textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-siz
  .sheet input,.sheet select{border:0;appearance:none;-webkit-appearance:none;padding:0}
 }
 body[data-tab="seg"] #progView{display:none}body:not([data-tab="seg"]) #seg{display:none}
-.tw{overflow:auto;border:1px solid var(--line);border-radius:10px;max-height:70vh}
-#segGrid{border-collapse:collapse;min-width:100%}#segGrid th,#segGrid td{border:1px solid var(--line);padding:6px 9px;font-size:12.5px;text-align:left;vertical-align:top}
-#segGrid thead th{position:sticky;top:0;background:var(--fill);z-index:2;min-width:140px}
-#segGrid .rl{position:sticky;left:0;background:var(--card);z-index:1;min-width:150px;font-weight:600;white-space:nowrap}
-#segGrid thead th:first-child{left:0;z-index:3}
-.sc{cursor:pointer}.sc:hover{outline:2px solid var(--brand);outline-offset:-2px}
-.sc.ok{background:#FFF36B;color:#111}.sc.no{color:var(--bad);font-weight:600}.sc small{display:block;font-weight:400;color:var(--soft)}.sc.ok small{color:#444}
-.chip.ok{background:#FFF36B;color:#111;border-color:#e3d63f}.chip.no{color:var(--bad);border-color:var(--bad)}
+.tw{overflow:auto;border:1px solid var(--line);border-radius:12px;max-height:70vh}
+#segGrid{border-collapse:separate;border-spacing:0;min-width:100%}
+#segGrid th,#segGrid td{border:1px solid var(--line);padding:8px 10px;font-size:12.5px;text-align:left;vertical-align:top}
+#segGrid thead th{position:sticky;top:0;background:var(--brand-bg);color:var(--brand-2);z-index:2;min-width:150px;font-weight:600;border-bottom:2px solid var(--brand)}
+#segGrid thead th:first-child{left:0;z-index:3;background:var(--brand-bg)}
+#segGrid .rl{position:sticky;left:0;background:var(--fill);z-index:1;min-width:160px;font-weight:600;white-space:nowrap;color:var(--ink)}
+.sc{cursor:pointer;border-radius:8px;transition:box-shadow .15s,background .15s}
+.sc:hover{box-shadow:inset 0 0 0 2px var(--brand)}
+.sc:empty{background:repeating-linear-gradient(135deg,var(--fill),var(--fill) 6px,transparent 6px,transparent 12px)}
+.sc.conf{background:var(--brand-bg);color:var(--brand-2);border-left:3px solid var(--brand)}
+.sc.ok{background:var(--gold-bg);color:var(--gold-ink);border-left:3px solid var(--gold)}
+.sc.no{background:var(--bad-bg);color:var(--bad);border-left:3px solid var(--bad);font-weight:600}
+.sc.conf::before{content:'● ';color:var(--brand);font-weight:400}
+.sc.ok::before{content:'✓ ';color:var(--gold-ink);font-weight:400}
+.sc.no::before{content:'✕ ';font-weight:700}
+.sc small{display:block;font-weight:400;color:inherit;opacity:.8;margin-top:2px}
+.chip{display:inline-flex;align-items:center;gap:5px;padding:3px 12px}
+.chip.conf{background:var(--brand-bg);color:var(--brand-2);border-color:var(--brand)}
+.chip.ok{background:var(--gold-bg);color:var(--gold-ink);border-color:var(--gold)}
+.chip.no{background:var(--bad-bg);color:var(--bad);border-color:var(--bad)}
 dialog{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:20px;width:min(420px,calc(100% - 32px))}
 dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-size:11px;font-weight:600;color:var(--soft);text-transform:uppercase;margin:10px 0 4px}dialog input{width:100%}
 .btn[aria-pressed="true"]{background:var(--brand-bg);border-color:var(--brand);color:var(--brand)}
 @page seg{size:A4 landscape;margin:8mm}
-.sc.conf{background:#D5E8D4;color:#111}.chip.conf{background:#D5E8D4;color:#111;border-color:#a9c9a6}
-.sh th{background:#d32f2f;color:#fff;text-align:left;text-transform:uppercase;font-size:11px;letter-spacing:.05em;position:sticky;left:0}
+.sh th{color:#fff;text-align:left;text-transform:uppercase;font-size:11px;letter-spacing:.06em;position:sticky;left:0;padding:6px 10px}
+.sh-t th{background:#2F6F73}
+.sh-m th{background:#A9792A}
+.sh-v th{background:#9C2B23}
 #segGrid thead small{font-weight:400;color:var(--soft);font-size:10.5px}
 /* Estadísticas de confiabilidad */
 .stat-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
@@ -178,26 +192,12 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
   </div>
   <div id="seg" class="no-print">
     <h1>Seguimiento <em>de asignaciones</em></h1>
-    <p class="hint">Toca un nombre para marcar si cumplió su parte. Verde = confirmado · amarillo = cumplió · rojo = no cumplió (con el hermano que lo reemplazó) · blanco = pendiente.</p>
+    <p class="hint">Toca un nombre para marcar si cumplió su parte. <span class="chip conf" style="padding:1px 8px">●</span> confirmado · <span class="chip ok" style="padding:1px 8px">✓</span> cumplió · <span class="chip no" style="padding:1px 8px">✕</span> no cumplió (con el hermano que lo reemplazó) · rayado = pendiente.</p>
     <section class="card">
       <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><button class="btn" id="segPrint" type="button">Imprimir / PDF</button><span id="segMsg" role="status"></span></div>
-      <div class="chips" style="margin-bottom:8px"><span class="chip conf">Confirmado</span><span class="chip ok">Cumplió</span><span class="chip no">No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
+      <div class="chips" style="margin-bottom:8px"><span class="chip conf">● Confirmado</span><span class="chip ok">✓ Cumplió</span><span class="chip no">✕ No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
       <p class="hint" id="segStats"></p>
       <div class="tw"><table id="segGrid"></table></div>
-    </section>
-
-    <section class="card">
-      <h2>Estadísticas de confiabilidad</h2>
-      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento. Los conteos de «activos» excluyen a los inactivos y a los marcados «en salud»: para ti, esos no son opción real.</p>
-      <div class="stat-cards" id="availCards"></div>
-      <div class="row2"><label class="chk"><input type="checkbox" id="statsHist"> Ver histórico completo (todos los meses guardados), no solo el mes elegido</label></div>
-      <div class="tw" style="margin-top:10px"><table id="relTable"></table></div>
-    </section>
-
-    <section class="card">
-      <h2>Ranking de fallas</h2>
-      <p class="hint">Los hermanos con más «no cumplió» en todo el historial guardado (no solo el mes elegido arriba). De mayor a menor.</p>
-      <div id="failRank"></div>
     </section>
 
     <section class="card">
@@ -211,6 +211,19 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
       <h2>Disponibles para reemplazo</h2>
       <p class="hint">Hermanos activos (sin contar inactivos ni marcados «en salud») que no tuvieron ninguna participación en todo el mes elegido arriba. Se ordenan por menos asignaciones en el alcance de arriba.</p>
       <div id="replLists"></div>
+    </section>
+
+    <section class="card">
+      <h2>Estadísticas de confiabilidad</h2>
+      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento.</p>
+      <div class="row2"><label class="chk"><input type="checkbox" id="statsHist"> Ver histórico completo (todos los meses guardados), no solo el mes elegido</label></div>
+      <div class="tw" style="margin-top:4px"><table id="relTable"></table></div>
+    </section>
+
+    <section class="card">
+      <h2>Ranking de fallas</h2>
+      <p class="hint">Los hermanos con más «no cumplió» en todo el historial guardado (no solo el mes elegido arriba). De mayor a menor.</p>
+      <div id="failRank"></div>
     </section>
   </div>
 </main>
@@ -434,7 +447,7 @@ function renderSeg(){
   $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
   $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
   const g=$('segGrid');
-  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderAvail();renderReliability();renderRepl();renderRanking();renderPerson();return}
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderReliability();renderRepl();renderRanking();renderPerson();return}
   const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
@@ -443,13 +456,14 @@ function renderSeg(){
       const [l,ord]=lab(s,c);(rows[l]??={ord,cells:{}}).cells[wi]=s;
     });
   });
-  let cs='';const body=Object.entries(rows).sort((a,b)=>a[1].ord-b[1].ord).map(([l,r])=>{const sec=secOf(r.ord),h=sec&&sec!==cs?`<tr class="sh"><th colspan="${cur.weeks.length+1}">${sec}</th></tr>`:'';cs=sec||cs;return h+`<tr><th class="rl">${esc(l)}</th>${cur.weeks.map((w,wi)=>{
+  const secCls=sec=>sec==='Tesoro de la Biblia'?'t':sec==='Seamos mejores maestros'?'m':sec==='Nuestra vida cristiana'?'v':'';
+  let cs='';const body=Object.entries(rows).sort((a,b)=>a[1].ord-b[1].ord).map(([l,r])=>{const sec=secOf(r.ord),h=sec&&sec!==cs?`<tr class="sh sh-${secCls(sec)}"><th colspan="${cur.weeks.length+1}">${sec}</th></tr>`:'';cs=sec||cs;return h+`<tr><th class="rl">${esc(l)}</th>${cur.weeks.map((w,wi)=>{
     const s=r.cells[wi];if(!s||!s.o[s.f])return'<td></td>';
     const st=w.seg[s.k]||{};if(st.e==='ok')ok++;else if(st.e==='no')no++;else if(st.e==='conf')cf++;else pe++;
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
   g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
-  renderAvail();renderReliability();renderRepl();renderRanking();renderPerson();
+  renderReliability();renderRepl();renderRanking();renderPerson();
 }
 
 /* ---------- Estadísticas de confiabilidad y disponibilidad ---------- */
@@ -484,19 +498,9 @@ function renderReliability(){
   const st=computeStats(weekScope());
   const rows=Object.entries(st).map(([n,r])=>{const tot=r.ok+r.no,rate=tot?Math.round(r.no/tot*100):0;return{n,...r,tot,rate}})
     .sort((a,b)=>b.rate-a.rate||b.tot-a.tot||a.n.localeCompare(b.n));
-  $('relTable').innerHTML=rows.length?`<thead><tr><th>Hermano</th><th>Resueltas</th><th>Cumplió</th><th>No cumplió</th><th>% Cumplimiento</th><th>% Falla</th><th>Reemplazó a otros</th><th>Confiabilidad</th></tr></thead><tbody>${
-    rows.map(r=>`<tr><td>${esc(r.n)}</td><td>${r.tot}</td><td>${r.ok}</td><td>${r.no}</td><td>${r.tot?(100-r.rate)+'%':'—'}</td><td>${r.tot?r.rate+'%':'—'}</td><td>${r.repl||0}</td><td>${relBadge(r.rate,r.tot)}</td></tr>`).join('')
+  $('relTable').innerHTML=rows.length?`<thead><tr><th>Hermano</th><th>Resueltas</th><th>% Cumplimiento</th><th>Confiabilidad</th></tr></thead><tbody>${
+    rows.map(r=>`<tr><td>${esc(r.n)}</td><td>${r.tot}</td><td>${r.tot?(100-r.rate)+'%':'—'}</td><td>${relBadge(r.rate,r.tot)}</td></tr>`).join('')
   }</tbody>`:'<tbody><tr><td class="empty">Aún no hay asignaciones marcadas como cumplidas o no cumplidas en este alcance. Marca semanas en la tabla de arriba para que aparezcan aquí.</td></tr></tbody>';
-}
-function renderAvail(){
-  const activeP=people.filter(p=>!p.inactivo&&!p.salud);
-  const avV=activeP.filter(p=>p.genero==='V').length,avM=activeP.filter(p=>p.genero==='M').length;
-  const used=new Set();(cur?cur.weeks:[]).forEach(w=>slots(w).forEach(s=>{if(s.o[s.f])used.add(s.o[s.f])}));
-  let uV=0,uM=0;used.forEach(n=>{const p=byName(n);if(p){if(p.genero==='V')uV++;else if(p.genero==='M')uM++}});
-  $('availCards').innerHTML=`<div class="stat-mini"><b>${avV}</b><span>Hermanos activos (V)</span></div>
-<div class="stat-mini"><b>${avM}</b><span>Hermanas activas (M)</span></div>
-<div class="stat-mini"><b>${uV}</b><span>Hermanos usados este mes</span></div>
-<div class="stat-mini"><b>${uM}</b><span>Hermanas usadas este mes</span></div>`;
 }
 function rankOf(p){
   const t=(p.tarea||'').toUpperCase();
