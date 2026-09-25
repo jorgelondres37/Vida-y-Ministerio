@@ -47,7 +47,7 @@
   {"num":45,"nombre":"Aguilera, Noemí de","tarea":"PR","grupo":"1","genero":"M","inactivo":false,"salud":true,"asign":["MM_1","MM_2","MM_3"]},
   {"num":46,"nombre":"Ortega, David","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":47,"nombre":"Aliaga, Mario","tarea":"AN","grupo":"2","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":48,"nombre":"Alvarado, Carlos","tarea":"PTJ","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","DISCURSO_TESORO_BIBLIA","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
+  {"num":48,"nombre":"Alvarado, Carlos","tarea":"PTJ","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":49,"nombre":"Cruz, David","tarea":"SM/PR","grupo":"2","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":50,"nombre":"Benavides, Nayade de","tarea":"PR. AUX","grupo":"3","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":51,"nombre":"Mesa, Elías","tarea":"PNB","grupo":"2","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM"]},
