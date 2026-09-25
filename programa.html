@@ -259,7 +259,7 @@ async function gh(path,method='GET',body){const c=cfg();const r=await fetch(`htt
 const dec=s=>new TextDecoder().decode(Uint8Array.from(atob(s.replace(/\s/g,'')),c=>c.charCodeAt(0)));
 const enc=s=>{const b=new TextEncoder().encode(s);let x='';for(let i=0;i<b.length;i+=32768)x+=String.fromCharCode(...b.subarray(i,i+32768));return btoa(x)};
 async function loadJson(path,fb){if(cfg().token){try{const r=await gh(path);shas[path]=r.sha;return JSON.parse(dec(r.content))}catch(e){if(e.status===404){shas[path]=null;return fb}}}try{const r=await fetch(path+'?t='+Date.now(),{cache:'no-store'});if(r.ok)return await r.json()}catch{}return fb}
-async function saveJson(path,obj,msg){if(!cfg().token)throw new Error('Falta el token: actívalo en el Registro → Conexión GitHub');if(!(path in shas)){try{shas[path]=(await gh(path)).sha}catch(e){if(e.status!==404)throw e;shas[path]=null}}const b={message:msg,content:enc(JSON.stringify(obj,null,1)),branch:cfg().branch};if(shas[path])b.sha=shas[path];shas[path]=(await gh(path,'PUT',b)).content.sha}
+async function saveJson(path,obj,msg){if(!cfg().token)throw new Error('Falta el token: actívalo en el Registro → Ajustes de guardado');if(!(path in shas)){try{shas[path]=(await gh(path)).sha}catch(e){if(e.status!==404)throw e;shas[path]=null}}const b={message:msg,content:enc(JSON.stringify(obj,null,1)),branch:cfg().branch};if(shas[path])b.sha=shas[path];shas[path]=(await gh(path,'PUT',b)).content.sha}
 
 /* ---------- Lectura del texto de la guía ---------- */
 function classify(sec,t,n){

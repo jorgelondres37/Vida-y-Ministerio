@@ -73,21 +73,56 @@
   .p-meta{color:var(--soft);font-size:11px;white-space:nowrap}
   .asign-empty{color:var(--soft);padding:8px 0}
 
-  .controls{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:12px}
+  .controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:8px}
   select,input[type=text],input[type=password]{font:inherit;font-size:13px;color:var(--ink);background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 12px;max-width:100%;transition:border-color .2s,box-shadow .2s}
   select:focus,input:focus{outline:none;border-color:var(--brand);box-shadow:0 0 0 3px var(--brand-bg)}
   .controls input[type=text]{flex:1 1 220px;min-width:160px}
   .count-note{color:var(--soft);font-size:12.5px;margin-bottom:10px}
+
+  /* ---- Más filtros (panel colapsable) ---- */
+  .more-toggle{position:relative}
+  .more-badge{display:inline-grid;place-items:center;min-width:16px;height:16px;padding:0 4px;margin-left:6px;border-radius:99px;background:var(--brand);color:var(--on-brand);font-size:10px;font-weight:700;line-height:1}
+  .more-panel{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;width:100%;max-height:0;opacity:0;overflow:hidden;transition:max-height .25s cubic-bezier(.2,.8,.2,1),opacity .2s,margin .25s}
+  .more-panel.open{max-height:200px;opacity:1;margin-bottom:2px}
+  .more-panel select{width:100%}
+
   .table-wrap{overflow:auto;max-height:560px;border:1px solid var(--line);border-radius:12px}
   table{border-collapse:collapse;width:100%;min-width:560px}
   th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);white-space:nowrap}
   th{position:sticky;top:0;z-index:1;background:var(--fill);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--soft);font-weight:600}
-  tbody tr{animation:fade .25s both;transition:background .15s}tbody tr:hover{background:var(--fill)}
+  tbody tr{animation:fade .2s both;transition:background .15s}tbody tr:hover{background:var(--fill)}
   tbody tr:last-child td{border-bottom:0}
   tr.inactive-row td{color:var(--bad)}
   td.empty{text-align:center;color:var(--soft);padding:32px}
   .tag{display:inline-block;font-size:11px;font-weight:600;padding:2px 9px;border-radius:99px}
   .tag.active{background:var(--brand-bg);color:var(--brand)}.tag.inactive{background:var(--bad-bg);color:var(--bad)}
+
+  /* ---- Skeleton de carga ---- */
+  .sk{background:linear-gradient(90deg,var(--fill) 25%,var(--line) 37%,var(--fill) 63%);background-size:400% 100%;animation:sk 1.4s ease infinite;border-radius:8px}
+  @keyframes sk{0%{background-position:100% 0}100%{background-position:0 0}}
+  .sk-stat{height:132px;border-radius:var(--r)}
+  .loading-row td{padding:26px;text-align:center;color:var(--soft)}
+  .spinner{display:inline-block;width:14px;height:14px;border:2px solid var(--line);border-top-color:var(--brand);border-radius:50%;animation:spin .7s linear infinite;vertical-align:-2px;margin-right:8px}
+  @keyframes spin{to{transform:rotate(360deg)}}
+
+  /* ---- Paginación ---- */
+  .pagination{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+  .pagination .pg-info{color:var(--soft);font-size:12.5px}
+  .pagination .pg-btns{display:flex;align-items:center;gap:6px}
+  .pagination .pg-btns span{font-size:12.5px;color:var(--soft);padding:0 4px}
+
+  /* ---- Tabla → tarjetas en móvil ---- */
+  @media(max-width:680px){
+    .table-wrap{max-height:none;border:0;overflow:visible}
+    table{min-width:0;display:block}
+    thead{display:none}
+    tbody{display:flex;flex-direction:column;gap:10px}
+    tbody tr{display:block;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:4px 14px;box-shadow:var(--shadow)}
+    tbody tr td{display:flex;justify-content:space-between;align-items:center;gap:10px;white-space:normal;border-bottom:1px dashed var(--line);padding:9px 0}
+    tbody tr td:last-child{border-bottom:0}
+    tbody tr td::before{content:attr(data-label);font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--soft);flex:none}
+    tbody tr td[data-label="#"]{display:none}
+  }
 
   .btn{font:inherit;font-size:13px;font-weight:600;padding:9px 14px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;transition:transform .15s,background .2s,border-color .2s}
   .btn:hover{border-color:var(--ink)}.btn:active{transform:scale(.97)}
@@ -144,6 +179,27 @@
   .js .reveal{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
   .js .reveal.in{opacity:1;transform:none}
   @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0s!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+  /* ---- Toasts ---- */
+  .toast-wrap{position:fixed;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:80;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none}
+  .toast{pointer-events:auto;display:flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:500;padding:10px 16px;border-radius:99px;box-shadow:0 14px 40px -8px rgba(0,0,0,.35);animation:toastin .25s cubic-bezier(.2,.9,.3,1.2)}
+  .toast.err{background:var(--bad)}.toast.ok{background:var(--brand)}
+  .toast.out{animation:toastout .2s ease forwards}
+  @keyframes toastin{from{opacity:0;transform:translateY(12px) scale(.95)}}
+  @keyframes toastout{to{opacity:0;transform:translateY(8px) scale(.95)}}
+
+  @media print{
+    .top,.edit-bar,.hero,#resumen,#distribucion,#disponibilidad,footer,.controls,.count-note,.pagination,.toast-wrap{display:none!important}
+    body,.wrap{background:#fff!important;padding:0!important;margin:0!important}
+    #listado{border:0!important;box-shadow:none!important;padding:0!important}
+    .table-wrap{max-height:none!important;overflow:visible!important;border:0!important}
+    table{min-width:0!important}
+    thead{display:table-header-group!important}
+    tbody{display:table-row-group!important}
+    tbody tr{display:table-row!important;background:#fff!important;border:0!important;box-shadow:none!important}
+    tbody tr td{display:table-cell!important;border-bottom:1px solid #ccc!important}
+    tbody tr td::before{content:none!important}
+  }
 </style>
 </head>
 <body>
@@ -169,7 +225,7 @@
 
   <section id="resumen" class="reveal" aria-labelledby="h-res">
     <p class="eyebrow">Panorama general</p><h2 id="h-res">Estadísticas</h2><p class="hint">Cifras clave del registro y su proporción sobre el total.</p>
-    <div class="stats" id="statsRow"></div>
+    <div class="stats" id="statsRow"><div class="stat sk sk-stat"></div><div class="stat sk sk-stat"></div><div class="stat sk sk-stat"></div><div class="stat sk sk-stat"></div></div>
   </section>
 
   <div class="cols" id="distribucion">
@@ -201,22 +257,42 @@
     <div class="controls">
       <input type="text" id="searchBox" placeholder="Buscar por nombre…" aria-label="Buscar por nombre">
       <select id="filterGrupo" aria-label="Grupo"><option value="">Todos los grupos</option></select>
+      <button class="btn ghost more-toggle" id="moreToggle" type="button" aria-expanded="false" aria-controls="morePanel">Más filtros <span class="more-badge" id="moreBadge" hidden>0</span></button>
+      <button class="btn ghost" id="clearFilters" type="button">Limpiar filtros</button>
+      <span style="flex:1"></span>
+      <button class="btn ghost small" id="exportBtn" type="button" title="Descarga el listado filtrado como CSV (se abre en Excel)">⬇️ Exportar CSV</button>
+      <button class="btn ghost small" id="printBtn" type="button" title="Imprimir o guardar como PDF el listado filtrado">🖨️ Imprimir</button>
+    </div>
+    <div class="more-panel" id="morePanel">
       <select id="filterTarea" aria-label="Tarea"><option value="">Todas las tareas</option></select>
       <select id="filterGenero" aria-label="Género"><option value="">M y V</option><option value="M">M</option><option value="V">V</option></select>
       <select id="filterEstado" aria-label="Estado"><option value="">Activos e inactivos</option><option value="activo">Solo activos</option><option value="inactivo">Solo inactivos</option></select>
       <select id="filterAsign" aria-label="Asignación"><option value="">Cualquier asignación</option></select>
-      <button class="btn ghost" id="clearFilters" type="button">Limpiar filtros</button>
     </div>
     <div class="count-note" id="countNote" role="status" aria-live="polite"></div>
     <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de hermanos">
       <table>
         <thead><tr><th>#</th><th>Nombre</th><th>Tarea</th><th>Grupo</th><th>Género</th><th>Estado</th><th class="edit-col" id="actionsHead" hidden>Acciones</th></tr></thead>
-        <tbody id="tableBody"></tbody>
+        <tbody id="tableBody"><tr class="loading-row"><td colspan="7"><span class="spinner" aria-hidden="true"></span>Cargando hermanos…</td></tr></tbody>
       </table>
+    </div>
+    <div class="pagination" id="pagination" hidden>
+      <div class="pg-info" id="pgInfo"></div>
+      <div class="pg-btns">
+        <select id="pageSize" aria-label="Registros por página">
+          <option value="10">10 por página</option>
+          <option value="15" selected>15 por página</option>
+          <option value="25">25 por página</option>
+          <option value="9999">Ver todos</option>
+        </select>
+        <button class="btn ghost small" id="pgPrev" type="button" aria-label="Página anterior">‹</button>
+        <span id="pgLabel"></span>
+        <button class="btn ghost small" id="pgNext" type="button" aria-label="Página siguiente">›</button>
+      </div>
     </div>
   </section>
 
-  <footer><span id="footNote"></span> · <button class="btn ghost small" id="cfgBtn" type="button">Conexión GitHub</button></footer>
+  <footer><span id="footNote"></span> · <button class="btn ghost small" id="cfgBtn" type="button" title="Introduce tu clave de acceso para guardar los cambios de forma permanente">⚙️ Ajustes de guardado</button></footer>
 </main>
 
 <div class="edit-bar" id="editBar" hidden role="toolbar" aria-label="Edición">
@@ -273,9 +349,9 @@
 
 
 <dialog id="cfgDialog" aria-labelledby="cfgTitle">
-  <h3 id="cfgTitle">Conexión con GitHub</h3>
-  <p class="hint">El token se guarda solo en este dispositivo. Permite editar y guardar en el repositorio.</p>
-  <div class="field"><label for="c_token">Token (fine-grained, Contents: Read and write)</label><input type="password" id="c_token" autocomplete="off"></div>
+  <h3 id="cfgTitle">Ajustes de guardado</h3>
+  <p class="hint">Introduce tu clave de acceso para guardar las modificaciones permanentemente. Se guarda solo en este dispositivo y permite editar y guardar en el repositorio (técnicamente, es un token de GitHub).</p>
+  <div class="field"><label for="c_token">Clave de acceso (token de GitHub)</label><input type="password" id="c_token" autocomplete="off" placeholder="Token fine-grained · permiso Contents: Read and write"></div>
   <div class="field-row">
     <div class="field"><label for="c_owner">Usuario</label><input type="text" id="c_owner"></div>
     <div class="field"><label for="c_repo">Repositorio</label><input type="text" id="c_repo"></div>
@@ -288,6 +364,8 @@
     <button class="btn primary" id="cfgSave" type="button">Guardar</button>
   </div>
 </dialog>
+
+<div class="toast-wrap" id="toastWrap" aria-live="polite" aria-atomic="true"></div>
 
 <script>
 'use strict';
@@ -375,6 +453,19 @@ async function load() {
 function setStatus(msg, cls = '') { const s = $('saveStatus'); s.textContent = msg; s.className = 'save-status ' + cls; }
 function markDirty() { dirty = true; $('saveBtn').disabled = false; setStatus('Cambios sin guardar'); renderAll(); }
 
+// ---------- Toasts ----------
+function toast(msg, type = '') {
+  const wrap = $('toastWrap');
+  const el = document.createElement('div');
+  el.className = 'toast' + (type ? ' ' + type : '');
+  el.textContent = msg;
+  wrap.appendChild(el);
+  setTimeout(() => { el.classList.add('out'); setTimeout(() => el.remove(), 220); }, 3200);
+}
+
+// ---------- Paginación ----------
+let page = 1, pageSize = 15, printMode = false;
+
 // ---------- Render ----------
 const fmt = n => n.toLocaleString('es-CL', {maximumFractionDigits: 1});
 const stat = (cls, icon, n, label, sub) => {
@@ -438,19 +529,49 @@ function fillTareaFilter() {
   $('tareaList').innerHTML = tareas().map(t => `<option value="${esc(t)}">`).join('');
 }
 
-function renderTable() {
-  const q = $('searchBox').value.trim().toLowerCase(), g = $('filterGrupo').value, t = $('filterTarea').value,
-        gen = $('filterGenero').value, est = $('filterEstado').value, asg = $('filterAsign').value;
-  const list = rows.filter(r =>
+function currentFilters() {
+  return {
+    q: $('searchBox').value.trim().toLowerCase(), g: $('filterGrupo').value, t: $('filterTarea').value,
+    gen: $('filterGenero').value, est: $('filterEstado').value, asg: $('filterAsign').value
+  };
+}
+function filteredRows() {
+  const { q, g, t, gen, est, asg } = currentFilters();
+  return rows.filter(r =>
     (!q || r.nombre.toLowerCase().includes(q)) && (!g || r.grupo === g) && (!t || r.tarea === t) && (!gen || r.genero === gen) &&
     (est !== 'activo' || !r.inactivo) && (est !== 'inactivo' || r.inactivo) && (!asg || r.asign[asg]));
-  $('countNote').textContent = `${list.length} de ${rows.length} hermanos`;
-  $('actionsHead').hidden = !editMode;
-  $('tableBody').innerHTML = list.map(r => `<tr class="${r.inactivo ? 'inactive-row' : ''}">
-    <td>${r.num}</td><td>${esc(r.nombre)}</td><td>${esc(r.tarea)}${r.salud ? ' (salud)' : ''}</td><td>${r.grupo || '—'}</td><td>${r.genero}</td>
-    <td><span class="tag ${r.inactivo ? 'inactive' : 'active'}">${r.inactivo ? 'Inactivo' : 'Activo'}</span></td>
-    ${editMode ? `<td class="edit-col"><button class="btn small" type="button" data-edit="${r.num}" aria-label="Editar ${esc(r.nombre)}">Editar</button></td>` : ''}</tr>`).join('') || '<tr><td class="empty" colspan="7">Sin resultados con estos filtros.</td></tr>';
 }
+function rowHtml(r) {
+  return `<tr class="${r.inactivo ? 'inactive-row' : ''}">
+    <td data-label="#">${r.num}</td><td data-label="Nombre">${esc(r.nombre)}</td><td data-label="Tarea">${esc(r.tarea)}${r.salud ? ' (salud)' : ''}</td>
+    <td data-label="Grupo">${r.grupo || '—'}</td><td data-label="Género">${r.genero}</td>
+    <td data-label="Estado"><span class="tag ${r.inactivo ? 'inactive' : 'active'}">${r.inactivo ? 'Inactivo' : 'Activo'}</span></td>
+    ${editMode ? `<td class="edit-col" data-label="Acciones"><button class="btn small" type="button" data-edit="${r.num}" aria-label="Editar ${esc(r.nombre)}">Editar</button></td>` : ''}</tr>`;
+}
+function renderTable() {
+  const list = filteredRows();
+  $('actionsHead').hidden = !editMode;
+
+  const size = printMode ? Math.max(1, list.length) : pageSize;
+  const totalPages = Math.max(1, Math.ceil(list.length / size));
+  if (page > totalPages) page = totalPages;
+  if (page < 1) page = 1;
+  const start = (page - 1) * size, pageRows = list.slice(start, start + size);
+
+  $('countNote').innerHTML = list.length
+    ? `Mostrando <b>${start + 1}–${start + pageRows.length}</b> de <b>${list.length}</b> hermanos filtrados (${rows.length} en total)`
+    : `0 de ${rows.length} hermanos`;
+  $('tableBody').innerHTML = pageRows.map(rowHtml).join('') || '<tr><td class="empty" colspan="7">Sin resultados con estos filtros.</td></tr>';
+
+  $('pagination').hidden = printMode || list.length === 0;
+  if (!printMode) {
+    $('pgInfo').textContent = `Página ${page} de ${totalPages}`;
+    $('pgLabel').textContent = `${page} / ${totalPages}`;
+    $('pgPrev').disabled = page <= 1;
+    $('pgNext').disabled = page >= totalPages;
+  }
+}
+function resetPage() { page = 1; renderTable(); }
 
 function renderAll() { renderStats(); renderCharts(); fillTareaFilter(); renderAsignPeople(); renderTable(); decorate(); }
 
@@ -480,12 +601,18 @@ $('saveModalBtn').onclick = () => {
     inactivo: $('f_estado').value === 'inactivo', salud: $('f_salud').checked,
     asign: Object.fromEntries([...$('f_asign').querySelectorAll('input')].map(i => [i.value, i.checked]))
   };
+  const wasEditing = !!editing;
   if (editing) Object.assign(editing, vals);
   else rows.push({num: Math.max(0, ...rows.map(r => r.num)) + 1, ...vals});
   closeModal(); markDirty();
+  toast(wasEditing ? `Cambios guardados para ${vals.nombre} ✓` : `${vals.nombre} agregado con éxito ✓`, 'ok');
 };
 $('deleteBtn').onclick = () => {
-  if (editing && confirm(`¿Eliminar a ${editing.nombre}?`)) { rows = rows.filter(r => r !== editing); closeModal(); markDirty(); }
+  if (editing && confirm(`¿Eliminar a ${editing.nombre}?`)) {
+    const nombre = editing.nombre;
+    rows = rows.filter(r => r !== editing); closeModal(); markDirty();
+    toast(`${nombre} eliminado de la lista`);
+  }
 };
 $('cancelBtn').onclick = closeModal;
 $('modalOverlay').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
@@ -510,7 +637,8 @@ $('saveBtn').onclick = async () => {
     const r = await gh('PUT', {message: `Actualiza registro (${new Date().toISOString().slice(0, 16)})`, content: b64enc(serialize()), sha, branch: getCfg().branch});
     sha = r.content.sha; dirty = false;
     setStatus('Guardado ✓ (el sitio público se actualiza en ~1 min)', 'ok');
-  } catch (e) { setStatus(e.message, 'err'); $('saveBtn').disabled = false; }
+    toast('Cambios guardados en GitHub ✓', 'ok');
+  } catch (e) { setStatus(e.message, 'err'); $('saveBtn').disabled = false; toast('No se pudo guardar: ' + e.message, 'err'); }
 };
 window.addEventListener('beforeunload', e => { if (dirty) { e.preventDefault(); e.returnValue = ''; } });
 
@@ -532,9 +660,37 @@ $('asignSelect').innerHTML = ASIGN_COLS.map(c => `<option value="${c.id}">${c.la
 $('filterAsign').innerHTML = '<option value="">Cualquier asignación</option>' + $('asignSelect').innerHTML;
 $('filterGrupo').innerHTML += GRUPOS.map(g => `<option value="${g}">Grupo ${g}</option>`).join('');
 $('asignSelect').addEventListener('change', renderAsignPeople);
+function updateMoreBadge() {
+  const n = ['filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].filter(id => $(id).value).length;
+  $('moreBadge').hidden = !n; $('moreBadge').textContent = n;
+}
 ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => {
-  $(id).addEventListener('input', renderTable); $(id).addEventListener('change', renderTable);
+  $(id).addEventListener('input', () => { updateMoreBadge(); resetPage(); });
+  $(id).addEventListener('change', () => { updateMoreBadge(); resetPage(); });
 });
+$('moreToggle').onclick = () => {
+  const open = $('morePanel').classList.toggle('open');
+  $('moreToggle').setAttribute('aria-expanded', open);
+};
+$('pageSize').onchange = () => { pageSize = +$('pageSize').value; resetPage(); };
+$('pgPrev').onclick = () => { page--; renderTable(); };
+$('pgNext').onclick = () => { page++; renderTable(); };
+
+// ---------- Exportar / imprimir ----------
+function csvCell(v) { const s = String(v ?? ''); return /[",\n;]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; }
+$('exportBtn').onclick = () => {
+  const list = filteredRows();
+  const head = ['#', 'Nombre', 'Tarea', 'Grupo', 'Género', 'Estado', 'En salud'];
+  const body = list.map(r => [r.num, r.nombre, r.tarea, r.grupo || '', r.genero, r.inactivo ? 'Inactivo' : 'Activo', r.salud ? 'Sí' : 'No']);
+  const csv = '\uFEFF' + [head, ...body].map(row => row.map(csvCell).join(';')).join('\n');
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = `hermanos_${new Date().toISOString().slice(0, 10)}.csv`;
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(a.href);
+  toast(`Exportados ${list.length} hermanos a CSV ✓`, 'ok');
+};
+$('printBtn').onclick = () => { printMode = true; renderTable(); requestAnimationFrame(() => window.print()); };
+window.addEventListener('afterprint', () => { printMode = false; renderTable(); });
 
 
 // ---------- Interfaz: animaciones y navegación ----------
@@ -558,8 +714,11 @@ function decorate() {
 }
 function goFilter(b) {
   if (b.dataset.grupo) $('filterGrupo').value = b.dataset.grupo;
-  if (b.dataset.tarea) $('filterTarea').value = b.dataset.tarea;
-  renderTable();
+  if (b.dataset.tarea) {
+    $('filterTarea').value = b.dataset.tarea;
+    $('morePanel').classList.add('open'); $('moreToggle').setAttribute('aria-expanded', 'true');
+  }
+  updateMoreBadge(); resetPage();
   $('listado').scrollIntoView({behavior: 'smooth'});
 }
 document.addEventListener('click', e => { const b = e.target.closest('.clickable'); if (b) goFilter(b); });
@@ -568,7 +727,7 @@ document.addEventListener('keydown', e => {
 });
 $('clearFilters').onclick = () => {
   ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => $(id).value = '');
-  renderTable();
+  updateMoreBadge(); resetPage();
 };
 $('themeBtn').onclick = () => {
   const r = document.documentElement;
@@ -591,8 +750,11 @@ navLinks.forEach(a => { const s = document.querySelector(a.hash); if (s) spyIO.o
   try {
     rows = toRows((await load()).rows);
     $('editBar').hidden = !getCfg().token;
+    updateMoreBadge();
     renderAll();
   } catch (e) {
+    $('statsRow').innerHTML = '';
+    $('tableBody').innerHTML = `<tr><td class="empty" colspan="7">${esc(e.message)}</td></tr>`;
     $('countNote').textContent = e.message;
   }
 })();
