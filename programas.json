@@ -2309,6 +2309,887 @@
      }
     }
    ]
+  },
+  {
+   "id": "2026-07",
+   "weeks": [
+    {
+     "range": "29 DE JUNIO A 5 DE JULIO",
+     "bible": "JEREMÍAS 11, 12",
+     "sOpen": "106",
+     "sClose": "69",
+     "sMid": "109",
+     "presi": "Hernán Coronado",
+     "oraA": "Guillermo Colina",
+     "oraB": "Jimmy Silva",
+     "aseo": "1",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Cómo \"competir en una carrera contra caballos\"",
+       "min": 10,
+       "detail": "",
+       "p": "Luis López",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Ismael Orellana",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 12:1-11 (th lección 2).",
+       "p": "Tomás Colina",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 12:1-11 (th lección 2)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 3,
+       "detail": "PREDICACIÓN INFORMAL. Empiece una conversación después de que alguien haga o diga algo amable (lmd lección 1 punto 4).",
+       "p": "Ximena de Correa",
+       "h": "Carla Alvarado",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 1 punto 4)",
+       "desc": "PREDICACIÓN INFORMAL. Empiece una conversación después de que alguien haga o diga algo amable."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. La persona tiene hijos (lmd lección 3 punto 3).",
+       "p": "Marcela de Valenzuela",
+       "h": "Patricia de Pizarro",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 3 punto 3)",
+       "desc": "DE CASA EN CASA. La persona tiene hijos."
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 5,
+       "detail": "lmd apéndice A punto 17. Título: Jesús fue un gran maestro y sus consejos siempre funcionan (th lección 14).",
+       "p": "Ricardo Ugalde",
+       "h": "",
+       "l": "",
+       "t": "20:10",
+       "ref": "(th lección 14)",
+       "desc": "lmd apéndice A punto 17. Título: Jesús fue un gran maestro y sus consejos siempre funcionan."
+      },
+      {
+       "sec": "V",
+       "kind": "NEC",
+       "title": "Necesidades de la congregación",
+       "min": 15,
+       "detail": "",
+       "p": "Luis Escandell",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 98, 99.",
+       "p": "Mario Aliaga",
+       "h": "",
+       "l": "David Cruz",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb lecciones 98, 99."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Rocío Valenzuela",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "no",
+       "r": "Cecilia de Silva",
+       "n": ""
+      },
+      "p4.h": {
+       "e": "no",
+       "r": "Verónica de Alvarado",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "6-12 DE JULIO",
+     "bible": "JEREMÍAS 13-15",
+     "sOpen": "123",
+     "sClose": "61",
+     "sMid": "49",
+     "presi": "Jorge Benavides",
+     "oraA": "Andrés Valenzuela",
+     "oraB": "Ismael Orellana",
+     "aseo": "2",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Jehová merece que le obedezcamos",
+       "min": 10,
+       "detail": "",
+       "p": "Manuel Hernández",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Mauricio Valenzuela",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 13:1-14 (th lección 2).",
+       "p": "Luis Cabezas",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 13:1-14 (th lección 2)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Use un tratado para empezar una conversación (lmd lección 1 punto 5).",
+       "p": "Alicia Rodríguez",
+       "h": "Andrea de Ramirez",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 1 punto 5)",
+       "desc": "DE CASA EN CASA. Use un tratado para empezar una conversación."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. Muéstrele a la persona un artículo de jw.org relacionado con el tema del que hablaron en la conversación anterior (lmd lección 9 punto 4).",
+       "p": "Gisele de Pérez",
+       "h": "Andrea de Núñez",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 9 punto 4)",
+       "desc": "PREDICACIÓN INFORMAL. Muéstrele a la persona un artículo de jw.org relacionado con el tema del que hablaron en la conversación anterior."
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 5,
+       "detail": "lmd apéndice A punto 18. Título: Jesús predijo los acontecimientos que vemos hoy (th lección 7).",
+       "p": "David Ortega",
+       "h": "",
+       "l": "",
+       "t": "20:10",
+       "ref": "(th lección 7)",
+       "desc": "lmd apéndice A punto 18. Título: Jesús predijo los acontecimientos que vemos hoy."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "\"Obedecer es mejor que ofrecer un sacrificio\"",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Cristian Da Silva",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 100, 101.",
+       "p": "Ronny Pérez",
+       "h": "",
+       "l": "Jimmy Silva",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb lecciones 100, 101."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "13-19 DE JULIO",
+     "bible": "JEREMÍAS 16, 17",
+     "sOpen": "34",
+     "sClose": "22",
+     "sMid": "54",
+     "presi": "Mario Aliaga",
+     "oraA": "Carlos Yáñez",
+     "oraB": "Felipe Escandell",
+     "aseo": "3",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "¿Estamos confiando en la persona correcta?",
+       "min": 10,
+       "detail": "",
+       "p": "Cristian Da Silva",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Miguel Meneses",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 17:5-18 (th lección 5).",
+       "p": "Elías Mesa",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 17:5-18 (th lección 5)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Presente y analice un video del kit de enseñanza, pero no lo ponga (lmd lección 5 punto 5).",
+       "p": "Leonor Alvarado",
+       "h": "Angélica de López",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 5 punto 5)",
+       "desc": "DE CASA EN CASA. Presente y analice un video del kit de enseñanza, pero no lo ponga."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Ofrezca un curso de la Biblia (lmd lección 7 punto 4).",
+       "p": "Janis Hernández",
+       "h": "Rita Panes",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 7 punto 4)",
+       "desc": "DE CASA EN CASA. Ofrezca un curso de la Biblia."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga discípulos",
+       "min": 5,
+       "detail": "lff lección 19 resumen, repaso y \"Propóngase esto\" (lmd lección 11 punto 3).",
+       "p": "Bárbara López",
+       "h": "Erika de Escandell",
+       "l": "",
+       "t": "20:10",
+       "ref": "(lmd lección 11 punto 3)",
+       "desc": "lff lección 19 resumen, repaso y \"Propóngase esto\"."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Joven, confía en los consejos de la Biblia",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Carlos Alvarado",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 102, 103.",
+       "p": "Jorge Benavides",
+       "h": "",
+       "l": "Mauricio Valenzuela",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb lecciones 102, 103."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "no",
+       "r": "Cristian Da Silva",
+       "n": ""
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Jimmy Silva",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "no",
+       "r": "Claudio Correa",
+       "n": ""
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "no",
+       "r": "Cristhel de Hernández",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "no",
+       "r": "Hernán Coronado",
+       "n": ""
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "no",
+       "r": "Eduardo Benavides",
+       "n": ""
+      }
+     }
+    },
+    {
+     "range": "20-26 DE JULIO",
+     "bible": "JEREMÍAS 18, 19",
+     "sOpen": "44",
+     "sClose": "153",
+     "sMid": "38",
+     "presi": "Luis López",
+     "oraA": "Enrique Núñez",
+     "oraB": "David Ortega",
+     "aseo": "4",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Recuperarnos en sentido espiritual es posible",
+       "min": 10,
+       "detail": "",
+       "p": "Ronny Pérez",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "David Cruz",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 19:1-11 (th lección 5).",
+       "p": "Agustín Pizarro",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 19:1-11 (th lección 5)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Ofrézcale a la persona un curso de la Biblia y muéstrele cómo son nuestras clases (lmd lección 4 punto 3).",
+       "p": "Fabiola de Da Silva",
+       "h": "Roxana de Ruiz",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 4 punto 3)",
+       "desc": "DE CASA EN CASA. Ofrézcale a la persona un curso de la Biblia y muéstrele cómo son nuestras clases."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Siga analizando con la persona el tratado que le dejó en la visita anterior (lmd lección 9 punto 3).",
+       "p": "Lidiana de Arias",
+       "h": "Lisette de Molina",
+       "l": "",
+       "t": "20:05",
+       "ref": "(lmd lección 9 punto 3)",
+       "desc": "DE CASA EN CASA. Siga analizando con la persona el tratado que le dejó en la visita anterior."
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Explique sus creencias",
+       "min": 4,
+       "detail": "Discurso. ijwbq artículo 44. Título: ¿Qué dice la Biblia sobre el libre albedrío? (th lección 20).",
+       "p": "Eduardo Benavides",
+       "h": "",
+       "l": "",
+       "t": "20:11",
+       "ref": "(th lección 20)",
+       "desc": "Discurso. ijwbq artículo 44. Título: ¿Qué dice la Biblia sobre el libre albedrío?"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Pasos para recuperarnos en sentido espiritual",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg \"Carta del Cuerpo Gobernante\" e introducción.",
+       "p": "Claudio Correa",
+       "h": "",
+       "l": "Rodrigo Molina",
+       "t": "20:35",
+       "ref": "",
+       "desc": "wcg \"Carta del Cuerpo Gobernante\" e introducción."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Jorge Benavides",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Leticia de Ugalde",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "27 DE JULIO A 2 DE AGOSTO",
+     "bible": "JEREMÍAS 20, 21",
+     "sOpen": "73",
+     "sClose": "31",
+     "sMid": "57",
+     "presi": "Manuel Hernández",
+     "oraA": "Matías Colina",
+     "oraB": "Eduardo Benavides",
+     "aseo": "5",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Predicó con valor",
+       "min": 10,
+       "detail": "",
+       "p": "Carlos Alvarado",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "",
+       "p": "Johnny Silva",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 20:7-18 (th lección 2).",
+       "p": "Gabriel Ugalde",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 20:7-18 (th lección 2)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. Busque una manera natural de hacerle saber a la persona que usted es testigo de Jehová (lmd lección 2 punto 4).",
+       "p": "Elisabete de Ortega",
+       "h": "Marisol Avila",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 2 punto 4)",
+       "desc": "PREDICACIÓN INFORMAL. Busque una manera natural de hacerle saber a la persona que usted es testigo de Jehová."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor (lmd lección 9 punto 3).",
+       "p": "Andrea de Orellana",
+       "h": "Sirlene de Coronado",
+       "l": "",
+       "t": "20:05",
+       "ref": "(lmd lección 9 punto 3)",
+       "desc": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Explique sus creencias",
+       "min": 4,
+       "detail": "Escenificación. Un niño que tiene que hacer una presentación en clase ensaya con su papá o su mamá. La presentación está basada en ijwwd artículo 41 (th lección 13).",
+       "p": "Valezka de Cruz",
+       "h": "Josefina Avendaño",
+       "l": "",
+       "t": "20:11",
+       "ref": "(th lección 13)",
+       "desc": "Escenificación. Un niño que tiene que hacer una presentación en clase ensaya con su papá o su mamá. La presentación está basada en ijwwd artículo 41."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Seamos adaptables y mostremos interés por las personas",
+       "min": 15,
+       "detail": "Análisis con el auditorio.",
+       "p": "Luis Escandell",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg introducción a la sección 1, línea de tiempo y cap. 1.",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "Felipe Godoy",
+       "t": "20:35",
+       "ref": "",
+       "desc": "wcg introducción a la sección 1, línea de tiempo y cap. 1."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "no",
+       "r": "David Ortega",
+       "n": ""
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "no",
+       "r": "Cristian Da Silva",
+       "n": ""
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Fabiola de Da Silva",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Ana de Aliaga",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
+    }
+   ]
   }
  ]
 }
