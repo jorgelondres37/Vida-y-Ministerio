@@ -63,7 +63,7 @@
   {"num":61,"nombre":"Meneses, Miguel","tarea":"SM","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":62,"nombre":"Alvarado, Leonor","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":63,"nombre":"Silva, Johnny","tarea":"SM","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":64,"nombre":"Alvarado, Carla","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":true,"asign":["MM_1","MM_2","MM_3"]},
+  {"num":64,"nombre":"Alvarado, Carla","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":65,"nombre":"Ugalde, Ricardo","tarea":"SM","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":66,"nombre":"Cruz, Valezka de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":67,"nombre":"Durán, Matilde","tarea":"PTJ","grupo":"3","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
