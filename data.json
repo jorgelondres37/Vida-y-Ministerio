@@ -78,7 +78,7 @@
   {"num":76,"nombre":"López, Luis","tarea":"AN","grupo":"2","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":77,"nombre":"Núñez, Enrique","tarea":"PTJ","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM"]},
   {"num":78,"nombre":"Correa, Ximena de","tarea":"PE","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
-  {"num":79,"nombre":"Godoy, Claudia de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":[]},
+  {"num":79,"nombre":"Godoy, Claudia de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":80,"nombre":"López, Angélica de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":81,"nombre":"Pérez, Ronny","tarea":"AN/PR","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":82,"nombre":"López, Bárbara","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
