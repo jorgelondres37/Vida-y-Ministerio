@@ -166,6 +166,19 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 .repl-cols li.used{opacity:.6;background:transparent;border-style:dashed}
 .repl-cols li.used span{text-decoration:line-through}
 .repl-cols li.used small{color:var(--bad);font-style:italic}
+.cmp-chart{display:flex;flex-direction:column;gap:2px}
+.cmp-row{display:grid;grid-template-columns:88px 1fr 48px;align-items:center;gap:10px;padding:7px 4px;border-radius:8px;transition:background .15s}
+.cmp-row.clickable{cursor:pointer}
+.cmp-row.clickable:hover{background:var(--fill)}
+.cmp-row.clickable:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+.cmp-name{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-bar{height:14px;background:var(--fill);border-radius:99px;overflow:hidden}
+.cmp-bar div{height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#E3796D,var(--bad));transform-origin:left;animation:growX .6s cubic-bezier(.2,.8,.2,1) both}
+.cmp-bar.g div{background:linear-gradient(90deg,var(--brand),#1F6F5F)}
+.cmp-bar.w div{background:linear-gradient(90deg,#FFD873,#C98A00)}
+.cmp-bar.n div{background:var(--line)}
+.cmp-num{font:700 15px var(--serif);text-align:right}
+@media(max-width:560px){.cmp-row{grid-template-columns:66px 1fr 38px;gap:6px}}
 @media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
 body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
 body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
@@ -280,7 +293,7 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     <h1>Seguimiento <em>de asignaciones</em></h1>
     <p class="hint">Toca un nombre para marcar si cumplió su parte. <span class="chip conf" style="padding:1px 8px">●</span> confirmado · <span class="chip ok" style="padding:1px 8px">✓</span> cumplió · <span class="chip no" style="padding:1px 8px">✕</span> no cumplió (con el hermano que lo reemplazó) · rayado = pendiente.</p>
     <section class="card">
-      <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><button class="btn" id="segPrint" type="button">Imprimir / PDF</button><a class="btn" href="instrucciones.html">Instrucciones</a><span id="segMsg" role="status"></span></div>
+      <div class="row2"><select id="segMonth" aria-label="Mes"></select><button class="btn" id="segAll" type="button">Marcar pendientes como cumplidos</button><button class="btn primary" id="segSave" type="button">Guardar seguimiento</button><button class="btn" id="segPrint" type="button">Imprimir / PDF</button><a class="btn" href="instrucciones.html">Instrucciones</a><a class="btn ghost small" href="https://wol.jw.org/es/wol/meetings/r4/lp-s/2026/40" target="_blank" rel="noopener" title="Abre la guía oficial de esta semana en wol.jw.org">📖 Guía de Actividades de esta semana</a><span id="segMsg" role="status"></span></div>
       <div class="chips" style="margin-bottom:8px"><span class="chip conf">● Confirmado</span><span class="chip ok">✓ Cumplió</span><span class="chip no">✕ No cumplió · reemplazo</span><span class="chip">Pendiente</span></div>
       <p class="hint" id="segStats"></p>
       <div class="tw"><table id="segGrid"></table></div>
@@ -300,16 +313,15 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     </section>
 
     <section class="card">
-      <h2>Estadísticas de confiabilidad</h2>
-      <p class="hint">Cuenta las asignaciones ya marcadas como cumplidas o no cumplidas. Cámbialo de mes arriba para ver las cifras de ese mes de seguimiento.</p>
-      <div class="row2"><label class="chk"><input type="checkbox" id="statsHist"> Ver histórico completo (todos los meses guardados), no solo el mes elegido</label></div>
-      <div class="tw" style="margin-top:4px"><table id="relTable"></table></div>
-    </section>
-
-    <section class="card">
-      <h2>Ranking de fallas</h2>
-      <p class="hint">Los hermanos con más «no cumplió» en todo el historial guardado (no solo el mes elegido arriba). De mayor a menor.</p>
-      <div id="failRank"></div>
+      <h2>Cumplimiento por período</h2>
+      <p class="hint">Elige «Todos los meses» para el panorama general, o un mes puntual para verlo semana por semana. Toca una barra de mes para entrar a su detalle.</p>
+      <div class="row2">
+        <select id="cmpScope" aria-label="Período"></select>
+        <button class="btn small" id="cmpModeFail" type="button" aria-pressed="true">N° de fallas</button>
+        <button class="btn small" id="cmpModePct" type="button" aria-pressed="false">% de cumplimiento</button>
+      </div>
+      <p class="hint" id="cmpSummary"></p>
+      <div id="cmpChart" class="cmp-chart"></div>
     </section>
   </div>
   <div id="hojas" class="no-print">
@@ -554,7 +566,7 @@ function renderSeg(){
   $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
   $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
   const g=$('segGrid');
-  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderReliability();renderRepl();renderRanking();renderPerson();return}
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderRepl();renderCompliance();renderPerson();return}
   const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
@@ -570,17 +582,11 @@ function renderSeg(){
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
   g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
-  renderReliability();renderRepl();renderRanking();renderPerson();
+  renderRepl();renderCompliance();renderPerson();
 }
 
 /* ---------- Estadísticas de confiabilidad y disponibilidad ---------- */
-function weekScope(){
-  if($('statsHist')?.checked){
-    const done=new Set(progs.map(p=>p.id));
-    return [...progs.flatMap(p=>p.weeks),...(cur&&!done.has(cur.id)?cur.weeks:[])];
-  }
-  return cur?cur.weeks:[];
-}
+function weekScope(){return cur?cur.weeks:[]}
 function computeStats(weeks){
   const st={};const get=n=>(st[n]??={asign:0,ok:0,no:0,repl:0});
   weeks.forEach(w=>{
@@ -593,21 +599,6 @@ function computeStats(weeks){
     });
   });
   return st;
-}
-function relBadge(rate,tot){
-  if(tot<2)return'<span class="badge none">Pocos datos</span>';
-  if(rate===0)return'<span class="badge top">Muy confiable</span>';
-  if(rate<=15)return'<span class="badge good">Confiable</span>';
-  if(rate<=35)return'<span class="badge warn">Irregular</span>';
-  return'<span class="badge bad">Falla mucho</span>';
-}
-function renderReliability(){
-  const st=computeStats(weekScope());
-  const rows=Object.entries(st).map(([n,r])=>{const tot=r.ok+r.no,rate=tot?Math.round(r.no/tot*100):0;return{n,...r,tot,rate}})
-    .sort((a,b)=>b.rate-a.rate||b.tot-a.tot||a.n.localeCompare(b.n));
-  $('relTable').innerHTML=rows.length?`<thead><tr><th>Hermano</th><th>Resueltas</th><th>% Cumplimiento</th><th>Confiabilidad</th></tr></thead><tbody>${
-    rows.map(r=>`<tr><td>${esc(r.n)}</td><td>${r.tot}</td><td>${r.tot?(100-r.rate)+'%':'—'}</td><td>${relBadge(r.rate,r.tot)}</td></tr>`).join('')
-  }</tbody>`:'<tbody><tr><td class="empty">Aún no hay asignaciones marcadas como cumplidas o no cumplidas en este alcance. Marca semanas en la tabla de arriba para que aparezcan aquí.</td></tr></tbody>';
 }
 function rankOf(p){
   const t=(p.tarea||'').toUpperCase();
@@ -659,20 +650,58 @@ function weekLabels(w){
   slots(w).forEach(s=>{if(s.o.kind==='MM'&&s.f==='p')c.mm++;if(s.o.kind==='VC')c.vc++;out[s.k]=lab(s,c)[0]});
   return out;
 }
-function failRanking(){
-  const st=computeStats(allPrograms().flatMap(p=>p.weeks));
-  return Object.entries(st).map(([n,r])=>({n,no:r.no,ok:r.ok,tot:r.ok+r.no}))
-    .filter(r=>r.no>0).sort((a,b)=>b.no-a.no||b.tot-a.tot||a.n.localeCompare(b.n));
+function weekDate(w,progId){
+  const m=(w.range||'').match(/^(\d{1,2})(?:\s*[-–]\s*\d{1,2})?\s+DE\s+([A-ZÁÉÍÓÚÑ]+)/i),mo=m?MESES.indexOf(m[2].toUpperCase()):-1;
+  if(mo<0)return w.range;
+  let y=+progId.slice(0,4);const im=+progId.slice(5,7)-1;if(mo>im+6)y--;else if(mo<im-6)y++;
+  return new Date(y,mo,+m[1]+3).toLocaleDateString('es-CL',{day:'numeric',month:'short'});
 }
-function renderRanking(){
-  const rank=failRanking().slice(0,10),max=rank[0]?.no||1;
-  $('failRank').innerHTML=rank.length?rank.map((r,i)=>`<div class="rank-row">
-   <span class="rank-pos">${i+1}</span>
-   <span class="rank-name clickable" tabindex="0" role="button" data-person="${esc(r.n)}">${esc(r.n)}</span>
-   <div class="rank-bar"><div style="width:${Math.round(r.no/max*100)}%"></div></div>
-   <span class="rank-num">${r.no}</span>
-  </div>`).join(''):'<p class="hint">Aún no hay fallas registradas en el historial guardado. Buenas noticias.</p>';
+function monthlyCompliance(){
+  return allPrograms().map(p=>{
+    let ok=0,no=0;
+    p.weeks.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{const n=s.o[s.f];if(!n)return;const e=w.seg[s.k]?.e;if(e==='ok')ok++;else if(e==='no')no++})});
+    const [y,m]=p.id.split('-'),full=MESES[+m-1],abbr=full[0]+full.slice(1,3).toLowerCase();
+    return{id:p.id,label:`${abbr} ${y}`,full:`${full} ${y}`,ok,no,tot:ok+no};
+  });
 }
+function weeklyCompliance(id){
+  const p=allPrograms().find(x=>x.id===id);if(!p)return[];
+  return p.weeks.map((w,wi)=>{
+    w.seg=w.seg||{};let ok=0,no=0;
+    slots(w).forEach(s=>{const n=s.o[s.f];if(!n)return;const e=w.seg[s.k]?.e;if(e==='ok')ok++;else if(e==='no')no++});
+    return{id:id+'|'+wi,label:weekDate(w,id),full:w.range,ok,no,tot:ok+no};
+  });
+}
+let cmpMode='fail';
+function syncCmpMode(){$('cmpModeFail').setAttribute('aria-pressed',cmpMode==='fail');$('cmpModePct').setAttribute('aria-pressed',cmpMode==='pct')}
+function renderCompliance(){
+  const sel=$('cmpScope'),prevVal=sel.value||'all',plist=allPrograms();
+  sel.innerHTML='<option value="all">Todos los meses (resumen)</option>'+plist.map(p=>{const [y,m]=p.id.split('-');return`<option value="${p.id}">${MESES[+m-1]} ${y} · por semana</option>`}).join('');
+  sel.value=[...sel.options].some(o=>o.value===prevVal)?prevVal:'all';
+  const scope=sel.value,rows=scope==='all'?monthlyCompliance():weeklyCompliance(scope);
+  const withData=rows.filter(r=>r.tot>0);
+  let totalOk=0,totalNo=0;rows.forEach(r=>{totalOk+=r.ok;totalNo+=r.no});
+  const maxFail=Math.max(1,...rows.map(r=>r.no));
+  $('cmpChart').innerHTML=withData.length?rows.map(r=>{
+    const pctOk=r.tot?Math.round(r.ok/r.tot*100):null;
+    const barPct=cmpMode==='fail'?Math.round(r.no/maxFail*100):(pctOk??0);
+    const cls=cmpMode==='pct'?(r.tot<2?'n':pctOk>=90?'g':pctOk>=75?'w':''):'';
+    const click=scope==='all';
+    return`<div class="cmp-row${click?' clickable':''}"${click?` data-month="${r.id}" role="button" tabindex="0"`:''} title="${esc(r.full)}${r.tot?` · ${r.ok} cumplió · ${r.no} no cumplió`:' · sin datos marcados'}">
+     <span class="cmp-name">${esc(r.label)}</span>
+     <div class="cmp-bar ${cls}"><div style="width:${r.tot?barPct:0}%"></div></div>
+     <span class="cmp-num">${r.tot?(cmpMode==='fail'?r.no:pctOk+'%'):'—'}</span>
+    </div>`;
+  }).join(''):`<p class="hint">${scope==='all'?'Aún no hay meses con asignaciones marcadas como cumplidas o no cumplidas.':'Esta semana aún no tiene asignaciones marcadas.'}</p>`;
+  const totTot=totalOk+totalNo,totPct=totTot?Math.round(totalOk/totTot*100):0;
+  $('cmpSummary').textContent=totTot?`${totalOk} cumplidas · ${totalNo} no cumplidas · ${totPct}% de cumplimiento en ${scope==='all'?'todo el historial guardado':'este mes'}`:'Aún no hay datos para mostrar en esta selección.';
+}
+$('cmpScope').addEventListener('change',renderCompliance);
+$('cmpModeFail').onclick=()=>{cmpMode='fail';syncCmpMode();renderCompliance()};
+$('cmpModePct').onclick=()=>{cmpMode='pct';syncCmpMode();renderCompliance()};
+syncCmpMode();
+$('cmpChart').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b){$('cmpScope').value=b.dataset.month;renderCompliance()}});
+$('cmpChart').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.month){e.preventDefault();e.target.click()}});
 function personHistory(name){
   const months=[],incidents=[],successes=[];
   allPrograms().forEach(p=>{
@@ -731,8 +760,6 @@ function renderPerson(){
 $('personSearch').addEventListener('input',renderPerson);
 $('personScope').addEventListener('change',renderPerson);
 $('personClear').onclick=()=>{$('personSearch').value='';renderPerson()};
-$('failRank').addEventListener('click',e=>{const b=e.target.closest('[data-person]');if(b){$('personSearch').value=b.dataset.person;renderPerson();$('personCard').scrollIntoView({behavior:'smooth',block:'center'})}});
-$('failRank').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.person){e.preventDefault();e.target.click()}});
 function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&(!w.seg[s.k]||w.seg[s.k].e==='conf'))w.seg[s.k]={...w.seg[s.k],e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
 $('segAll').onclick=()=>cur&&confirm('¿Marcar como cumplidas todas las asignaciones pendientes del mes?')&&markPending(cur.weeks);
 $('segPrint').onclick=()=>{if(!cur)return;document.body.classList.add('ps');window.print()};
@@ -741,7 +768,6 @@ $('segMonth').onchange=e=>{
   const p=progs.find(x=>x.id===e.target.value);if(!p)return;
   cur=JSON.parse(JSON.stringify(p));$('month').value=cur.id;draft();render();renderSeg();
 };
-$('statsHist').onchange=renderReliability;
 const syncSeg=()=>{document.querySelectorAll('#segDlg [data-e]').forEach(b=>b.setAttribute('aria-pressed',b.dataset.e===segCtx.e));$('segNo').hidden=segCtx.e!=='no'};
 $('segGrid').addEventListener('click',e=>{
   const b=e.target.closest('[data-wk]');if(b)return markPending([cur.weeks[b.dataset.wk]]);
