@@ -2661,7 +2661,13 @@
        "desc": "wcg cap. 10."
       }
      ],
-     "seg": {}
+     "seg": {
+      "p4.p": {
+       "e": "no",
+       "r": "Esther Cortez",
+       "n": ""
+      }
+     }
     },
     {
      "range": "5-11 DE OCTUBRE",
