@@ -3336,7 +3336,64 @@
        "desc": "lfb lecciones 90, 91."
       }
      ],
-     "seg": {}
+     "seg": {
+      "oraA": {
+       "e": "no",
+       "r": "Miguel Meneses",
+       "n": ""
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Cecilia de Silva",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Valezka de Cruz",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "no",
+       "r": "Roxana de Ruiz",
+       "n": ""
+      },
+      "presi": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "8-14 DE JUNIO",
@@ -3487,7 +3544,70 @@
        "desc": "lfb lecciones 92, 93."
       }
      ],
-     "seg": {}
+     "seg": {
+      "p0.p": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "no",
+       "r": "Sirlene de Coronado",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Fabiola de Da Silva",
+       "n": ""
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Matías Colina",
+       "n": ""
+      },
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p6.h": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p9.p": {
+       "e": "ok"
+      },
+      "p9.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "range": "15-21 DE JUNIO",
