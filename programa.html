@@ -18,7 +18,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-u
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
 .top-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
 .brand{font:600 16px var(--serif);flex:1}
-.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 110px}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 72px}
 h1{font:600 clamp(30px,5vw,46px)/1.05 var(--serif);letter-spacing:-.025em;margin:0 0 6px}
 h1 em{color:var(--brand)}h2{font:600 19px var(--serif);margin:0 0 4px}
 .hint{color:var(--soft);font-size:12.5px;margin:0 0 12px}
@@ -215,11 +215,11 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
  body.print-slips .slip-week{display:none}
  body.print-slips .slip{border:1px solid #999;box-shadow:none}
 }
-/* ---- Selector de semana (barra inferior) ---- */
+/* ---- Selector de semana ---- */
 .wk-hide{display:none}
-#wkBar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -6px 20px -12px rgba(20,30,25,.25);padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
-#wkBar[hidden],body[data-tab="seg"] #wkBar{display:none}
-.wkbar-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px}
+.wkbar{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:var(--shadow);margin-bottom:18px}
+.wkbar[hidden]{display:none}
+#hojas .wkbar{box-shadow:none;background:var(--fill);margin:4px 0 0}
 .wkbar-lbl{font:600 10px Inter;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);flex:none}
 .wkbar-list{display:flex;gap:6px;overflow-x:auto;flex:1;padding:2px;scrollbar-width:thin}
 .wkbtn{flex:none;font:inherit;font-size:12px;font-weight:600;padding:5px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;white-space:nowrap;line-height:1.2;text-align:center}
@@ -229,11 +229,11 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 .wkbtn[aria-pressed="true"] small{color:inherit;opacity:.85}
 .wkbtn.all{align-self:center}
 .wkbar-nav{flex:none;padding:5px 10px}
-#sheets,#hojasGrid{scroll-margin-top:64px}
+.wkbar-nav:disabled{opacity:.4;cursor:default}
 .wk-empty{margin:14px 0}
 @media(max-width:520px){.wkbar-lbl{display:none}}
 @media print{
- #wkBar{display:none!important}
+ .wkbar{display:none!important}
  .sheet.wk-hide{display:block!important}
  body:not(.print-one) .slip-card.wk-hide{display:flex!important}
 }
@@ -303,6 +303,7 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     </section>
   </div>
 
+  <div class="wkbar no-print" id="wkBarProg" hidden><span class="wkbar-lbl">Semana</span><button class="btn small wkbar-nav" data-nav="-1" type="button" aria-label="Semana anterior">‹</button><div class="wkbar-list"></div><button class="btn small wkbar-nav" data-nav="1" type="button" aria-label="Semana siguiente">›</button></div>
   <div id="sheets"></div>
 
   <section class="card no-print">
@@ -351,12 +352,12 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     <p class="hint">Se generan solas a partir del mes abierto arriba (Programa / Seguimiento): una hojita por cada parte de la Escuela y la Lectura de la Biblia. Si el seguimiento marcó «no cumplió» con reemplazo, aquí lo verás destacado. Puedes editar cualquier campo, y descargar o enviar cada hojita por separado.</p>
     <section class="card">
       <div class="row2"><select id="hojasMonth" aria-label="Mes"></select><button class="btn" id="hojasImprimirTodo" type="button">Imprimir todas</button><a class="btn" href="instrucciones.html">Instrucciones</a><span id="hojasMsg" role="status"></span></div>
+      <div class="wkbar no-print" id="wkBarHojas" hidden><span class="wkbar-lbl">Semana</span><button class="btn small wkbar-nav" data-nav="-1" type="button" aria-label="Semana anterior">‹</button><div class="wkbar-list"></div><button class="btn small wkbar-nav" data-nav="1" type="button" aria-label="Semana siguiente">›</button></div>
       <div id="hojasGrid" class="hojas-grid"></div>
       <p id="hojasEmptyWk" class="hint wk-empty" hidden>Esta semana no tiene partes de Escuela ni Lectura de la Biblia.</p>
     </section>
   </div>
 </main>
-<nav id="wkBar" class="no-print" aria-label="Seleccionar semana" hidden><div class="wkbar-in"><span class="wkbar-lbl">Semana</span><button class="btn small wkbar-nav" id="wkPrev" type="button" aria-label="Semana anterior">‹</button><div class="wkbar-list" id="wkList"></div><button class="btn small wkbar-nav" id="wkNext" type="button" aria-label="Semana siguiente">›</button></div></nav>
 <dialog id="segDlg" aria-labelledby="segT">
   <h2 id="segT" style="margin:0"></h2><p class="hint" id="segSub"></p>
   <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="conf" type="button">Confirmado</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
@@ -876,10 +877,13 @@ ${rep?`<div class="slip-repl">↪ Seguimiento: <b>${esc(mainSlot.o[mainSlot.f])}
 }
 function fitSlips(){
   document.querySelectorAll('#hojasGrid .slip').forEach(el=>{
+    const c=el.closest('.slip-card'),h=c.classList.contains('wk-hide');
+    if(h)c.classList.remove('wk-hide');
     el.style.fontSize='';
     let size=12.5,guard=0;
     el.style.fontSize=size+'px';
     while(el.scrollHeight>el.clientHeight+1&&size>7.5&&guard<25){size-=0.4;el.style.fontSize=size+'px';guard++}
+    if(h)c.classList.add('wk-hide');
   });
 }
 let fitT;
@@ -992,7 +996,7 @@ $('hist').addEventListener('click',async e=>{
 });
 
 /* ---------- Selector de semana (Programa y Hojas de asignación) ---------- */
-const wkSel={prog:0,hojas:0}; // índice de semana, o -1 = todas
+const wkSel={prog:{id:null,i:0},hojas:{id:null,i:0}}; // i = índice de semana, -1 = todas
 const wkTab=()=>document.body.dataset.tab;
 function wkLabel(w){
   const m=String(w.range||'').match(/^(\d{1,2}(?:\s*[-–]\s*\d{1,2})?)\s+DE\s+([A-ZÁÉÍÓÚÑ]+)(?:\s+A\s+(\d{1,2})\s+DE\s+([A-ZÁÉÍÓÚÑ]+))?/i);
@@ -1000,32 +1004,49 @@ function wkLabel(w){
   const ab=x=>x.slice(0,3).toLowerCase();
   return m[3]?`${m[1].replace(/\s+/g,'')} ${ab(m[2])} – ${m[3]} ${ab(m[4])}`:`${m[1].replace(/\s*[-–]\s*/,'–')} ${ab(m[2])}`;
 }
-function wkRefresh(scroll){
-  const bar=$('wkBar'),t=wkTab();
-  if(t!=='prog'&&t!=='hojas'){bar.hidden=true;return}
-  if(!cur||!cur.weeks||!cur.weeks.length){bar.hidden=true;return}
-  const n=cur.weeks.length;
-  if(wkSel[t]>=n)wkSel[t]=0;
-  const sel=wkSel[t];
-  bar.hidden=false;
-  $('wkList').innerHTML=cur.weeks.map((w,i)=>`<button class="wkbtn" type="button" data-wk="${i}" aria-pressed="${sel===i}" title="${esc(w.range+(w.bible?' | '+w.bible:''))}"><small>Sem. ${i+1}</small>${esc(wkLabel(w))}</button>`).join('')+`<button class="wkbtn all" type="button" data-wk="-1" aria-pressed="${sel===-1}">Todas</button>`;
-  const on=$('wkList').querySelector('[aria-pressed="true"]');if(on&&on.scrollIntoView)on.scrollIntoView({block:'nearest',inline:'center'});
-  $('wkPrev').disabled=sel<=0;$('wkNext').disabled=sel===-1||sel>=n-1;
-  const host=t==='prog'?$('sheets'):$('hojasGrid'),items=host.children;
-  let shown=0;
-  [...items].forEach(el=>{
-    if(el.dataset.wi===undefined)return;
-    const hide=sel!==-1&&+el.dataset.wi!==sel;
-    el.classList.toggle('wk-hide',hide);
-    if(!hide)shown++;
-  });
-  if(t==='hojas')$('hojasEmptyWk').hidden=!(shown===0&&host.querySelector('.slip-card')!==null);
-  if(scroll){const r=host.getBoundingClientRect();if(r.top<0)host.scrollIntoView({behavior:'smooth',block:'start'})}
+/* Semana por defecto: la de hoy si el mes abierto es el actual; si no, la primera */
+function wkDefault(){
+  const t=new Date(),today=new Date(t.getFullYear(),t.getMonth(),t.getDate());
+  for(let i=0;i<cur.weeks.length;i++){
+    const d=meetingDate(cur.weeks[i]);if(!d)continue;
+    const start=new Date(d.getFullYear(),d.getMonth(),d.getDate()-3),end=new Date(start.getFullYear(),start.getMonth(),start.getDate()+6);
+    if(today>=start&&today<=end)return i;
+  }
+  return 0;
 }
-function wkGo(i){const t=wkTab();wkSel[t]=i;if(t==='hojas')fitSlips();wkRefresh(true);if(t==='hojas')requestAnimationFrame(fitSlips)}
-$('wkList').addEventListener('click',e=>{const b=e.target.closest('[data-wk]');if(b)wkGo(+b.dataset.wk)});
-$('wkPrev').onclick=()=>{const t=wkTab();if(wkSel[t]>0)wkGo(wkSel[t]-1)};
-$('wkNext').onclick=()=>{const t=wkTab();if(cur&&wkSel[t]>=0&&wkSel[t]<cur.weeks.length-1)wkGo(wkSel[t]+1)};
+function wkRefresh(){
+  [['prog','wkBarProg',$('sheets')],['hojas','wkBarHojas',$('hojasGrid')]].forEach(([t,id,host])=>{
+    const bar=$(id),ok=cur&&cur.weeks&&cur.weeks.length;
+    bar.hidden=!ok;
+    if(!ok){if(t==='hojas')$('hojasEmptyWk').hidden=true;return}
+    const st=wkSel[t];
+    if(st.id!==cur.id||st.i>=cur.weeks.length){st.id=cur.id;st.i=wkDefault()}
+    const sel=st.i;
+    bar.querySelector('.wkbar-list').innerHTML=cur.weeks.map((w,i)=>`<button class="wkbtn" type="button" data-wk="${i}" aria-pressed="${sel===i}" title="${esc(w.range+(w.bible?' | '+w.bible:''))}"><small>Sem. ${i+1}</small>${esc(wkLabel(w))}</button>`).join('')+`<button class="wkbtn all" type="button" data-wk="-1" aria-pressed="${sel===-1}">Todas</button>`;
+    const on=bar.querySelector('.wkbtn[aria-pressed="true"]');
+    if(on){const l=bar.querySelector('.wkbar-list');l.scrollLeft=Math.max(0,on.offsetLeft-l.clientWidth/2+on.offsetWidth/2)}
+    bar.querySelector('[data-nav="-1"]').disabled=sel<=0;
+    bar.querySelector('[data-nav="1"]').disabled=sel===-1||sel>=cur.weeks.length-1;
+    let shown=0;
+    [...host.children].forEach(el=>{
+      if(el.dataset.wi===undefined)return;
+      const hide=sel!==-1&&+el.dataset.wi!==sel;
+      el.classList.toggle('wk-hide',hide);
+      if(!hide)shown++;
+    });
+    if(t==='hojas'){
+      $('hojasEmptyWk').hidden=!(shown===0&&host.querySelector('.slip-card')!==null);
+      requestAnimationFrame(fitSlips);
+    }
+  });
+}
+function wkGo(t,i){wkSel[t].i=i;wkSel[t].id=cur.id;wkRefresh()}
+document.querySelectorAll('.wkbar').forEach(bar=>bar.addEventListener('click',e=>{
+  const t=bar.id==='wkBarProg'?'prog':'hojas',b=e.target.closest('[data-wk]'),n=e.target.closest('[data-nav]');
+  if(!cur)return;
+  if(b)wkGo(t,+b.dataset.wk);
+  else if(n&&!n.disabled)wkGo(t,wkSel[t].i+ +n.dataset.nav);
+}));
 
 /* ---------- Inicio ---------- */
 (async()=>{
