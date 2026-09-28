@@ -33,6 +33,20 @@ textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-siz
 .chk{display:flex;align-items:center;gap:6px;font-size:12.5px;color:var(--soft)}
 #msg{font-size:12.5px;color:var(--soft)}#msg.err{color:var(--bad)}#msg.ok{color:var(--brand)}
 .chips{display:flex;flex-wrap:wrap;gap:6px}.chip{background:var(--fill);border:1px solid var(--line);border-radius:99px;padding:2px 10px;font-size:12px}.chip.hi{border-color:var(--bad);color:var(--bad)}
+.load-ways{display:flex;flex-direction:column;gap:2px;margin:10px 0 4px}
+.load-way{background:var(--fill);border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.load-way-head{display:flex;align-items:center;gap:10px}
+.load-way-head .ico{font-size:18px;line-height:1;flex:none}
+.load-way-head b{display:block;font-size:12.5px;color:var(--brand);line-height:1.3}
+.load-way-head small{display:block;font-size:11px;color:var(--soft);font-weight:400;line-height:1.3;margin-top:1px}
+.load-way-head .btn{margin-left:auto;flex:none}
+.load-way .row2{margin-top:8px}
+.load-way .lw-msg{display:block;font-size:11.5px;margin-top:4px;min-height:14px}
+.load-sep{text-align:center;font-size:10px;color:var(--soft);letter-spacing:.08em;text-transform:uppercase;margin:1px 0}
+.load-sep span{background:var(--card);padding:0 8px;position:relative}
+.prompt-details{margin-top:8px}
+.prompt-details summary{cursor:pointer;font-size:11px;color:var(--soft)}
+#claudePrompt{min-height:0;height:150px;font-size:11px;background:var(--card);resize:vertical;margin-top:6px;width:100%}
 .hist{display:flex;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line)}.hist b{flex:1}
 /* Hoja de programa */
 .sheet{background:#fff;color:#111;border:1px solid var(--line);border-radius:6px;padding:22px 26px;margin-bottom:18px;font-size:13px}
@@ -201,8 +215,48 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
     <section class="card">
       <h2>1 · Cargar el mes</h2>
-      <p class="hint">Abre la guía (PDF de Vida y Ministerio), selecciona y copia todo el texto, y pégalo aquí.</p>
+      <p class="hint">Elige el mes y trae el programa por cualquiera de estas 3 vías.</p>
       <div class="row2"><input type="month" id="month" aria-label="Mes"><label class="chk"><input type="checkbox" id="salud"> Incluir hermanos marcados «en salud»</label></div>
+
+      <div class="load-ways">
+        <div class="load-way">
+          <div class="load-way-head"><span class="ico">📄</span><div><b>PDF de la guía</b><small>Sube el PDF oficial del mes y se extrae el texto solo</small></div></div>
+          <div class="row2"><input type="file" id="pdfFile" accept="application/pdf"><button class="btn small" id="pdfReadBtn" type="button">Extraer texto</button></div>
+          <span id="pdfMsg" role="status" class="lw-msg"></span>
+        </div>
+
+        <div class="load-sep"><span>o</span></div>
+
+        <div class="load-way">
+          <div class="load-way-head"><span class="ico">✨</span><div><b>Prompt</b><small>Pégaselo a Claude con el PDF del mes y te devuelve el texto listo</small></div><button class="btn small primary" id="copyPromptBtn" type="button">Copiar</button></div>
+          <span id="copyMsg" role="status" class="lw-msg"></span>
+          <details class="prompt-details"><summary>Ver el prompt completo</summary>
+          <textarea id="claudePrompt">Actúa como transcriptor, sin resumir ni traducir nada. Voy a adjuntarte el PDF de la Guía de actividades para la reunión Vida y Ministerio Cristianos de un mes. Dame TODO el contenido de cada semana del mes, en texto plano, sin nombres de hermanos, sin tablas, sin encabezados ni pies de página, sin la frase "Nota al estudiante", con esta estructura EXACTA para cada semana (una semana tras otra, separadas por una línea en blanco):
+
+1) DIA DE MES A DIA DE MES | LIBRO CAPITULOS, CAPITULOS (ejemplo: 28 DE SEPTIEMBRE A 4 DE OCTUBRE | JEREMIAS 38, 39). Si la semana cae dentro de un solo mes usa DIA-DIA DE MES | LIBRO CAPITULOS.
+2) Canción NÚMERO y oración
+3) Palabras de introducción (1 min.)
+4) TESOROS DE LA BIBLIA
+5) Los 3 puntos de esa sección, cada uno así: NÚMERO. Título (X min) y, si trae, el detalle o la cita bíblica en la línea siguiente.
+6) SEAMOS MEJORES MAESTROS
+7) Todos los puntos de esa sección (normalmente números 4, 5, 6 y a veces 7), cada uno así: NÚMERO. Título (X min) y en la línea siguiente el detalle completo, incluida la referencia entre paréntesis tipo (lmd lección 9 punto 3).
+8) Canción NÚMERO
+9) NUESTRA VIDA CRISTIANA
+10) Los puntos restantes (discurso o análisis de Vida Cristiana, Necesidades de la congregación si aparece, y Estudio bíblico de la congregación), cada uno así: NÚMERO. Título (X min) y el detalle en la línea siguiente.
+11) Palabras de conclusión (3 mins.)
+12) Canción NÚMERO y oración
+
+No agregues explicaciones tuyas antes ni después: dame solo el texto listo para copiar y pegar.</textarea>
+          </details>
+        </div>
+
+        <div class="load-sep"><span>o</span></div>
+
+        <div class="load-way">
+          <div class="load-way-head"><span class="ico">✍️</span><div><b>A mano</b><small>Copia el texto de la guía y pégalo en el cuadro de abajo</small></div></div>
+        </div>
+      </div>
+
       <textarea id="paste" placeholder="Pega aquí el texto de la guía de actividades…"></textarea>
       <div class="row2" style="margin-top:10px"><button class="btn primary" id="parseBtn" type="button">Leer y asignar</button><span id="msg" role="status"></span></div>
     </section>
@@ -444,6 +498,80 @@ function hist(){
 const draft=()=>{try{localStorage.setItem(DK,JSON.stringify(cur))}catch{}};
 
 /* ---------- Eventos ---------- */
+let pdfjsReady=null;
+function loadPdfJs(){
+  if(pdfjsReady)return pdfjsReady;
+  pdfjsReady=new Promise((res,rej)=>{
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js';
+    s.onload=()=>{try{window.pdfjsLib.GlobalWorkerOptions.workerSrc='https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';res()}catch(e){rej(e)}};
+    s.onerror=()=>rej(new Error('No se pudo cargar el lector de PDF. Revisa tu conexión e inténtalo de nuevo.'));
+    document.head.appendChild(s);
+  });
+  return pdfjsReady;
+}
+function linesFromItems(arr){
+  arr.sort((a,b)=>b.y-a.y||a.x-b.x);
+  const lines=[];let curLine=null,lastY=null;const TOL=2.5;
+  arr.forEach(it=>{if(lastY===null||Math.abs(it.y-lastY)>TOL){curLine=[];lines.push(curLine);lastY=it.y}curLine.push(it)});
+  return lines.map(l=>l.sort((a,b)=>a.x-b.x).map(x=>x.str).join(' ').replace(/\s+/g,' ').trim()).filter(Boolean);
+}
+async function pdfToText(file){
+  await loadPdfJs();
+  const buf=await file.arrayBuffer();
+  const pdf=await window.pdfjsLib.getDocument({data:buf}).promise;
+  const out=[];
+  for(let i=1;i<=pdf.numPages;i++){
+    const page=await pdf.getPage(i);
+    const vp=page.getViewport({scale:1});
+    const content=await page.getTextContent();
+    const items=content.items.filter(it=>it.str.trim()).map(it=>({str:it.str,x:it.transform[4],y:it.transform[5]}));
+    if(!items.length)continue;
+    const mid=vp.width/2,left=items.filter(it=>it.x<mid).length,right=items.length-left;
+    let splitX=null;
+    if(left>3&&right>3){
+      const xs=[...new Set(items.map(it=>it.x))].sort((a,b)=>a-b);
+      let bestGap=0,bestX=null;
+      for(let k=1;k<xs.length;k++){
+        const gap=xs[k]-xs[k-1],midpoint=(xs[k]+xs[k-1])/2;
+        if(midpoint>vp.width*0.3&&midpoint<vp.width*0.7&&gap>bestGap){bestGap=gap;bestX=midpoint}
+      }
+      if(bestGap>vp.width*0.03)splitX=bestX;
+    }
+    const pageLines=splitX!==null
+      ?[...linesFromItems(items.filter(it=>it.x<splitX)),...linesFromItems(items.filter(it=>it.x>=splitX))]
+      :linesFromItems(items);
+    out.push(pageLines.join('\n'));
+  }
+  return out.join('\n\n');
+}
+const sayPdf=(m,c='')=>{const e=$('pdfMsg');if(e){e.textContent=m;e.className='lw-msg '+c}};
+$('pdfReadBtn').onclick=async()=>{
+  const f=$('pdfFile').files[0];
+  if(!f)return sayPdf('Primero elige un archivo PDF.','err');
+  if(f.type!=='application/pdf'&&!/\.pdf$/i.test(f.name))return sayPdf('Ese archivo no es un PDF.','err');
+  sayPdf('Leyendo el PDF…');
+  try{
+    const txt=await pdfToText(f);
+    if(!txt.trim())throw new Error('El PDF no tiene texto (¿es una imagen escaneada?). Prueba la opción B o pega el texto a mano.');
+    $('paste').value=txt;
+    sayPdf('Listo, texto extraído ↓ revísalo abajo y luego presiona «Leer y asignar».','ok');
+    $('paste').scrollIntoView({behavior:'smooth',block:'center'});
+  }catch(e){sayPdf(e.message,'err')}
+};
+$('copyPromptBtn').onclick=async()=>{
+  const txt=$('claudePrompt').value,m=$('copyMsg');
+  try{
+    await navigator.clipboard.writeText(txt);
+    m.textContent='Prompt copiado ✓';m.className='lw-msg ok';
+  }catch(e){
+    try{
+      $('claudePrompt').select();
+      document.execCommand('copy');
+      m.textContent='Prompt copiado ✓';m.className='lw-msg ok';
+    }catch(e2){m.textContent='No se pudo copiar solo: selecciona el texto y usa Ctrl/Cmd+C.';m.className='lw-msg err'}
+  }
+};
 $('parseBtn').onclick=()=>{
   const id=$('month').value;
   if(!id)return say('Elige el mes del programa.','err');
