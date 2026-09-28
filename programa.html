@@ -18,7 +18,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.5 Inter,system-u
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--bg);border-bottom:1px solid var(--line)}
 .top-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:12px;padding:10px 20px}
 .brand{font:600 16px var(--serif);flex:1}
-.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 72px}
+.wrap{max-width:1000px;margin:0 auto;padding:24px 20px 110px}
 h1{font:600 clamp(30px,5vw,46px)/1.05 var(--serif);letter-spacing:-.025em;margin:0 0 6px}
 h1 em{color:var(--brand)}h2{font:600 19px var(--serif);margin:0 0 4px}
 .hint{color:var(--soft);font-size:12.5px;margin:0 0 12px}
@@ -215,6 +215,28 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
  body.print-slips .slip-week{display:none}
  body.print-slips .slip{border:1px solid #999;box-shadow:none}
 }
+/* ---- Selector de semana (barra inferior) ---- */
+.wk-hide{display:none}
+#wkBar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:var(--bg);border-top:1px solid var(--line);box-shadow:0 -6px 20px -12px rgba(20,30,25,.25);padding:8px 12px calc(8px + env(safe-area-inset-bottom,0px))}
+#wkBar[hidden],body[data-tab="seg"] #wkBar{display:none}
+.wkbar-in{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:8px}
+.wkbar-lbl{font:600 10px Inter;letter-spacing:.07em;text-transform:uppercase;color:var(--soft);flex:none}
+.wkbar-list{display:flex;gap:6px;overflow-x:auto;flex:1;padding:2px;scrollbar-width:thin}
+.wkbtn{flex:none;font:inherit;font-size:12px;font-weight:600;padding:5px 11px;border-radius:99px;border:1px solid var(--line);background:var(--card);color:var(--ink);cursor:pointer;white-space:nowrap;line-height:1.2;text-align:center}
+.wkbtn small{display:block;font-size:9.5px;font-weight:500;color:var(--soft);text-transform:uppercase;letter-spacing:.05em}
+.wkbtn:hover{border-color:var(--ink)}
+.wkbtn[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+.wkbtn[aria-pressed="true"] small{color:inherit;opacity:.85}
+.wkbtn.all{align-self:center}
+.wkbar-nav{flex:none;padding:5px 10px}
+#sheets,#hojasGrid{scroll-margin-top:64px}
+.wk-empty{margin:14px 0}
+@media(max-width:520px){.wkbar-lbl{display:none}}
+@media print{
+ #wkBar{display:none!important}
+ .sheet.wk-hide{display:block!important}
+ body:not(.print-one) .slip-card.wk-hide{display:flex!important}
+}
 </style>
 
 </head>
@@ -330,9 +352,11 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     <section class="card">
       <div class="row2"><select id="hojasMonth" aria-label="Mes"></select><button class="btn" id="hojasImprimirTodo" type="button">Imprimir todas</button><a class="btn" href="instrucciones.html">Instrucciones</a><span id="hojasMsg" role="status"></span></div>
       <div id="hojasGrid" class="hojas-grid"></div>
+      <p id="hojasEmptyWk" class="hint wk-empty" hidden>Esta semana no tiene partes de Escuela ni Lectura de la Biblia.</p>
     </section>
   </div>
 </main>
+<nav id="wkBar" class="no-print" aria-label="Seleccionar semana" hidden><div class="wkbar-in"><span class="wkbar-lbl">Semana</span><button class="btn small wkbar-nav" id="wkPrev" type="button" aria-label="Semana anterior">‹</button><div class="wkbar-list" id="wkList"></div><button class="btn small wkbar-nav" id="wkNext" type="button" aria-label="Semana siguiente">›</button></div></nav>
 <dialog id="segDlg" aria-labelledby="segT">
   <h2 id="segT" style="margin:0"></h2><p class="hint" id="segSub"></p>
   <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="conf" type="button">Confirmado</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
@@ -464,7 +488,7 @@ function sel(w,sl,wi,o,f){
 }
 function render(){
   $('tools').hidden=!cur;
-  if(!cur){$('sheets').innerHTML='';return}
+  if(!cur){$('sheets').innerHTML='';wkRefresh();return}
   const [y,mo]=cur.id.split('-'),title=`${MESES[+mo-1]} ${y}`;
   $('sheets').innerHTML=cur.weeks.map((w,wi)=>{
     const sl=slots(w),tm=times(w),S=(o,f)=>sel(w,sl,wi,o,f);
@@ -480,7 +504,7 @@ function render(){
       return head+`<div class="pt"><div class="r"><span class="tm">${p.t}</span><span class="n">${n}</span><div class="tt"><b>${ce(pi,'title',p.title)}</b> <span class="mn">(${p.min} min.)</span>${ref}</div><div class="who">${who}</div></div>${l2}</div>`;
     }).join('');
     const F=[['ent','ACOMODADOR ENTRADA'],['mic','MICRÓFONOS'],['aud','ACOMODADOR AUDITORIO'],['plat','PLATAFORMA'],['av','AUDIO VIDEO / ZOOM']];
-    return`<section class="sheet"><div class="doc">Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</div>
+    return`<section class="sheet" data-wi="${wi}"><div class="doc">Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</div>
 <div class="wk">${ce(null,'range',w.range)}${ce(null,'bible',w.bible)}<i>SALA PRINCIPAL</i></div>
 <div class="r"><span class="tm">19:30</span><span></span><span><b>Presidente</b></span><span class="who">${S(w,'presi')}</span></div>
 <div class="r"><span></span><span></span><span>Canción ${inp('sOpen',w.sOpen,'sn')} y oración</span><span class="who">${S(w,'oraA')}</span></div>
@@ -491,6 +515,7 @@ ${rows}
 <div class="foot">${F.map(([k,l])=>`<label>${l}<input data-w="${wi}" data-x="${k}" value="${esc(w.x[k])}"></label>`).join('')}<label>ASEO (GRUPO)<input data-w="${wi}" data-f="aseo" value="${esc(w.aseo)}"></label></div></section>`;
   }).join('');
   summary();
+  wkRefresh();
 }
 function summary(){
   if(!cur)return;const c={};
@@ -789,6 +814,7 @@ document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('[data-tab]').forEach(x=>x.setAttribute('aria-pressed',x===b));
   if(b.dataset.tab==='seg')renderSeg();
   if(b.dataset.tab==='hojas')renderHojas();
+  wkRefresh();
 });
 
 /* ---------- Hojas de asignación ---------- */
@@ -807,7 +833,7 @@ function renderHojas(){
   ids.sort().reverse();
   monthSel.innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
   const grid=$('hojasGrid');
-  if(!cur||!cur.weeks.length){grid.innerHTML='<p class="hint">Genera y guarda un mes en la pestaña Programa para que aparezcan aquí las hojas de asignación.</p>';return}
+  if(!cur||!cur.weeks.length){wkRefresh();grid.innerHTML='<p class="hint">Genera y guarda un mes en la pestaña Programa para que aparezcan aquí las hojas de asignación.</p>';return}
   let out='';
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};
@@ -820,7 +846,7 @@ function renderHojas(){
       const num=pi+1,uid=`w${wi}p${pi}`;
       const st=mainSlot&&w.seg[mainSlot.k],rep=(st&&st.e==='no'&&st.r)?st.r:null;
       const sala=p.sala==='A'?'A':'P';
-      out+=`<div class="slip-card"><div class="slip-week">${esc(dateLbl(w))} · ${esc(w.range)}</div>
+      out+=`<div class="slip-card" data-wi="${wi}"><div class="slip-week">${esc(dateLbl(w))} · ${esc(w.range)}</div>
 <div class="slip" id="slip-${uid}">
 <div class="slip-doc">Asignaciones para la reunión<br>Vida y Ministerio Cristianos</div>
 <div class="slip-f"><b>Nombre</b><span>${mainSlot?slipSelect(w,wi,p,'p'):esc(p.p||'')}</span></div>
@@ -845,6 +871,7 @@ ${rep?`<div class="slip-repl">↪ Seguimiento: <b>${esc(mainSlot.o[mainSlot.f])}
     });
   });
   grid.innerHTML=out||'<p class="hint">Este mes no tiene partes de Escuela ni Lectura de la Biblia todavía. Vuelve a la pestaña Programa y genera o completa las asignaciones.</p>';
+  wkRefresh();
   requestAnimationFrame(fitSlips);
 }
 function fitSlips(){
@@ -923,7 +950,7 @@ async function shareSlip(slipEl){
 }
 function printOneSlip(cardEl){
   document.querySelectorAll('.slip-card').forEach(c=>{if(c!==cardEl)c.style.display='none'});
-  document.body.classList.add('print-slips');fitSlips();window.print();
+  document.body.classList.add('print-slips','print-one');fitSlips();window.print();
 }
 $('hojasGrid').addEventListener('click',e=>{
   const b=e.target.closest('[data-act]');if(!b)return;
@@ -934,7 +961,7 @@ $('hojasGrid').addEventListener('click',e=>{
 });
 $('hojasImprimirTodo').onclick=()=>{if(!cur)return;document.body.classList.add('print-slips');fitSlips();window.print()};
 window.addEventListener('afterprint',()=>{
-  document.body.classList.remove('print-slips');
+  document.body.classList.remove('print-slips','print-one');
   document.querySelectorAll('.slip-card').forEach(c=>c.style.display='');
 });
 $('sheets').addEventListener('change',e=>{
@@ -963,6 +990,42 @@ $('hist').addEventListener('click',async e=>{
     try{await saveJson(HP,{programs:next},`Elimina programa ${d}`);progs=next;hist()}catch(err){say(err.message,'err')}
   }
 });
+
+/* ---------- Selector de semana (Programa y Hojas de asignación) ---------- */
+const wkSel={prog:0,hojas:0}; // índice de semana, o -1 = todas
+const wkTab=()=>document.body.dataset.tab;
+function wkLabel(w){
+  const m=String(w.range||'').match(/^(\d{1,2}(?:\s*[-–]\s*\d{1,2})?)\s+DE\s+([A-ZÁÉÍÓÚÑ]+)(?:\s+A\s+(\d{1,2})\s+DE\s+([A-ZÁÉÍÓÚÑ]+))?/i);
+  if(!m)return w.range||'Semana';
+  const ab=x=>x.slice(0,3).toLowerCase();
+  return m[3]?`${m[1].replace(/\s+/g,'')} ${ab(m[2])} – ${m[3]} ${ab(m[4])}`:`${m[1].replace(/\s*[-–]\s*/,'–')} ${ab(m[2])}`;
+}
+function wkRefresh(scroll){
+  const bar=$('wkBar'),t=wkTab();
+  if(t!=='prog'&&t!=='hojas'){bar.hidden=true;return}
+  if(!cur||!cur.weeks||!cur.weeks.length){bar.hidden=true;return}
+  const n=cur.weeks.length;
+  if(wkSel[t]>=n)wkSel[t]=0;
+  const sel=wkSel[t];
+  bar.hidden=false;
+  $('wkList').innerHTML=cur.weeks.map((w,i)=>`<button class="wkbtn" type="button" data-wk="${i}" aria-pressed="${sel===i}" title="${esc(w.range+(w.bible?' | '+w.bible:''))}"><small>Sem. ${i+1}</small>${esc(wkLabel(w))}</button>`).join('')+`<button class="wkbtn all" type="button" data-wk="-1" aria-pressed="${sel===-1}">Todas</button>`;
+  const on=$('wkList').querySelector('[aria-pressed="true"]');if(on&&on.scrollIntoView)on.scrollIntoView({block:'nearest',inline:'center'});
+  $('wkPrev').disabled=sel<=0;$('wkNext').disabled=sel===-1||sel>=n-1;
+  const host=t==='prog'?$('sheets'):$('hojasGrid'),items=host.children;
+  let shown=0;
+  [...items].forEach(el=>{
+    if(el.dataset.wi===undefined)return;
+    const hide=sel!==-1&&+el.dataset.wi!==sel;
+    el.classList.toggle('wk-hide',hide);
+    if(!hide)shown++;
+  });
+  if(t==='hojas')$('hojasEmptyWk').hidden=!(shown===0&&host.querySelector('.slip-card')!==null);
+  if(scroll){const r=host.getBoundingClientRect();if(r.top<0)host.scrollIntoView({behavior:'smooth',block:'start'})}
+}
+function wkGo(i){const t=wkTab();wkSel[t]=i;if(t==='hojas')fitSlips();wkRefresh(true);if(t==='hojas')requestAnimationFrame(fitSlips)}
+$('wkList').addEventListener('click',e=>{const b=e.target.closest('[data-wk]');if(b)wkGo(+b.dataset.wk)});
+$('wkPrev').onclick=()=>{const t=wkTab();if(wkSel[t]>0)wkGo(wkSel[t]-1)};
+$('wkNext').onclick=()=>{const t=wkTab();if(cur&&wkSel[t]>=0&&wkSel[t]<cur.weeks.length-1)wkGo(wkSel[t]+1)};
 
 /* ---------- Inicio ---------- */
 (async()=>{
