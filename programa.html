@@ -215,6 +215,16 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
  body.print-slips .slip-week{display:none}
  body.print-slips .slip{border:1px solid #999;box-shadow:none}
 }
+/* ---- Semanas especiales (asamblea / conmemoración) ---- */
+.doc-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.sheet .sp-sel{font:500 10.5px Inter;letter-spacing:0;text-transform:none;color:#777;border:1px solid #ddd;border-radius:99px;padding:1px 8px;background:#fafafa;cursor:pointer;max-width:170px}
+.sheet .sp-sel:hover{border-color:#999;color:#333}
+.sheet.sheet-sp .sp-sel{color:#6B4E14;background:#F3E6C9;border-color:#A9792A}
+.sp-banner{border:2px solid #222;border-radius:6px;text-align:center;padding:48px 20px;margin:22px 0 8px}
+.sp-kind{font:700 11px Inter;letter-spacing:.14em;text-transform:uppercase;color:#666;margin-bottom:10px}
+.sp-name{font:600 clamp(22px,4vw,32px)/1.2 var(--serif);text-transform:uppercase;display:inline-block;min-width:8ch}
+.sp-note{font-size:11.5px;color:#777;margin:14px 0 0}
+.wkbtn.sp{border-style:dashed}
 /* ---- Selector de semana ---- */
 .wk-hide{display:none}
 .wkbar{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 12px;box-shadow:var(--shadow);margin-bottom:18px}
@@ -411,14 +421,33 @@ function parse(txt){
       const det=p[4].replace(/\s+/g,' ').trim();let kind=classify(sec,title,n);if(kind==='MM'&&/^Discurso/i.test(det))kind='DMM';
       parts.push({sec,kind,title,min:+p[3],detail:p[4].replace(/\s+/g,' ').trim().slice(0,320),p:'',h:'',l:''});
     }
-    return{range:m[1].replace(/\s+/g,' ').toUpperCase(),bible:(m[2]||'').replace(/\s+/g,' ').trim().toUpperCase(),
+    let special='',spName='';
+    const mA=body.match(/(?:presidencia|presidente)\s+(asamblea[^\n]*)/i);
+    if(!parts.length||mA){
+      if(/conmemoraci[oó]n/i.test(body))special='conmemoracion';
+      else if(/asamblea\s+regional|convenci[oó]n/i.test(body))special='regional';
+      else if(/asamblea/i.test(body))special='circuito';
+    }
+    if(special){
+      spName=(special!=='conmemoracion'&&mA)?mA[1].replace(/\d.*$/,'').trim().toLowerCase().replace(/(^|\s)\S/g,c=>c.toUpperCase()):SPL[special];
+      if(!spName)spName=SPL[special];
+    }
+    return{special,spName,range:m[1].replace(/\s+/g,' ').toUpperCase(),bible:(m[2]||'').replace(/\s+/g,' ').trim().toUpperCase(),
       sOpen:os[0]?.n||'',sClose:os[1]?.n||'',sMid:mid?.n||'',presi:'',oraA:'',oraB:'',aseo:'',x:{ent:'',mic:'',aud:'',plat:'',av:''},parts};
-  }).filter(w=>w.parts.length);
+  }).filter(w=>w.parts.length||w.special);
 }
 
 /* ---------- Motor de asignación ---------- */
+const SPL={circuito:'Asamblea de Circuito',regional:'Asamblea Regional',conmemoracion:'Conmemoración de la Muerte de Jesús'};
+const SPS={circuito:'Asamblea',regional:'Asamblea',conmemoracion:'Conmemoración'};
+function setSpecial(w,v){
+  w.special=v||'';
+  if(!v){w.spName='';return}
+  if(!w.spName||Object.values(SPL).includes(w.spName))w.spName=SPL[v];
+}
 const byName=n=>people.find(p=>p.n===n);
 function slots(w){
+  if(w.special)return[];
   const s=[{o:w,f:'presi',role:'PRESIDENCIA',g:'V'},{o:w,f:'oraA',role:'ORACION',g:'V'},{o:w,f:'oraB',role:'ORACION',g:'V'}];let mm=0;
   w.parts.forEach(p=>{
     if(p.kind==='MM'){s.push({o:p,f:'p',role:MMR[Math.min(mm++,2)]},{o:p,f:'h',role:'MMH',helper:1})}
@@ -434,11 +463,12 @@ const pool=s=>{
   return c;
 };
 const newT=()=>({cnt:{},lr:{},la:{},seq:0});
-function reg(T,w){slots(w).forEach(s=>{const st=w.seg&&w.seg[s.k],n=(st&&st.e==='no'&&st.r)?st.r:s.o[s.f];if(!n)return;T.cnt[n]=(T.cnt[n]||0)+1;T.lr[n+'|'+s.role]=T.seq;T.la[n]=T.seq});T.seq++}
+function reg(T,w){if(w.special)return;slots(w).forEach(s=>{const st=w.seg&&w.seg[s.k],n=(st&&st.e==='no'&&st.r)?st.r:s.o[s.f];if(!n)return;T.cnt[n]=(T.cnt[n]||0)+1;T.lr[n+'|'+s.role]=T.seq;T.la[n]=T.seq});T.seq++}
 const score=(T,n,role)=>(T.cnt[n]||0)*3+Math.max(0,4-(T.seq-(T.lr[n+'|'+role]??-99)))*2+(T.seq-(T.la[n]??-99)<=1?2:0)+Math.random()*.7;
 function histBefore(){return progs.filter(p=>p.id<cur.id).sort((a,b)=>a.id<b.id?-1:1)}
 function tally(){const T=newT();histBefore().flatMap(p=>p.weeks).slice(-13).forEach(w=>reg(T,w));return T}
 function fillWeek(w,T,all){
+  if(w.special)return;
   const sl=slots(w);
   if(all)sl.forEach(s=>s.o[s.f]='');
   const used=new Set(sl.map(s=>s.o[s.f]).filter(Boolean));
@@ -454,7 +484,7 @@ function fillWeek(w,T,all){
 function autofill(all){
   const T=tally();cur.weeks.forEach(w=>fillWeek(w,T,all));
   let last=0;histBefore().forEach(p=>p.weeks.forEach(w=>{if(+w.aseo)last=+w.aseo}));
-  cur.weeks.forEach(w=>{if(all||!w.aseo){last=last%5+1;w.aseo=String(last)}else last=+w.aseo||last});
+  cur.weeks.forEach(w=>{if(w.special)return;if(all||!w.aseo){last=last%5+1;w.aseo=String(last)}else last=+w.aseo||last});
 }
 
 /* ---------- Render ---------- */
@@ -487,11 +517,21 @@ function sel(w,sl,wi,o,f){
   const out=val&&!names.includes(val);
   return`<select data-w="${wi}" data-s="${i}" class="${out?'bad-sel':''}" aria-label="Asignado"><option value="">—</option>${(out?[val,...names]:names).map(n=>`<option ${n===val?'selected':''} value="${esc(n)}">${out&&n===val?'⚠ ':''}${esc(n)}</option>`).join('')}</select>`;
 }
+function spSelect(w,wi){
+  return`<select class="sp-sel no-print" data-w="${wi}" data-sp aria-label="Tipo de semana" title="Tipo de semana"><option value=""${w.special?'':' selected'}>Reunión normal</option>${Object.entries(SPL).map(([k,l])=>`<option value="${k}"${w.special===k?' selected':''}>${l}</option>`).join('')}</select>`;
+}
+function specialSheet(w,wi,title){
+  const ce=(f,v)=>`<span class="ce" contenteditable="true" spellcheck="false" data-w="${wi}" data-f="${f}">${esc(v)}</span>`;
+  return`<section class="sheet sheet-sp" data-wi="${wi}"><div class="doc doc-row"><span>Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</span>${spSelect(w,wi)}</div>
+<div class="wk">${ce('range',w.range)}<i>${esc(SPL[w.special])}</i></div>
+<div class="sp-banner"><div class="sp-kind">${esc(SPL[w.special])}</div><div class="sp-name">${ce('spName',w.spName||SPL[w.special])}</div><p class="sp-note no-print">Esta semana no hay reunión: nadie tiene asignaciones. Puedes editar el nombre tocándolo.</p></div></section>`;
+}
 function render(){
   $('tools').hidden=!cur;
   if(!cur){$('sheets').innerHTML='';wkRefresh();return}
   const [y,mo]=cur.id.split('-'),title=`${MESES[+mo-1]} ${y}`;
   $('sheets').innerHTML=cur.weeks.map((w,wi)=>{
+    if(w.special)return specialSheet(w,wi,title);
     const sl=slots(w),tm=times(w),S=(o,f)=>sel(w,sl,wi,o,f);
     const inp=(f,v,c='')=>`<input class="${c}" data-w="${wi}" data-f="${f}" value="${esc(v)}">`;
     const ce=(pi,f,v,c='')=>`<span class="ce ${c}" contenteditable="true" spellcheck="false" data-w="${wi}"${pi===null?'':` data-p="${pi}"`} data-f="${f}">${esc(v)}</span>`;
@@ -505,7 +545,7 @@ function render(){
       return head+`<div class="pt"><div class="r"><span class="tm">${p.t}</span><span class="n">${n}</span><div class="tt"><b>${ce(pi,'title',p.title)}</b> <span class="mn">(${p.min} min.)</span>${ref}</div><div class="who">${who}</div></div>${l2}</div>`;
     }).join('');
     const F=[['ent','ACOMODADOR ENTRADA'],['mic','MICRÓFONOS'],['aud','ACOMODADOR AUDITORIO'],['plat','PLATAFORMA'],['av','AUDIO VIDEO / ZOOM']];
-    return`<section class="sheet" data-wi="${wi}"><div class="doc">Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</div>
+    return`<section class="sheet" data-wi="${wi}"><div class="doc doc-row"><span>Guía de actividades para la reunión Vida y Ministerio Cristianos · ${title}</span>${spSelect(w,wi)}</div>
 <div class="wk">${ce(null,'range',w.range)}${ce(null,'bible',w.bible)}<i>SALA PRINCIPAL</i></div>
 <div class="r"><span class="tm">19:30</span><span></span><span><b>Presidente</b></span><span class="who">${S(w,'presi')}</span></div>
 <div class="r"><span></span><span></span><span>Canción ${inp('sOpen',w.sOpen,'sn')} y oración</span><span class="who">${S(w,'oraA')}</span></div>
@@ -606,7 +646,7 @@ function renderSeg(){
     const s=r.cells[wi];if(!s||!s.o[s.f])return'<td></td>';
     const st=w.seg[s.k]||{};if(st.e==='ok')ok++;else if(st.e==='no')no++;else if(st.e==='conf')cf++;else pe++;
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
-  g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br><button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button></th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
+  g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br>${w.special?`<small>${esc(w.spName||SPL[w.special])}</small>`:`<button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button>`}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
   renderRepl();renderCompliance();renderPerson();
 }
@@ -826,7 +866,7 @@ function meetingDate(w){
   return new Date(y,mo,+m[1]+3);
 }
 function fechaDDMM(w){const d=meetingDate(w);return d?String(d.getDate()).padStart(2,'0')+'/'+String(d.getMonth()+1).padStart(2,'0')+'/'+d.getFullYear():''}
-function eligibleParts(w){return w.parts.map((p,pi)=>({p,pi})).filter(({p})=>p.kind==='LECTURA'||p.sec==='M')}
+function eligibleParts(w){if(w.special)return[];return w.parts.map((p,pi)=>({p,pi})).filter(({p})=>p.kind==='LECTURA'||p.sec==='M')}
 function slipSelect(w,wi,part,field){return sel(w,slots(w),wi,part,field)}
 function renderHojas(){
   const monthSel=$('hojasMonth');
@@ -970,6 +1010,7 @@ window.addEventListener('afterprint',()=>{
 });
 $('sheets').addEventListener('change',e=>{
   const t=e.target,w=cur?.weeks[t.dataset.w];if(!w)return;
+  if(t.dataset.sp!==undefined){setSpecial(w,t.value);draft();render();return}
   if(t.dataset.s!==undefined){const s=slots(w)[t.dataset.s];s.o[s.f]=t.value;render()}
   else{
     if(t.dataset.p!==undefined)w.parts[t.dataset.p][t.dataset.f]=t.value;
@@ -1022,7 +1063,7 @@ function wkRefresh(){
     const st=wkSel[t];
     if(st.id!==cur.id||st.i>=cur.weeks.length){st.id=cur.id;st.i=wkDefault()}
     const sel=st.i;
-    bar.querySelector('.wkbar-list').innerHTML=cur.weeks.map((w,i)=>`<button class="wkbtn" type="button" data-wk="${i}" aria-pressed="${sel===i}" title="${esc(w.range+(w.bible?' | '+w.bible:''))}"><small>Sem. ${i+1}</small>${esc(wkLabel(w))}</button>`).join('')+`<button class="wkbtn all" type="button" data-wk="-1" aria-pressed="${sel===-1}">Todas</button>`;
+    bar.querySelector('.wkbar-list').innerHTML=cur.weeks.map((w,i)=>`<button class="wkbtn${w.special?' sp':''}" type="button" data-wk="${i}" aria-pressed="${sel===i}" title="${esc(w.range+(w.bible?' | '+w.bible:''))}"><small>Sem. ${i+1}${w.special?' · '+SPS[w.special]:''}</small>${esc(wkLabel(w))}</button>`).join('')+`<button class="wkbtn all" type="button" data-wk="-1" aria-pressed="${sel===-1}">Todas</button>`;
     const on=bar.querySelector('.wkbtn[aria-pressed="true"]');
     if(on){const l=bar.querySelector('.wkbar-list');l.scrollLeft=Math.max(0,on.offsetLeft-l.clientWidth/2+on.offsetWidth/2)}
     bar.querySelector('[data-nav="-1"]').disabled=sel<=0;
@@ -1035,7 +1076,9 @@ function wkRefresh(){
       if(!hide)shown++;
     });
     if(t==='hojas'){
-      $('hojasEmptyWk').hidden=!(shown===0&&host.querySelector('.slip-card')!==null);
+      const sw=sel>=0?cur.weeks[sel]:null;
+      $('hojasEmptyWk').textContent=sw&&sw.special?`Esta semana es «${sw.spName||SPL[sw.special]}»: no hay reunión, así que no hay hojas de asignación.`:'Esta semana no tiene partes de Escuela ni Lectura de la Biblia.';
+      $('hojasEmptyWk').hidden=!(shown===0&&(sw&&sw.special?true:host.querySelector('.slip-card')!==null));
       requestAnimationFrame(fitSlips);
     }
   });
