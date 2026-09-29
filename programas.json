@@ -3794,7 +3794,9 @@
       "p8.l": {
        "e": "ok"
       }
-     }
+     },
+     "special": "circuito",
+     "spName": "Asamblea de Circuito"
     },
     {
      "range": "22-28 DE JUNIO",
