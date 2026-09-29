@@ -2536,717 +2536,6 @@
    ]
   },
   {
-   "id": "2026-06",
-   "weeks": [
-    {
-     "range": "1-7 DE JUNIO",
-     "bible": "JEREMÍAS 1-3",
-     "sOpen": "84",
-     "sClose": "18",
-     "sMid": "76",
-     "presi": "Cristian Da Silva",
-     "oraA": "Felipe Escandell",
-     "oraB": "Guillermo Colina",
-     "aseo": "1",
-     "x": {
-      "ent": "",
-      "mic": "",
-      "aud": "",
-      "plat": "",
-      "av": ""
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "“No te dejes intimidar […], porque ‘yo estoy contigo’”",
-       "min": 10,
-       "detail": "[Ponga el VIDEO Información sobre Jeremías]. Como a Jeremías, puede que nos asuste predicar o sintamos que no somos capaces de hacerlo bien (Jer 1:6). Jehová nos capacita y nos da fuerzas para hacer su voluntad (Jer 1:8, 9; w10 15/1 9 párrs. 7, 8; vea la imagen de la portada).",
-       "p": "Hernán Coronado",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "Jer 2:28. Jehová desafió a los judíos infieles. ¿Qué aprendemos de lo que les dijo? (jr 43 párrs. 3). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
-       "p": "David Cruz",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 3:14-25 (th lección 12).",
-       "p": "Gabriel Ugalde",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 3:14-25 (th lección 12)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 3,
-       "detail": "DE CASA EN CASA. Empiece hablando de un tema de actualidad, pero luego muéstrele a la persona lo que dice la Biblia sobre un tema que a ella le interese más (lmd lección 2 punto 5).",
-       "p": "Verónica de Alvarado",
-       "h": "Claudia de Godoy",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 2 punto 5)",
-       "desc": "DE CASA EN CASA. Empiece hablando de un tema de actualidad, pero luego muéstrele a la persona lo que dice la Biblia sobre un tema que a ella le interese más."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga revisitas",
-       "min": 4,
-       "detail": "DE CASA EN CASA. Ofrezca un curso de la Biblia (lmd lección 8 punto 3).",
-       "p": "Erika de Escandell",
-       "h": "Rocío Valenzuela",
-       "l": "",
-       "t": "20:04",
-       "ref": "(lmd lección 8 punto 3)",
-       "desc": "DE CASA EN CASA. Ofrezca un curso de la Biblia."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga discípulos",
-       "min": 5,
-       "detail": "Converse con alguien que estudia la Biblia con usted pero no progresa (lmd lección 12 punto 5).",
-       "p": "Ximena de Correa",
-       "h": "Silvana de Cancino",
-       "l": "",
-       "t": "20:10",
-       "ref": "(lmd lección 12 punto 5)",
-       "desc": "Converse con alguien que estudia la Biblia con usted pero no progresa."
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "¡Sé valiente como Jeremías!",
-       "min": 6,
-       "detail": "Análisis con el auditorio. Ponga el VIDEO Aprende de los amigos de Jehová: Jeremías. Luego pregunte: ¿Qué hizo Jeremías para ser amigo de Jehová? (Jer 1:6-8). ¿A quién quieres hablarle de Jehová? ¿Qué le dirías para ayudarle a hacerse amigo de Jehová?",
-       "p": "Jorge Benavides",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "“Listos para presentar una defensa […] con apacibilidad y profundo respeto”",
-       "min": 9,
-       "detail": "Análisis con el auditorio. Para predicar las buenas noticias y defender las normas morales de Jehová, necesitamos ser valientes. Pero hay que equilibrar el valor con otras cualidades cristianas. Lea 1 Pedro 3:15. Luego pregunte: ¿Qué otras cualidades necesitamos cuando explicamos nuestras creencias? ¿Por qué son import",
-       "p": "Luis López",
-       "h": "",
-       "l": "",
-       "t": "20:26",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "lfb lecciones 90, 91.",
-       "p": "Luis Escandell",
-       "h": "",
-       "l": "Mauricio Valenzuela",
-       "t": "20:35",
-       "ref": "",
-       "desc": "lfb lecciones 90, 91."
-      }
-     ],
-     "seg": {
-      "oraA": {
-       "e": "no",
-       "r": "Miguel Meneses",
-       "n": ""
-      },
-      "p3.p": {
-       "e": "no",
-       "r": "Cecilia de Silva",
-       "n": ""
-      },
-      "p3.h": {
-       "e": "no",
-       "r": "Valezka de Cruz",
-       "n": ""
-      },
-      "p5.h": {
-       "e": "no",
-       "r": "Roxana de Ruiz",
-       "n": ""
-      },
-      "presi": {
-       "e": "ok"
-      },
-      "oraB": {
-       "e": "ok"
-      },
-      "p0.p": {
-       "e": "ok"
-      },
-      "p1.p": {
-       "e": "ok"
-      },
-      "p2.p": {
-       "e": "ok"
-      },
-      "p4.p": {
-       "e": "ok"
-      },
-      "p4.h": {
-       "e": "ok"
-      },
-      "p5.p": {
-       "e": "ok"
-      },
-      "p6.p": {
-       "e": "ok"
-      },
-      "p7.p": {
-       "e": "ok"
-      },
-      "p8.p": {
-       "e": "ok"
-      },
-      "p8.l": {
-       "e": "ok"
-      }
-     }
-    },
-    {
-     "range": "8-14 DE JUNIO",
-     "bible": "JEREMÍAS 4-6",
-     "sOpen": "56",
-     "sClose": "68",
-     "sMid": "60",
-     "presi": "Carlos Alvarado",
-     "oraA": "Johnny Silva",
-     "oraB": "Felipe Godoy",
-     "aseo": "2",
-     "x": {
-      "ent": "",
-      "mic": "",
-      "aud": "",
-      "plat": "",
-      "av": ""
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "No nos enfermemos espiritualmente como les pasó a los de Judá",
-       "min": 10,
-       "detail": "El pueblo de Judá era terco y rebelde (Jer 4:4, 14; w13 15/3 9, 10 párrs. 8, 9). No les interesaba recibir el diagnóstico que Jehová hizo de su estado espiritual (Jer 5:31; jr 114 párr. 2). Como no escucharon las advertencias de Jehová, él los castigó (Jer 6:17-19). PREGÚNTESE: “¿Qué puedo hacer para no enfermarme en s",
-       "p": "Ronny Pérez",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "Jer 4:10. ¿En qué sentido engañó Jehová a su pueblo? (w07 15/3 9 párr. 4). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
-       "p": "Jimmy Silva",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 5:1-11 (th lección 5).",
-       "p": "Ismael Orellana",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 5:1-11 (th lección 5)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "PREDICACIÓN PÚBLICA. (lmd lección 2 punto 3).",
-       "p": "Marcela de Valenzuela",
-       "h": "Carla Alvarado",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 2 punto 3)",
-       "desc": "PREDICACIÓN PÚBLICA."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "DE CASA EN CASA. (lmd lección 1 punto 3).",
-       "p": "Lisette de Molina",
-       "h": "Paola de Mesa",
-       "l": "",
-       "t": "20:03",
-       "ref": "(lmd lección 1 punto 3)",
-       "desc": "DE CASA EN CASA."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga revisitas",
-       "min": 4,
-       "detail": "PREDICACIÓN INFORMAL. La persona le dice que no está segura de si se puede confiar en la Biblia (lmd lección 3 punto 3).",
-       "p": "Emilia Robles",
-       "h": "Poulette de Robles",
-       "l": "",
-       "t": "20:06",
-       "ref": "(lmd lección 3 punto 3)",
-       "desc": "PREDICACIÓN INFORMAL. La persona le dice que no está segura de si se puede confiar en la Biblia."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Explique sus creencias",
-       "min": 3,
-       "detail": "Escenificación. ijwfq artículo 5. Tema: ¿De dónde proviene el nombre testigos de Jehová? (th lección 7).",
-       "p": "Gisele de Pérez",
-       "h": "Leticia de Ugalde",
-       "l": "",
-       "t": "20:12",
-       "ref": "(th lección 7)",
-       "desc": "Escenificación. ijwfq artículo 5. Tema: ¿De dónde proviene el nombre testigos de Jehová?"
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "Proteja su corazón de la información falsa",
-       "min": 8,
-       "detail": "Análisis con el auditorio. En el antiguo Israel, los falsos profetas y videntes difundían información falsa. Esta información era peligrosa pero atrayente (Is 30:10; Jer 5:31). Del mismo modo, aquellos que esparcen información falsa en nuestros días tratan de apelar a nuestros sentimientos. ¿Cómo puede protegerse? Pong",
-       "p": "Manuel Hernández",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "NEC",
-       "title": "Necesidades de la congregación",
-       "min": 7,
-       "detail": "",
-       "p": "Claudio Correa",
-       "h": "",
-       "l": "",
-       "t": "20:28",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "lfb lecciones 92, 93.",
-       "p": "Mario Aliaga",
-       "h": "",
-       "l": "Eduardo Benavides",
-       "t": "20:35",
-       "ref": "",
-       "desc": "lfb lecciones 92, 93."
-      }
-     ],
-     "seg": {
-      "p0.p": {
-       "e": "no",
-       "r": "Luis Escandell",
-       "n": ""
-      },
-      "p5.h": {
-       "e": "no",
-       "r": "Sirlene de Coronado",
-       "n": ""
-      },
-      "p5.p": {
-       "e": "no",
-       "r": "Fabiola de Da Silva",
-       "n": ""
-      },
-      "oraB": {
-       "e": "no",
-       "r": "Matías Colina",
-       "n": ""
-      },
-      "presi": {
-       "e": "ok"
-      },
-      "oraA": {
-       "e": "ok"
-      },
-      "p1.p": {
-       "e": "ok"
-      },
-      "p2.p": {
-       "e": "ok"
-      },
-      "p3.p": {
-       "e": "ok"
-      },
-      "p3.h": {
-       "e": "ok"
-      },
-      "p4.p": {
-       "e": "ok"
-      },
-      "p4.h": {
-       "e": "ok"
-      },
-      "p6.p": {
-       "e": "ok"
-      },
-      "p6.h": {
-       "e": "ok"
-      },
-      "p7.p": {
-       "e": "ok"
-      },
-      "p8.p": {
-       "e": "ok"
-      },
-      "p9.p": {
-       "e": "ok"
-      },
-      "p9.l": {
-       "e": "ok"
-      }
-     }
-    },
-    {
-     "range": "15-21 DE JUNIO",
-     "bible": "JEREMÍAS 7, 8",
-     "sOpen": "152",
-     "sClose": "71",
-     "sMid": "91",
-     "presi": "Jorge Benavides",
-     "oraA": "Miguel Meneses",
-     "oraB": "Luis Cabezas",
-     "aseo": "3",
-     "x": {
-      "ent": "",
-      "mic": "",
-      "aud": "",
-      "plat": "",
-      "av": ""
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "No respetaron el templo de Jehová",
-       "min": 10,
-       "detail": "Muchos habitantes de Judá creían que el templo por sí solo los iba a proteger a pesar de su mala conducta (Jer 7:4, 8-10; jr 21 párr. 12). Su comportamiento manchaba el nombre de Jehová (Jer 7:11; it “Jehová” párr. 78). Jehová usó el ejemplo de Siló para mostrarles lo que pasaría con el templo (Jer 7:12-14; it “Siló” n",
-       "p": "Luis Escandell",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "Jer 8:22. Jeremías dijo: “¿Acaso no hay ningún bálsamo en Galaad?”. ¿A qué se refería? (jr 135 párr. 14). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
-       "p": "Mauricio Valenzuela",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 8:4-13 (th lección 2).",
-       "p": "Elías Mesa",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 8:4-13 (th lección 2)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 3,
-       "detail": "PREDICACIÓN INFORMAL. (lmd lección 5 punto 5).",
-       "p": "Cristhel de Hernández",
-       "h": "Rita Panes",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 5 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga revisitas",
-       "min": 4,
-       "detail": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor (lmd lección 9 punto 3).",
-       "p": "Valezka de Cruz",
-       "h": "Patricia de Pizarro",
-       "l": "",
-       "t": "20:04",
-       "ref": "(lmd lección 9 punto 3)",
-       "desc": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga discípulos",
-       "min": 5,
-       "detail": "lff lección 19 punto 6 (th lección 19).",
-       "p": "Cecilia de Silva",
-       "h": "Nayade de Benavides",
-       "l": "",
-       "t": "20:10",
-       "ref": "(th lección 19)",
-       "desc": "lff lección 19 punto 6."
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "¿Cómo podemos demostrar que respetamos el Salón del Reino?",
-       "min": 5,
-       "detail": "Análisis con el auditorio. Ponga el VIDEO Hazte amigo de Jehová: Tienes que amar la casa de Jehová. Luego pregunte: ¿Qué debemos hacer para cuidar el Salón del Reino, y por qué? Lea 1 Timoteo 2:9, 10. Luego pregunte: ¿De qué otra manera podemos todos demostrar respeto por Jehová cuando asistimos a nuestras reuniones?",
-       "p": "Hernán Coronado",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "Cómo usamos las donaciones: Mantenemos nuestros Salones del Reino en buen estado",
-       "min": 10,
-       "detail": "Análisis con el auditorio basado en el artículo. Repase los gastos que hay que cubrir para cuidar el Salón del Reino (hdu artículo 30). ¿Qué gastos tenemos que cubrir para mantener nuestros Salones del Reino en buen estado? ¿Y por qué es importante cuidar nuestros salones? A veces hay grandes proyectos de mantenimiento",
-       "p": "Ronny Pérez",
-       "h": "",
-       "l": "",
-       "t": "20:25",
-       "ref": "",
-       "desc": "Análisis con el auditorio basado en el artículo."
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "lfb introducción a la sección 14 y lecciones 94, 95.",
-       "p": "Claudio Correa",
-       "h": "",
-       "l": "Enrique Núñez",
-       "t": "20:35",
-       "ref": "",
-       "desc": "lfb introducción a la sección 14 y lecciones 94, 95."
-      }
-     ],
-     "seg": {}
-    },
-    {
-     "range": "22-28 DE JUNIO",
-     "bible": "JEREMÍAS 9, 10",
-     "sOpen": "5",
-     "sClose": "58",
-     "sMid": "48",
-     "presi": "Luis López",
-     "oraA": "Jimmy Silva",
-     "oraB": "Matías Colina",
-     "aseo": "4",
-     "x": {
-      "ent": "",
-      "mic": "",
-      "aud": "",
-      "plat": "",
-      "av": ""
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "¿De qué presumirá usted?",
-       "min": 10,
-       "detail": "No tratemos de impresionar a los demás con nuestros logros y habilidades (Jer 9:23; w20.07 6 párrs. 13-15). Busquemos oportunidades de presumir de Jehová (Jer 9:24; w25.05 30 párr. 14). Sigamos el ejemplo de humildad del apóstol Pablo (1Co 2:1-5; it “Sabiduría” párrs. 25, 26).",
-       "p": "Claudio Correa",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "Jer 10:21. ¿Qué pueden aprender los superintendentes cristianos de este versículo? (jr 133, 134 párrs. 11, 12). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
-       "p": "Ricardo Ugalde",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 9:13-24 (th lección 12).",
-       "p": "Guillermo Colina",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 9:13-24 (th lección 12)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 4,
-       "detail": "PREDICACIÓN INFORMAL. (lmd lección 3 punto 5).",
-       "p": "Lauren Arias",
-       "h": "Lidiana de Arias",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 3 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 4,
-       "detail": "DE CASA EN CASA. (lmd lección 3 punto 4).",
-       "p": "Andrea de Orellana",
-       "h": "Alicia Rodríguez",
-       "l": "",
-       "t": "20:05",
-       "ref": "(lmd lección 3 punto 4)",
-       "desc": "DE CASA EN CASA."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga revisitas",
-       "min": 4,
-       "detail": "PREDICACIÓN INFORMAL. (lmd lección 7 punto 3).",
-       "p": "Elisabete de Ortega",
-       "h": "Marisol Avila",
-       "l": "",
-       "t": "20:11",
-       "ref": "(lmd lección 7 punto 3)",
-       "desc": "PREDICACIÓN INFORMAL."
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "lfb lecciones 96, 97.",
-       "p": "Cristian Da Silva",
-       "h": "",
-       "l": "David Ortega",
-       "t": "20:20",
-       "ref": "",
-       "desc": "lfb lecciones 96, 97."
-      }
-     ],
-     "seg": {
-      "presi": {
-       "e": "ok"
-      },
-      "oraA": {
-       "e": "ok"
-      },
-      "oraB": {
-       "e": "ok"
-      },
-      "p0.p": {
-       "e": "ok"
-      },
-      "p1.p": {
-       "e": "ok"
-      },
-      "p2.p": {
-       "e": "ok"
-      },
-      "p3.p": {
-       "e": "ok"
-      },
-      "p3.h": {
-       "e": "ok"
-      },
-      "p4.p": {
-       "e": "ok"
-      },
-      "p4.h": {
-       "e": "ok"
-      },
-      "p5.p": {
-       "e": "no",
-       "r": "Nayade de Benavides",
-       "n": ""
-      },
-      "p5.h": {
-       "e": "ok"
-      },
-      "p6.p": {
-       "e": "ok"
-      },
-      "p6.l": {
-       "e": "no",
-       "r": "David Cruz",
-       "n": ""
-      }
-     }
-    }
-   ]
-  },
-  {
    "id": "2026-10",
    "weeks": [
     {
@@ -3905,6 +3194,766 @@
       }
      ],
      "seg": {}
+    }
+   ]
+  },
+  {
+   "id": "2026-06",
+   "weeks": [
+    {
+     "range": "1-7 DE JUNIO",
+     "bible": "JEREMÍAS 1-3",
+     "sOpen": "84",
+     "sClose": "18",
+     "sMid": "76",
+     "presi": "Cristian Da Silva",
+     "oraA": "Felipe Escandell",
+     "oraB": "Guillermo Colina",
+     "aseo": "1",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "“No te dejes intimidar […], porque ‘yo estoy contigo’”",
+       "min": 10,
+       "detail": "[Ponga el VIDEO Información sobre Jeremías]. Como a Jeremías, puede que nos asuste predicar o sintamos que no somos capaces de hacerlo bien (Jer 1:6). Jehová nos capacita y nos da fuerzas para hacer su voluntad (Jer 1:8, 9; w10 15/1 9 párrs. 7, 8; vea la imagen de la portada).",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Jer 2:28. Jehová desafió a los judíos infieles. ¿Qué aprendemos de lo que les dijo? (jr 43 párrs. 3). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
+       "p": "David Cruz",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 3:14-25 (th lección 12).",
+       "p": "Gabriel Ugalde",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 3:14-25 (th lección 12)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Empiece hablando de un tema de actualidad, pero luego muéstrele a la persona lo que dice la Biblia sobre un tema que a ella le interese más (lmd lección 2 punto 5).",
+       "p": "Verónica de Alvarado",
+       "h": "Claudia de Godoy",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 2 punto 5)",
+       "desc": "DE CASA EN CASA. Empiece hablando de un tema de actualidad, pero luego muéstrele a la persona lo que dice la Biblia sobre un tema que a ella le interese más."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Ofrezca un curso de la Biblia (lmd lección 8 punto 3).",
+       "p": "Erika de Escandell",
+       "h": "Rocío Valenzuela",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 8 punto 3)",
+       "desc": "DE CASA EN CASA. Ofrezca un curso de la Biblia."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga discípulos",
+       "min": 5,
+       "detail": "Converse con alguien que estudia la Biblia con usted pero no progresa (lmd lección 12 punto 5).",
+       "p": "Ximena de Correa",
+       "h": "Silvana de Cancino",
+       "l": "",
+       "t": "20:10",
+       "ref": "(lmd lección 12 punto 5)",
+       "desc": "Converse con alguien que estudia la Biblia con usted pero no progresa."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "¡Sé valiente como Jeremías!",
+       "min": 6,
+       "detail": "Análisis con el auditorio. Ponga el VIDEO Aprende de los amigos de Jehová: Jeremías. Luego pregunte: ¿Qué hizo Jeremías para ser amigo de Jehová? (Jer 1:6-8). ¿A quién quieres hablarle de Jehová? ¿Qué le dirías para ayudarle a hacerse amigo de Jehová?",
+       "p": "Jorge Benavides",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "“Listos para presentar una defensa […] con apacibilidad y profundo respeto”",
+       "min": 9,
+       "detail": "Análisis con el auditorio. Para predicar las buenas noticias y defender las normas morales de Jehová, necesitamos ser valientes. Pero hay que equilibrar el valor con otras cualidades cristianas. Lea 1 Pedro 3:15. Luego pregunte: ¿Qué otras cualidades necesitamos cuando explicamos nuestras creencias? ¿Por qué son import",
+       "p": "Luis López",
+       "h": "",
+       "l": "",
+       "t": "20:26",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 90, 91.",
+       "p": "Luis Escandell",
+       "h": "",
+       "l": "Mauricio Valenzuela",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb lecciones 90, 91."
+      }
+     ],
+     "seg": {
+      "oraA": {
+       "e": "no",
+       "r": "Miguel Meneses",
+       "n": ""
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Cecilia de Silva",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Valezka de Cruz",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "no",
+       "r": "Roxana de Ruiz",
+       "n": ""
+      },
+      "presi": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "8-14 DE JUNIO",
+     "bible": "JEREMÍAS 4-6",
+     "sOpen": "56",
+     "sClose": "68",
+     "sMid": "60",
+     "presi": "Carlos Alvarado",
+     "oraA": "Johnny Silva",
+     "oraB": "Felipe Godoy",
+     "aseo": "2",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "No nos enfermemos espiritualmente como les pasó a los de Judá",
+       "min": 10,
+       "detail": "El pueblo de Judá era terco y rebelde (Jer 4:4, 14; w13 15/3 9, 10 párrs. 8, 9). No les interesaba recibir el diagnóstico que Jehová hizo de su estado espiritual (Jer 5:31; jr 114 párr. 2). Como no escucharon las advertencias de Jehová, él los castigó (Jer 6:17-19). PREGÚNTESE: “¿Qué puedo hacer para no enfermarme en s",
+       "p": "Ronny Pérez",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Jer 4:10. ¿En qué sentido engañó Jehová a su pueblo? (w07 15/3 9 párr. 4). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
+       "p": "Jimmy Silva",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 5:1-11 (th lección 5).",
+       "p": "Ismael Orellana",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 5:1-11 (th lección 5)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 2,
+       "detail": "PREDICACIÓN PÚBLICA. (lmd lección 2 punto 3).",
+       "p": "Marcela de Valenzuela",
+       "h": "Carla Alvarado",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 2 punto 3)",
+       "desc": "PREDICACIÓN PÚBLICA."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 2,
+       "detail": "DE CASA EN CASA. (lmd lección 1 punto 3).",
+       "p": "Lisette de Molina",
+       "h": "Paola de Mesa",
+       "l": "",
+       "t": "20:03",
+       "ref": "(lmd lección 1 punto 3)",
+       "desc": "DE CASA EN CASA."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. La persona le dice que no está segura de si se puede confiar en la Biblia (lmd lección 3 punto 3).",
+       "p": "Emilia Robles",
+       "h": "Poulette de Robles",
+       "l": "",
+       "t": "20:06",
+       "ref": "(lmd lección 3 punto 3)",
+       "desc": "PREDICACIÓN INFORMAL. La persona le dice que no está segura de si se puede confiar en la Biblia."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Explique sus creencias",
+       "min": 3,
+       "detail": "Escenificación. ijwfq artículo 5. Tema: ¿De dónde proviene el nombre testigos de Jehová? (th lección 7).",
+       "p": "Gisele de Pérez",
+       "h": "Leticia de Ugalde",
+       "l": "",
+       "t": "20:12",
+       "ref": "(th lección 7)",
+       "desc": "Escenificación. ijwfq artículo 5. Tema: ¿De dónde proviene el nombre testigos de Jehová?"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Proteja su corazón de la información falsa",
+       "min": 8,
+       "detail": "Análisis con el auditorio. En el antiguo Israel, los falsos profetas y videntes difundían información falsa. Esta información era peligrosa pero atrayente (Is 30:10; Jer 5:31). Del mismo modo, aquellos que esparcen información falsa en nuestros días tratan de apelar a nuestros sentimientos. ¿Cómo puede protegerse? Pong",
+       "p": "Manuel Hernández",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "NEC",
+       "title": "Necesidades de la congregación",
+       "min": 7,
+       "detail": "",
+       "p": "Claudio Correa",
+       "h": "",
+       "l": "",
+       "t": "20:28",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 92, 93.",
+       "p": "Mario Aliaga",
+       "h": "",
+       "l": "Eduardo Benavides",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb lecciones 92, 93."
+      }
+     ],
+     "seg": {
+      "p0.p": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "no",
+       "r": "Sirlene de Coronado",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Fabiola de Da Silva",
+       "n": ""
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Matías Colina",
+       "n": ""
+      },
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p6.h": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p9.p": {
+       "e": "ok"
+      },
+      "p9.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "15-21 DE JUNIO",
+     "bible": "JEREMÍAS 7, 8",
+     "sOpen": "152",
+     "sClose": "71",
+     "sMid": "91",
+     "presi": "Jorge Benavides",
+     "oraA": "Miguel Meneses",
+     "oraB": "Luis Cabezas",
+     "aseo": "3",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "No respetaron el templo de Jehová",
+       "min": 10,
+       "detail": "Muchos habitantes de Judá creían que el templo por sí solo los iba a proteger a pesar de su mala conducta (Jer 7:4, 8-10; jr 21 párr. 12). Su comportamiento manchaba el nombre de Jehová (Jer 7:11; it “Jehová” párr. 78). Jehová usó el ejemplo de Siló para mostrarles lo que pasaría con el templo (Jer 7:12-14; it “Siló” n",
+       "p": "Luis Escandell",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Jer 8:22. Jeremías dijo: “¿Acaso no hay ningún bálsamo en Galaad?”. ¿A qué se refería? (jr 135 párr. 14). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
+       "p": "Mauricio Valenzuela",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 8:4-13 (th lección 2).",
+       "p": "Elías Mesa",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 8:4-13 (th lección 2)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 3,
+       "detail": "PREDICACIÓN INFORMAL. (lmd lección 5 punto 5).",
+       "p": "Cristhel de Hernández",
+       "h": "Rita Panes",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 5 punto 5)",
+       "desc": "PREDICACIÓN INFORMAL."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor (lmd lección 9 punto 3).",
+       "p": "Valezka de Cruz",
+       "h": "Patricia de Pizarro",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 9 punto 3)",
+       "desc": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga discípulos",
+       "min": 5,
+       "detail": "lff lección 19 punto 6 (th lección 19).",
+       "p": "Cecilia de Silva",
+       "h": "Nayade de Benavides",
+       "l": "",
+       "t": "20:10",
+       "ref": "(th lección 19)",
+       "desc": "lff lección 19 punto 6."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "¿Cómo podemos demostrar que respetamos el Salón del Reino?",
+       "min": 5,
+       "detail": "Análisis con el auditorio. Ponga el VIDEO Hazte amigo de Jehová: Tienes que amar la casa de Jehová. Luego pregunte: ¿Qué debemos hacer para cuidar el Salón del Reino, y por qué? Lea 1 Timoteo 2:9, 10. Luego pregunte: ¿De qué otra manera podemos todos demostrar respeto por Jehová cuando asistimos a nuestras reuniones?",
+       "p": "Hernán Coronado",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Cómo usamos las donaciones: Mantenemos nuestros Salones del Reino en buen estado",
+       "min": 10,
+       "detail": "Análisis con el auditorio basado en el artículo. Repase los gastos que hay que cubrir para cuidar el Salón del Reino (hdu artículo 30). ¿Qué gastos tenemos que cubrir para mantener nuestros Salones del Reino en buen estado? ¿Y por qué es importante cuidar nuestros salones? A veces hay grandes proyectos de mantenimiento",
+       "p": "Ronny Pérez",
+       "h": "",
+       "l": "",
+       "t": "20:25",
+       "ref": "",
+       "desc": "Análisis con el auditorio basado en el artículo."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb introducción a la sección 14 y lecciones 94, 95.",
+       "p": "Claudio Correa",
+       "h": "",
+       "l": "Enrique Núñez",
+       "t": "20:35",
+       "ref": "",
+       "desc": "lfb introducción a la sección 14 y lecciones 94, 95."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
+    },
+    {
+     "range": "22-28 DE JUNIO",
+     "bible": "JEREMÍAS 9, 10",
+     "sOpen": "5",
+     "sClose": "58",
+     "sMid": "48",
+     "presi": "Luis López",
+     "oraA": "Jimmy Silva",
+     "oraB": "Matías Colina",
+     "aseo": "4",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "¿De qué presumirá usted?",
+       "min": 10,
+       "detail": "No tratemos de impresionar a los demás con nuestros logros y habilidades (Jer 9:23; w20.07 6 párrs. 13-15). Busquemos oportunidades de presumir de Jehová (Jer 9:24; w25.05 30 párr. 14). Sigamos el ejemplo de humildad del apóstol Pablo (1Co 2:1-5; it “Sabiduría” párrs. 25, 26).",
+       "p": "Claudio Correa",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Jer 10:21. ¿Qué pueden aprender los superintendentes cristianos de este versículo? (jr 133, 134 párrs. 11, 12). ¿Qué perlas espirituales ha encontrado en la lectura bíblica de esta semana?",
+       "p": "Ricardo Ugalde",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Jer 9:13-24 (th lección 12).",
+       "p": "Guillermo Colina",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Jer 9:13-24 (th lección 12)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. (lmd lección 3 punto 5).",
+       "p": "Lauren Arias",
+       "h": "Lidiana de Arias",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 3 punto 5)",
+       "desc": "PREDICACIÓN INFORMAL."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empiece conversaciones",
+       "min": 4,
+       "detail": "DE CASA EN CASA. (lmd lección 3 punto 4).",
+       "p": "Andrea de Orellana",
+       "h": "Alicia Rodríguez",
+       "l": "",
+       "t": "20:05",
+       "ref": "(lmd lección 3 punto 4)",
+       "desc": "DE CASA EN CASA."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Haga revisitas",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. (lmd lección 7 punto 3).",
+       "p": "Elisabete de Ortega",
+       "h": "Marisol Avila",
+       "l": "",
+       "t": "20:11",
+       "ref": "(lmd lección 7 punto 3)",
+       "desc": "PREDICACIÓN INFORMAL."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "lfb lecciones 96, 97.",
+       "p": "Cristian Da Silva",
+       "h": "",
+       "l": "David Ortega",
+       "t": "20:20",
+       "ref": "",
+       "desc": "lfb lecciones 96, 97."
+      }
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Nayade de Benavides",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p6.l": {
+       "e": "no",
+       "r": "David Cruz",
+       "n": ""
+      }
+     }
     }
    ]
   }
