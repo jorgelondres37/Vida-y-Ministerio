@@ -1,6 +1,6 @@
 {
  "rows": [
-  {"num":1,"nombre":"Colina, Stephanie de","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":true,"asign":[]},
+  {"num":1,"nombre":"Colina, Stephanie de","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":true,"asign":["MM_1","MM_2","MM_3"]},
   {"num":2,"nombre":"Riquelme, Kiryat","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":3,"nombre":"Cabezas, Rosa de","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":4,"nombre":"Moraga, René","tarea":"PNB","grupo":null,"genero":"V","inactivo":true,"salud":false,"asign":[]},
