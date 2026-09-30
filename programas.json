@@ -4535,7 +4535,8 @@
       "plat": "",
       "av": ""
      },
-     "parts": []
+     "parts": [],
+     "seg": {}
     },
     {
      "special": "",
@@ -4661,7 +4662,64 @@
        "ref": "",
        "desc": "lfb introducción a la sección 12 y lecciones 74, 75."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "no",
+       "r": "Juan Aguilera",
+       "n": ""
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Elisabete de Ortega",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Nayade de Benavides",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "no",
+       "r": "Leonor Alvarado",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "no",
+       "r": "Leticia de Ugalde",
+       "n": ""
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -4787,7 +4845,56 @@
        "ref": "",
        "desc": "lfb lecciones 76, 77."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "no",
+       "r": "Erika de Escandell",
+       "n": ""
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -4926,7 +5033,59 @@
        "ref": "",
        "desc": "lfb lecciones 78, 79."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Ricardo Ugalde",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -5052,7 +5211,42 @@
        "ref": "",
        "desc": "lfb lecciones 80, 81."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      }
+     }
     }
    ]
   }
