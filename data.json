@@ -98,7 +98,7 @@
   {"num":96,"nombre":"Pizarro, Patricia de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":97,"nombre":"Robles, Poulette de","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":98,"nombre":"Valenzuela, Andrés","tarea":"PTJ","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":99,"nombre":"Valenzuela, Mauricio","tarea":"SM","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
+  {"num":99,"nombre":"Valenzuela, Mauricio","tarea":"SM","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":100,"nombre":"Valenzuela, Marcela de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":101,"nombre":"Valenzuela, Rocío","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":102,"nombre":"Pérez, Gisele de","tarea":"PR","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
