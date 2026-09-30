@@ -109,6 +109,7 @@
   {"num":107,"nombre":"Jhon Maturana","tarea":"PTJ","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM"]},
   {"num":108,"nombre":"Alejandro Oliva","tarea":"SC","grupo":null,"genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":109,"nombre":"Carolina de Rojo","tarea":"PR","grupo":"3","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
-  {"num":110,"nombre":"Elsa de Salinas","tarea":"PR","grupo":null,"genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]}
+  {"num":110,"nombre":"Elsa de Salinas","tarea":"PR","grupo":null,"genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
+  {"num":111,"nombre":"Renan Rojo","tarea":"SM/PR","grupo":null,"genero":"V","inactivo":false,"salud":false,"asign":["ORACION","DISCURSO_TESORO_BIBLIA","DISCURSO_MM","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]}
  ]
 }
