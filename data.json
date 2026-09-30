@@ -94,7 +94,7 @@
   {"num":92,"nombre":"Pizarro, Agustín","tarea":"PTJ","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":93,"nombre":"Hernández, Cristhel de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":94,"nombre":"Hernández, Janis","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
-  {"num":95,"nombre":"Robles, Cesar","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM"]},
+  {"num":95,"nombre":"Robles, Cesar","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":96,"nombre":"Pizarro, Patricia de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":97,"nombre":"Robles, Poulette de","tarea":"PTJ","grupo":"1","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":98,"nombre":"Valenzuela, Andrés","tarea":"PTJ","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
