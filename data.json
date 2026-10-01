@@ -6,7 +6,7 @@
   {"num":4,"nombre":"Moraga, René","tarea":"PNB","grupo":null,"genero":"V","inactivo":true,"salud":false,"asign":[]},
   {"num":5,"nombre":"Silva, Mauro","tarea":"PTJ","grupo":"1","genero":"V","inactivo":true,"salud":false,"asign":[]},
   {"num":6,"nombre":"Díaz, Osvaldo","tarea":"PTJ","grupo":"2","genero":"V","inactivo":true,"salud":false,"asign":[]},
-  {"num":7,"nombre":"Navarro, Olga de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":true,"asign":[]},
+  {"num":7,"nombre":"Navarro, Olga de","tarea":"PTJ","grupo":"2","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":8,"nombre":"Parra, Nicole de","tarea":"PTJ","grupo":"3","genero":"M","inactivo":true,"salud":false,"asign":[]},
   {"num":9,"nombre":"Coronado, Tomás","tarea":"PTJ","grupo":"3","genero":"V","inactivo":false,"salud":true,"asign":[]},
   {"num":10,"nombre":"Pinto, Susan de","tarea":"PTJ","grupo":"3","genero":"M","inactivo":false,"salud":true,"asign":[]},
