@@ -32,7 +32,7 @@
   {"num":30,"nombre":"Veloz, Ana María de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":31,"nombre":"Veloz, Javiana","tarea":"PTJ","grupo":"5","genero":"M","inactivo":true,"salud":false,"asign":[]},
   {"num":32,"nombre":"Yáñez, Lucía de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":true,"asign":[]},
-  {"num":33,"nombre":"Cerna, Rebecca","tarea":"PNB","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
+  {"num":33,"nombre":"Cerna, Rebeca","tarea":"PNB","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":34,"nombre":"Colina, Tomás","tarea":"PTJ","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM"]},
   {"num":35,"nombre":"Lauren Arias","tarea":"PNB","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":36,"nombre":"Molina, Rodrigo","tarea":"PTJ","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
@@ -111,6 +111,7 @@
   {"num":109,"nombre":"Carolina de Rojo","tarea":"PR","grupo":"3","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":110,"nombre":"Elsa de Salinas","tarea":"PR","grupo":null,"genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":111,"nombre":"Renan Rojo","tarea":"SM/PR","grupo":null,"genero":"V","inactivo":false,"salud":false,"asign":["ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_MM","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":112,"nombre":"Ambar Hernandes","tarea":"PNB","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]}
+  {"num":112,"nombre":"Ambar Hernandes","tarea":"PNB","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
+  {"num":113,"nombre":"Veronica de  Picardo","tarea":"PR","grupo":null,"genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]}
  ]
 }
