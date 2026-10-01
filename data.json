@@ -90,7 +90,7 @@
   {"num":88,"nombre":"Da Silva, Cristian","tarea":"AN/PR","grupo":"1","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":89,"nombre":"Escandell, Erika de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":90,"nombre":"Escandell, Luis","tarea":"AN","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["PRESIDENCIA","ORACION","DISCURSO_TESORO_BIBLIA","PERLAS_ESCONDIDAS","LECTURA_BIBLIA","DISCURSO_VIDA_CRISTIANA","NECESIDADES_CONGREGACION","ESTUDIO_BIBLICO","LECTOR_ESTUDIO_BIBLICO"]},
-  {"num":91,"nombre":"Escandell, Felipe","tarea":"PTJ","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","MM_1","DISCURSO_MM"]},
+  {"num":91,"nombre":"Escandell, Felipe","tarea":"PTJ / FAMILIAR","grupo":"4","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","MM_1","DISCURSO_MM"]},
   {"num":92,"nombre":"Pizarro, Agustín","tarea":"PTJ","grupo":"5","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":93,"nombre":"Hernández, Cristhel de","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":94,"nombre":"Hernández, Janis","tarea":"PTJ","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
