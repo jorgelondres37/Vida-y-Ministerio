@@ -6127,7 +6127,8 @@
        "ref": "",
        "desc": "lfb lecciones 58, 59."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -6253,7 +6254,8 @@
        "ref": "",
        "desc": "lfb lecciones 60, 61."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "circuito",
@@ -6379,7 +6381,8 @@
        "ref": "",
        "desc": "lfb lecciones 62, 63."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -6518,7 +6521,8 @@
        "ref": "",
        "desc": "lfb lecciones 64, 65."
       }
-     ]
+     ],
+     "seg": {}
     }
    ]
   },
@@ -6662,7 +6666,58 @@
        "ref": "",
        "desc": "lfb lección 50, introducción a la sección 9 y lección 51."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Verónica de Alvarado",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "no",
+       "r": "Hernán Coronado",
+       "n": ""
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -6801,7 +6856,59 @@
        "ref": "",
        "desc": "lfb lecciones 52, 53."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "no",
+       "r": "Thiare Aliaga",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -6927,7 +7034,54 @@
        "ref": "",
        "desc": "lfb lecciones 54, 55."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -7079,7 +7233,69 @@
        "ref": "",
        "desc": "lfb lección 56, introducción a la sección 10 y lección 57."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "no",
+       "r": "Matías Colina",
+       "n": ""
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p6.h": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p9.p": {
+       "e": "ok"
+      },
+      "p9.l": {
+       "e": "no",
+       "r": "Jimmy Silva",
+       "n": ""
+      }
+     }
     }
    ]
   }
