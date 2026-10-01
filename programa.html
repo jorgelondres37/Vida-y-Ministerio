@@ -116,6 +116,20 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 #relTable th,#relTable td{border:1px solid var(--line);padding:6px 10px;font-size:12.5px;text-align:left;white-space:nowrap}
 #relTable thead th{background:var(--fill);position:sticky;top:0;z-index:1}
 #relTable td.empty{color:var(--soft);white-space:normal}
+/* Historial de asignaciones */
+#haTable{border-collapse:collapse;min-width:100%}
+#haTable th,#haTable td{border:1px solid var(--line);padding:6px 9px;font-size:12.5px;text-align:center;white-space:nowrap;vertical-align:middle}
+#haTable th:first-child,#haTable td:first-child{text-align:left;position:sticky;left:0;background:var(--card);z-index:1;min-width:130px;font-weight:600}
+#haTable thead th{background:var(--fill);position:sticky;top:0;z-index:2;font-size:10.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--soft);font-weight:600}
+#haTable thead th:first-child{z-index:3;background:var(--fill)}
+#haTable td.ha-hi{background:var(--gold-bg);color:var(--gold-ink);font-weight:700}
+#haTable td.ha-zero{color:var(--soft);opacity:.45}
+#haTable .ha-repl{display:block;font-size:10.5px;font-weight:500;color:var(--soft);margin-top:1px}
+#haTable tbody tr:hover td{background:var(--fill)}
+#haTable tbody tr:hover td:first-child{background:var(--fill)}
+#haTable .ha-tot{font-weight:700;font-variant-numeric:tabular-nums}
+#haSummary b{color:var(--ink)}
+
 .badge{display:inline-block;font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px;white-space:nowrap}
 .badge.top{background:#D5E8D4;color:#1F6F5F}
 .badge.good{background:var(--brand-bg);color:var(--brand)}
@@ -166,19 +180,40 @@ dialog::backdrop{background:rgba(10,15,12,.5)}dialog label{display:block;font-si
 .repl-cols li.used{opacity:.6;background:transparent;border-style:dashed}
 .repl-cols li.used span{text-decoration:line-through}
 .repl-cols li.used small{color:var(--bad);font-style:italic}
-.cmp-chart{display:flex;flex-direction:column;gap:2px}
-.cmp-row{display:grid;grid-template-columns:88px 1fr 48px;align-items:center;gap:10px;padding:7px 4px;border-radius:8px;transition:background .15s}
+.cmp-chart{display:flex;flex-direction:column;gap:3px}
+.cmp-row{display:grid;grid-template-columns:100px 1fr auto;align-items:center;gap:12px;padding:8px 8px;border-radius:10px;transition:background .15s}
 .cmp-row.clickable{cursor:pointer}
 .cmp-row.clickable:hover{background:var(--fill)}
 .cmp-row.clickable:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
-.cmp-name{font-size:12.5px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.cmp-bar{height:14px;background:var(--fill);border-radius:99px;overflow:hidden}
-.cmp-bar div{height:100%;width:100%;border-radius:99px;background:linear-gradient(90deg,#E3796D,var(--bad));transform-origin:left;animation:growX .6s cubic-bezier(.2,.8,.2,1) both}
-.cmp-bar.g div{background:linear-gradient(90deg,var(--brand),#1F6F5F)}
-.cmp-bar.w div{background:linear-gradient(90deg,#FFD873,#C98A00)}
-.cmp-bar.n div{background:var(--line)}
-.cmp-num{font:700 15px var(--serif);text-align:right}
-@media(max-width:560px){.cmp-row{grid-template-columns:66px 1fr 38px;gap:6px}}
+.cmp-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cmp-name small{display:block;font-size:10.5px;font-weight:500;color:var(--soft);margin-top:1px}
+.cmp-bar{height:16px;background:var(--fill);border-radius:99px;overflow:hidden;display:flex}
+.cmp-bar .seg-ok{height:100%;background:var(--brand);border-radius:99px 0 0 99px;transform-origin:left;animation:growX .55s cubic-bezier(.2,.8,.2,1) both}
+.cmp-bar .seg-no{height:100%;background:var(--bad);border-radius:0 99px 99px 0;transform-origin:left;animation:growX .55s cubic-bezier(.2,.8,.2,1) both}
+.cmp-bar.single .seg-ok,.cmp-bar.single .seg-no{border-radius:99px}
+.cmp-bar.fail-only .seg-no{background:linear-gradient(90deg,#E3796D,var(--bad));border-radius:99px}
+.cmp-bar.pct-only{background:var(--fill)}
+.cmp-bar.pct-only .seg-ok{border-radius:99px}
+.cmp-bar.pct-only.g .seg-ok{background:var(--brand)}
+.cmp-bar.pct-only.w .seg-ok{background:var(--gold)}
+.cmp-bar.pct-only.b .seg-ok{background:var(--bad)}
+.cmp-bar.pct-only.n .seg-ok{background:var(--line)}
+.cmp-meta{display:flex;align-items:center;gap:10px;min-width:0;justify-content:flex-end}
+.cmp-num{font:700 15px var(--serif);text-align:right;min-width:2.2ch;font-variant-numeric:tabular-nums}
+.cmp-num.bad{color:var(--bad)}.cmp-num.ok{color:var(--brand)}.cmp-num.soft{color:var(--soft)}
+.cmp-detail{font-size:11px;color:var(--soft);white-space:nowrap}
+.cmp-modes{display:inline-flex;border:1px solid var(--line);border-radius:10px;overflow:hidden;background:var(--card)}
+.cmp-modes .btn{border:0;border-radius:0;border-right:1px solid var(--line);margin:0;padding:5px 11px}
+.cmp-modes .btn:last-child{border-right:0}
+.cmp-modes .btn[aria-pressed="true"]{background:var(--brand-bg);color:var(--brand)}
+.cmp-nav{display:flex;align-items:center;gap:10px}
+.cmp-nav-label{font-weight:600;font-size:13px;color:var(--ink)}
+.cmp-empty{padding:20px 8px;text-align:center;color:var(--soft);font-size:13px}
+@media(max-width:560px){
+  .cmp-row{grid-template-columns:72px 1fr;gap:6px 10px}
+  .cmp-meta{grid-column:1/-1;justify-content:flex-start;padding-left:0}
+}
+
 @media print{body.ps #progView,body.ps .top,body.ps dialog,body.ps #seg .row2,body.ps #seg h1,body.ps #seg .hint{display:none!important}
 body.ps #seg.no-print{display:block!important;page:seg}body.ps .tw{overflow:visible;max-height:none;border:0}
 body.ps #segGrid th,body.ps #segGrid td{font-size:9px;padding:3px 5px;min-width:0}body.ps #segGrid thead th{position:static}body.ps .rl,body.ps .sh th{position:static}
@@ -345,18 +380,46 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
       <div id="replLists"></div>
     </section>
 
-    <section class="card">
+    <section class="card" id="cmpSection">
       <h2>Cumplimiento por período</h2>
-      <p class="hint">Elige «Todos los meses» para el panorama general, o un mes puntual para verlo semana por semana. Toca una barra de mes para entrar a su detalle.</p>
-      <div class="row2">
-        <select id="cmpScope" aria-label="Período"></select>
-        <button class="btn small" id="cmpModeFail" type="button" aria-pressed="true">N° de fallas</button>
-        <button class="btn small" id="cmpModePct" type="button" aria-pressed="false">% de cumplimiento</button>
+      <p class="hint">Panorama de cumplimiento en el historial. Toca un mes para verlo semana a semana.</p>
+      <div class="row2" style="flex-wrap:wrap">
+        <div class="cmp-nav" id="cmpNav" hidden>
+          <button class="btn small" id="cmpBack" type="button">← Todos los meses</button>
+          <span class="cmp-nav-label" id="cmpNavLabel"></span>
+        </div>
+        <select id="cmpScope" aria-label="Período" style="min-width:180px"></select>
+        <div class="cmp-modes" role="group" aria-label="Modo de visualización">
+          <button class="btn small" id="cmpModeFail" type="button" aria-pressed="true">Fallas</button>
+          <button class="btn small" id="cmpModePct" type="button" aria-pressed="false">% cumplimiento</button>
+          <button class="btn small" id="cmpModeBoth" type="button" aria-pressed="false">Ambos</button>
+        </div>
       </div>
+      <div class="stat-cards" id="cmpKpis" style="margin:12px 0 8px"></div>
       <p class="hint" id="cmpSummary"></p>
       <div id="cmpChart" class="cmp-chart"></div>
     </section>
+
+
+    <section class="card" id="histAsig">
+      <h2>Historial de asignaciones</h2>
+      <p class="hint">Cuántas veces le ha tocado cada parte a cada hermano. Útil para repartir con equidad. Los reemplazos se cuentan aparte (número en gris = como reemplazo).</p>
+      <div class="row2">
+        <select id="haScope" aria-label="Alcance">
+          <option value="month">Mes abierto</option>
+          <option value="year">Año del mes abierto</option>
+          <option value="all">Todo el historial</option>
+        </select>
+        <select id="haRole" aria-label="Asignación"><option value="">Todas las asignaciones</option></select>
+        <input type="text" id="haSearch" placeholder="Filtrar por nombre…" aria-label="Filtrar por nombre" style="flex:1;min-width:140px">
+        <button class="btn small" id="haSortTot" type="button" aria-pressed="true">Más asignaciones</button>
+        <button class="btn small" id="haSortName" type="button" aria-pressed="false">A–Z</button>
+      </div>
+      <p class="hint" id="haSummary"></p>
+      <div class="tw" style="max-height:420px"><table id="haTable"></table></div>
+    </section>
   </div>
+
   <div id="hojas" class="no-print">
     <h1>Hojas <em>de asignación</em></h1>
     <p class="hint">Se generan solas a partir del mes abierto arriba (Programa / Seguimiento): una hojita por cada parte de la Escuela y la Lectura de la Biblia. Si el seguimiento marcó «no cumplió» con reemplazo, aquí lo verás destacado. Puedes editar cualquier campo, y descargar o enviar cada hojita por separado.</p>
@@ -387,7 +450,13 @@ const SHOWD=['MM','LECTURA','EST','QD','DMM'];
 const HP='programas.json',CK='hermanos.cfg',DK='programa.draft';
 let people=[],progs=[],cur=null;
 const disp=n=>n.includes(',')?n.split(',').slice(1).join(',').trim()+' '+n.split(',')[0].trim():n.trim();
+const nameSort=(a,b)=>String(a??'').localeCompare(String(b??''),'es',{sensitivity:'base',numeric:true});
+const sortByName=(arr,key)=>key?arr.slice().sort((a,b)=>nameSort(a[key],b[key])):arr.slice().sort(nameSort);
+const fold=s=>String(s??'').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const nameMatch=(name,q)=>{const n=fold(name),parts=fold(q).split(/\s+/).filter(Boolean);return parts.every(p=>n.includes(p))};
+
 const say=(m,c='')=>['msg','segMsg'].forEach(i=>{const e=$(i);if(e){e.textContent=m;e.className=c}});
+
 
 /* ---------- GitHub (misma conexión que el Registro) ---------- */
 const cfg=()=>{let s={};try{s=JSON.parse(localStorage.getItem(CK)||'{}')}catch{}const h=location.hostname;const g=h.endsWith('.github.io')?{owner:h.split('.')[0],repo:location.pathname.split('/')[1]||h}:{};return{branch:'main',...g,...s}};
@@ -513,10 +582,11 @@ function splitD(p){
 const norm=p=>{if(p.ref===undefined){const s=splitD(p);p.ref=s.ref;p.desc=s.desc}};
 function sel(w,sl,wi,o,f){
   const i=sl.findIndex(s=>s.o===o&&s.f===f),s=sl[i],val=o[f]||'';
-  const names=pool(s).map(p=>p.n).sort((a,b)=>a.localeCompare(b));
+  const names=pool(s).map(p=>p.n).sort(nameSort);
   const out=val&&!names.includes(val);
   return`<select data-w="${wi}" data-s="${i}" class="${out?'bad-sel':''}" aria-label="Asignado"><option value="">—</option>${(out?[val,...names]:names).map(n=>`<option ${n===val?'selected':''} value="${esc(n)}">${out&&n===val?'⚠ ':''}${esc(n)}</option>`).join('')}</select>`;
 }
+
 function spSelect(w,wi){
   return`<select class="sp-sel no-print" data-w="${wi}" data-sp aria-label="Tipo de semana" title="Tipo de semana"><option value=""${w.special?'':' selected'}>Reunión normal</option>${Object.entries(SPL).map(([k,l])=>`<option value="${k}"${w.special===k?' selected':''}>${l}</option>`).join('')}</select>`;
 }
@@ -561,8 +631,9 @@ ${rows}
 function summary(){
   if(!cur)return;const c={};
   cur.weeks.forEach(w=>slots(w).forEach(s=>{const n=s.o[s.f];if(n)c[n]=(c[n]||0)+1}));
-  $('summary').innerHTML=Object.entries(c).sort((a,b)=>b[1]-a[1]||a[0].localeCompare(b[0])).map(([n,k])=>`<span class="chip ${k>3?'hi':''}">${esc(n)} ×${k}</span>`).join('')||'<span class="hint">Sin asignaciones todavía.</span>';
+  $('summary').innerHTML=Object.entries(c).sort((a,b)=>b[1]-a[1]||nameSort(a[0],b[0])).map(([n,k])=>`<span class="chip ${k>3?'hi':''}">${esc(n)} ×${k}</span>`).join('')||'<span class="hint">Sin asignaciones todavía.</span>';
 }
+
 function hist(){
   $('hist').innerHTML=progs.slice().sort((a,b)=>a.id<b.id?1:-1).map(p=>{const [y,m]=p.id.split('-');return`<div class="hist"><b>${MESES[+m-1]} ${y}</b><button class="btn small" data-open="${p.id}">Abrir</button><button class="btn small danger" data-del="${p.id}">Eliminar</button></div>`}).join('')||'<p class="hint">Aún no hay meses guardados.</p>';
 }
@@ -630,9 +701,10 @@ function renderSeg(){
   const ids=progs.map(p=>p.id);if(cur&&!ids.includes(cur.id))ids.push(cur.id);
   ids.sort().reverse();
   $('segMonth').innerHTML=ids.map(id=>{const [y,m]=id.split('-');return`<option value="${id}" ${cur&&cur.id===id?'selected':''}>${MESES[+m-1]} ${y}${progs.some(p=>p.id===id)?'':' (sin guardar)'}</option>`}).join('')||'<option>Sin meses guardados</option>';
-  $('segL').innerHTML=people.filter(p=>!p.inactivo).map(p=>`<option value="${esc(p.n)}">`).join('');
+  $('segL').innerHTML=sortByName(people.filter(p=>!p.inactivo),'n').map(p=>`<option value="${esc(p.n)}">`).join('');
+
   const g=$('segGrid');
-  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderRepl();renderCompliance();renderPerson();return}
+  if(!cur){g.innerHTML='<tbody><tr><td>Genera y guarda un mes en la pestaña Programa, o elige uno del historial.</td></tr></tbody>';$('segStats').textContent='';renderRepl();renderCompliance();renderPerson();renderHistAsig();return}
   const rows={};let ok=0,no=0,pe=0,cf=0;
   cur.weeks.forEach((w,wi)=>{
     w.seg=w.seg||{};const c={mm:0,vc:0};
@@ -648,7 +720,7 @@ function renderSeg(){
     return`<td class="sc ${st.e||''}" data-w="${wi}" data-k="${s.k}" data-l="${esc(l)}" title="${esc(st.n||'')}">${esc(s.o[s.f])}${st.e==='no'&&st.r?`<small>↪ Reemplazó: ${esc(st.r)}</small>`:''}${st.n?`<small>📝 ${esc(st.n)}</small>`:''}</td>`}).join('')}</tr>`}).join('');
   g.innerHTML=`<thead><tr><th>Asignación</th>${cur.weeks.map((w,i)=>`<th>${esc(dateLbl(w))}<br><small>${esc(w.range)}</small><br>${w.special?`<small>${esc(w.spName||SPL[w.special])}</small>`:`<button class="btn small" type="button" data-wk="${i}">✔ Semana cumplida</button>`}</th>`).join('')}</tr></thead><tbody>${body}</tbody>`;
   $('segStats').textContent=`${ok} cumplidas · ${no} no cumplidas · ${cf} confirmadas · ${pe} pendientes`;
-  renderRepl();renderCompliance();renderPerson();
+  renderRepl();renderCompliance();renderPerson();renderHistAsig();
 }
 
 /* ---------- Estadísticas de confiabilidad y disponibilidad ---------- */
@@ -689,12 +761,13 @@ function renderRepl(){
   const list=g=>{
     const all=cand.filter(p=>p.genero===g).map(p=>({p,r:rankOf(p)}));
     const free=all.filter(({p})=>!stMonth[p.n]?.repl);
-    const used=all.filter(({p})=>stMonth[p.n]?.repl).sort((a,b)=>a.p.n.localeCompare(b.p.n));
+    const used=all.filter(({p})=>stMonth[p.n]?.repl).sort((a,b)=>nameSort(a.p.n,b.p.n));
     let out='';
     if(!free.length){
       out+='<p class="hint">Sin candidatos: todos ya tuvieron participación o hicieron un reemplazo este mes.</p>';
     }else{
-      const l=free.sort((a,b)=>a.r.t-b.r.t||(st[a.p.n]?.asign||0)-(st[b.p.n]?.asign||0)||a.p.n.localeCompare(b.p.n));
+      const l=free.sort((a,b)=>a.r.t-b.r.t||(st[a.p.n]?.asign||0)-(st[b.p.n]?.asign||0)||nameSort(a.p.n,b.p.n));
+
       const groups={};l.forEach(({p,r})=>{(groups[r.l]??={t:r.t,items:[]}).items.push(p)});
       out+=Object.entries(groups).sort((a,b)=>a[1].t-b[1].t).map(([label,gr])=>
         `<h5 class="repl-grp">${esc(label)}</h5><ul>${gr.items.map(p=>`<li>${esc(p.n)}<small>${st[p.n]?.asign?st[p.n].asign+' asig.':'sin asignar'}</small></li>`).join('')}</ul>`
@@ -738,33 +811,92 @@ function weeklyCompliance(id){
     return{id:id+'|'+wi,label:weekDate(w,id),full:w.range,ok,no,tot:ok+no};
   });
 }
-let cmpMode='fail';
-function syncCmpMode(){$('cmpModeFail').setAttribute('aria-pressed',cmpMode==='fail');$('cmpModePct').setAttribute('aria-pressed',cmpMode==='pct')}
+let cmpMode='both'; // fail | pct | both
+function syncCmpMode(){
+  $('cmpModeFail').setAttribute('aria-pressed',cmpMode==='fail');
+  $('cmpModePct').setAttribute('aria-pressed',cmpMode==='pct');
+  $('cmpModeBoth').setAttribute('aria-pressed',cmpMode==='both');
+}
 function renderCompliance(){
   const sel=$('cmpScope'),prevVal=sel.value||'all',plist=allPrograms();
-  sel.innerHTML='<option value="all">Todos los meses (resumen)</option>'+plist.map(p=>{const [y,m]=p.id.split('-');return`<option value="${p.id}">${MESES[+m-1]} ${y} · por semana</option>`}).join('');
+  sel.innerHTML='<option value="all">Todos los meses</option>'+plist.map(p=>{const [y,m]=p.id.split('-');return`<option value="${p.id}">${MESES[+m-1]} ${y}</option>`}).join('');
   sel.value=[...sel.options].some(o=>o.value===prevVal)?prevVal:'all';
-  const scope=sel.value,rows=scope==='all'?monthlyCompliance():weeklyCompliance(scope);
-  const withData=rows.filter(r=>r.tot>0);
+  const scope=sel.value,isMonth=scope!=='all';
+  const rows=isMonth?weeklyCompliance(scope):monthlyCompliance();
+
+  // nav breadcrumb
+  const nav=$('cmpNav');
+  if(isMonth){
+    const [y,m]=scope.split('-');
+    nav.hidden=false;
+    $('cmpNavLabel').textContent=`${MESES[+m-1]} ${y} · por semana`;
+  }else{nav.hidden=true}
+
   let totalOk=0,totalNo=0;rows.forEach(r=>{totalOk+=r.ok;totalNo+=r.no});
-  const maxFail=Math.max(1,...rows.map(r=>r.no));
-  $('cmpChart').innerHTML=withData.length?rows.map(r=>{
-    const pctOk=r.tot?Math.round(r.ok/r.tot*100):null;
-    const barPct=cmpMode==='fail'?Math.round(r.no/maxFail*100):(pctOk??0);
-    const cls=cmpMode==='pct'?(r.tot<2?'n':pctOk>=90?'g':pctOk>=75?'w':''):'';
-    const click=scope==='all';
-    return`<div class="cmp-row${click?' clickable':''}"${click?` data-month="${r.id}" role="button" tabindex="0"`:''} title="${esc(r.full)}${r.tot?` · ${r.ok} cumplió · ${r.no} no cumplió`:' · sin datos marcados'}">
-     <span class="cmp-name">${esc(r.label)}</span>
-     <div class="cmp-bar ${cls}"><div style="width:${r.tot?barPct:0}%"></div></div>
-     <span class="cmp-num">${r.tot?(cmpMode==='fail'?r.no:pctOk+'%'):'—'}</span>
-    </div>`;
-  }).join(''):`<p class="hint">${scope==='all'?'Aún no hay meses con asignaciones marcadas como cumplidas o no cumplidas.':'Esta semana aún no tiene asignaciones marcadas.'}</p>`;
   const totTot=totalOk+totalNo,totPct=totTot?Math.round(totalOk/totTot*100):0;
-  $('cmpSummary').textContent=totTot?`${totalOk} cumplidas · ${totalNo} no cumplidas · ${totPct}% de cumplimiento en ${scope==='all'?'todo el historial guardado':'este mes'}`:'Aún no hay datos para mostrar en esta selección.';
+
+  // KPIs
+  $('cmpKpis').innerHTML=totTot?`
+    <div class="stat-mini"><b>${totTot}</b><span>Marcadas</span></div>
+    <div class="stat-mini"><b style="color:var(--brand)">${totalOk}</b><span>Cumplidas</span></div>
+    <div class="stat-mini"><b style="color:var(--bad)">${totalNo}</b><span>No cumplidas</span></div>
+    <div class="stat-mini"><b>${totPct}%</b><span>Cumplimiento</span></div>`
+    :`<div class="stat-mini"><b>—</b><span>Sin datos aún</span></div>`;
+
+  $('cmpSummary').textContent=totTot
+    ? (isMonth
+        ? `Semana a semana de este mes · ${totalOk} cumplidas · ${totalNo} no cumplidas`
+        : `Resumen de ${rows.filter(r=>r.tot>0).length} mes${rows.filter(r=>r.tot>0).length===1?'':'es'} con datos · toca un mes para ver el detalle`)
+    : (isMonth?'Este mes aún no tiene asignaciones marcadas como cumplidas o no cumplidas.':'Aún no hay meses con seguimiento marcado. Marca el cumplimiento en la cuadrícula de arriba.');
+
+  if(!rows.some(r=>r.tot>0)){
+    $('cmpChart').innerHTML=`<div class="cmp-empty">${isMonth?'Sin marcas en las semanas de este mes.':'Sin datos de cumplimiento en el historial.'}</div>`;
+    return;
+  }
+
+  const maxFail=Math.max(1,...rows.map(r=>r.no));
+  const maxTot=Math.max(1,...rows.map(r=>r.tot));
+
+  $('cmpChart').innerHTML=rows.map(r=>{
+    const pctOk=r.tot?Math.round(r.ok/r.tot*100):null;
+    const click=!isMonth&&r.tot>0;
+    const title=r.tot?`${r.full} · ${r.ok} cumplió · ${r.no} no cumplió${pctOk!=null?' · '+pctOk+'%':''}`:r.full+' · sin datos';
+
+    let barHtml='', numHtml='', detail='';
+    if(!r.tot){
+      barHtml=`<div class="cmp-bar single"><div class="seg-ok" style="width:0"></div></div>`;
+      numHtml=`<span class="cmp-num soft">—</span>`;
+    }else if(cmpMode==='fail'){
+      const w=Math.round(r.no/maxFail*100);
+      barHtml=`<div class="cmp-bar fail-only single"><div class="seg-no" style="width:${w}%"></div></div>`;
+      numHtml=`<span class="cmp-num ${r.no?'bad':'ok'}">${r.no}</span>`;
+      detail=`<span class="cmp-detail">${r.ok} ok</span>`;
+    }else if(cmpMode==='pct'){
+      const cls=pctOk>=90?'g':pctOk>=75?'w':pctOk>=50?'':'b';
+      barHtml=`<div class="cmp-bar pct-only ${cls} single"><div class="seg-ok" style="width:${pctOk}%"></div></div>`;
+      numHtml=`<span class="cmp-num ${pctOk>=90?'ok':pctOk<75?'bad':''}">${pctOk}%</span>`;
+      detail=`<span class="cmp-detail">${r.no} fallas</span>`;
+    }else{
+      // both: stacked bar proportional to totals
+      const okW=Math.round(r.ok/maxTot*100), noW=Math.round(r.no/maxTot*100);
+      barHtml=`<div class="cmp-bar"><div class="seg-ok" style="width:${okW}%"></div><div class="seg-no" style="width:${noW}%"></div></div>`;
+      numHtml=`<span class="cmp-num">${pctOk}%</span>`;
+      detail=`<span class="cmp-detail"><span style="color:var(--brand)">${r.ok}</span> · <span style="color:var(--bad)">${r.no}</span></span>`;
+    }
+
+    const sub=isMonth?esc(r.full):'';
+    return`<div class="cmp-row${click?' clickable':''}"${click?` data-month="${r.id}" role="button" tabindex="0"`:''} title="${esc(title)}">
+      <span class="cmp-name">${esc(r.label)}${sub?`<small>${sub}</small>`:''}</span>
+      ${barHtml}
+      <div class="cmp-meta">${detail}${numHtml}</div>
+    </div>`;
+  }).join('');
 }
 $('cmpScope').addEventListener('change',renderCompliance);
 $('cmpModeFail').onclick=()=>{cmpMode='fail';syncCmpMode();renderCompliance()};
 $('cmpModePct').onclick=()=>{cmpMode='pct';syncCmpMode();renderCompliance()};
+$('cmpModeBoth').onclick=()=>{cmpMode='both';syncCmpMode();renderCompliance()};
+$('cmpBack').onclick=()=>{$('cmpScope').value='all';renderCompliance()};
 syncCmpMode();
 $('cmpChart').addEventListener('click',e=>{const b=e.target.closest('[data-month]');if(b){$('cmpScope').value=b.dataset.month;renderCompliance()}});
 $('cmpChart').addEventListener('keydown',e=>{if((e.key==='Enter'||e.key===' ')&&e.target.dataset.month){e.preventDefault();e.target.click()}});
@@ -792,14 +924,31 @@ function allNamesEver(){
     slots(w).forEach(s=>{if(s.o[s.f])set.add(s.o[s.f])});
     Object.values(w.seg||{}).forEach(st=>{if(st.r)set.add(st.r)});
   }));
-  return[...set].sort((a,b)=>a.localeCompare(b));
+  return[...set].sort(nameSort);
+}
+
+function resolveName(q){
+  if(!q)return'';
+  const all=allNamesEver();
+  const exact=all.find(n=>fold(n)===fold(q));
+  if(exact)return exact;
+  const hits=all.filter(n=>nameMatch(n,q));
+  return hits.length===1?hits[0]:(hits.find(n=>fold(n).startsWith(fold(q)))||'');
 }
 function renderPerson(){
   $('allNamesL').innerHTML=allNamesEver().map(n=>`<option value="${esc(n)}">`).join('');
-  const name=$('personSearch').value.trim(),scopeSel=$('personScope');
-  if(!name){$('personCard').innerHTML='';scopeSel.hidden=true;scopeSel.innerHTML='';return}
+  const raw=$('personSearch').value.trim(),scopeSel=$('personScope');
+  if(!raw){$('personCard').innerHTML='';scopeSel.hidden=true;scopeSel.innerHTML='';return}
+  const name=resolveName(raw)||raw;
   const data=personHistory(name);
-  if(!data.months.length){$('personCard').innerHTML=`<p class="hint">Sin registros de cumplimiento para «${esc(name)}» en el historial guardado. Revisa que el nombre esté escrito igual que en el registro.</p>`;scopeSel.hidden=true;scopeSel.innerHTML='';return}
+  if(!data.months.length){
+    const suggestions=allNamesEver().filter(n=>nameMatch(n,raw)).slice(0,8);
+    $('personCard').innerHTML=suggestions.length
+      ?`<p class="hint">Varias coincidencias para «${esc(raw)}». Elige una:</p><div class="chips" style="margin-top:8px">${suggestions.map(n=>`<button type="button" class="chip" data-pick-name="${esc(n)}" style="cursor:pointer">${esc(n)}</button>`).join('')}</div>`
+      :`<p class="hint">Sin registros de cumplimiento para «${esc(raw)}». Revisa que el nombre esté escrito igual que en el registro.</p>`;
+    scopeSel.hidden=true;scopeSel.innerHTML='';return;
+  }
+
   const prevVal=scopeSel.value;
   scopeSel.hidden=false;
   scopeSel.innerHTML='<option value="all">Histórico completo</option>'+data.months.map(m=>`<option value="${m.id}">${esc(m.label)}</option>`).join('');
@@ -826,6 +975,142 @@ function renderPerson(){
 $('personSearch').addEventListener('input',renderPerson);
 $('personScope').addEventListener('change',renderPerson);
 $('personClear').onclick=()=>{$('personSearch').value='';renderPerson()};
+$('personCard').addEventListener('click',e=>{
+  const b=e.target.closest('[data-pick-name]');
+  if(b){$('personSearch').value=b.dataset.pickName;renderPerson()}
+});
+
+/* ---------- Historial de asignaciones (conteo por hermano × rol) ---------- */
+const HA_ROLES=[
+  {id:'PRESIDENCIA',label:'Presidencia',short:'Pres.'},
+  {id:'ORACION',label:'Oración',short:'Oración'},
+  {id:'DISCURSO_TESORO_BIBLIA',label:'Discurso Tesoros',short:'Tesoros'},
+  {id:'PERLAS_ESCONDIDAS',label:'Perlas escondidas',short:'Perlas'},
+  {id:'LECTURA_BIBLIA',label:'Lectura de la Biblia',short:'Lectura'},
+  {id:'MM_1',label:'Escuela N°1',short:'Esc.1'},
+  {id:'MM_2',label:'Escuela N°2',short:'Esc.2'},
+  {id:'MM_3',label:'Escuela N°3',short:'Esc.3'},
+  {id:'MMH',label:'Ayudante Escuela',short:'Ayud.'},
+  {id:'DISCURSO_MM',label:'Discurso Mejores Maestros',short:'Disc.MM'},
+  {id:'DISCURSO_VIDA_CRISTIANA',label:'Discurso Vida Cristiana',short:'Vida C.'},
+  {id:'NECESIDADES_CONGREGACION',label:'Necesidades',short:'Neces.'},
+  {id:'ESTUDIO_BIBLICO',label:'Conductor Estudio Bíblico',short:'Cond.EB'},
+  {id:'LECTOR_ESTUDIO_BIBLICO',label:'Lector Estudio Bíblico',short:'Lect.EB'}
+];
+let haSort='tot'; // 'tot' | 'name'
+function haPrograms(){
+  const scope=$('haScope')?.value||'month';
+  const all=allPrograms();
+  if(scope==='all')return all;
+  if(!cur)return[];
+  if(scope==='month')return all.filter(p=>p.id===cur.id).length?all.filter(p=>p.id===cur.id):[cur];
+  const y=cur.id.slice(0,4);
+  return all.filter(p=>p.id.startsWith(y));
+}
+function computeHistAsig(){
+  // per name: { asign:{role:n}, repl:{role:n} }
+  const map={};
+  const get=n=>(map[n]??={asign:{},repl:{}});
+  haPrograms().forEach(p=>{
+    (p.weeks||[]).forEach(w=>{
+      w.seg=w.seg||{};
+      slots(w).forEach(s=>{
+        const assigned=s.o[s.f];if(!assigned)return;
+        const role=s.role;if(!role)return;
+        const st=w.seg[s.k];
+        if(st&&st.e==='no'&&st.r){
+          // original was assigned but didn't fulfill → still counts as having been given the part
+          get(assigned).asign[role]=(get(assigned).asign[role]||0)+1;
+          // replacement actually did it
+          get(st.r).repl[role]=(get(st.r).repl[role]||0)+1;
+        }else{
+          get(assigned).asign[role]=(get(assigned).asign[role]||0)+1;
+        }
+      });
+    });
+  });
+  return map;
+}
+function renderHistAsig(){
+  const roleSel=$('haRole'),prevRole=roleSel.value;
+  roleSel.innerHTML='<option value="">Todas las asignaciones</option>'+HA_ROLES.map(r=>`<option value="${r.id}">${r.label}</option>`).join('');
+  if([...roleSel.options].some(o=>o.value===prevRole))roleSel.value=prevRole;
+
+  const data=computeHistAsig();
+  const roleFilter=roleSel.value;
+  const q=($('haSearch').value||'').trim().toLowerCase();
+  const cols=roleFilter?HA_ROLES.filter(r=>r.id===roleFilter):HA_ROLES;
+
+  let rows=Object.entries(data).map(([name,d])=>{
+    let totA=0,totR=0;
+    const cells={};
+    cols.forEach(r=>{
+      const a=d.asign[r.id]||0,rep=d.repl[r.id]||0;
+      cells[r.id]={a,rep};
+      totA+=a;totR+=rep;
+    });
+    // if filtering one role, also compute overall for sorting fairness from full data
+    if(roleFilter){
+      totA=Object.values(d.asign).reduce((s,v)=>s+v,0);
+      totR=Object.values(d.repl).reduce((s,v)=>s+v,0);
+    }
+    const focusA=roleFilter?(d.asign[roleFilter]||0):totA;
+    const focusR=roleFilter?(d.repl[roleFilter]||0):totR;
+    return{name,cells,totA,totR,focusA,focusR,focus:focusA+focusR};
+  }).filter(r=>r.focus>0);
+
+  if(q)rows=rows.filter(r=>nameMatch(r.name,q));
+
+  if(haSort==='name')rows.sort((a,b)=>nameSort(a.name,b.name));
+  else rows.sort((a,b)=>b.focus-a.focus||b.focusA-a.focusA||nameSort(a.name,b.name));
+
+  const scopeLbl={month:'este mes',year:'este año',all:'todo el historial'}[$('haScope').value]||'';
+  const nPeople=rows.length;
+  const nAsig=rows.reduce((s,r)=>s+Object.values(r.cells).reduce((t,c)=>t+c.a,0),0);
+  const nRepl=rows.reduce((s,r)=>s+Object.values(r.cells).reduce((t,c)=>t+c.rep,0),0);
+  $('haSummary').innerHTML=nPeople
+    ?`<b>${nPeople}</b> hermanos con participación · <b>${nAsig}</b> asignaciones · <b>${nRepl}</b> como reemplazo · alcance: ${scopeLbl}`
+    :`Sin datos de asignaciones en ${scopeLbl}. Genera o abre un mes con nombres asignados.`;
+
+  if(!rows.length){
+    $('haTable').innerHTML='<tbody><tr><td class="empty" style="text-align:left;padding:18px;color:var(--soft)">No hay registros para mostrar con estos filtros.</td></tr></tbody>';
+    return;
+  }
+
+  // highlight threshold: top quartile of focus counts when showing all roles, or ≥2 when single role
+  const maxFocus=Math.max(1,...rows.map(r=>roleFilter?r.focusA+r.focusR:r.focus));
+  const hiAt=roleFilter?2:Math.max(2,Math.ceil(maxFocus*0.6));
+
+  const head=`<thead><tr><th>Hermano</th>${cols.map(c=>`<th title="${esc(c.label)}">${esc(c.short)}</th>`).join('')}<th>Total</th></tr></thead>`;
+  const body=rows.map(r=>{
+    const tds=cols.map(c=>{
+      const {a,rep}=r.cells[c.id]||{a:0,rep:0};
+      const sum=a+rep;
+      if(!sum)return`<td class="ha-zero">—</td>`;
+      const hi=sum>=hiAt?' ha-hi':'';
+      if(!a&&rep)return`<td class="${hi}"><span class="ha-repl">${rep} reem.</span></td>`;
+      const replHtml=rep?`<span class="ha-repl">+${rep} reem.</span>`:'';
+      return`<td class="${hi}">${a}${replHtml}</td>`;
+
+    }).join('');
+    const aShow=roleFilter?r.focusA:r.totA, rShow=roleFilter?r.focusR:r.totR;
+    const totShow=!aShow&&rShow?`<span class="ha-repl">${rShow} reem.</span>`:`${aShow}${rShow?` <span class="ha-repl">+${rShow}</span>`:''}`;
+    return`<tr><td>${esc(r.name)}</td>${tds}<td class="ha-tot">${totShow}</td></tr>`;
+
+  }).join('');
+  $('haTable').innerHTML=head+'<tbody>'+body+'</tbody>';
+}
+function syncHaSort(){
+  $('haSortTot').setAttribute('aria-pressed',haSort==='tot');
+  $('haSortName').setAttribute('aria-pressed',haSort==='name');
+}
+$('haScope').addEventListener('change',renderHistAsig);
+$('haRole').addEventListener('change',renderHistAsig);
+$('haSearch').addEventListener('input',renderHistAsig);
+$('haSortTot').onclick=()=>{haSort='tot';syncHaSort();renderHistAsig()};
+$('haSortName').onclick=()=>{haSort='name';syncHaSort();renderHistAsig()};
+syncHaSort();
+
 function markPending(ws){ws.forEach(w=>{w.seg=w.seg||{};slots(w).forEach(s=>{if(s.o[s.f]&&(!w.seg[s.k]||w.seg[s.k].e==='conf'))w.seg[s.k]={...w.seg[s.k],e:'ok'}})});draft();renderSeg();say('Cambios sin guardar')}
 $('segAll').onclick=()=>cur&&confirm('¿Marcar como cumplidas todas las asignaciones pendientes del mes?')&&markPending(cur.weeks);
 $('segPrint').onclick=()=>{if(!cur)return;document.body.classList.add('ps');window.print()};
@@ -1094,7 +1379,7 @@ document.querySelectorAll('.wkbar').forEach(bar=>bar.addEventListener('click',e=
 /* ---------- Inicio ---------- */
 (async()=>{
   const d=await loadJson('data.json',{rows:[]});
-  people=(d.rows||[]).map(r=>({...r,n:disp(r.nombre),asign:r.asign||[]}));
+  people=(d.rows||[]).map(r=>({...r,n:disp(r.nombre),asign:r.asign||[]})).sort((a,b)=>nameSort(a.n,b.n));
   progs=(await loadJson(HP,{programs:[]})).programs||[];
   hist();
   if(!people.length)say('No se pudo cargar data.json.','err');
