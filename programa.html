@@ -411,9 +411,22 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
           <option value="all">Todo el historial</option>
         </select>
         <select id="haRole" aria-label="Asignación"><option value="">Todas las asignaciones</option></select>
+        <select id="haRank" aria-label="Rango">
+          <option value="">Todos los rangos</option>
+          <option value="Ancianos">Ancianos</option>
+          <option value="Siervos ministeriales">Siervos ministeriales</option>
+          <option value="Publicadores">Publicadores (varones)</option>
+          <option value="Publicadores no bautizados">Publicadores no bautizados</option>
+          <option value="Precursoras regulares">Precursoras regulares</option>
+          <option value="Precursoras auxiliares">Precursoras auxiliares</option>
+          <option value="Publicadoras">Publicadoras</option>
+          <option value="Publicadoras no bautizadas">Publicadoras no bautizadas</option>
+          <option value="__sin__">Sin rango en el registro</option>
+        </select>
         <input type="text" id="haSearch" placeholder="Filtrar por nombre…" aria-label="Filtrar por nombre" style="flex:1;min-width:140px">
         <button class="btn small" id="haSortTot" type="button" aria-pressed="true">Más asignaciones</button>
         <button class="btn small" id="haSortName" type="button" aria-pressed="false">A–Z</button>
+
       </div>
       <p class="hint" id="haSummary"></p>
       <div class="tw" style="max-height:420px"><table id="haTable"></table></div>
@@ -1031,6 +1044,10 @@ function computeHistAsig(){
   });
   return map;
 }
+function haRankOf(name){
+  const p=byName(name)||people.find(x=>fold(x.n)===fold(name));
+  return p?rankOf(p).l:null;
+}
 function renderHistAsig(){
   const roleSel=$('haRole'),prevRole=roleSel.value;
   roleSel.innerHTML='<option value="">Todas las asignaciones</option>'+HA_ROLES.map(r=>`<option value="${r.id}">${r.label}</option>`).join('');
@@ -1038,6 +1055,7 @@ function renderHistAsig(){
 
   const data=computeHistAsig();
   const roleFilter=roleSel.value;
+  const rankFilter=$('haRank')?.value||'';
   const q=($('haSearch').value||'').trim().toLowerCase();
   const cols=roleFilter?HA_ROLES.filter(r=>r.id===roleFilter):HA_ROLES;
 
@@ -1056,8 +1074,12 @@ function renderHistAsig(){
     }
     const focusA=roleFilter?(d.asign[roleFilter]||0):totA;
     const focusR=roleFilter?(d.repl[roleFilter]||0):totR;
-    return{name,cells,totA,totR,focusA,focusR,focus:focusA+focusR};
+    const rank=haRankOf(name);
+    return{name,cells,totA,totR,focusA,focusR,focus:focusA+focusR,rank};
   }).filter(r=>r.focus>0);
+
+  if(rankFilter==='__sin__')rows=rows.filter(r=>!r.rank);
+  else if(rankFilter)rows=rows.filter(r=>r.rank===rankFilter);
 
   if(q)rows=rows.filter(r=>nameMatch(r.name,q));
 
@@ -1065,12 +1087,13 @@ function renderHistAsig(){
   else rows.sort((a,b)=>b.focus-a.focus||b.focusA-a.focusA||nameSort(a.name,b.name));
 
   const scopeLbl={month:'este mes',year:'este año',all:'todo el historial'}[$('haScope').value]||'';
+  const rankLbl=rankFilter==='__sin__'?'sin rango en el registro':(rankFilter||'todos los rangos');
   const nPeople=rows.length;
   const nAsig=rows.reduce((s,r)=>s+Object.values(r.cells).reduce((t,c)=>t+c.a,0),0);
   const nRepl=rows.reduce((s,r)=>s+Object.values(r.cells).reduce((t,c)=>t+c.rep,0),0);
   $('haSummary').innerHTML=nPeople
-    ?`<b>${nPeople}</b> hermanos con participación · <b>${nAsig}</b> asignaciones · <b>${nRepl}</b> como reemplazo · alcance: ${scopeLbl}`
-    :`Sin datos de asignaciones en ${scopeLbl}. Genera o abre un mes con nombres asignados.`;
+    ?`<b>${nPeople}</b> hermanos · <b>${nAsig}</b> asignaciones · <b>${nRepl}</b> como reemplazo · ${scopeLbl} · ${esc(rankLbl)}`
+    :`Sin datos de asignaciones en ${scopeLbl}${rankFilter?' con el rango elegido':''}. Genera o abre un mes con nombres asignados.`;
 
   if(!rows.length){
     $('haTable').innerHTML='<tbody><tr><td class="empty" style="text-align:left;padding:18px;color:var(--soft)">No hay registros para mostrar con estos filtros.</td></tr></tbody>';
@@ -1095,18 +1118,21 @@ function renderHistAsig(){
     }).join('');
     const aShow=roleFilter?r.focusA:r.totA, rShow=roleFilter?r.focusR:r.totR;
     const totShow=!aShow&&rShow?`<span class="ha-repl">${rShow} reem.</span>`:`${aShow}${rShow?` <span class="ha-repl">+${rShow}</span>`:''}`;
-    return`<tr><td>${esc(r.name)}</td>${tds}<td class="ha-tot">${totShow}</td></tr>`;
-
+    const rankSub=r.rank?`<small style="display:block;font-weight:500;color:var(--soft);font-size:10.5px;margin-top:1px">${esc(r.rank)}</small>`:'';
+    return`<tr><td>${esc(r.name)}${rankSub}</td>${tds}<td class="ha-tot">${totShow}</td></tr>`;
   }).join('');
   $('haTable').innerHTML=head+'<tbody>'+body+'</tbody>';
 }
+
 function syncHaSort(){
   $('haSortTot').setAttribute('aria-pressed',haSort==='tot');
   $('haSortName').setAttribute('aria-pressed',haSort==='name');
 }
 $('haScope').addEventListener('change',renderHistAsig);
 $('haRole').addEventListener('change',renderHistAsig);
+$('haRank').addEventListener('change',renderHistAsig);
 $('haSearch').addEventListener('input',renderHistAsig);
+
 $('haSortTot').onclick=()=>{haSort='tot';syncHaSort();renderHistAsig()};
 $('haSortName').onclick=()=>{haSort='name';syncHaSort();renderHistAsig()};
 syncHaSort();
