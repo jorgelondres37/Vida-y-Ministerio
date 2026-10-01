@@ -3,6 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Registro de hermanos de la Congregación Curauma: grupos, tareas, disponibilidad y asignaciones para la reunión Vida y Ministerio.">
+<meta name="theme-color" content="#1B6B5B" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#101412" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Congregación Curauma — Registro de Hermanos">
+<meta property="og:description" content="Registro de hermanos, grupos y asignaciones de la Congregación Curauma.">
+<meta property="og:type" content="website">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Curauma">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%231B6B5B'/%3E%3Ctext x='16' y='21' text-anchor='middle' font-family='Georgia,serif' font-size='13' font-weight='700' fill='white'%3ECC%3C/text%3E%3C/svg%3E">
 <title>Congregación Curauma — Registro de Hermanos</title>
 <script>document.documentElement.classList.add('js');try{var t=localStorage.getItem('hermanos.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -10,7 +21,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=IBM+Plex+Mono:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#F5F4F0;--card:#FFFEFB;--ink:#1A221E;--soft:#5E6862;--line:#E4E6DF;--fill:#F0F1EC;
+    --bg:#F5F4F0;--card:#FFFEFB;--ink:#1A221E;--soft:#4A544E;--line:#E4E6DF;--fill:#F0F1EC;
     --brand:#1B6B5B;--brand-2:#145247;--brand-bg:#D8EDE6;--on-brand:#fff;
     --bad:#B33A2E;--bad-bg:#F9E6E2;--gold:#A87B2E;--gold-bg:#F4E8CC;
     --shadow:0 1px 2px rgba(20,30,25,.04),0 6px 20px -10px rgba(20,30,25,.1);
@@ -18,13 +29,13 @@
     box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)
   }
   @media(prefers-color-scheme:dark){:root:not([data-theme="light"]){
-    --bg:#101412;--card:#181D1A;--ink:#EAEDEA;--soft:#9AA49D;--line:#2A312C;--fill:#222925;
+    --bg:#101412;--card:#181D1A;--ink:#EAEDEA;--soft:#A8B2AB;--line:#2A312C;--fill:#222925;
     --brand:#4BB89F;--brand-2:#6AC4B0;--brand-bg:#1C302B;--on-brand:#0A1411;
     --gold:#D0A44E;--gold-bg:#372C14;--bad:#E17A6E;--bad-bg:#382320;
     --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -12px rgba(0,0,0,.55)
   }}
   :root[data-theme="dark"]{
-    --bg:#101412;--card:#181D1A;--ink:#EAEDEA;--soft:#9AA49D;--line:#2A312C;--fill:#222925;
+    --bg:#101412;--card:#181D1A;--ink:#EAEDEA;--soft:#A8B2AB;--line:#2A312C;--fill:#222925;
     --brand:#4BB89F;--brand-2:#6AC4B0;--brand-bg:#1C302B;--on-brand:#0A1411;
     --gold:#D0A44E;--gold-bg:#372C14;--bad:#E17A6E;--bad-bg:#382320;
     --shadow:0 1px 2px rgba(0,0,0,.35),0 8px 24px -12px rgba(0,0,0,.55)
@@ -227,6 +238,48 @@
     tbody tr td{display:table-cell!important;border-bottom:1px solid #ccc!important}
     tbody tr td::before{content:none!important}
   }
+
+  /* ---- A11y / contrast polish ---- */
+  .hint,.stat-sub,.count-note,.p-meta,.bar-count,.t-split,.pg-info,.save-status,.subtitle{color:var(--soft)}
+  .btn:disabled,.btn.primary:disabled{opacity:.55;cursor:not-allowed}
+  .btn:focus-visible,.icon-btn:focus-visible,nav a:focus-visible,select:focus-visible,input:focus-visible{
+    outline:2px solid var(--brand);outline-offset:2px
+  }
+  .tag.health{background:var(--gold-bg);color:var(--gold)}
+  tr.health-row td:first-child{box-shadow:inset 3px 0 0 var(--gold)}
+  tr.inactive-row td{opacity:.92}
+  .name-cell{display:flex;flex-direction:column;gap:2px}
+  .name-cell .badges{display:flex;flex-wrap:wrap;gap:4px}
+  .filter-chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+  .filter-chips:empty{display:none}
+  .fchip{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:99px;background:var(--brand-bg);color:var(--brand);font-size:12px;font-weight:600;border:1px solid transparent}
+  .fchip button{border:0;background:transparent;color:inherit;cursor:pointer;font-size:14px;line-height:1;padding:0 0 0 2px}
+  .controls-actions{display:flex;flex-wrap:wrap;gap:6px;align-items:center}
+  @media(max-width:720px){
+    .top-in{padding:10px 14px;gap:8px}
+    nav{order:3;width:100%;margin-left:0;padding-top:4px}
+    .top-in{flex-wrap:wrap}
+    .controls{gap:8px}
+    .controls-actions{width:100%}
+  }
+  .edit-bar .btn.primary-edit{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+  .edit-bar .btn[aria-pressed="true"]{background:var(--brand);border-color:var(--brand);color:var(--on-brand)}
+  .field-error{font-size:11.5px;color:var(--bad);margin-top:4px;display:none}
+  .field.invalid input,.field.invalid select{border-color:var(--bad);box-shadow:0 0 0 3px var(--bad-bg)}
+  .field.invalid .field-error{display:block}
+  .sk-row{height:42px;margin:6px 0;border-radius:8px}
+  .load-error{padding:28px 16px;text-align:center;color:var(--bad)}
+  .load-error button{margin-top:10px}
+  .theme-btn-label{font-size:12px;font-weight:600}
+  @media(max-width:700px){.theme-btn-label{display:none}}
+  .icon-btn.theme{width:auto;padding:0 10px;display:inline-flex;align-items:center;gap:6px;font-size:13px}
+  .tooltip-host{position:relative}
+  .bar-row[title]{cursor:help}
+  #cfgDialog .hint{margin-bottom:12px}
+  .cfg-steps{margin:0 0 14px;padding-left:18px;font-size:12.5px;color:var(--soft);line-height:1.5}
+  .cfg-steps li{margin-bottom:4px}
+  .cfg-steps b{color:var(--ink)}
+
 </style>
 
 </head>
@@ -240,7 +293,7 @@
     </nav>
     <a class="btn ghost" href="instrucciones.html" style="text-decoration:none;white-space:nowrap">Instrucciones</a>
     <a class="btn primary" href="programa.html" style="text-decoration:none;white-space:nowrap">Programa</a>
-    <button class="icon-btn" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro">◐</button>
+    <button class="icon-btn theme" id="themeBtn" type="button" aria-label="Cambiar entre tema claro y oscuro" title="Cambiar tema"><span aria-hidden="true">◐</span><span class="theme-btn-label" id="themeLabel">Tema</span></button>
   </div>
 </header>
 
@@ -295,15 +348,18 @@
     <h2 id="h-list">Listado</h2>
     <p class="hint">Busca y combina filtros para encontrar hermanos.</p>
 
-    <div class="controls">
-      <input type="text" id="searchBox" placeholder="Buscar por nombre…" aria-label="Buscar por nombre">
-      <select id="filterGrupo" aria-label="Grupo"><option value="">Todos los grupos</option></select>
+    <div class="controls" role="search">
+      <input type="search" id="searchBox" placeholder="Buscar por nombre o apellido…" aria-label="Buscar por nombre o apellido" autocomplete="off">
+      <select id="filterGrupo" aria-label="Filtrar por grupo"><option value="">Todos los grupos</option></select>
       <button class="btn ghost more-toggle" id="moreToggle" type="button" aria-expanded="false" aria-controls="morePanel">Más filtros <span class="more-badge" id="moreBadge" hidden>0</span></button>
-      <button class="btn ghost" id="clearFilters" type="button">Limpiar filtros</button>
+      <button class="btn ghost" id="clearFilters" type="button" aria-label="Limpiar todos los filtros">Limpiar</button>
       <span style="flex:1"></span>
-      <button class="btn ghost small" id="exportBtn" type="button" title="Descarga el listado filtrado como CSV (se abre en Excel)">⬇️ Exportar CSV</button>
-      <button class="btn ghost small" id="printBtn" type="button" title="Imprimir o guardar como PDF el listado filtrado">🖨️ Imprimir</button>
+      <div class="controls-actions">
+        <button class="btn ghost small" id="exportBtn" type="button" aria-label="Exportar listado filtrado a CSV" title="Descarga el listado filtrado como CSV">⬇️ CSV</button>
+        <button class="btn ghost small" id="printBtn" type="button" aria-label="Imprimir o guardar listado como PDF" title="Imprimir o guardar como PDF">🖨️ PDF</button>
+      </div>
     </div>
+    <div class="filter-chips" id="filterChips" aria-live="polite"></div>
     <div class="more-panel" id="morePanel">
       <select id="filterTarea" aria-label="Tarea"><option value="">Todas las tareas</option></select>
       <select id="filterGenero" aria-label="Género"><option value="">M y V</option><option value="M">M</option><option value="V">V</option></select>
@@ -314,7 +370,7 @@
     <div class="table-wrap" tabindex="0" role="region" aria-label="Tabla de hermanos">
       <table>
         <thead><tr><th>#</th><th>Nombre</th><th>Tarea</th><th>Grupo</th><th>Género</th><th>Estado</th><th class="edit-col" id="actionsHead" hidden>Acciones</th></tr></thead>
-        <tbody id="tableBody"><tr class="loading-row"><td colspan="7"><span class="spinner" aria-hidden="true"></span>Cargando hermanos…</td></tr></tbody>
+        <tbody id="tableBody"><tr class="loading-row"><td colspan="7"><div class="sk sk-row" style="max-width:90%;margin:8px auto"></div><div class="sk sk-row" style="max-width:75%;margin:8px auto"></div><div class="sk sk-row" style="max-width:85%;margin:8px auto"></div><p style="margin:12px 0 0;color:var(--soft);font-size:13px"><span class="spinner" aria-hidden="true"></span>Cargando hermanos…</p></td></tr></tbody>
       </table>
     </div>
     <div class="pagination" id="pagination" hidden>
@@ -338,7 +394,7 @@
 
 <div class="edit-bar" id="editBar" hidden role="toolbar" aria-label="Edición">
   <button class="btn" id="addBtn" type="button">+ Agregar hermano</button>
-  <button class="btn ghost" id="editModeBtn" type="button" aria-pressed="false">Modo edición: OFF</button>
+  <button class="btn" id="editModeBtn" type="button" aria-pressed="false" aria-label="Activar o desactivar modo edición">✏️ Edición: off</button>
   <span class="save-status" id="saveStatus" role="status" aria-live="polite"></span>
   <button class="btn primary" id="saveBtn" type="button" disabled>Guardar cambios</button>
 </div>
@@ -346,9 +402,10 @@
 <div class="modal-overlay" id="modalOverlay" hidden>
   <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
     <h3 id="modalTitle">Agregar hermano</h3>
-    <div class="field">
-      <label for="f_nombre">Nombre</label>
-      <input type="text" id="f_nombre" placeholder="Apellido, Nombre">
+    <div class="field" id="fieldNombre">
+      <label for="f_nombre">Nombre <span style="color:var(--bad)">*</span></label>
+      <input type="text" id="f_nombre" placeholder="Apellido, Nombre" required autocomplete="name" aria-describedby="errNombre">
+      <div class="field-error" id="errNombre">Escribe el nombre (ej. Pérez, Ana).</div>
     </div>
     <div class="field-row">
       <div class="field">
@@ -391,7 +448,13 @@
 
 <dialog id="cfgDialog" aria-labelledby="cfgTitle">
   <h3 id="cfgTitle">Ajustes de guardado</h3>
-  <p class="hint">Introduce tu clave de acceso para guardar las modificaciones permanentemente. Se guarda solo en este dispositivo y permite editar y guardar en el repositorio (técnicamente, es un token de GitHub).</p>
+  <p class="hint">Para guardar cambios de forma permanente necesitas un token de GitHub con permiso de escritura en este repositorio. Se guarda solo en este dispositivo.</p>
+  <ol class="cfg-steps">
+    <li>En GitHub: <b>Settings → Developer settings → Personal access tokens</b> (fine-grained).</li>
+    <li>Permiso del repositorio: <b>Contents → Read and write</b>.</li>
+    <li>Pega el token abajo. Usuario y repo suelen autocompletarse en GitHub Pages.</li>
+    <li>Si falla el guardado, usa <b>Exportar CSV</b> como respaldo.</li>
+  </ol>
   <div class="field"><label for="c_token">Clave de acceso (token de GitHub)</label><input type="password" id="c_token" autocomplete="off" placeholder="Token fine-grained · permiso Contents: Read and write"></div>
   <div class="field-row">
     <div class="field"><label for="c_owner">Usuario</label><input type="text" id="c_owner"></div>
@@ -428,6 +491,8 @@ const ASIGN_COLS = [
 const GRUPOS = ['1','2','3','4','5'];
 const $ = id => document.getElementById(id);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const fold = s => String(s ?? '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+const nameMatch = (name, q) => { const n = fold(name), parts = fold(q).split(/\s+/).filter(Boolean); return !parts.length || parts.every(p => n.includes(p)); };
 
 // ---------- Config (por dispositivo) ----------
 const CFG_KEY = 'hermanos.cfg';
@@ -529,7 +594,7 @@ function renderCharts() {
   const max = Math.max(1, ...GRUPOS.map(g => rows.filter(r => r.grupo === g).length));
   $('grupoChart').innerHTML = GRUPOS.map(g => {
     const gr = rows.filter(r => r.grupo === g), inact = gr.filter(r => r.inactivo).length, act = gr.length - inact;
-    return `<div class="bar-row clickable" role="button" tabindex="0" data-grupo="${g}" title="Filtrar listado por este grupo"><div class="name">Grupo ${g}</div>
+    return `<div class="bar-row clickable" role="button" tabindex="0" data-grupo="${g}" title="Grupo ${g}: ${act} activos · ${inact} inactivos · ${gr.length} en total. Toca para filtrar."><div class="name">Grupo ${g}</div>
       <div class="bar-track"><div class="bar-fill"><div class="seg-active" style="width:${act / max * 100}%"></div><div class="seg-inactive" style="width:${inact / max * 100}%"></div></div></div>
       <div class="bar-count"><b>${gr.length}</b> (${inact} inact.)</div></div>`;
   }).join('');
@@ -579,12 +644,19 @@ function currentFilters() {
 function filteredRows() {
   const { q, g, t, gen, est, asg } = currentFilters();
   return rows.filter(r =>
-    (!q || r.nombre.toLowerCase().includes(q)) && (!g || r.grupo === g) && (!t || r.tarea === t) && (!gen || r.genero === gen) &&
+    (!q || nameMatch(r.nombre, q)) && (!g || r.grupo === g) && (!t || r.tarea === t) && (!gen || r.genero === gen) &&
     (est !== 'activo' || !r.inactivo) && (est !== 'inactivo' || r.inactivo) && (!asg || r.asign[asg]));
 }
 function rowHtml(r) {
-  return `<tr class="${r.inactivo ? 'inactive-row' : ''}">
-    <td data-label="#">${r.num}</td><td data-label="Nombre">${esc(r.nombre)}</td><td data-label="Tarea">${esc(r.tarea)}${r.salud ? ' (salud)' : ''}</td>
+  const badges = [
+    r.inactivo ? '<span class="tag inactive">Inactivo</span>' : '',
+    r.salud ? '<span class="tag health">En salud</span>' : ''
+  ].filter(Boolean).join('');
+  const cls = [r.inactivo ? 'inactive-row' : '', r.salud && !r.inactivo ? 'health-row' : ''].filter(Boolean).join(' ');
+  return `<tr class="${cls}">
+    <td data-label="#">${r.num}</td>
+    <td data-label="Nombre"><div class="name-cell"><span>${esc(r.nombre)}</span>${badges ? `<span class="badges">${badges}</span>` : ''}</div></td>
+    <td data-label="Tarea">${esc(r.tarea)}</td>
     <td data-label="Grupo">${r.grupo || '—'}</td><td data-label="Género">${r.genero}</td>
     <td data-label="Estado"><span class="tag ${r.inactivo ? 'inactive' : 'active'}">${r.inactivo ? 'Inactivo' : 'Activo'}</span></td>
     ${editMode ? `<td class="edit-col" data-label="Acciones"><button class="btn small" type="button" data-edit="${r.num}" aria-label="Editar ${esc(r.nombre)}">Editar</button></td>` : ''}</tr>`;
@@ -636,9 +708,15 @@ const closeModal = () => { $('modalOverlay').hidden = true; editing = null; };
 
 $('saveModalBtn').onclick = () => {
   const nombre = $('f_nombre').value.trim();
-  if (!nombre) { $('f_nombre').focus(); return; }
+  const field = $('fieldNombre');
+  if (!nombre || nombre.length < 2) {
+    field.classList.add('invalid');
+    $('f_nombre').focus();
+    return;
+  }
+  field.classList.remove('invalid');
   const vals = {
-    nombre, tarea: $('f_tarea').value.trim().toUpperCase(), grupo: $('f_grupo').value || null, genero: $('f_genero').value,
+    nombre, tarea: $('f_tarea').value.trim().toUpperCase() || '—', grupo: $('f_grupo').value || null, genero: $('f_genero').value,
     inactivo: $('f_estado').value === 'inactivo', salud: $('f_salud').checked,
     asign: Object.fromEntries([...$('f_asign').querySelectorAll('input')].map(i => [i.value, i.checked]))
   };
@@ -648,6 +726,7 @@ $('saveModalBtn').onclick = () => {
   closeModal(); markDirty();
   toast(wasEditing ? `Cambios guardados para ${vals.nombre} ✓` : `${vals.nombre} agregado con éxito ✓`, 'ok');
 };
+$('f_nombre').addEventListener('input', () => { if ($('f_nombre').value.trim().length >= 2) $('fieldNombre').classList.remove('invalid'); });
 $('deleteBtn').onclick = () => {
   if (editing && confirm(`¿Eliminar a ${editing.nombre}?`)) {
     const nombre = editing.nombre;
@@ -667,9 +746,11 @@ $('tableBody').addEventListener('click', e => {
 $('addBtn').onclick = () => openModal(null);
 $('editModeBtn').onclick = () => {
   editMode = !editMode;
-  $('editModeBtn').textContent = `Modo edición: ${editMode ? 'ON' : 'OFF'}`;
+  $('editModeBtn').textContent = editMode ? '✏️ Edición: on' : '✏️ Edición: off';
   $('editModeBtn').setAttribute('aria-pressed', editMode);
+  $('editModeBtn').classList.toggle('primary-edit', editMode);
   renderTable();
+  toast(editMode ? 'Modo edición activado — puedes editar filas' : 'Modo edición desactivado', editMode ? 'ok' : '');
 };
 $('saveBtn').onclick = async () => {
   $('saveBtn').disabled = true; setStatus('Guardando…');
@@ -704,7 +785,31 @@ $('asignSelect').addEventListener('change', renderAsignPeople);
 function updateMoreBadge() {
   const n = ['filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].filter(id => $(id).value).length;
   $('moreBadge').hidden = !n; $('moreBadge').textContent = n;
+  renderFilterChips();
 }
+function renderFilterChips() {
+  const host = $('filterChips');
+  if (!host) return;
+  const chips = [];
+  const q = $('searchBox').value.trim();
+  if (q) chips.push({key: 'searchBox', label: 'Buscar: ' + q});
+  if ($('filterGrupo').value) chips.push({key: 'filterGrupo', label: 'Grupo ' + $('filterGrupo').value});
+  if ($('filterTarea').value) chips.push({key: 'filterTarea', label: 'Tarea: ' + $('filterTarea').value});
+  if ($('filterGenero').value) chips.push({key: 'filterGenero', label: $('filterGenero').value === 'M' ? 'Mujeres' : 'Varones'});
+  if ($('filterEstado').value) chips.push({key: 'filterEstado', label: $('filterEstado').value === 'activo' ? 'Solo activos' : 'Solo inactivos'});
+  if ($('filterAsign').value) {
+    const opt = $('filterAsign').selectedOptions[0];
+    chips.push({key: 'filterAsign', label: opt ? opt.textContent : 'Asignación'});
+  }
+  host.innerHTML = chips.map(c => `<span class="fchip">${esc(c.label)}<button type="button" data-clear="${c.key}" aria-label="Quitar filtro ${esc(c.label)}">×</button></span>`).join('');
+}
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-clear]');
+  if (!b || !b.closest('#filterChips')) return;
+  const id = b.dataset.clear;
+  if ($(id)) $(id).value = '';
+  updateMoreBadge(); resetPage();
+});
 ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => {
   $(id).addEventListener('input', () => { updateMoreBadge(); resetPage(); });
   $(id).addEventListener('change', () => { updateMoreBadge(); resetPage(); });
@@ -770,12 +875,21 @@ $('clearFilters').onclick = () => {
   ['searchBox', 'filterGrupo', 'filterTarea', 'filterGenero', 'filterEstado', 'filterAsign'].forEach(id => $(id).value = '');
   updateMoreBadge(); resetPage();
 };
+function syncThemeLabel() {
+  const r = document.documentElement;
+  const cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  const lab = $('themeLabel');
+  if (lab) lab.textContent = cur === 'dark' ? 'Claro' : 'Oscuro';
+  $('themeBtn').setAttribute('aria-label', cur === 'dark' ? 'Cambiar a tema claro' : 'Cambiar a tema oscuro');
+}
 $('themeBtn').onclick = () => {
   const r = document.documentElement;
   const cur = r.dataset.theme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
   r.dataset.theme = cur === 'dark' ? 'light' : 'dark';
   try { localStorage.setItem('hermanos.theme', r.dataset.theme); } catch {}
+  syncThemeLabel();
 };
+syncThemeLabel();
 const revealIO = new IntersectionObserver(es => es.forEach(e => {
   if (e.isIntersecting) { e.target.classList.add('in'); revealIO.unobserve(e.target); }
 }), {threshold: 0.05});
@@ -795,8 +909,14 @@ navLinks.forEach(a => { const s = document.querySelector(a.hash); if (s) spyIO.o
     renderAll();
   } catch (e) {
     $('statsRow').innerHTML = '';
-    $('tableBody').innerHTML = `<tr><td class="empty" colspan="7">${esc(e.message)}</td></tr>`;
+    $('tableBody').innerHTML = `<tr><td colspan="7"><div class="load-error"><strong>No se pudo cargar el registro</strong><br>${esc(e.message)}<br><button class="btn primary" type="button" id="retryLoad">Reintentar</button></div></td></tr>`;
     $('countNote').textContent = e.message;
+    const btn = $('retryLoad');
+    if (btn) btn.onclick = () => location.reload();
+  }
+  // PWA: service worker opcional
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('sw.js').catch(() => {});
   }
 })();
 </script>
