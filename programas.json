@@ -7964,7 +7964,13 @@
        "desc": "wcg cap. 11."
       }
      ],
-     "seg": {}
+     "seg": {
+      "p6.p": {
+       "e": "no",
+       "r": "Kiryat Riquelme",
+       "n": ""
+      }
+     }
     },
     {
      "range": "12-18 DE OCTUBRE",
