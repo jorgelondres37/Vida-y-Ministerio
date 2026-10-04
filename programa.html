@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Programa Vida y Ministerio — Curauma</title>
+<title>Programa Vida y Ministerio — Bordelaguna</title>
 <script>try{var t=localStorage.getItem('hermanos.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,6 +63,11 @@ textarea{width:100%;min-height:150px;font-family:ui-monospace,monospace;font-siz
 .foot{display:grid;grid-template-columns:repeat(3,1fr);gap:4px 14px;margin-top:12px;border-top:1px solid #999;padding-top:8px;font-size:11px}
 .foot label{display:flex;flex-direction:column;font-weight:700;font-size:10px;color:#444}.foot input{width:100%}
 .bad-sel{color:#B3382C!important}
+.sheet .dup-sel{background:#FFF3CD;box-shadow:0 0 0 1px #E0A800;border-radius:3px}
+@media print{.sheet .dup-sel{background:transparent;box-shadow:none}}
+#dupToast{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:100;width:min(520px,calc(100% - 24px));background:var(--gold-bg);color:var(--gold-ink);border:1px solid var(--gold);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow);font-size:13px;line-height:1.45}
+#dupToast[hidden]{display:none}
+#dupToast .dt-act{display:flex;gap:8px;margin-top:8px}
 @media(max-width:640px){.r{grid-template-columns:40px 18px 1fr}.who{grid-column:3}.foot{grid-template-columns:1fr 1fr}}
 @media print{
  @page{size:A4;margin:10mm}
@@ -286,7 +291,7 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
 </head>
 <body data-tab="prog">
-<header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><button class="btn small" data-tab="hojas" aria-pressed="false">Hojas de asignación</button><a class="btn small" href="index.html">← Registro</a></div></header>
+<header class="top no-print"><div class="top-in"><span class="brand">Congregación Bordelaguna</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><button class="btn small" data-tab="hojas" aria-pressed="false">Hojas de asignación</button><a class="btn small" href="index.html">← Registro</a></div></header>
 <main class="wrap">
   <div id="progView">
   <div class="no-print">
@@ -444,6 +449,7 @@ No agregues explicaciones tuyas antes ni después: dame solo el texto listo para
     </section>
   </div>
 </main>
+<div id="dupToast" class="no-print" role="alert" hidden></div>
 <dialog id="segDlg" aria-labelledby="segT">
   <h2 id="segT" style="margin:0"></h2><p class="hint" id="segSub"></p>
   <div class="row2"><button class="btn" data-e="" type="button">Pendiente</button><button class="btn" data-e="conf" type="button">Confirmado</button><button class="btn" data-e="ok" type="button">✔ Cumplió</button><button class="btn" data-e="no" type="button">✖ No cumplió</button></div>
@@ -597,7 +603,8 @@ function sel(w,sl,wi,o,f){
   const i=sl.findIndex(s=>s.o===o&&s.f===f),s=sl[i],val=o[f]||'';
   const names=pool(s).map(p=>p.n).sort(nameSort);
   const out=val&&!names.includes(val);
-  return`<select data-w="${wi}" data-s="${i}" class="${out?'bad-sel':''}" aria-label="Asignado"><option value="">—</option>${(out?[val,...names]:names).map(n=>`<option ${n===val?'selected':''} value="${esc(n)}">${out&&n===val?'⚠ ':''}${esc(n)}</option>`).join('')}</select>`;
+  const dup=val&&sl.filter(x=>x.o[x.f]===val).length>1;
+  return`<select data-w="${wi}" data-s="${i}" class="${out?'bad-sel':''}${dup?' dup-sel':''}"${dup?' title="Este hermano está repetido en esta semana"':''} aria-label="Asignado"><option value="">—</option>${(out?[val,...names]:names).map(n=>`<option ${n===val?'selected':''} value="${esc(n)}">${out&&n===val?'⚠ ':''}${esc(n)}</option>`).join('')}</select>`;
 }
 
 function spSelect(w,wi){
@@ -621,7 +628,7 @@ function render(){
     let n=0,sec='';
     const rows=w.parts.map((p,pi)=>{
       norm(p);n++;
-      const head=p.sec!==sec?`<div class="sec ${p.sec.toLowerCase()}"><span>${{T:'TESOROS DE LA BIBLIA',M:'SEAMOS MEJORES MAESTROS',V:'NUESTRA VIDA CRISTIANA'}[p.sec]}</span><span>SALA PRINCIPAL</span><span>${p.sec==='V'?'LECTOR':''}</span></div>${p.sec==='V'?`<div class="r"><span class="tm">${tm.sMid}</span><span></span><span>Canción ${inp('sMid',w.sMid,'sn')}</span><span class="who">${S(w,'presi')}</span></div>`:''}`:'';sec=p.sec;
+      const head=p.sec!==sec?`<div class="sec ${p.sec.toLowerCase()}"><span>${{T:'TESOROS DE LA BIBLIA',M:'SEAMOS MEJORES MAESTROS',V:'NUESTRA VIDA CRISTIANA'}[p.sec]}</span><span>SALA PRINCIPAL</span><span>${p.sec==='V'?'LECTOR':''}</span></div>${p.sec==='V'?`<div class="r"><span class="tm">${tm.sMid}</span><span></span><span>Canción ${inp('sMid',w.sMid,'sn')}</span><span class="who">${esc(w.presi)}</span></div>`:''}`:'';sec=p.sec;
       const who=p.kind==='EST'?`<div class="who2">${S(p,'p')}${S(p,'l')}</div>`:S(p,'p');
       const l2=(p.desc||p.kind==='MM')?`<div class="r"><span></span><span></span><div class="tt dsc">${ce(pi,'desc',p.desc)}</div><div class="who">${p.kind==='MM'?S(p,'h'):''}</div></div>`:'';
       const ref=(p.ref||p.kind==='MM'||p.kind==='LECTURA')?' '+ce(pi,'ref',p.ref,'ref'):'';
@@ -1319,10 +1326,45 @@ window.addEventListener('afterprint',()=>{
   document.body.classList.remove('print-slips','print-one');
   document.querySelectorAll('.slip-card').forEach(c=>c.style.display='');
 });
+/* ---------- Aviso de hermano repetido (no bloquea) ---------- */
+let dupT;
+function dupToast(html,undo){
+  const el=$('dupToast');
+  el.innerHTML=`<div>${html}</div><div class="dt-act"><button class="btn small" data-d="ok" type="button">Dejarlo así</button><button class="btn small danger" data-d="undo" type="button">Deshacer</button></div>`;
+  el._undo=undo;el.hidden=false;clearTimeout(dupT);dupT=setTimeout(()=>{el.hidden=true},14000);
+}
+function dupCheck(wi,key,prev){
+  const w=cur.weeks[wi];if(!w)return;
+  const sl=slots(w),s=sl.find(x=>x.k===key);if(!s)return;
+  const name=s.o[s.f];if(!name)return;
+  const lb=weekLabels(w);
+  const same=sl.filter(x=>x.k!==key&&x.o[x.f]===name).map(x=>lb[x.k]);
+  const adj=[];
+  [wi-1,wi+1].forEach(j=>{
+    const o=cur.weeks[j];if(!o||o.special)return;
+    const ol=weekLabels(o);
+    slots(o).forEach(x=>{if(x.o[x.f]===name)adj.push(`${ol[x.k]} (${wkLabel(o)})`)});
+  });
+  if(!same.length&&!adj.length)return;
+  let h=`⚠ <b>${esc(name)}</b> quedó como «${esc(lb[key])}»`;
+  if(same.length)h+=`<br>y ya tiene en esta semana: ${same.map(esc).join(', ')}.`;
+  if(adj.length)h+=`<br>También aparece en semana contigua: ${adj.map(esc).join(', ')}.`;
+  h+='<br><small>Puedes dejarlo así si es intencional.</small>';
+  dupToast(h,()=>{
+    const w2=cur.weeks[wi],s2=w2&&slots(w2).find(x=>x.k===key);
+    if(s2){s2.o[s2.f]=prev||'';draft();render()}
+  });
+}
+$('dupToast').addEventListener('click',e=>{
+  const b=e.target.closest('[data-d]');if(!b)return;
+  const el=$('dupToast');
+  if(b.dataset.d==='undo'&&el._undo)el._undo();
+  el.hidden=true;clearTimeout(dupT);
+});
 $('sheets').addEventListener('change',e=>{
   const t=e.target,w=cur?.weeks[t.dataset.w];if(!w)return;
   if(t.dataset.sp!==undefined){setSpecial(w,t.value);draft();render();return}
-  if(t.dataset.s!==undefined){const s=slots(w)[t.dataset.s];s.o[s.f]=t.value;render()}
+  if(t.dataset.s!==undefined){const wi=+t.dataset.w,s=slots(w)[t.dataset.s],prev=s.o[s.f],key=s.k;s.o[s.f]=t.value;render();dupCheck(wi,key,prev)}
   else{
     if(t.dataset.p!==undefined)w.parts[t.dataset.p][t.dataset.f]=t.value;
     else if(t.dataset.x)w.x[t.dataset.x]=t.value;else w[t.dataset.f]=t.value;
