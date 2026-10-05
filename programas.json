@@ -8489,7 +8489,56 @@
        "ref": "",
        "desc": "lfb lecciones 32, 33."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Renan Rojo",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -8615,7 +8664,51 @@
        "ref": "",
        "desc": "lfb lecciones 34, 35."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -8754,7 +8847,68 @@
        "ref": "",
        "desc": "lfb lecciones 36, 37."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "no",
+       "r": "Renan Rojo",
+       "n": ""
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "no",
+       "r": "Guillermo Colina",
+       "n": ""
+      },
+      "p3.p": {
+       "e": "ok"
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "ok"
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p5.h": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "no",
+       "r": "Ximena de Correa",
+       "n": ""
+      },
+      "p6.h": {
+       "e": "no",
+       "r": "Lidiana de Arias",
+       "n": ""
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p8.p": {
+       "e": "ok"
+      },
+      "p8.l": {
+       "e": "ok"
+      }
+     }
     },
     {
      "special": "",
@@ -8880,7 +9034,57 @@
        "ref": "",
        "desc": "lfb lección 38, introducción a la sección 7 y lección 39."
       }
-     ]
+     ],
+     "seg": {
+      "presi": {
+       "e": "ok"
+      },
+      "oraA": {
+       "e": "ok"
+      },
+      "oraB": {
+       "e": "ok"
+      },
+      "p0.p": {
+       "e": "ok"
+      },
+      "p1.p": {
+       "e": "ok"
+      },
+      "p2.p": {
+       "e": "ok"
+      },
+      "p3.p": {
+       "e": "no",
+       "r": "Leticia de Ugalde",
+       "n": ""
+      },
+      "p3.h": {
+       "e": "ok"
+      },
+      "p4.p": {
+       "e": "ok"
+      },
+      "p4.h": {
+       "e": "no",
+       "r": "Janis Hernández",
+       "n": ""
+      },
+      "p5.p": {
+       "e": "ok"
+      },
+      "p6.p": {
+       "e": "ok"
+      },
+      "p7.p": {
+       "e": "ok"
+      },
+      "p7.l": {
+       "e": "no",
+       "r": "Eduardo Benavides",
+       "n": ""
+      }
+     }
     }
    ]
   }
