@@ -32,7 +32,7 @@
   {"num":32,"nombre":"Yáñez, Lucía de","tarea":"PTJ","grupo":"5","genero":"M","inactivo":false,"salud":true,"asign":[]},
   {"num":33,"nombre":"Cerna, Rebeca","tarea":"PNB","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":35,"nombre":"Lauren Arias","tarea":"PNB","grupo":"5","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
-  {"num":36,"nombre":"Molina, Rodrigo","tarea":"PTJ","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["ORACION","LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
+  {"num":36,"nombre":"Molina, Rodrigo","tarea":"PTJ","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":["LECTURA_BIBLIA","DISCURSO_MM","LECTOR_ESTUDIO_BIBLICO"]},
   {"num":37,"nombre":"Avendaño, Josefina","tarea":"PNB","grupo":"4","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":38,"nombre":"Robles, Emilia","tarea":"PNB","grupo":"1","genero":"M","inactivo":false,"salud":false,"asign":["MM_1","MM_2","MM_3"]},
   {"num":39,"nombre":"Molina, Rodrigo Jr","tarea":"PNB","grupo":"3","genero":"V","inactivo":false,"salud":false,"asign":[]},
