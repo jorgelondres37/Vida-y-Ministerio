@@ -10067,10 +10067,10 @@
      "sOpen": "1",
      "sClose": "33",
      "sMid": "44",
-     "presi": "Alejandro Oliva",
+     "presi": "Mario Aliaga",
      "oraA": "Carlos Yáñez",
      "oraB": "Enrique Núñez",
-     "aseo": "4",
+     "aseo": "        1",
      "x": {
       "ent": "",
       "mic": "",
@@ -10085,7 +10085,7 @@
        "title": "Ayudamos a otros a beneficiarse de la misericordia de Jehová",
        "min": 10,
        "detail": "Jehová fue justo cuando condenó a Babilonia por sus graves pecados y su arrogancia (Jer 50:14, 29, 31; it \"Presunción\" párr. 10). Jehová perdonó por completo a los israelitas que se arrepintieron de sus pecados (Jer 50:20). Nos esforzamos por imitar la misericordia de Jehová predicando las buenas noticias y ayudando a ",
-       "p": "David Cruz",
+       "p": "Felipe Gonzalez",
        "h": "",
        "l": "",
        "t": "19:35",
@@ -10124,7 +10124,7 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor (lmd lección 1 punto 5).",
-       "p": "Andrea de Núñez",
+       "p": "Janis Hernández",
        "h": "Poulette de Robles",
        "l": "",
        "t": "20:00",
@@ -10137,8 +10137,8 @@
        "title": "Hagamos revisitas",
        "min": 4,
        "detail": "DE CASA EN CASA. Visitas a alguien para conversar sobre un tema, pero la persona quiere hablar de un tema distinto (lmd lección 9 punto 3).",
-       "p": "Rebeca Cerna",
-       "h": "Lauren Arias",
+       "p": "Verónica de Alvarado",
+       "h": "Elisabete de Ortega",
        "l": "",
        "t": "20:04",
        "ref": "(lmd lección 9 punto 3)",
@@ -10150,8 +10150,8 @@
        "title": "Hagamos discípulos",
        "min": 5,
        "detail": "lff lección 20 punto 4 (lmd lección 11 punto 4).",
-       "p": "Emilia Robles",
-       "h": "Ambar Hernandes",
+       "p": "Andrea de Orellana",
+       "h": "Gisele de Pérez",
        "l": "",
        "t": "20:10",
        "ref": "(lmd lección 11 punto 4)",
@@ -10163,7 +10163,7 @@
        "title": "Nunca olviden lo que Jehová recuerda",
        "min": 15,
        "detail": "Análisis con el auditorio. Pon el VIDEO. Luego pregunta: ¿Qué lecciones sacamos de este video?",
-       "p": "Mario Aliaga",
+       "p": "Ronny Pérez",
        "h": "",
        "l": "",
        "t": "20:20",
@@ -10176,14 +10176,15 @@
        "title": "Estudio bíblico de la congregación",
        "min": 30,
        "detail": "wcg cap. 15.",
-       "p": "Felipe Gonzalez",
+       "p": "Cristian Da Silva",
        "h": "",
-       "l": "Cesar Robles",
+       "l": "Andrés Valenzuela",
        "t": "20:35",
        "ref": "",
        "desc": "wcg cap. 15."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -10193,7 +10194,7 @@
      "sOpen": "98",
      "sClose": "150",
      "sMid": "10",
-     "presi": "Mario Aliaga",
+     "presi": "Jorge Benavides",
      "oraA": "Cesar Robles",
      "oraB": "Andrés Valenzuela",
      "aseo": "5",
@@ -10309,7 +10310,8 @@
        "ref": "",
        "desc": "wcg cap. 16."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -10319,7 +10321,7 @@
      "sOpen": "28",
      "sClose": "75",
      "sMid": "90",
-     "presi": "Felipe Gonzalez",
+     "presi": "Ronny Pérez",
      "oraA": "Felipe Escandell",
      "oraB": "David Ortega",
      "aseo": "1",
@@ -10435,11 +10437,12 @@
        "ref": "",
        "desc": "wcg cap. 17."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
-     "special": "",
-     "spName": "",
+     "special": "regional",
+     "spName": "Asamblea Regional",
      "range": "23-29 DE NOVIEMBRE",
      "bible": "LAMENTACIONES 3-5",
      "sOpen": "158",
@@ -10561,7 +10564,8 @@
        "ref": "",
        "desc": "wcg cap. 18."
       }
-     ]
+     ],
+     "seg": {}
     }
    ]
   }
