@@ -9775,7 +9775,13 @@
        "desc": "Visita super intendente de circuito"
       }
      ],
-     "seg": {}
+     "seg": {
+      "presi": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      }
+     }
     },
     {
      "range": "19-25 DE OCTUBRE",
