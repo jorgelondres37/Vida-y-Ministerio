@@ -9277,208 +9277,34 @@
    "id": "2026-10",
    "weeks": [
     {
-     "range": "28 DE SEPTIEMBRE A 4 DE OCTUBRE",
-     "bible": "JEREMÍAS 38, 39",
-     "sOpen": "102",
-     "sClose": "56",
-     "sMid": "90",
-     "presi": "Felipe Gonzalez",
-     "oraA": "Hernán Coronado",
-     "oraB": "Luis López",
-     "aseo": "          1",
+     "special": "",
+     "spName": "",
+     "range": "2-8 DE NOVIEMBRE",
+     "bible": "JEREMÍAS 49, 50",
+     "sOpen": "1",
+     "sClose": "33",
+     "sMid": "44",
+     "presi": "Alejandro Oliva",
+     "oraA": "Carlos Yáñez",
+     "oraB": "Cesar Robles",
+     "aseo": "5",
      "x": {
-      "ent": "Carlos Yañez",
-      "mic": "Carlos Alvarado /  Luis Cabezas",
-      "aud": "Claudio Correa",
-      "plat": "Felipe Escandell",
-      "av": "Guillermo colina / Eduardo Benavides"
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
      },
      "parts": [
       {
        "sec": "T",
        "kind": "TESORO",
-       "title": "No dejemos de ayudarnos unos a otros",
+       "title": "Ayudamos a otros a beneficiarse de la misericordia de Jehová",
        "min": 10,
-       "detail": "",
-       "p": "Luis Escandell",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "",
-       "p": "Ricardo Ugalde",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 38:1-13 (th lección 12).",
-       "p": "Jhon Maturana",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 38:1-13 (th lección 12)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 3,
-       "detail": "PREDICACIÓN INFORMAL. Ofrézcale un curso de la Biblia a una persona que está preocupada por el clima extremo (lmd lección 9 punto 3).",
-       "p": "Ximena de Correa",
-       "h": "Rosa de Cabezas",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 9 punto 3)",
-       "desc": "PREDICACIÓN INFORMAL. Ofrézcale un curso de la Biblia a una persona que está preocupada por el clima extremo."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Haga revisitas",
-       "min": 4,
-       "detail": "PREDICACIÓN INFORMAL. Ofrézcale un curso de la Biblia a una persona que tiene hijos (lmd lección 9 punto 5).",
-       "p": "Ana de Aliaga",
-       "h": "Paola de Mesa",
-       "l": "",
-       "t": "20:04",
-       "ref": "(lmd lección 9 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL. Ofrézcale un curso de la Biblia a una persona que tiene hijos."
-      },
-      {
-       "sec": "M",
-       "kind": "QD",
-       "title": "¿Qué diría?",
-       "min": 6,
-       "detail": "Análisis con el auditorio. DE CASA EN CASA. Repase brevemente Una obra de amor lección 1 punto 4. Mencione la imagen y luego pregunte: Según lo que vemos en la imagen, ¿qué pregunta podría hacer para empezar una conversación? ¿Qué texto mostraría?",
+       "detail": "Jehová fue justo cuando condenó a Babilonia por sus graves pecados y su arrogancia (Jer 50:14, 29, 31; it \"Presunción\" párr. 10). Jehová perdonó por completo a los israelitas que se arrepintieron de sus pecados (Jer 50:20). Nos esforzamos por imitar la misericordia de Jehová predicando las buenas noticias y ayudando a ",
        "p": "Felipe Godoy",
        "h": "",
        "l": "",
-       "t": "20:09",
-       "ref": "",
-       "desc": "Análisis con el auditorio. DE CASA EN CASA. Repase brevemente Una obra de amor lección 1 punto 4. Mencione la imagen y luego pregunte: Según lo que vemos en la imagen, ¿qué pregunta podría hacer para empezar una conversación? ¿Qué texto mostraría?"
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "“¿Quién me tocó?”",
-       "min": 15,
-       "detail": "Análisis con el auditorio.",
-       "p": "Jorge Benavides",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "wcg cap. 10.",
-       "p": "Manuel Hernández",
-       "h": "",
-       "l": "Eduardo Benavides",
-       "t": "20:35",
-       "ref": "",
-       "desc": "wcg cap. 10."
-      }
-     ],
-     "seg": {
-      "p4.p": {
-       "e": "no",
-       "r": "Esther Cortez",
-       "n": ""
-      },
-      "presi": {
-       "e": "ok"
-      },
-      "p2.p": {
-       "e": "no",
-       "r": "Agustín Pizarro",
-       "n": ""
-      },
-      "oraA": {
-       "e": "ok",
-       "r": "",
-       "n": ""
-      },
-      "oraB": {
-       "e": "no",
-       "r": "Carla Alvarado",
-       "n": ""
-      },
-      "p0.p": {
-       "e": "ok"
-      },
-      "p1.p": {
-       "e": "ok"
-      },
-      "p3.p": {
-       "e": "ok"
-      },
-      "p3.h": {
-       "e": "ok"
-      },
-      "p4.h": {
-       "e": "ok"
-      },
-      "p5.p": {
-       "e": "ok"
-      },
-      "p6.p": {
-       "e": "ok"
-      },
-      "p7.p": {
-       "e": "ok"
-      },
-      "p7.l": {
-       "e": "ok"
-      }
-     }
-    },
-    {
-     "range": "5-11 DE OCTUBRE",
-     "bible": "JEREMÍAS 40, 41",
-     "sOpen": "33",
-     "sClose": "38",
-     "sMid": "17",
-     "presi": "Luis López",
-     "oraA": "Cristian Da Silva",
-     "oraB": "Andrés Valenzuela",
-     "aseo": "         2",
-     "x": {
-      "ent": "Jhonny Silva ",
-      "mic": "Felipe Godoy /  David Ortega ",
-      "aud": "Jorge Benavides",
-      "plat": "Eduardo Benavides",
-      "av": "Gabriel Ugalde / David Cruz"
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "Tengamos un punto de vista equilibrado de la protección de Jehová",
-       "min": 10,
-       "detail": "",
-       "p": "Ronny Pérez",
-       "h": "",
-       "l": "",
        "t": "19:35",
        "ref": "",
        "desc": ""
@@ -9488,7 +9314,7 @@
        "kind": "PERLAS",
        "title": "Busquemos perlas escondidas",
        "min": 10,
-       "detail": "",
+       "detail": "Jer 50:24. ¿Qué hizo Jehová para que Babilonia cayera en \"una trampa\"? (it \"Trampa\" párr. 3). ¿Qué perlas espirituales has encontrado en la lectura bíblica de esta semana?",
        "p": "Guillermo Colina",
        "h": "",
        "l": "",
@@ -9501,404 +9327,60 @@
        "kind": "LECTURA",
        "title": "Lectura de la Biblia",
        "min": 4,
-       "detail": "Jer 40:1-10 (th lección 2).",
+       "detail": "Jer 50:24-40 (th lección 11).",
        "p": "Luis Valladares",
        "h": "",
        "l": "",
        "t": "19:55",
-       "ref": "Jer 40:1-10 (th lección 2)",
+       "ref": "Jer 50:24-40 (th lección 11)",
        "desc": ""
       },
       {
        "sec": "M",
        "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "DE CASA EN CASA. (lmd lección 2 punto 3).",
-       "p": "Andrea de Orellana",
-       "h": "Leonor Alvarado",
-       "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 2 punto 3)",
-       "desc": "DE CASA EN CASA."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "PREDICACIÓN INFORMAL. (lmd lección 2 punto 5).",
-       "p": "Alicia Rodríguez",
-       "h": "Marisol Avila",
-       "l": "",
-       "t": "20:03",
-       "ref": "(lmd lección 2 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 4,
-       "detail": "PREDICACIÓN PÚBLICA. Una persona se queda mirando el carrito de publicaciones (lmd lección 5 punto 3).",
-       "p": "Lidiana de Arias",
-       "h": "Thiare Aliaga",
-       "l": "",
-       "t": "20:06",
-       "ref": "(lmd lección 5 punto 3)",
-       "desc": "PREDICACIÓN PÚBLICA. Una persona se queda mirando el carrito de publicaciones."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Explique sus creencias",
+       "title": "Empecemos conversaciones",
        "min": 3,
-       "detail": "Escenificación. ijwbq artículo 103. Tema: ¿Quién es Jehová? (th lección 17).",
-       "p": "Erika de Escandell",
-       "h": "Sirlene de Coronado",
-       "l": "",
-       "t": "20:12",
-       "ref": "(th lección 17)",
-       "desc": "Escenificación. ijwbq artículo 103. Tema: ¿Quién es Jehová?"
-      },
-      {
-       "sec": "V",
-       "kind": "VC",
-       "title": "Jehová protege a las viudas",
-       "min": 15,
-       "detail": "Análisis con el auditorio.",
-       "p": "Hernán Coronado",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": "Análisis con el auditorio."
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Estudio bíblico de la congregación",
-       "min": 30,
-       "detail": "wcg cap. 11.",
-       "p": "Felipe Gonzalez",
-       "h": "",
-       "l": "Luis Cabezas",
-       "t": "20:35",
-       "ref": "",
-       "desc": "wcg cap. 11."
-      }
-     ],
-     "seg": {
-      "p6.p": {
-       "e": "no",
-       "r": "Kiryat Riquelme",
-       "n": ""
-      },
-      "p5.p": {
-       "e": "no",
-       "r": "Valentina De Gonzalez",
-       "n": ""
-      },
-      "p5.h": {
-       "e": "no",
-       "r": "Silvana de Cancino",
-       "n": ""
-      },
-      "oraA": {
-       "e": "no",
-       "r": "Jorge Benavides",
-       "n": ""
-      },
-      "p7.p": {
-       "e": "no",
-       "r": "Claudio Correa",
-       "n": ""
-      },
-      "presi": {
-       "e": "ok"
-      },
-      "oraB": {
-       "e": "ok"
-      },
-      "p0.p": {
-       "e": "ok"
-      },
-      "p1.p": {
-       "e": "ok"
-      },
-      "p2.p": {
-       "e": "ok"
-      },
-      "p3.p": {
-       "e": "ok"
-      },
-      "p3.h": {
-       "e": "ok"
-      },
-      "p4.p": {
-       "e": "ok"
-      },
-      "p4.h": {
-       "e": "ok"
-      },
-      "p6.h": {
-       "e": "ok"
-      },
-      "p8.p": {
-       "e": "ok"
-      },
-      "p8.l": {
-       "e": "ok"
-      }
-     }
-    },
-    {
-     "range": "12-18 DE OCTUBRE",
-     "bible": "JEREMÍAS 42-44",
-     "sOpen": "103",
-     "sClose": "103",
-     "sMid": "47",
-     "presi": "Mario Aliaga",
-     "oraA": "Mauricio Valenzuela",
-     "oraB": "Alejandro Oliva",
-     "aseo": "         3",
-     "x": {
-      "ent": "Ismael Orellana ",
-      "mic": "Guillermo Colina / Gabriel Ugalde",
-      "aud": "Luis Lopez",
-      "plat": "David Cruz",
-      "av": "Ronny Perez / Ricardo Ugalde"
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "Pidieron guía y luego la rechazaron",
-       "min": 10,
-       "detail": "",
-       "p": "Manuel Hernández",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "",
-       "p": "David Cruz",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 43:1-13 (th lección 11).",
-       "p": "Luis Cabezas",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 43:1-13 (th lección 11)",
-       "desc": ""
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 3,
-       "detail": "PREDICACIÓN INFORMAL. (lmd lección 1 punto 5).",
-       "p": "Nayade de Benavides",
-       "h": "Bárbara López",
+       "detail": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor (lmd lección 1 punto 5).",
+       "p": "Esther Cortez",
+       "h": "Emilia Robles",
        "l": "",
        "t": "20:00",
        "ref": "(lmd lección 1 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL."
+       "desc": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor."
       },
       {
        "sec": "M",
        "kind": "MM",
-       "title": "Haga revisitas",
+       "title": "Hagamos revisitas",
        "min": 4,
-       "detail": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor (lmd lección 7 punto 4).",
-       "p": "Valentina De Gonzalez",
-       "h": "Angélica de López",
+       "detail": "DE CASA EN CASA. Visitas a alguien para conversar sobre un tema, pero la persona quiere hablar de un tema distinto (lmd lección 9 punto 3).",
+       "p": "Marisol Avila",
+       "h": "Poulette de Robles",
        "l": "",
        "t": "20:04",
-       "ref": "(lmd lección 7 punto 4)",
-       "desc": "DE CASA EN CASA. Utilice una de las verdades del apéndice A del folleto Una obra de amor."
-      },
-      {
-       "sec": "M",
-       "kind": "QD",
-       "title": "¿Qué diría?",
-       "min": 6,
-       "detail": "Análisis con el auditorio. PREDICACIÓN INFORMAL. Repase brevemente Una obra de amor lección 2 punto 3. Mencione la imagen y luego pregunte: ¿Cómo podría empezar a conversar con un hombre que está leyendo la Biblia u otro libro religioso? ¿Qué le preguntaría para saber qué verdad bíblica le podría interesar? ¿Qué texto ",
-       "p": "Ismael Orellana",
-       "h": "",
-       "l": "",
-       "t": "20:09",
-       "ref": "",
-       "desc": "Análisis con el auditorio. PREDICACIÓN INFORMAL. Repase brevemente Una obra de amor lección 2 punto 3. Mencione la imagen y luego pregunte: ¿Cómo podría empezar a conversar con un hombre que está leyendo la Biblia u otro libro religioso? ¿Qué le preguntaría para saber qué verdad bíblica le podría interesar? ¿Qué texto"
-      },
-      {
-       "sec": "V",
-       "kind": "NEC",
-       "title": "Necesidades de la congregación",
-       "min": 15,
-       "detail": "",
-       "p": "Claudio Correa",
-       "h": "",
-       "l": "",
-       "t": "20:20",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "V",
-       "kind": "EST",
-       "title": "Demuestren tenerlos en muy alta estima y tratenlos con amor",
-       "min": 30,
-       "detail": "wcg cap. 12.",
-       "p": "Alejandro Oliva",
-       "h": "",
-       "l": "",
-       "t": "20:35",
-       "ref": "",
-       "desc": "Visita super intendente de circuito"
-      }
-     ],
-     "seg": {
-      "presi": {
-       "e": "no",
-       "r": "Luis Escandell",
-       "n": ""
-      }
-     }
-    },
-    {
-     "range": "19-25 DE OCTUBRE",
-     "bible": "JEREMÍAS 45, 46",
-     "sOpen": "21",
-     "sClose": "87",
-     "sMid": "117",
-     "presi": "Claudio Correa",
-     "oraA": "Jorge Benavides",
-     "oraB": "Miguel Meneses",
-     "aseo": "        4",
-     "x": {
-      "ent": "Luis Cabezas",
-      "mic": "Jhonny Silva  / Enrique Nuñez ",
-      "aud": "Manuel Hernandez",
-      "plat": "Gabriel Ugalde",
-      "av": "Felipe Escandel / Eduardo Benavides"
-     },
-     "parts": [
-      {
-       "sec": "T",
-       "kind": "TESORO",
-       "title": "La esperanza es clave para estar contentos",
-       "min": 10,
-       "detail": "",
-       "p": "Felipe Gonzalez",
-       "h": "",
-       "l": "",
-       "t": "19:35",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "PERLAS",
-       "title": "Busquemos perlas escondidas",
-       "min": 10,
-       "detail": "",
-       "p": "Johnny Silva",
-       "h": "",
-       "l": "",
-       "t": "19:45",
-       "ref": "",
-       "desc": ""
-      },
-      {
-       "sec": "T",
-       "kind": "LECTURA",
-       "title": "Lectura de la Biblia",
-       "min": 4,
-       "detail": "Jer 46:13-24 (th lección 10).",
-       "p": "Agustín Pizarro",
-       "h": "",
-       "l": "",
-       "t": "19:55",
-       "ref": "Jer 46:13-24 (th lección 10)",
-       "desc": ""
+       "ref": "(lmd lección 9 punto 3)",
+       "desc": "DE CASA EN CASA. Visitas a alguien para conversar sobre un tema, pero la persona quiere hablar de un tema distinto."
       },
       {
        "sec": "M",
        "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 3,
-       "detail": "PREDICACIÓN INFORMAL. Empiece una conversación con alguien que parece estar contento (lmd lección 2 punto 3).",
-       "p": "Elisabete de Ortega",
-       "h": "Gisele de Pérez",
+       "title": "Hagamos discípulos",
+       "min": 5,
+       "detail": "lff lección 20 punto 4 (lmd lección 11 punto 4).",
+       "p": "Ambar Hernandes",
+       "h": "Rita Panes",
        "l": "",
-       "t": "20:00",
-       "ref": "(lmd lección 2 punto 3)",
-       "desc": "PREDICACIÓN INFORMAL. Empiece una conversación con alguien que parece estar contento."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "DE CASA EN CASA. La persona está enojada (lmd lección 4 punto 5).",
-       "p": "Fabiola de Da Silva",
-       "h": "Valezka de Cruz",
-       "l": "",
-       "t": "20:04",
-       "ref": "(lmd lección 4 punto 5)",
-       "desc": "DE CASA EN CASA. La persona está enojada."
-      },
-      {
-       "sec": "M",
-       "kind": "MM",
-       "title": "Empiece conversaciones",
-       "min": 2,
-       "detail": "DE CASA EN CASA. La persona que abre la puerta se ve triste (lmd lección 2 punto 4).",
-       "p": "Janis Hernández",
-       "h": "Andrea de Ramirez",
-       "l": "",
-       "t": "20:07",
-       "ref": "(lmd lección 2 punto 4)",
-       "desc": "DE CASA EN CASA. La persona que abre la puerta se ve triste."
-      },
-      {
-       "sec": "M",
-       "kind": "DMM",
-       "title": "Discurso",
-       "min": 4,
-       "detail": "lmd apéndice A punto 20. Título: Jesús no es Dios (th lección 7).",
-       "p": "Andrés Valenzuela",
-       "h": "",
-       "l": "",
-       "t": "20:11",
-       "ref": "(th lección 7)",
-       "desc": "lmd apéndice A punto 20. Título: Jesús no es Dios."
+       "t": "20:10",
+       "ref": "(lmd lección 11 punto 4)",
+       "desc": "lff lección 20 punto 4."
       },
       {
        "sec": "V",
        "kind": "VC",
-       "title": "“No se olviden [...] de compartir lo que tienen”",
+       "title": "Nunca olviden lo que Jehová recuerda",
        "min": 15,
-       "detail": "Análisis con el auditorio.",
-       "p": "Ronny Pérez",
+       "detail": "Análisis con el auditorio. Pon el VIDEO. Luego pregunta: ¿Qué lecciones sacamos de este video?",
+       "p": "Felipe Gonzalez",
        "h": "",
        "l": "",
        "t": "20:20",
@@ -9910,42 +9392,44 @@
        "kind": "EST",
        "title": "Estudio bíblico de la congregación",
        "min": 30,
-       "detail": "wcg cap. 13.",
-       "p": "Luis Escandell",
+       "detail": "wcg cap. 15.",
+       "p": "Mario Aliaga",
        "h": "",
-       "l": "Carlos Alvarado",
+       "l": "Felipe Escandell",
        "t": "20:35",
        "ref": "",
-       "desc": "wcg cap. 13."
+       "desc": "wcg cap. 15."
       }
      ],
      "seg": {}
     },
     {
-     "range": "26 DE OCTUBRE A 1 DE NOVIEMBRE",
-     "bible": "JEREMÍAS 47, 48",
-     "sOpen": "125",
-     "sClose": "54",
-     "sMid": "158",
-     "presi": "Cristian Da Silva",
-     "oraA": "Luis Escandell",
-     "oraB": "Guillermo Colina",
-     "aseo": "        5",
+     "special": "",
+     "spName": "",
+     "range": "9-15 DE NOVIEMBRE",
+     "bible": "JEREMÍAS 51, 52",
+     "sOpen": "98",
+     "sClose": "150",
+     "sMid": "10",
+     "presi": "Felipe Gonzalez",
+     "oraA": "Enrique Núñez",
+     "oraB": "Carlos Alvarado",
+     "aseo": "1",
      "x": {
-      "ent": "Felipe Godoy",
-      "mic": "Andres Valenzuela / Jhon Maturana ",
-      "aud": "Mauricio Valenzuela",
-      "plat": "Miguel Meneses",
-      "av": "Ismael Orellana / David Cruz"
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
      },
      "parts": [
       {
        "sec": "T",
        "kind": "TESORO",
-       "title": "Jehová es un juez justo y misericordioso",
+       "title": "No seamos como Sedequías",
        "min": 10,
-       "detail": "",
-       "p": "Claudio Correa",
+       "detail": "Sedequías no hizo lo correcto (Jer 52:1, 2; jr 29). Sedequías rompió el juramento que había hecho en el nombre de Dios (Jer 52:3; w17.10 23 párrs. 9, 10). Sedequías no pudo librarse de las consecuencias de sus actos (Jer 52:8-11). PARA MEDITAR: \"¿Qué puedo hacer para no ser como Sedequías?\" (w17.10 23, 24 párrs. 11, 12",
+       "p": "David Cruz",
        "h": "",
        "l": "",
        "t": "19:35",
@@ -9957,7 +9441,7 @@
        "kind": "PERLAS",
        "title": "Busquemos perlas escondidas",
        "min": 10,
-       "detail": "",
+       "detail": "Jer 51:6, 7, 36. ¿En qué se parecen la advertencia que Jeremías anunció y la advertencia que nosotros damos hoy? (jr 165 párr. 21; 167 párr. 25). ¿Qué perlas espirituales has encontrado en la lectura bíblica de esta semana?",
        "p": "Mauricio Valenzuela",
        "h": "",
        "l": "",
@@ -9970,78 +9454,332 @@
        "kind": "LECTURA",
        "title": "Lectura de la Biblia",
        "min": 4,
-       "detail": "Jer 48:1-13 (th lección 11).",
-       "p": "Felipe Escandell",
+       "detail": "Jer 52:6-20 (th lección 5).",
+       "p": "Cesar Robles",
        "h": "",
        "l": "",
        "t": "19:55",
-       "ref": "Jer 48:1-13 (th lección 11)",
+       "ref": "Jer 52:6-20 (th lección 5)",
        "desc": ""
       },
       {
        "sec": "M",
        "kind": "MM",
-       "title": "Empiece conversaciones",
+       "title": "Empecemos conversaciones",
        "min": 3,
-       "detail": "DE CASA EN CASA. (lmd lección 5 punto 4).",
-       "p": "Leticia de Ugalde",
-       "h": "Rita Panes",
+       "detail": "DE CASA EN CASA. Ofrece un curso bíblico de forma directa (lmd lección 3 punto 3).",
+       "p": "Valentina De Gonzalez",
+       "h": "Rebeca Cerna",
        "l": "",
        "t": "20:00",
-       "ref": "(lmd lección 5 punto 4)",
-       "desc": "DE CASA EN CASA."
+       "ref": "(lmd lección 3 punto 3)",
+       "desc": "DE CASA EN CASA. Ofrece un curso bíblico de forma directa."
       },
       {
        "sec": "M",
        "kind": "MM",
-       "title": "Haga revisitas",
+       "title": "Empecemos conversaciones",
        "min": 4,
-       "detail": "PREDICACIÓN INFORMAL. Utilice una de las verdades del apéndice A del folleto Una obra de amor (lmd lección 9 punto 5).",
-       "p": "Marcela de Valenzuela",
-       "h": "Roxana de Ruiz",
+       "detail": "DE CASA EN CASA. En la conversación, mencionas que Jesús es el Hijo de Dios. La persona te dice que no está de acuerdo (lmd lección 3 punto 4).",
+       "p": "Silvana de Cancino",
+       "h": "Lauren Arias",
        "l": "",
        "t": "20:04",
-       "ref": "(lmd lección 9 punto 5)",
-       "desc": "PREDICACIÓN INFORMAL. Utilice una de las verdades del apéndice A del folleto Una obra de amor."
+       "ref": "(lmd lección 3 punto 4)",
+       "desc": "DE CASA EN CASA. En la conversación, mencionas que Jesús es el Hijo de Dios. La persona te dice que no está de acuerdo."
       },
       {
        "sec": "M",
-       "kind": "MM",
-       "title": "Haga discípulos",
+       "kind": "DMM",
+       "title": "Discurso",
        "min": 5,
-       "detail": "Anime a su estudiante de la Biblia a orar con más frecuencia (th lección 8).",
-       "p": "Cristhel de Hernández",
-       "h": "Rocío Valenzuela",
+       "detail": "lmd apéndice A punto 21. Título: El Reino de Dios es un gobierno real que está en el cielo (th lección 7).",
+       "p": "Jhon Maturana",
+       "h": "",
        "l": "",
        "t": "20:10",
-       "ref": "(th lección 8)",
-       "desc": "Anime a su estudiante de la Biblia a orar con más frecuencia."
+       "ref": "(th lección 7)",
+       "desc": "lmd apéndice A punto 21. Título: El Reino de Dios es un gobierno real que está en el cielo."
       },
       {
        "sec": "V",
-       "kind": "NEC",
-       "title": "Necesidades de la congregación",
+       "kind": "VC",
+       "title": "Nuestras donaciones le dan gloria al gran nombre de Jehová",
        "min": 15,
-       "detail": "",
-       "p": "Manuel Hernández",
+       "detail": "Análisis con el auditorio a cargo de un anciano (mira la pág. 16). A los israelitas que no participaron directamente en la construcción del templo se les dio la oportunidad de glorificar el nombre de Jehová haciendo donaciones generosas (1Cr 29:8-10). Nosotros tampoco podemos participar directamente en todos nuestros p",
+       "p": "Alejandro Oliva",
        "h": "",
        "l": "",
        "t": "20:20",
        "ref": "",
-       "desc": ""
+       "desc": "Análisis con el auditorio a cargo de un anciano (mira la pág."
       },
       {
        "sec": "V",
        "kind": "EST",
        "title": "Estudio bíblico de la congregación",
        "min": 30,
-       "detail": "wcg cap. 14.",
-       "p": "Luis López",
+       "detail": "wcg cap. 16.",
+       "p": "Manuel Hernández",
        "h": "",
-       "l": "David Ortega",
+       "l": "Andrés Valenzuela",
        "t": "20:35",
        "ref": "",
-       "desc": "wcg cap. 14."
+       "desc": "wcg cap. 16."
+      }
+     ],
+     "seg": {}
+    },
+    {
+     "special": "",
+     "spName": "",
+     "range": "16-22 DE NOVIEMBRE",
+     "bible": "LAMENTACIONES 1, 2",
+     "sOpen": "28",
+     "sClose": "75",
+     "sMid": "90",
+     "presi": "Alejandro Oliva",
+     "oraA": "Felipe Escandell",
+     "oraB": "Guillermo Colina",
+     "aseo": "2",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Una reacción natural ante una situación devastadora",
+       "min": 10,
+       "detail": "[Pon el VIDEO Información sobre Lamentaciones]. Jeremías se sintió devastado cuando el pueblo que él amaba sufrió las consecuencias de dejar de servir a Jehová (Lam 2:11). Jeremías tenía la esperanza de que ellos entraran en razón, le oraran a Jehová con humildad y se arrepintieran (Lam 2:19; w24.08 27, 28 párrs. 7-9).",
+       "p": "Felipe Godoy",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Lam 2:1. ¿Cómo fue arrojada \"la hermosura de Israel desde los cielos a la tierra\"? (w07 1/6 9 párr. 1). ¿Qué perlas espirituales has encontrado en la lectura bíblica de esta semana?",
+       "p": "Johnny Silva",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Lam 1:8-18 (th lección 10).",
+       "p": "Elías Mesa",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Lam 1:8-18 (th lección 10)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "PREDICACIÓN INFORMAL. Empieza una conversación amigable que termina antes de que puedas predicar (lmd lección 2 punto 4).",
+       "p": "Angélica de López",
+       "h": "Marcela de Valenzuela",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 2 punto 4)",
+       "desc": "PREDICACIÓN INFORMAL. Empieza una conversación amigable que termina antes de que puedas predicar."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Hagamos revisitas",
+       "min": 4,
+       "detail": "PREDICACIÓN PÚBLICA. Presenta y analiza un video del kit de enseñanza y ofrece un curso de la Biblia (lmd lección 9 punto 4).",
+       "p": "Rita Panes",
+       "h": "Cristhel de Hernández",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 9 punto 4)",
+       "desc": "PREDICACIÓN PÚBLICA. Presenta y analiza un video del kit de enseñanza y ofrece un curso de la Biblia."
+      },
+      {
+       "sec": "M",
+       "kind": "QD",
+       "title": "¿Qué dirías?",
+       "min": 5,
+       "detail": "Análisis con el auditorio. DE CASA EN CASA. Repasa brevemente Una obra de amor lección 1 punto 4b. Menciona la imagen y luego pregunta: Según lo que vemos en la imagen, ¿qué pregunta podrías hacer para empezar una conversación? ¿Qué texto mostrarías?",
+       "p": "Carlos Yáñez",
+       "h": "",
+       "l": "",
+       "t": "20:10",
+       "ref": "",
+       "desc": "Análisis con el auditorio. DE CASA EN CASA. Repasa brevemente Una obra de amor lección 1 punto 4b. Menciona la imagen y luego pregunta: Según lo que vemos en la imagen, ¿qué pregunta podrías hacer para empezar una conversación? ¿Qué texto mostrarías?"
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "No nos olvidemos de nuestros hermanos inactivos",
+       "min": 15,
+       "detail": "Análisis con el auditorio. Dedicamos mucho tiempo y esfuerzo a encontrar a personas que quieran aprender de Jehová y servirle. Pero no debemos olvidarnos de \"nuestros hermanos en la fe\" que están inactivos (Gál 6:10). ¿Qué pudiera llevar a nuestros hermanos a volverse inactivos? Algunos se enfrascan en su trabajo, se s",
+       "p": "Claudio Correa",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 17.",
+       "p": "Felipe Gonzalez",
+       "h": "",
+       "l": "Luis Cabezas",
+       "t": "20:35",
+       "ref": "",
+       "desc": "wcg cap. 17."
+      }
+     ],
+     "seg": {}
+    },
+    {
+     "special": "",
+     "spName": "",
+     "range": "23-29 DE NOVIEMBRE",
+     "bible": "LAMENTACIONES 3-5",
+     "sOpen": "158",
+     "sClose": "74",
+     "sMid": "109",
+     "presi": "Claudio Correa",
+     "oraA": "Andrés Valenzuela",
+     "oraB": "Cesar Robles",
+     "aseo": "3",
+     "x": {
+      "ent": "",
+      "mic": "",
+      "aud": "",
+      "plat": "",
+      "av": ""
+     },
+     "parts": [
+      {
+       "sec": "T",
+       "kind": "TESORO",
+       "title": "Cuando tengamos problemas, no nos rindamos",
+       "min": 10,
+       "detail": "Valoremos lo que Jehová ha hecho por nosotros (Lam 3:22; w24.01 30 párr. 16). Confiemos en que Jehová seguirá a nuestro lado (Lam 3:23; Mt 6:34). Esperemos con paciencia a que llegue el fin de nuestros problemas (Lam 3:24; w21.08 13 párrs. 17-19).",
+       "p": "Mauricio Valenzuela",
+       "h": "",
+       "l": "",
+       "t": "19:35",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "PERLAS",
+       "title": "Busquemos perlas escondidas",
+       "min": 10,
+       "detail": "Lam 3:27. ¿Por qué es bueno que los jóvenes aprendan a aguantar situaciones difíciles? (w07 1/6 11 párr. 4). ¿Qué perlas espirituales has encontrado en la lectura bíblica de esta semana?",
+       "p": "David Cruz",
+       "h": "",
+       "l": "",
+       "t": "19:45",
+       "ref": "",
+       "desc": ""
+      },
+      {
+       "sec": "T",
+       "kind": "LECTURA",
+       "title": "Lectura de la Biblia",
+       "min": 4,
+       "detail": "Lam 3:19-42 (th lección 12).",
+       "p": "Carlos Alvarado",
+       "h": "",
+       "l": "",
+       "t": "19:55",
+       "ref": "Lam 3:19-42 (th lección 12)",
+       "desc": ""
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 3,
+       "detail": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor (lmd lección 5 punto 4).",
+       "p": "Poulette de Robles",
+       "h": "Paola de Mesa",
+       "l": "",
+       "t": "20:00",
+       "ref": "(lmd lección 5 punto 4)",
+       "desc": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor."
+      },
+      {
+       "sec": "M",
+       "kind": "MM",
+       "title": "Empecemos conversaciones",
+       "min": 4,
+       "detail": "PREDICACIÓN INFORMAL. Ofrece un tratado (lmd lección 4 punto 3).",
+       "p": "Matilde Durán",
+       "h": "Thiare Aliaga",
+       "l": "",
+       "t": "20:04",
+       "ref": "(lmd lección 4 punto 3)",
+       "desc": "PREDICACIÓN INFORMAL. Ofrece un tratado."
+      },
+      {
+       "sec": "M",
+       "kind": "DMM",
+       "title": "Discurso",
+       "min": 5,
+       "detail": "w25.12 26-30. Título: Los mayores son un tesoro para la congregación (th lección 16).",
+       "p": "Luis Valladares",
+       "h": "",
+       "l": "",
+       "t": "20:10",
+       "ref": "(th lección 16)",
+       "desc": "w25.12 26-30. Título: Los mayores son un tesoro para la congregación."
+      },
+      {
+       "sec": "V",
+       "kind": "VC",
+       "title": "Ayudemos a los cuidadores a no rendirse",
+       "min": 15,
+       "detail": "Análisis con el auditorio. Para los cristianos verdaderos es todo un honor cuidar de nuestros seres queridos. Pero eso no significa que sea una tarea fácil. Por eso Jehová ayuda a los cuidadores para que no se rindan. Lo hace, por ejemplo, mediante los hermanos de la congregación. Lee Proverbios 20:18 y Filipenses 2:4.",
+       "p": "Alejandro Oliva",
+       "h": "",
+       "l": "",
+       "t": "20:20",
+       "ref": "",
+       "desc": "Análisis con el auditorio."
+      },
+      {
+       "sec": "V",
+       "kind": "EST",
+       "title": "Estudio bíblico de la congregación",
+       "min": 30,
+       "detail": "wcg cap. 18.",
+       "p": "Felipe Gonzalez",
+       "h": "",
+       "l": "Enrique Núñez",
+       "t": "20:35",
+       "ref": "",
+       "desc": "wcg cap. 18."
       }
      ],
      "seg": {}
