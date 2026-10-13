@@ -9409,7 +9409,9 @@
        "e": "ok"
       },
       "oraB": {
-       "e": "ok"
+       "e": "no",
+       "r": "Carlos Alvarado",
+       "n": ""
       },
       "p0.p": {
        "e": "ok"
@@ -9418,7 +9420,9 @@
        "e": "ok"
       },
       "p2.p": {
-       "e": "ok"
+       "e": "no",
+       "r": "Agustín Pizarro",
+       "n": ""
       },
       "p3.p": {
        "e": "ok"
@@ -9427,7 +9431,9 @@
        "e": "ok"
       },
       "p4.p": {
-       "e": "ok"
+       "e": "no",
+       "r": "Esther Cortez",
+       "n": ""
       },
       "p4.h": {
        "e": "ok"
