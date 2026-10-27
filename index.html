@@ -363,7 +363,7 @@
     <div class="more-panel" id="morePanel">
       <select id="filterTarea" aria-label="Tarea"><option value="">Todas las tareas</option></select>
       <select id="filterGenero" aria-label="Género"><option value="">M y V</option><option value="M">M</option><option value="V">V</option></select>
-      <select id="filterEstado" aria-label="Estado"><option value="">Activos e inactivos</option><option value="activo">Solo activos</option><option value="inactivo">Solo inactivos</option></select>
+      <select id="filterEstado" aria-label="Estado"><option value="">Activos e inactivos</option><option value="activo">Solo activos</option><option value="inactivo">Solo inactivos</option><option value="salud">En Salud</option></select>
       <select id="filterAsign" aria-label="Asignación"><option value="">Cualquier asignación</option></select>
     </div>
     <div class="count-note" id="countNote" role="status" aria-live="polite"></div>
@@ -645,7 +645,7 @@ function filteredRows() {
   const { q, g, t, gen, est, asg } = currentFilters();
   return rows.filter(r =>
     (!q || nameMatch(r.nombre, q)) && (!g || r.grupo === g) && (!t || r.tarea === t) && (!gen || r.genero === gen) &&
-    (est !== 'activo' || !r.inactivo) && (est !== 'inactivo' || r.inactivo) && (!asg || r.asign[asg]));
+    (est !== 'activo' || !r.inactivo) && (est !== 'inactivo' || r.inactivo) && (est !== 'salud' || r.salud) && (!asg || r.asign[asg]));
 }
 function rowHtml(r) {
   const badges = [
@@ -796,7 +796,7 @@ function renderFilterChips() {
   if ($('filterGrupo').value) chips.push({key: 'filterGrupo', label: 'Grupo ' + $('filterGrupo').value});
   if ($('filterTarea').value) chips.push({key: 'filterTarea', label: 'Tarea: ' + $('filterTarea').value});
   if ($('filterGenero').value) chips.push({key: 'filterGenero', label: $('filterGenero').value === 'M' ? 'Mujeres' : 'Varones'});
-  if ($('filterEstado').value) chips.push({key: 'filterEstado', label: $('filterEstado').value === 'activo' ? 'Solo activos' : 'Solo inactivos'});
+  if ($('filterEstado').value) chips.push({key: 'filterEstado', label: {activo: 'Solo activos', inactivo: 'Solo inactivos', salud: 'En Salud'}[$('filterEstado').value]});
   if ($('filterAsign').value) {
     const opt = $('filterAsign').selectedOptions[0];
     chips.push({key: 'filterAsign', label: opt ? opt.textContent : 'Asignación'});
