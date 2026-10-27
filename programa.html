@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Programa Vida y Ministerio — Bordelaguna</title>
+<title>Programa Vida y Ministerio — Congregación Curauma</title>
 <script>try{var t=localStorage.getItem('hermanos.theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -291,7 +291,7 @@ body.ps [data-wk]{display:none}body.ps .sc small{font-size:8px}body.ps .card{bor
 
 </head>
 <body data-tab="prog">
-<header class="top no-print"><div class="top-in"><span class="brand">Congregación Bordelaguna</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><button class="btn small" data-tab="hojas" aria-pressed="false">Hojas de asignación</button><a class="btn small" href="index.html">← Registro</a></div></header>
+<header class="top no-print"><div class="top-in"><span class="brand">Congregación Curauma</span><button class="btn small" data-tab="prog" aria-pressed="true">Programa</button><button class="btn small" data-tab="seg" aria-pressed="false">Seguimiento</button><button class="btn small" data-tab="hojas" aria-pressed="false">Hojas de asignación</button><a class="btn small" href="index.html">← Registro</a></div></header>
 <main class="wrap">
   <div id="progView">
   <div class="no-print">
@@ -686,7 +686,12 @@ $('parseBtn').onclick=()=>{
 };
 $('fillBtn').onclick=()=>{autofill(false);draft();render()};
 $('regenBtn').onclick=()=>{if(confirm('Se reemplazarán TODAS las asignaciones del mes, incluidas las que editaste. ¿Continuar?')){autofill(true);draft();render()}};
-$('printBtn').onclick=()=>window.print();
+const BASE_TITLE=document.title;
+$('printBtn').onclick=()=>{
+  if(cur){const [y,mo]=cur.id.split('-'),mes=MESES[+mo-1];document.title=`Programa Vida y Ministerio - ${mes[0]+mes.slice(1).toLowerCase()} ${y}`}
+  window.print();
+};
+window.addEventListener('afterprint',()=>{document.title=BASE_TITLE});
 async function saveCur(){
   const next=progs.filter(p=>p.id!==cur.id).concat([JSON.parse(JSON.stringify(cur))]);
   try{say('Guardando…');await saveJson(HP,{programs:next},`Programa ${cur.id}`);progs=next;hist();say('Guardado en el historial ✓','ok')}
