@@ -10212,7 +10212,7 @@
      "aseo": "        1",
      "x": {
       "ent": "Miguel Meneses ",
-      "mic": "Felipe Godoy / David Ortega",
+      "mic": "Felipe Escandell / David Ortega",
       "aud": "David Cruz",
       "plat": "Luis Cabezas",
       "av": "Felipe Godoy / Miguel Meneses"
@@ -10323,7 +10323,13 @@
        "desc": "wcg cap. 15."
       }
      ],
-     "seg": {}
+     "seg": {
+      "p7.p": {
+       "e": "no",
+       "r": "Luis Escandell",
+       "n": ""
+      }
+     }
     },
     {
      "special": "",
@@ -10450,7 +10456,13 @@
        "desc": "wcg cap. 16."
       }
      ],
-     "seg": {}
+     "seg": {
+      "p3.h": {
+       "e": "no",
+       "r": "Valentina De Gonzalez",
+       "n": ""
+      }
+     }
     },
     {
      "special": "",
