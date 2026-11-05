@@ -10737,8 +10737,8 @@
      "sClose": "134",
      "sMid": "63",
      "presi": "Cristian Da Silva",
-     "oraA": "Cesar Robles",
-     "oraB": "Carlos Yáñez",
+     "oraA": "Luis Cabezas",
+     "oraB": "Ismael Orellana",
      "aseo": "3",
      "x": {
       "ent": "",
@@ -10793,7 +10793,7 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "DE CASA EN CASA. Ofrece un curso de la Biblia (lmd lección 3 punto 3).",
-       "p": "Rebeca Cerna",
+       "p": "Paola de Mesa",
        "h": "Andrea de Núñez",
        "l": "",
        "t": "20:00",
@@ -10806,7 +10806,7 @@
        "title": "Hagamos discípulos",
        "min": 5,
        "detail": "Anima a un estudiante de la Biblia que está afrontando oposición de la familia (lmd lección 11 punto 5).",
-       "p": "Ambar Hernandes",
+       "p": "Valezka de Cruz",
        "h": "Patricia de Pizarro",
        "l": "",
        "t": "20:04",
@@ -10819,7 +10819,7 @@
        "title": "Discurso",
        "min": 4,
        "detail": "lmd apéndice A punto 22. Título: El Reino de Dios reemplazará a todos los gobiernos humanos (th lección 6).",
-       "p": "Jhon Maturana",
+       "p": "Felipe Escandell",
        "h": "",
        "l": "",
        "t": "20:11",
@@ -10832,7 +10832,7 @@
        "title": "Necesidades de la congregación",
        "min": 15,
        "detail": "",
-       "p": "Manuel Hernández",
+       "p": "Claudio Correa",
        "h": "",
        "l": "",
        "t": "20:20",
@@ -10852,7 +10852,8 @@
        "ref": "",
        "desc": "wcg cap. 19."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -10919,8 +10920,8 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "DE CASA EN CASA. Enseña una verdad bíblica. Si quieres, puedes utilizar una de las que aparecen en el apéndice A del folleto Una obra de amor (lmd lección 1 punto 5).",
-       "p": "Lauren Arias",
-       "h": "Josefina Avendaño",
+       "p": "Lidiana de Arias",
+       "h": "Angélica de López",
        "l": "",
        "t": "20:00",
        "ref": "(lmd lección 1 punto 5)",
@@ -10932,8 +10933,8 @@
        "title": "Empecemos conversaciones",
        "min": 4,
        "detail": "PREDICACIÓN PÚBLICA. La persona ha oído que los testigos de Jehová son una secta (lmd lección 4 punto 4).",
-       "p": "Matilde Durán",
-       "h": "Marcela de Valenzuela",
+       "p": "Marcela de Valenzuela",
+       "h": "Fabiola de Da Silva",
        "l": "",
        "t": "20:04",
        "ref": "(lmd lección 4 punto 4)",
@@ -10945,8 +10946,8 @@
        "title": "Hagamos discípulos",
        "min": 5,
        "detail": "Habla con tu estudiante sobre la limpieza o la higiene personal (lmd lección 12 punto 4).",
-       "p": "Emilia Robles",
-       "h": "Erika de Escandell",
+       "p": "Erika de Escandell",
+       "h": "Bárbara López",
        "l": "",
        "t": "20:10",
        "ref": "(lmd lección 12 punto 4)",
@@ -10978,7 +10979,8 @@
        "ref": "",
        "desc": "wcg cap. 20."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -10988,7 +10990,7 @@
      "sOpen": "49",
      "sClose": "133",
      "sMid": "153",
-     "presi": "Cristian Da Silva",
+     "presi": "Juan Aguilera",
      "oraA": "Enrique Núñez",
      "oraB": "Felipe Escandell",
      "aseo": "5",
@@ -11045,7 +11047,7 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "PREDICACIÓN PÚBLICA. La persona quiere discutir (lmd lección 4 punto 5).",
-       "p": "Andrea de Núñez",
+       "p": "Ana de Aliaga",
        "h": "Cristhel de Hernández",
        "l": "",
        "t": "20:00",
@@ -11059,7 +11061,7 @@
        "min": 4,
        "detail": "DE CASA EN CASA. Ofrécele a la persona una revista sobre el tema del que hablaron en la visita anterior (lmd lección 9 punto 4).",
        "p": "Thiare Aliaga",
-       "h": "Ambar Hernandes",
+       "h": "Roxana de Ruiz",
        "l": "",
        "t": "20:04",
        "ref": "(lmd lección 9 punto 4)",
@@ -11071,7 +11073,7 @@
        "title": "¿Qué dirías?",
        "min": 5,
        "detail": "Análisis con el auditorio. DE CASA EN CASA. Repasa brevemente Una obra de amor lección 1 punto 4b. Menciona la imagen y luego pregunta: Según lo que vemos en la imagen, ¿qué podrías decir para empezar una conversación? ¿Qué texto mostrarías?",
-       "p": "Elías Mesa",
+       "p": "Mauricio Valenzuela",
        "h": "",
        "l": "",
        "t": "20:10",
@@ -11097,14 +11099,15 @@
        "title": "Estudio bíblico de la congregación",
        "min": 30,
        "detail": "wcg cap. 21.",
-       "p": "Jorge Benavides",
+       "p": "Ronny Pérez",
        "h": "",
-       "l": "Cesar Robles",
+       "l": "Eduardo Benavides",
        "t": "20:35",
        "ref": "",
        "desc": "wcg cap. 21."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -11115,7 +11118,7 @@
      "sClose": "154",
      "sMid": "139",
      "presi": "Hernán Coronado",
-     "oraA": "Carlos Yáñez",
+     "oraA": "David Ortega",
      "oraB": "Eduardo Benavides",
      "aseo": "1",
      "x": {
@@ -11158,7 +11161,7 @@
        "title": "Lectura de la Biblia",
        "min": 4,
        "detail": "Eze 8:7-18 (th lección 2).",
-       "p": "Miguel Meneses",
+       "p": "Ismael Orellana",
        "h": "",
        "l": "",
        "t": "19:55",
@@ -11171,7 +11174,7 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "DE CASA EN CASA. (lmd lección 1 punto 4).",
-       "p": "Matilde Durán",
+       "p": "Elisabete de Ortega",
        "h": "Silvana de Cancino",
        "l": "",
        "t": "20:00",
@@ -11184,8 +11187,8 @@
        "title": "Hagamos revisitas",
        "min": 4,
        "detail": "DE CASA EN CASA. Vuelves a visitar a una persona, pero no está en casa. Aprovechas la oportunidad para hablar con otro miembro de la familia (lmd lección 9 punto 3).",
-       "p": "Rita Panes",
-       "h": "Poulette de Robles",
+       "p": "Leticia de Ugalde",
+       "h": "Marisol Avila",
        "l": "",
        "t": "20:04",
        "ref": "(lmd lección 9 punto 3)",
@@ -11197,7 +11200,7 @@
        "title": "Hagamos discípulos",
        "min": 5,
        "detail": "Ayuda a tu estudiante a prepararse para predicarle a un familiar (lmd lección 12 punto 3).",
-       "p": "Josefina Avendaño",
+       "p": "Valentina De Gonzalez",
        "h": "Sirlene de Coronado",
        "l": "",
        "t": "20:10",
@@ -11230,7 +11233,8 @@
        "ref": "",
        "desc": "wcg introducción a la sección 2, línea de tiempo y cap. 22."
       }
-     ]
+     ],
+     "seg": {}
     },
     {
      "special": "",
@@ -11242,7 +11246,7 @@
      "sMid": "60",
      "presi": "Luis Escandell",
      "oraA": "Agustín Pizarro",
-     "oraB": "Cesar Robles",
+     "oraB": "Ricardo Ugalde",
      "aseo": "2",
      "x": {
       "ent": "",
@@ -11271,7 +11275,7 @@
        "title": "Busquemos perlas escondidas",
        "min": 10,
        "detail": "Eze 9:9. ¿Por qué incluyó Jehová en su condena a \"la casa de Israel\"? (it \"Cronología\" párr. 104). ¿Qué perlas espirituales has encontrado en la lectura bíblica de esta semana?",
-       "p": "David Cruz",
+       "p": "Luis Cabezas",
        "h": "",
        "l": "",
        "t": "19:45",
@@ -11284,7 +11288,7 @@
        "title": "Lectura de la Biblia",
        "min": 4,
        "detail": "Eze 9:1-11 (th lección 5).",
-       "p": "Luis Valladares",
+       "p": "Johnny Silva",
        "h": "",
        "l": "",
        "t": "19:55",
@@ -11297,8 +11301,8 @@
        "title": "Empecemos conversaciones",
        "min": 3,
        "detail": "DE CASA EN CASA. Presenta y analiza un video del kit de enseñanza, pero no lo pongas (lmd lección 3 punto 5).",
-       "p": "Marisol Avila",
-       "h": "Lauren Arias",
+       "p": "Leonor Alvarado",
+       "h": "Gisele de Pérez",
        "l": "",
        "t": "20:00",
        "ref": "(lmd lección 3 punto 5)",
@@ -11310,7 +11314,7 @@
        "title": "Hagamos revisitas",
        "min": 4,
        "detail": "DE CASA EN CASA. La persona tiene una pregunta. Para responderle, presenta y analiza un video, pero no lo pongas (lmd lección 9 punto 5).",
-       "p": "Emilia Robles",
+       "p": "Janis Hernández",
        "h": "Esther Cortez",
        "l": "",
        "t": "20:04",
@@ -11323,8 +11327,8 @@
        "title": "Expliquemos nuestras creencias",
        "min": 5,
        "detail": "Escenificación. Para ayudar a un familiar a entender por qué crees en la creación, presenta y analiza un video de la serie \"¿Lo diseñó alguien?\", pero no lo pongas (th lección 2).",
-       "p": "Patricia de Pizarro",
-       "h": "Rebeca Cerna",
+       "p": "Andrea de Orellana",
+       "h": "Rosa de Cabezas",
        "l": "",
        "t": "20:10",
        "ref": "(th lección 2)",
@@ -11349,14 +11353,15 @@
        "title": "Estudio bíblico de la congregación",
        "min": 30,
        "detail": "wcg cap. 23.",
-       "p": "Cristian Da Silva",
+       "p": "Ronny Pérez",
        "h": "",
        "l": "Andrés Valenzuela",
        "t": "20:35",
        "ref": "",
        "desc": "wcg cap. 23."
       }
-     ]
+     ],
+     "seg": {}
     }
    ]
   }
